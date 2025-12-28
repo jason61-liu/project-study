@@ -1,0 +1,11 @@
+# BitsAndBytes量化所需依赖包
+
+# BitsAndBytes - 量化核心库 (transformers内置支持)
+bitsandbytes>=0.41.0
+
+# 基础依赖
+transformers>=4.35.0
+torch>=2.0.0
+accelerate>=0.24.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0

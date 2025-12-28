@@ -1,0 +1,11 @@
+# AWQ量化所需依赖包 (Linux环境)
+
+# AutoAWQ - AWQ量化核心库
+autoawq>=0.2.0
+
+# 基础依赖
+transformers>=4.35.0
+torch>=2.0.0
+accelerate>=0.24.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
