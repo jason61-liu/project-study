@@ -5,16 +5,15 @@ AWQ量化脚本 - 使用 llm-compressor 对 Qwen3-4B 模型进行 AWQ 量化
 """
 
 import os
-import json
-import tempfile
 import torch
+from datasets import Dataset
 from transformers import AutoTokenizer, AutoConfig
 from llmcompressor.modifiers.awq import AWQModifier
 from llmcompressor import oneshot
 
 # 模型路径配置
-MODEL_PATH = "/mnt/hgfs/vm-share/models/Qwen/Qwen3-4B"
-QUANT_PATH = "/mnt/hgfs/vm-share/models/Qwen/Qwen3-4B-awq"
+MODEL_PATH = "/mnt/hgfs/vm-share/models/Qwen/Qwen3-0.6B"
+QUANT_PATH = "/mnt/hgfs/vm-share/models/Qwen/Qwen3-0.6B-awq"
 
 # AWQ量化配置
 W_BIT = 4
@@ -45,7 +44,9 @@ def print_system_info():
         print(f"CUDA版本: {torch.version.cuda}")
         print(f"GPU数量: {torch.cuda.device_count()}")
         print(f"GPU名称: {torch.cuda.get_device_name(0)}")
-        print(f"GPU内存: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.2f} GB")
+        print(
+            f"GPU内存: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.2f} GB"
+        )
     print("=" * 60)
 
 
@@ -58,7 +59,10 @@ def print_original_model_info():
     config = AutoConfig.from_pretrained(MODEL_PATH, trust_remote_code=True)
 
     # 估算参数量 (Qwen3-4B 约 4B 参数)
-    total_params = config.num_hidden_layers * config.hidden_size * config.num_attention_heads * 4 + config.vocab_size * config.hidden_size
+    total_params = (
+        config.num_hidden_layers * config.hidden_size * config.num_attention_heads * 4
+        + config.vocab_size * config.hidden_size
+    )
 
     size_fp16_mb = total_params * 2 / 1024 / 1024
     size_int4_mb = total_params * 0.5 / 1024 / 1024
@@ -99,28 +103,20 @@ def quantize_model():
         },
     )
 
-    # 将校准数据集保存为临时 JSON 文件
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
-        for text in CALIBRATION_DATASET:
-            f.write(json.dumps({"text": text}, ensure_ascii=False) + "\n")
-        temp_dataset_path = f.name
+    # 将校准数据集转换为 HuggingFace Dataset 对象
+    calibration_dataset = Dataset.from_dict({"text": CALIBRATION_DATASET})
 
     print("\n正在执行 AWQ 量化（可能需要几分钟）...")
-    try:
-        oneshot(
-            model=MODEL_PATH,
-            dataset_path=temp_dataset_path,
-            recipe=[awq_modifier],
-            output_dir=QUANT_PATH,
-            num_calibration_samples=len(CALIBRATION_DATASET),
-            max_seq_length=512,
-            precision="float16",
-            trust_remote_code_model=True,
-        )
-    finally:
-        # 删除临时文件
-        if os.path.exists(temp_dataset_path):
-            os.remove(temp_dataset_path)
+    oneshot(
+        model=MODEL_PATH,
+        dataset=calibration_dataset,
+        recipe=[awq_modifier],
+        output_dir=QUANT_PATH,
+        num_calibration_samples=len(CALIBRATION_DATASET),
+        max_seq_length=512,
+        precision="float16",
+        trust_remote_code_model=True,
+    )
 
     # 保存 tokenizer
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, trust_remote_code=True)
@@ -169,6 +165,7 @@ def main():
     except Exception as e:
         print(f"\n错误: {e}")
         import traceback
+
         traceback.print_exc()
     finally:
         if torch.cuda.is_available():
