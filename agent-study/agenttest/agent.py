@@ -1,3 +1,14 @@
+"""
+Author: liushiyi liushiyi2013@163.com
+Date: 2026-03-02 23:40:27
+LastEditors: liushiyi liushiyi2013@163.com
+LastEditTime: 2026-03-27 23:30:57
+FilePath: /pyproject/agent-study/agenttest/agent.py
+Description:
+
+Copyright (c) 2026 , All Rights Reserved.
+"""
+
 import uuid
 import json
 from typing import List, Optional, Callable, Dict

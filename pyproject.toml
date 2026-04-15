@@ -1,0 +1,9 @@
+[project]
+name = "pdf_analysis"
+version = "1.0.0"
+dependencies = [
+    "pdfminer-six",
+    "pypdf2",
+    "pandas",
+    "openpyxl",
+]

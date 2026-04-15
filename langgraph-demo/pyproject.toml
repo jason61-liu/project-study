@@ -1,0 +1,10 @@
+[project]
+name = "langgraph-demo"
+version = "1.0.0"
+description = "LangGraph 学习示例项目"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=1.1.0",
+    "langchain-openai>=1.1.0",
+    "python-dotenv>=1.0.0",
+]
