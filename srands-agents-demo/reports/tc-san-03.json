@@ -1,0 +1,33 @@
+{
+  "id": "TC-SAN-03",
+  "name": "Sandbox 结果回填 tool_result",
+  "status": "PASS",
+  "elapsed_seconds": 0.015,
+  "events_count": 1,
+  "events": [
+    {
+      "type": "sandbox_execute",
+      "command": "echo test_result_backfill",
+      "exit_code": 0,
+      "stdout": "[CMA Sandbox] stdout: test_result_backfill\n"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "exit_code=0",
+      "expected": "0",
+      "actual": "0",
+      "match": true
+    },
+    {
+      "assertion": "stdout 含 CMA Sandbox 标记",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

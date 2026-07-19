@@ -1,0 +1,16 @@
+[project]
+name = "srands-agents-poc"
+version = "0.1.0"
+description = "Strands Python SDK CMA 集成技术验证 POC"
+requires-python = ">=3.12"
+dependencies = [
+    "strands-agents>=1.45.0",
+    "strands-agents-tools>=0.8.2",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

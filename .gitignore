@@ -228,3 +228,6 @@ dist/
 
 # UV package manager
 uv.lock
+
+# Claude Code local config
+.claude/

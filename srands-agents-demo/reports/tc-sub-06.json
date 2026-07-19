@@ -1,0 +1,20 @@
+{
+  "id": "TC-SUB-06",
+  "name": "并发委派多个子 Agent",
+  "status": "PASS",
+  "elapsed_seconds": 16.145,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "并发委派完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TC-SUB-04",
+  "name": "子 Agent 独立工具集",
+  "status": "PASS",
+  "elapsed_seconds": 0.003,
+  "events_count": 1,
+  "events": [
+    {
+      "sub_tools": [],
+      "main_tools": [
+        "bash"
+      ]
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "子 Agent 不含 bash",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "主 Agent 含 bash",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

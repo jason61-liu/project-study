@@ -1,0 +1,26 @@
+{
+  "id": "TC-SUB-05",
+  "name": "子 Agent 中断传播",
+  "status": "PASS",
+  "elapsed_seconds": 4.176,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "子 Agent 中断传播到主 Agent",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "恢复后正常",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

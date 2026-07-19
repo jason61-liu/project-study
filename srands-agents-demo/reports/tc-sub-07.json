@@ -1,0 +1,20 @@
+{
+  "id": "TC-SUB-07",
+  "name": "嵌套委派（子→孙）",
+  "status": "PASS",
+  "elapsed_seconds": 22.897,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "嵌套委派完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

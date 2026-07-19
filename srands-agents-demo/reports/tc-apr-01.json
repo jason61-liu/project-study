@@ -1,0 +1,24 @@
+{
+  "id": "TC-APR-01",
+  "name": "allowed 模式自动放行",
+  "status": "PASS",
+  "elapsed_seconds": 0.006,
+  "events_count": 1,
+  "events": [
+    {
+      "tool_result": "{'toolUseId': 'tooluse_bash_307529822', 'status': 'success', 'content': [{'text': '{\"output\": \"allowed_test\\\\n\", \"error\": \"\"}'}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "工具正常执行（未被取消）",
+      "expected": "success",
+      "actual": "success",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

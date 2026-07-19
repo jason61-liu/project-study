@@ -1,0 +1,20 @@
+{
+  "id": "TC-APR-04",
+  "name": "manual 模式 interrupt 超时",
+  "status": "PASS",
+  "elapsed_seconds": 1.042,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "asyncio.wait_for 包装成功",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

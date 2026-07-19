@@ -1,0 +1,37 @@
+{
+  "id": "TC-SES-07",
+  "name": "Sandbox 配置隔离",
+  "status": "PASS",
+  "elapsed_seconds": 0.026,
+  "events_count": 1,
+  "events": [
+    {
+      "agent_a_result": "{'toolUseId': 'tooluse_bash_577351849', 'status': 'success', 'content': [{'text': '{\"output\": \"[Sandbox-Alpha] alpha_test\\\\n\", \"error\": \"\"}'}]}",
+      "agent_b_result": "{'toolUseId': 'tooluse_bash_305238843', 'status': 'success', 'content': [{'text': '{\"output\": \"[Sandbox-Beta] beta_test\\\\n\", \"error\": \"\"}'}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 3,
+  "assertions": [
+    {
+      "assertion": "AgentA 路由到 Sandbox-Alpha",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentB 路由到 Sandbox-Beta",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "Sandbox-Alpha 输出不含 Beta 标记",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

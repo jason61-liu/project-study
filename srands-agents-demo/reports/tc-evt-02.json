@@ -1,0 +1,32 @@
+{
+  "id": "TC-EVT-02",
+  "name": "cancel_tool 时不发 tool_use",
+  "status": "PASS",
+  "elapsed_seconds": 0.007,
+  "events_count": 1,
+  "events": [
+    {
+      "type": "agent.tool_result",
+      "tool_use_id": "tooluse_bash_694118327",
+      "content": [
+        {
+          "text": "Tool 'bash' is forbidden"
+        }
+      ],
+      "is_error": true,
+      "cancel_message": "Tool 'bash' is forbidden"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "cancel 时不产生 agent.tool_use 事件",
+      "expected": "0",
+      "actual": "0",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

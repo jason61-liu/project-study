@@ -1,0 +1,25 @@
+{
+  "id": "TC-SUB-03",
+  "name": "子 Agent 状态保留 (preserve_context=True)",
+  "status": "PASS",
+  "elapsed_seconds": 6.287,
+  "events_count": 1,
+  "events": [
+    {
+      "after_first_call": 2,
+      "after_second_call": 4
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "preserve_context=True 时 messages 增长",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

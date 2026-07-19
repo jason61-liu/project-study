@@ -1,0 +1,31 @@
+{
+  "id": "TC-SES-01",
+  "name": "对话历史隔离",
+  "status": "PASS",
+  "elapsed_seconds": 0.922,
+  "events_count": 1,
+  "events": [
+    {
+      "agent_a_msg_count": 2,
+      "agent_b_msg_count": 2
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "AgentA messages 不含 AgentB 输入",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentB messages 不含 AgentA 输入",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

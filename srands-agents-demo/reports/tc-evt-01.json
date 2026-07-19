@@ -1,0 +1,26 @@
+{
+  "id": "TC-EVT-01",
+  "name": "BeforeToolCallEvent → agent.tool_use",
+  "status": "PASS",
+  "elapsed_seconds": 0.001,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "translator 已注册 BeforeToolCall hook",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "translator 已注册 AfterToolCall hook",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

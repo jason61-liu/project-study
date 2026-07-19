@@ -1,0 +1,138 @@
+id	source_site	city	role	experience	degree	tags	evidence_level	source_url	collected_at
+1	BOSS直聘	上海	Agent 架构师/高级 AI 应用开发工程师	3-5年	本科	agent_core,business_delivery,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+2	BOSS直聘	上海	AI Agent 开发工程师（可审计/可观测）	3-5年	本科	agent_core,engineering_reliability,evaluation_observability,security_governance	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+3	BOSS直聘	上海	AI Agent 开发工程师（Agent OS）	3-5年	硕士	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+4	BOSS直聘	上海	AI Agent 开发工程师（稳定可扩展后端）	5-10年	本科	agent_core,engineering_reliability,inference_serving,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+5	BOSS直聘	上海	机器人交互 AI Agent 开发工程师	3-5年	本科	agent_core,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+6	BOSS直聘	上海	量化研究 AI Agent 开发工程师	在校/应届	本科	agent_core,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+7	BOSS直聘	上海	ToB AI Agent 开发工程师	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+8	BOSS直聘	上海	FDE AI Agent 应用开发工程师	1-3年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+9	BOSS直聘	上海	远程 AI Agent 应用开发工程师	5-10年	本科	agent_core,business_delivery,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+10	BOSS直聘	上海	AI 应用开发工程师（Prompt/RAG/Tool/Memory）	1-3年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+11	BOSS直聘	上海	AI Agent 开发工程师（规划/上下文/工具/工作流）	1-3年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+12	BOSS直聘	上海	CAD AI 助手开发工程师	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+13	BOSS直聘	上海	云服务 AI Agent 开发工程师	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/42555746a85eb0741HB43di7GQ~~/	2026-07-17
+14	BOSS直聘	上海	AI Agent 开发工程师（高并发分布式架构）	5-10年	本科	agent_core,engineering_reliability,evaluation_observability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/547bb79b1d47367a1HB43di6EQ~~/	2026-07-17
+15	BOSS直聘	杭州	资深 AI 应用工程师（Agent/Workflow）	3-5年	本科	agent_core,business_delivery,engineering_reliability,framework_specific	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+16	BOSS直聘	杭州	高级 AI 应用工程师（系统设计/工程化）	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+17	BOSS直聘	杭州	AI 应用工程师（知识库/RAG/Agent Flow）	1-3年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+18	BOSS直聘	杭州	AI 应用工程师（业务需求到架构）	5-10年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+19	BOSS直聘	杭州	AI 应用工程师（RAG/智能 Agent）	3-5年	硕士	agent_core,engineering_reliability,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+20	BOSS直聘	杭州	AI 应用工程师（任务分解/工具调用/安全）	1-3年	本科	agent_core,engineering_reliability,security_governance	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+21	BOSS直聘	杭州	AI 应用工程师（模型工具/Agent 创建）	3-5年	本科	agent_core,engineering_reliability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+22	BOSS直聘	杭州	AI 应用工程师（RAG/微调/蒸馏）	1-3年	本科	evaluation_observability,model_training_posttraining,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+23	BOSS直聘	杭州	AI 应用工程师（Python/Go/Agent Flow）	1-3年	本科	agent_core,engineering_reliability,framework_specific	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+24	BOSS直聘	杭州	大模型 AI 应用工程师	3-5年	本科	agent_core,engineering_reliability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/2feb34b40323cf930nF62t26EA~~/	2026-07-17
+25	BOSS直聘	苏州	AI Agent 核心引擎开发工程师	1-3年	本科	agent_core,engineering_reliability,evaluation_observability,inference_serving,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+26	BOSS直聘	苏州	AI 应用开发工程师（任务流）	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+27	BOSS直聘	苏州	AI 开发工程师（Agent 设计研发）	1-3年	本科	agent_core,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+28	BOSS直聘	苏州	AI 应用开发工程师（模型 API/Prompt/Context）	1-3年	本科	agent_core,model_training_posttraining,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+29	BOSS直聘	苏州	AI 应用开发工程师（Agent/QA/RAG）	1-3年	本科	agent_core,engineering_reliability,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+30	BOSS直聘	苏州	AI Agent 应用开发工程师	1-3年	硕士	agent_core,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+31	BOSS直聘	苏州	大模型开发工程师（部署/RAG/Agent 平台）	3-5年	硕士	engineering_reliability,inference_serving,model_training_posttraining,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+32	BOSS直聘	苏州	资深 AI 应用开发工程师（稳定性/扩展性）	5-10年	本科	agent_core,business_delivery,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/e62ced1a0c5547ef0nR-3tm6Ew~~/	2026-07-17
+33	BOSS直聘	北京	算法应用工程师（模型 Agent 核心/AI 平台）	5-10年	本科	agent_core,business_delivery,engineering_reliability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+34	BOSS直聘	北京	NLP 算法应用工程师（Agentic 平台）	3-5年	本科	agent_core,engineering_reliability,multi_agent	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+35	BOSS直聘	北京	高级算法应用工程师（知识平台工程化）	5-10年	硕士	business_delivery,engineering_reliability,model_training_posttraining,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+36	BOSS直聘	北京	Agent 算法应用工程师（规划/记忆/工具/工作流）	5-10年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+37	BOSS直聘	北京	大模型 Agent 算法应用工程师	3-5年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+38	BOSS直聘	北京	大模型算法与 Agent 应用工程师	1-3年	硕士	agent_core,evaluation_observability,model_training_posttraining,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+39	BOSS直聘	北京	Agent 应用算法工程师（规划/对话/执行）	3-5年	本科	agent_core,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+40	BOSS直聘	北京	AI 应用算法工程师（训练/Agent 化）	3-5年	本科	agent_core,evaluation_observability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+41	BOSS直聘	北京	AI 应用算法工程师（评测体系）	1-3年	本科	agent_core,engineering_reliability,evaluation_observability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/5589efcb37983f380nB_3Ny0FA~~/	2026-07-17
+42	BOSS直聘	深圳	AI Agent 开发工程师（广州长湾创新技术）	3-5年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+43	BOSS直聘	深圳	AI Agent 开发工程师（和生创新技术）	3-5年	本科	agent_core,business_delivery,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+44	BOSS直聘	深圳	AI Agent 开发工程师（LangGraph，海道教育）	1-3年	本科	agent_core,engineering_reliability,framework_specific,multi_agent	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+45	BOSS直聘	深圳	AI Agent 开发工程师（蓝青教育集团）	3-5年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+46	BOSS直聘	深圳	AI Agent 开发工程师（创信测试技术）	1-3年	本科	agent_core,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+47	BOSS直聘	深圳	AI 应用开发工程师（鲁班到家）	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+48	BOSS直聘	深圳	AI Agent 开发工程师（四方精创）	3-5年	本科	agent_core,business_delivery,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+49	BOSS直聘	深圳	AI Agent 开发工程师（兔展）	3-5年	硕士	agent_core,engineering_reliability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+50	BOSS直聘	深圳	AI Agent 开发工程师（深圳中米网络科技）	5-10年	本科	agent_core,business_delivery,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+51	BOSS直聘	深圳	AI 应用开发工程师（Beyond Power）	1-3年	本科	agent_core,evaluation_observability,framework_specific	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+52	BOSS直聘	深圳	AI Agent 开发工程师（玺云科技）	1年以内	本科	agent_core,framework_specific	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+53	BOSS直聘	深圳	AI Agent 开发工程师（维度教育）	经验不限	本科	agent_core,business_delivery	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+54	BOSS直聘	深圳	AI 应用开发工程师（Seeed）	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+55	BOSS直聘	深圳	AI 应用高级开发工程师（酷开）	3-5年	本科	business_delivery,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+56	BOSS直聘	深圳	AI 应用开发工程师（贝特瑞）	5-10年	本科	agent_core,business_delivery,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+57	BOSS直聘	深圳	AI Agent 开发工程师（AI 工厂，道通智能航空技术）	经验不限	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+58	BOSS直聘	深圳	AI Agent 资深开发工程师（合信惠通）	3-5年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+59	BOSS直聘	深圳	AI Agent 开发工程师-抖音研发（今日头条）	经验不限	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+60	BOSS直聘	深圳	AI 应用开发工程师 Junior/Senior/架构师（深圳凌邦德智能）	1-3年	本科	business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+61	BOSS直聘	深圳	后端开发高级工程师（AI 效能提升研发，顺丰科技）	5-10年	硕士	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/61b3aefe7b718e280nBy29m6GQ~~/	2026-07-17
+62	BOSS直聘	深圳	AI 应用开发工程师（万兴科技）	5-10年	本科	agent_core,business_delivery,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/4ad7cfcdefcf1f150nB509y9Fw~~/	2026-07-17
+63	BOSS直聘	深圳	AI 应用开发工程师（答税）	3-5年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/4ad7cfcdefcf1f150nB509y9Fw~~/	2026-07-17
+64	BOSS直聘	深圳	AI 应用开发工程师（中荟未来）	5-10年	学历不限	agent_core,engineering_reliability,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/4ad7cfcdefcf1f150nB509y9Fw~~/	2026-07-17
+65	BOSS直聘	深圳	AI 应用开发资深工程师（优必选机器人）	5-10年	本科	business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/4ad7cfcdefcf1f150nB509y9Fw~~/	2026-07-17
+66	BOSS直聘	成都	AI Agent 应用开发工程师（安邦公司）	3-5年	本科	agent_core,framework_specific,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+67	BOSS直聘	成都	AI Agent 平台开发工程师（腾讯）	3-5年	本科	agent_core,engineering_reliability,multi_agent,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+68	BOSS直聘	成都	AI 大模型应用开发工程师（万物纵横）	1-3年	本科	agent_core,business_delivery,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+69	BOSS直聘	成都	AI 座舱大模型应用开发工程师（摩斯智联）	1-3年	本科	agent_core,engineering_reliability,multi_agent	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+70	BOSS直聘	成都	AI 应用开发工程师组长（水月雨科技）	3-5年	硕士	agent_core,business_delivery,engineering_reliability,inference_serving,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+71	BOSS直聘	成都	AI 应用开发工程师/Python（BigQuant）	1-3年	本科	agent_core,engineering_reliability,framework_specific	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+72	BOSS直聘	成都	AI 应用开发工程师资深/专家（一智科技）	5-10年	本科	business_delivery,engineering_reliability,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+73	BOSS直聘	成都	AI 应用开发工程师（恒湾科技）	经验不限	硕士	agent_core,engineering_reliability,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+74	BOSS直聘	成都	AI Agent 应用开发工程师（盛安德）	5-10年	本科	agent_core,business_delivery,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/e6edc20c9b8b6e0e03V62tm8Ew~~/	2026-07-17
+75	BOSS直聘	广州	智能体研发工程师（投研方向，广发基金）	3-5年	硕士	agent_core,engineering_reliability,evaluation_observability,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+76	BOSS直聘	广州	AI 研发工程师（智能体方向，国测类脑）	经验不限	硕士	agent_core,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+77	BOSS直聘	广州	Agent 工程师/Tech Lead（知微行易）	经验不限	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+78	BOSS直聘	广州	AI Agent 智能体研发工程师（爱化身）	经验不限	本科	agent_core,business_delivery	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+79	BOSS直聘	广州	智能体平台高级研发工程师/专家（阿里巴巴集团）	3-5年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+80	BOSS直聘	广州	AI 研发工程师（智能体方向，星尘科技）	经验不限	硕士	agent_core,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+81	BOSS直聘	广州	AI 开发工程师/智能体开发（趋势智能）	经验不限	本科	agent_core,business_delivery,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+82	BOSS直聘	广州	智能体开发工程师/AI 应用开发（拓保软件）	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/84e753ed302fbef31H193d68Fw~~/	2026-07-17
+83	BOSS直聘	广州	Go 后端开发工程师（AI Agent 方向，卓术科技）	3-5年	本科	agent_core,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/c0ece3e4c3f19cbf03V-0t-1Ew~~/	2026-07-17
+84	BOSS直聘	武汉	AI Ops 开发工程师（岚图汽车）	5-10年	本科	agent_core,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+85	BOSS直聘	武汉	AI Agent 开发工程师（武汉海云健康科技）	1-3年	本科	agent_core,engineering_reliability,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+86	BOSS直聘	武汉	AI Agent 开发工程师（壹品慧）	在校/应届	本科	agent_core,framework_specific	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+87	BOSS直聘	武汉	AI Agent 开发工程师（国响）	1-3年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+88	BOSS直聘	武汉	AI Agent 应用开发工程师（乐薇）	1-3年	本科	agent_core,evaluation_observability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+89	BOSS直聘	武汉	AI 工程化高级开发工程师（金山云）	5-10年	本科	agent_core,business_delivery,engineering_reliability,inference_serving	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+90	BOSS直聘	武汉	AI Agent 与 Claw 系统开发工程师（紫嫣喷雾）	3-5年	本科	agent_core,engineering_reliability,framework_specific	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+91	BOSS直聘	武汉	PHP 工程师（AI Agent 开发方向，三人行知识产权）	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+92	BOSS直聘	武汉	AI 开发工程师（大模型应用落地，武汉金档）	3-5年	本科	agent_core,engineering_reliability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/870691b5c9322cf303V92NW4EQ~~/	2026-07-17
+93	BOSS直聘	武汉	AI 开发工程师（Agent 高并发调度，财富趋势科技）	经验不限	本科	agent_core,engineering_reliability,inference_serving,multi_agent	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+94	BOSS直聘	武汉	AI 应用开发工程师（东风汽车）	1年以内	本科	engineering_reliability,inference_serving,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+95	BOSS直聘	武汉	AI Agent 开发工程师（阿博茨科技）	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+96	BOSS直聘	武汉	AI Agent 全栈开发工程师（北京九通衢中南分公司）	3-5年	硕士	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+97	BOSS直聘	武汉	AI 开发工程师（武汉爱买科技）	3-5年	本科	agent_core,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+98	BOSS直聘	武汉	AI 开发工程师（睿服科技）	3-5年	本科	agent_core,multi_agent,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+99	BOSS直聘	武汉	AI 应用开发工程师（顺丰科技）	5-10年	本科	agent_core,business_delivery,engineering_reliability,evaluation_observability	public_summary	https://m.zhipin.com/zhaopin/6d49fc42108c777b0nBy3d--GQ~~/	2026-07-17
+100	BOSS直聘	西安	AI Agent 开发工程师（丝路大业影业）	5-10年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/1f95b1e31a4e39cc03Ny09W0Fg~~/	2026-07-17
+101	BOSS直聘	西安	AI 应用开发工程师（SenseTime）	经验不限	本科	agent_core,engineering_reliability,inference_serving,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/1f95b1e31a4e39cc03Ny09W0Fg~~/	2026-07-17
+102	BOSS直聘	西安	AI Agent/大模型应用开发工程师（中科创达）	3-5年	本科	agent_core,engineering_reliability,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/1f95b1e31a4e39cc03Ny09W0Fg~~/	2026-07-17
+103	BOSS直聘	西安	AI Agent 开发工程师（陕西明太实业）	3-5年	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/1f95b1e31a4e39cc03Ny09W0Fg~~/	2026-07-17
+104	BOSS直聘	西安	AI Agent 工程师（技术研发岗，星纪谷智能）	1-3年	本科	agent_core,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/9e7a81126642287803B-2ty_Ew~~/	2026-07-17
+105	BOSS直聘	西安	AI Agent 开发研发技术（全宇信息）	1-3年	本科	agent_core,multi_agent,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/9e7a81126642287803B-2ty_Ew~~/	2026-07-17
+106	BOSS直聘	西安	智能体开发工程师（景行锐创）	经验不限	硕士	agent_core,framework_specific,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/c49154732a833bb30314296-EA~~/	2026-07-17
+107	BOSS直聘	西安	智能体开发工程师（陕西智邦数创）	经验不限	本科	agent_core,framework_specific,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/c49154732a833bb30314296-EA~~/	2026-07-17
+108	BOSS直聘	西安	人工智能算法工程师（智能体设计与评估，赞同科技）	3-5年	本科	agent_core,evaluation_observability,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/52d679d0d0f874cf0HJz2tq0/	2026-07-17
+109	BOSS直聘	西安	大模型技术专家（联通数字科技）	5-10年	本科	agent_core,business_delivery,model_training_posttraining,multi_agent,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/85479181ce73002f03dz39m0Ew~~/	2026-07-17
+110	BOSS直聘	南京	AI 业务应用工程师（Agent 开发，思酷）	经验不限	本科	agent_core,engineering_reliability,rag_context_memory,tools_mcp	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+111	BOSS直聘	南京	大模型应用工程师（AI Agent 方向，中科创达）	5-10年	本科	agent_core,business_delivery,evaluation_observability,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+112	BOSS直聘	南京	AI Agent 应用实施工程师（联成科技）	1-3年	本科	agent_core,business_delivery,framework_specific	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+113	BOSS直聘	南京	AI Agent 智能体大模型应用开发工程师（南京争锋）	1-3年	硕士	agent_core,framework_specific,rag_context_memory	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+114	BOSS直聘	南京	AI 应用全栈工程师（Agent 方向，卷积字节）	在校/应届	本科	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+115	BOSS直聘	南京	算法工程师（大模型/AI 应用，信大科技）	3-5年	本科	evaluation_observability,inference_serving,model_training_posttraining	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+116	BOSS直聘	南京	AI 大模型应用研发工程师（无际）	经验不限	硕士	agent_core,business_delivery,engineering_reliability	public_summary	https://m.zhipin.com/zhaopin/4b773679fb8ed36603162N20FA~~/	2026-07-17
+117	猎聘	深圳	AI Agent 智能体工程师	3年以上	硕士	agent_core,engineering_reliability,framework_specific,inference_serving,model_training_posttraining,multi_agent,rag_context_memory	full_detail	https://www.liepin.com/job/1972329243.shtml	2026-07-17
+118	猎聘	杭州	淘宝高级算法工程师-智能对话服务 P6	3-5年	硕士	agent_core,business_delivery,engineering_reliability,model_training_posttraining,rag_context_memory	full_detail	https://www.liepin.com/job/1983967513.shtml	2026-07-17
+119	猎聘	上海	全栈开发工程师（React + Java + AI Agent，申通快递）	1-3年	本科	agent_core,business_delivery,engineering_reliability	full_detail	https://www.liepin.com/job/1981454911.shtml	2026-07-17
+120	猎聘	深圳	AI Agent 前端开发工程师（绿联科技）	未注明	未注明	agent_core,engineering_reliability,tools_mcp	public_summary	https://www.liepin.com/job/1983680297.shtml	2026-07-17
+121	猎聘	杭州	大模型应用工程师	3-5年	硕士	agent_core,engineering_reliability,model_training_posttraining,rag_context_memory	full_detail	https://www.liepin.com/job/1968305949.shtml	2026-07-17
+122	猎聘	西安	资深 AI Agent 开发工程师/架构师（Python/Go）	5年以上	未注明	agent_core,engineering_reliability,framework_specific,inference_serving,rag_context_memory,tools_mcp	full_detail	https://www.liepin.com/a/76744575.shtml	2026-07-17
+123	猎聘	广州	资深 AI Agent 开发工程师（绿瘦健康产业集团）	1-3年	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/company/876434/	2026-07-17
+124	猎聘	北京	Agent 智能体平台高级研发工程师/专家	5-10年	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/zpkshptyfgcsd3a9/	2026-07-17
+125	猎聘	上海	研发效能与 AI 平台全栈工程师（Agent 方向）	10年以上	学历不限	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/zpkshptyfgcsd3a9/	2026-07-17
+126	猎聘	上海	AI Agent 应用开发工程师（新智认知）	5年以上	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/company/13006787/	2026-07-17
+127	猎聘	北京	大模型应用开发工程师（零点有数）	5-8年	本科	agent_core,engineering_reliability,rag_context_memory	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+128	猎聘	北京	智能体应用开发工程师（泰康在线）	5年以上	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+129	猎聘	北京	大模型应用开发工程师（宜信）	3-5年	本科	agent_core,engineering_reliability,rag_context_memory	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+130	猎聘	北京	Agent 应用开发工程师（大型人工智能公司）	3-5年	学历不限	agent_core,engineering_reliability	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+131	猎聘	北京	Agent 应用开发工程师（人工智能上市公司）	5-10年	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+132	猎聘	北京	Agent 应用开发高级工程师	5-10年	本科	agent_core,business_delivery,engineering_reliability	title_only	https://m.liepin.com/city-bj/zpmcuyykfgcsb3v9/	2026-07-17
+133	猎聘	杭州	蚂蚁集团-风控策略智能体研发工程师	3-5年	本科	agent_core,business_delivery,evaluation_observability,security_governance	title_only	https://m.liepin.com/zpmyjsptyfgcsc12x/	2026-07-17
+134	猎聘	上海	蚂蚁集团-Java 研发工程师（RAG 检索方向）	3-5年	本科	engineering_reliability,rag_context_memory	title_only	https://m.liepin.com/zpmyjsptyfgcsc12x/	2026-07-17
+135	猎聘	苏州	AI 算法工程师（全栈 RAG 大模型落地）	3-5年	本科	engineering_reliability,model_training_posttraining,rag_context_memory	title_only	https://m.liepin.com/city-suzhou/zpmxqygcs8o2m/	2026-07-17
+136	猎聘	苏州	AI 算法工程师（时序预测+大模型 Agent）	1-3年	本科	agent_core,business_delivery,model_training_posttraining	title_only	https://m.liepin.com/city-suzhou/zpmxqygcs8o2m/	2026-07-17
+137	猎聘	苏州	具身智能算法工程师（大模型应用与智能体方向）	1-3年	硕士	agent_core,inference_serving,model_training_posttraining	title_only	https://m.liepin.com/city-suzhou/zpmxqygcs8o2m/	2026-07-17

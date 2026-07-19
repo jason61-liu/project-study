@@ -1,0 +1,20 @@
+{
+  "id": "TC-SRV-01",
+  "name": "消息写入 EventStore (FileSessionManager)",
+  "status": "PASS",
+  "elapsed_seconds": 1.399,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "Session 目录已创建",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

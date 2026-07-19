@@ -1,0 +1,29 @@
+{
+  "id": "TC-EVT-03",
+  "name": "interrupt 时发 pending tool_use",
+  "status": "PASS",
+  "elapsed_seconds": 0.017,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 1,
+  "hooks": [
+    {
+      "hook": "BeforeToolCallEvent",
+      "timestamp": 1782623565.562495,
+      "payload": {
+        "interrupt_triggered": true,
+        "sse_events_count": 2
+      }
+    }
+  ],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "真实 SDK hook 触发了 interrupt",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

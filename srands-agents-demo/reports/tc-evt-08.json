@@ -1,0 +1,46 @@
+{
+  "id": "TC-EVT-08",
+  "name": "多工具并行事件顺序",
+  "status": "PASS",
+  "elapsed_seconds": 2.403,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 2,
+  "hooks": [
+    {
+      "hook": "BeforeToolCallEvent",
+      "timestamp": 1782623570.538599,
+      "payload": {
+        "calls": [
+          {
+            "id": "call_00_lmZ90BDiglgoMmJzTPPO3193",
+            "name": "bash"
+          }
+        ]
+      }
+    },
+    {
+      "hook": "AfterToolCallEvent",
+      "timestamp": 1782623570.538601,
+      "payload": {
+        "calls": [
+          {
+            "id": "call_00_lmZ90BDiglgoMmJzTPPO3193",
+            "name": "bash",
+            "status": "success"
+          }
+        ]
+      }
+    }
+  ],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "Hook 注册和回调机制正确（真实 SDK 触发）",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

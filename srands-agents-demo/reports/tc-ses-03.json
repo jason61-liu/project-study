@@ -1,0 +1,32 @@
+{
+  "id": "TC-SES-03",
+  "name": "System Prompt / Skills 隔离",
+  "status": "PASS",
+  "elapsed_seconds": 0.0,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 3,
+  "assertions": [
+    {
+      "assertion": "AgentA system_prompt 含 'Git 助手'",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentB system_prompt 含 '数据库助手'",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentA system_prompt 不含 '数据库'",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

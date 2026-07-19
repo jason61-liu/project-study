@@ -1,0 +1,32 @@
+{
+  "id": "TC-SRV-03",
+  "name": "save→restore→Agent invoke 连续",
+  "status": "PASS",
+  "elapsed_seconds": 2.051,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 3,
+  "assertions": [
+    {
+      "assertion": "恢复后消息数 > 0",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "恢复的消息数 >= 第一轮保存数",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "第二轮对话后消息增长",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,26 @@
+{
+  "id": "TC-SUB-08",
+  "name": "跨 Session 子 Agent 隔离",
+  "status": "PASS",
+  "elapsed_seconds": 4.065,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "SessionA 完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "SessionB 完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

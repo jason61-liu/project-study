@@ -1,0 +1,248 @@
+{
+  "total": 48,
+  "passed": 48,
+  "failed": 0,
+  "blocked": 0,
+  "results": {
+    "TC-APR-01": {
+      "name": "allowed 模式自动放行",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-APR-02": {
+      "name": "manual 模式 interrupt 暂停 + 确认恢复",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-APR-03": {
+      "name": "manual 模式 interrupt 暂停 + 拒绝",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-APR-04": {
+      "name": "manual 模式 interrupt 超时",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-APR-05": {
+      "name": "forbidden 模式直接拒绝",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-APR-06": {
+      "name": "per-tool 配置独立",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-APR-07": {
+      "name": "审批暂停跨 session 隔离",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-APR-08": {
+      "name": "审批暂停后资源释放",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-EVT-01": {
+      "name": "BeforeToolCallEvent → agent.tool_use",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-EVT-02": {
+      "name": "cancel_tool 时不发 tool_use",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-03": {
+      "name": "interrupt 时发 pending tool_use",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-04": {
+      "name": "AfterToolCallEvent → agent.tool_result",
+      "status": "PASS",
+      "assertions": 3
+    },
+    "TC-EVT-04-ERR": {
+      "name": "AfterToolCallEvent → is_error=true",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-05": {
+      "name": "TextStreamEvent → agent.message.delta",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-06": {
+      "name": "AgentResultEvent → session.status_idle",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-07": {
+      "name": "异常 → session.error",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-EVT-08": {
+      "name": "多工具并行事件顺序",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-MCP-01": {
+      "name": "双 Agent 各自独立 MCP 工具集",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-MCP-02": {
+      "name": "MCP 调用运行隔离",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-MCP-03": {
+      "name": "MCP 生命周期隔离",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-MCP-04": {
+      "name": "同类型 MCP 独立连接",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-MCP-05": {
+      "name": "无 MCP 配置不加载 MCP 工具",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-MCP-06": {
+      "name": "adapter 层过滤全局缓存泄露",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SAN-01": {
+      "name": "bash 被拦截重定向",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SAN-02": {
+      "name": "非 bash 工具不走 Sandbox",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SAN-03": {
+      "name": "Sandbox 结果回填 tool_result",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SAN-04": {
+      "name": "Sandbox 超时/错误传递",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SAN-05": {
+      "name": "多个 bash 并行全部走 Sandbox",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SES-01": {
+      "name": "对话历史隔离",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SES-02": {
+      "name": "工具注册表隔离",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SES-03": {
+      "name": "System Prompt / Skills 隔离",
+      "status": "PASS",
+      "assertions": 3
+    },
+    "TC-SES-04": {
+      "name": "模型配置隔离",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SES-06": {
+      "name": "中断控制隔离",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SES-07": {
+      "name": "Sandbox 配置隔离",
+      "status": "PASS",
+      "assertions": 3
+    },
+    "TC-SES-08": {
+      "name": "审批状态隔离",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SRV-01": {
+      "name": "消息写入 EventStore (FileSessionManager)",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SRV-02": {
+      "name": "从 EventStore 重建消息 (FileSessionManager)",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SRV-03": {
+      "name": "save→restore→Agent invoke 连续",
+      "status": "PASS",
+      "assertions": 3
+    },
+    "TC-SRV-04": {
+      "name": "多轮保存增量一致性",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SRV-05": {
+      "name": "tool_use/tool_result 顺序关联",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SUB-01": {
+      "name": "主 Agent 委派子 Agent 执行任务",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SUB-02": {
+      "name": "子 Agent 状态隔离 (preserve_context=False)",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SUB-03": {
+      "name": "子 Agent 状态保留 (preserve_context=True)",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SUB-04": {
+      "name": "子 Agent 独立工具集",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SUB-05": {
+      "name": "子 Agent 中断传播",
+      "status": "PASS",
+      "assertions": 2
+    },
+    "TC-SUB-06": {
+      "name": "并发委派多个子 Agent",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SUB-07": {
+      "name": "嵌套委派（子→孙）",
+      "status": "PASS",
+      "assertions": 1
+    },
+    "TC-SUB-08": {
+      "name": "跨 Session 子 Agent 隔离",
+      "status": "PASS",
+      "assertions": 2
+    }
+  }
+}

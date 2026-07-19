@@ -1,0 +1,26 @@
+{
+  "id": "TC-MCP-02",
+  "name": "MCP 调用运行隔离",
+  "status": "PASS",
+  "elapsed_seconds": 2.9,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "AgentA 正常完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentB 正常完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

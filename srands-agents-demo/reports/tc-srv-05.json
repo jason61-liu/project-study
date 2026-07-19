@@ -1,0 +1,24 @@
+{
+  "id": "TC-SRV-05",
+  "name": "tool_use/tool_result 顺序关联",
+  "status": "PASS",
+  "elapsed_seconds": 1.896,
+  "events_count": 1,
+  "events": [
+    {
+      "total_messages": 4
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "messages 中包含 tool_use",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

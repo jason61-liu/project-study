@@ -1,0 +1,20 @@
+{
+  "id": "TC-MCP-03",
+  "name": "MCP 生命周期隔离",
+  "status": "PASS",
+  "elapsed_seconds": 3.514,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "AgentA 在 AgentB cleanup 后仍正常",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

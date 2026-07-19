@@ -1,0 +1,20 @@
+{
+  "id": "TC-MCP-01",
+  "name": "双 Agent 各自独立 MCP 工具集",
+  "status": "PASS",
+  "elapsed_seconds": 0.0,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "AgentA registry_id 唯一",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

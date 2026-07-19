@@ -1,0 +1,26 @@
+{
+  "id": "TC-SES-04",
+  "name": "模型配置隔离",
+  "status": "PASS",
+  "elapsed_seconds": 0.0,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "两个 model 是不同的实例",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "model_id 一致",
+      "expected": "deepseek-chat",
+      "actual": "deepseek-chat",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,28 @@
+{
+  "id": "TC-SRV-04",
+  "name": "多轮保存增量一致性",
+  "status": "PASS",
+  "elapsed_seconds": 2.229,
+  "events_count": 1,
+  "events": [
+    {
+      "message_counts_per_round": [
+        2,
+        4,
+        6
+      ]
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "消息数逐轮递增",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

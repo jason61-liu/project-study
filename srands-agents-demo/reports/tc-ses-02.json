@@ -1,0 +1,33 @@
+{
+  "id": "TC-SES-02",
+  "name": "工具注册表隔离",
+  "status": "PASS",
+  "elapsed_seconds": 0.003,
+  "events_count": 1,
+  "events": [
+    {
+      "agent_a_tools": [],
+      "agent_b_tools": [
+        "bash"
+      ]
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "AgentA 不含 bash",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "AgentB 含 bash",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

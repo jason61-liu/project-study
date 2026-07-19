@@ -1,0 +1,20 @@
+{
+  "id": "TC-MCP-04",
+  "name": "同类型 MCP 独立连接",
+  "status": "PASS",
+  "elapsed_seconds": 0.0,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "两个 client ID 不同",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

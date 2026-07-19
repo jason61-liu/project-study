@@ -1,0 +1,147 @@
+{
+  "id": "TC-EVT-05",
+  "name": "TextStreamEvent → agent.message.delta",
+  "status": "PASS",
+  "elapsed_seconds": 1.078,
+  "events_count": 14,
+  "events": [
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "你好"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "！"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "很高兴"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "见到"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "你"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "～"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": " "
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "有什么"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "我可以"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "帮"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "你的"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "吗"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "？"
+        }
+      ]
+    },
+    {
+      "type": "agent.message.delta",
+      "content": [
+        {
+          "type": "text",
+          "text": "😊"
+        }
+      ]
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "至少产生 1 条 delta",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

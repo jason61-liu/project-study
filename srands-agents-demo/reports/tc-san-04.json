@@ -1,0 +1,26 @@
+{
+  "id": "TC-SAN-04",
+  "name": "Sandbox 超时/错误传递",
+  "status": "PASS",
+  "elapsed_seconds": 0.016,
+  "events_count": 1,
+  "events": [
+    {
+      "type": "sandbox_timeout",
+      "exit_code": 1,
+      "stderr": "[CMA Sandbox] timeout: Command 'sleep 5' timed out after 0.01 seconds"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "超时/错误被正确处理",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,26 @@
+{
+  "id": "TC-APR-06",
+  "name": "per-tool 配置独立",
+  "status": "PASS",
+  "elapsed_seconds": 0.019,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "bash (manual): interrupt 已触发",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "allowed 模式：工具正常执行",
+      "expected": "success",
+      "actual": "success",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,24 @@
+{
+  "id": "TC-SUB-02",
+  "name": "子 Agent 状态隔离 (preserve_context=False)",
+  "status": "PASS",
+  "elapsed_seconds": 3.315,
+  "events_count": 1,
+  "events": [
+    {
+      "sub_agent_msg_count": 2
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "as_tool() 返回 AgentTool",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

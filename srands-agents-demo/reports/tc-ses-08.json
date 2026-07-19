@@ -1,0 +1,20 @@
+{
+  "id": "TC-SES-08",
+  "name": "审批状态隔离",
+  "status": "PASS",
+  "elapsed_seconds": 2.431,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "AgentB 正常完成（不被 AgentA interrupt 影响）",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

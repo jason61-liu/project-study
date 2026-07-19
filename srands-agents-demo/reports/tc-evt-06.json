@@ -1,0 +1,25 @@
+{
+  "id": "TC-EVT-06",
+  "name": "AgentResultEvent → session.status_idle",
+  "status": "PASS",
+  "elapsed_seconds": 1.191,
+  "events_count": 1,
+  "events": [
+    {
+      "type": "session.status_idle",
+      "stop_reason": "end_turn"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "产生了 session.status_idle 事件",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

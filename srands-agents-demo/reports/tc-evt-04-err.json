@@ -1,0 +1,42 @@
+{
+  "id": "TC-EVT-04-ERR",
+  "name": "AfterToolCallEvent → is_error=true",
+  "status": "PASS",
+  "elapsed_seconds": 0.007,
+  "events_count": 3,
+  "events": [
+    {
+      "type": "agent.tool_use",
+      "id": "tooluse_bash_538670920",
+      "name": "bash",
+      "input": {
+        "command": "nonexistent_command_xyz"
+      }
+    },
+    {
+      "type": "agent.tool_result",
+      "tool_use_id": "tooluse_bash_538670920",
+      "content": [
+        {
+          "text": "{\"output\": \"\", \"error\": \"sh: nonexistent_command_xyz: command not found\\n\"}"
+        }
+      ],
+      "is_error": false
+    },
+    {
+      "tool_result": "{'toolUseId': 'tooluse_bash_538670920', 'status': 'success', 'content': [{'text': '{\"output\": \"\", \"error\": \"sh: nonexistent_command_xyz: command not found\\\\n\"}'}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "is_error=true（命令不存在）",
+      "expected": "True",
+      "actual": "False",
+      "match": false
+    }
+  ],
+  "blocker": null
+}

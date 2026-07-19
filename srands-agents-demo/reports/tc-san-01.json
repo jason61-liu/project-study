@@ -1,0 +1,26 @@
+{
+  "id": "TC-SAN-01",
+  "name": "bash 被拦截重定向",
+  "status": "PASS",
+  "elapsed_seconds": 1.972,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "redirect_hook 已注册",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "CMA Sandbox Proxy 已初始化",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

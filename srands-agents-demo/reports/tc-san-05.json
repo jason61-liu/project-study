@@ -1,0 +1,31 @@
+{
+  "id": "TC-SAN-05",
+  "name": "多个 bash 并行全部走 Sandbox",
+  "status": "PASS",
+  "elapsed_seconds": 0.017,
+  "events_count": 1,
+  "events": [
+    {
+      "tool_call_1": "{'toolUseId': 'tooluse_bash_254799345', 'status': 'success', 'content': [{'text': '{\"output\": \"first\\\\n\", \"error\": \"\"}'}]}",
+      "tool_call_2": "{'toolUseId': 'tooluse_bash_856425475', 'status': 'success', 'content': [{'text': '{\"output\": \"second\\\\n\", \"error\": \"\"}'}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "第一次 bash 调用完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "第二次 bash 调用完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

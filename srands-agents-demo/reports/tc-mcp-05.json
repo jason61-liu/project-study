@@ -1,0 +1,20 @@
+{
+  "id": "TC-MCP-05",
+  "name": "无 MCP 配置不加载 MCP 工具",
+  "status": "PASS",
+  "elapsed_seconds": 0.001,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "无 MCP 工具",
+      "expected": "0",
+      "actual": "0",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

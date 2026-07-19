@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mechanical Orrery</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow: hidden; background: #070a0e; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    canvas { display: block; touch-action: none; }
+    #hud { position: fixed; inset: 0; pointer-events: none; color: #e7edf0; }
+    .brand { position: absolute; top: 24px; left: 26px; letter-spacing: 3px; font-size: 12px; font-weight: 700; color: #e6c47a; text-shadow: 0 0 18px #d5883f66; }
+    .brand span { display: block; margin-top: 6px; color: #8a9ba4; letter-spacing: 1.6px; font-size: 9px; font-weight: 500; }
+    .panel { position: absolute; left: 22px; bottom: 22px; width: min(310px, calc(100vw - 44px)); padding: 16px; border: 1px solid #ffffff1a; background: #10161bdb; box-shadow: 0 18px 54px #00000077; backdrop-filter: blur(16px); border-radius: 7px; pointer-events: auto; }
+    .panel.empty .data { display: none; }
+    .eyebrow { color: #8da1a7; letter-spacing: 1.6px; font-size: 9px; font-weight: 700; }
+    .name { margin: 7px 0 11px; color: #f3dfac; font-size: 21px; font-weight: 600; letter-spacing: .5px; }
+    .data { display: grid; grid-template-columns: 1fr auto; gap: 8px 18px; border-top: 1px solid #ffffff13; padding-top: 12px; color: #9fafb6; font-size: 12px; }
+    .data strong { color: #e6edf0; font-weight: 550; }
+    .toolbar { position: absolute; right: 22px; bottom: 22px; display: flex; align-items: center; gap: 9px; padding: 10px; border: 1px solid #ffffff1a; border-radius: 7px; background: #10161bdb; box-shadow: 0 18px 54px #00000077; backdrop-filter: blur(16px); pointer-events: auto; }
+    button { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #ffffff20; border-radius: 5px; background: #192229; color: #e7edf0; cursor: pointer; transition: background .2s, border-color .2s; }
+    button:hover { background: #26343c; border-color: #e6c47a99; }
+    button svg { width: 16px; height: 16px; fill: currentColor; }
+    .speed { display: grid; gap: 3px; padding: 0 4px; color: #9fafb6; font-size: 9px; letter-spacing: 1px; }
+    input[type="range"] { width: 88px; accent-color: #e6b86e; }
+    .reduce { position: absolute; top: 22px; right: 22px; display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #10161bce; border: 1px solid #ffffff1a; border-radius: 5px; color: #aebdc3; font-size: 10px; letter-spacing: .7px; pointer-events: auto; }
+    .reduce input { accent-color: #e6b86e; }
+    @media (max-width: 640px) {
+      .brand { top: 16px; left: 16px; }
+      .reduce { top: 13px; right: 13px; font-size: 9px; }
+      .panel { left: 12px; bottom: 12px; padding: 13px; width: min(275px, calc(100vw - 24px)); }
+      .toolbar { right: 12px; bottom: 102px; gap: 5px; padding: 7px; }
+      .speed { display: grid; padding: 0 1px; }
+      .speed span { display: none; }
+      input[type="range"] { width: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <div class="brand">AURELIUS ORRERY<span>HELIOSPHERIC INSTRUMENT</span></div>
+    <label class="reduce"><input id="reduce" type="checkbox">减少动态效果</label>
+    <section id="panel" class="panel empty" aria-live="polite">
+      <div class="eyebrow">SELECTED BODY</div>
+      <div id="body-name" class="name">选择地球或月球</div>
+      <div class="data"><span>轨道周期</span><strong id="period">--</strong><span>当前位置</span><strong id="position">--</strong></div>
+    </section>
+    <div class="toolbar">
+      <button id="pause" title="暂停或继续" aria-label="暂停或继续"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="speed"><span>ORBIT SPEED</span><input id="speed" type="range" min="0" max="2" step="0.01" value="1"></div>
+      <button id="reset" title="重置视角" aria-label="重置视角"><svg viewBox="0 0 24 24"><path d="M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.7-4.2L13 11h7V4z"/></svg></button>
+    </div>
+  </div>
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js" } }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/controls/OrbitControls.js';
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#091015');
+    scene.fog = new THREE.Fog('#091015', 18, 50);
+
+    const camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.1, 100);
+    const initialCamera = new THREE.Vector3(12.5, 8.8, 15.5);
+    const initialTarget = new THREE.Vector3(0, 1.45, 0);
+    camera.position.copy(initialCamera);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.12;
+    document.body.prepend(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.055;
+    controls.minDistance = 5;
+    controls.maxDistance = 29;
+    controls.maxPolarAngle = Math.PI * 0.485;
+    controls.target.copy(initialTarget);
+
+    const metal = (color, roughness = .32, metalness = .88) => new THREE.MeshStandardMaterial({ color, roughness, metalness });
+    const brass = metal('#b98a3c', .28, .9);
+    const darkBrass = metal('#4d3420', .38, .82);
+    const steel = metal('#73828a', .25, .92);
+    const blackSteel = metal('#152027', .3, .88);
+    const iron = metal('#202a2f', .42, .84);
+    const earthMat = new THREE.MeshStandardMaterial({ color: '#1b6596', roughness: .48, metalness: .12, emissive: '#082238', emissiveIntensity: .36 });
+    const moonMat = new THREE.MeshStandardMaterial({ color: '#aab1ad', roughness: .74, metalness: .08 });
+    const sunMat = new THREE.MeshStandardMaterial({ color: '#ffc061', roughness: .3, metalness: .35, emissive: '#ff7a20', emissiveIntensity: 1.65 });
+
+    const world = new THREE.Group();
+    scene.add(world);
+
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(22, 96), new THREE.MeshStandardMaterial({ color: '#0d161a', roughness: .8, metalness: .15 }));
+    floor.rotation.x = -Math.PI / 2;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    const hemi = new THREE.HemisphereLight('#7891a0', '#111010', 1.55);
+    scene.add(hemi);
+    const key = new THREE.SpotLight('#dbeefa', 780, 42, Math.PI / 5.3, .4, 1.2);
+    key.position.set(7, 13, 9); key.castShadow = true; key.shadow.mapSize.set(2048, 2048); scene.add(key);
+    const rim = new THREE.PointLight('#b56b2c', 60, 22, 2);
+    rim.position.set(-8, 5, -7); scene.add(rim);
+    const sunLight = new THREE.PointLight('#ffb144', 130, 15, 2);
+    sunLight.position.set(0, 3.5, 0); sunLight.castShadow = true; scene.add(sunLight);
+
+    function cylinder(radiusTop, radiusBottom, height, material, y, radial = 64) {
+      const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radiusTop, radiusBottom, height, radial), material);
+      mesh.position.y = y; mesh.castShadow = mesh.receiveShadow = true; return mesh;
+    }
+    world.add(cylinder(4.9, 5.35, .38, blackSteel, .19));
+    world.add(cylinder(4.5, 4.75, .32, iron, .54));
+    world.add(cylinder(3.88, 4.2, .38, darkBrass, .88));
+    world.add(cylinder(3.42, 3.62, .22, steel, 1.18));
+
+    function makeGear(radius, teeth, depth, material) {
+      const shape = new THREE.Shape();
+      const points = teeth * 4;
+      for (let i = 0; i <= points; i++) {
+        const a = (i / points) * Math.PI * 2;
+        const tooth = i % 4 === 0 || i % 4 === 1;
+        const r = radius * (tooth ? 1.15 : .92);
+        const x = Math.cos(a) * r, y = Math.sin(a) * r;
+        if (i === 0) shape.moveTo(x, y); else shape.lineTo(x, y);
+      }
+      const geo = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelSegments: 2, bevelSize: .055, bevelThickness: .055, curveSegments: 2 });
+      geo.center();
+      const gear = new THREE.Mesh(geo, material);
+      gear.castShadow = gear.receiveShadow = true;
+      return gear;
+    }
+
+    const gearDeck = new THREE.Group(); gearDeck.position.y = 1.38; world.add(gearDeck);
+    const centralGear = makeGear(1.65, 26, .28, brass); centralGear.rotation.x = Math.PI / 2; gearDeck.add(centralGear);
+    const gearA = makeGear(.72, 16, .22, steel); gearA.rotation.x = Math.PI / 2; gearA.position.set(2.25, .04, 0); gearDeck.add(gearA);
+    const gearB = makeGear(.54, 13, .2, darkBrass); gearB.rotation.x = Math.PI / 2; gearB.position.set(-1.92, .03, 1.1); gearDeck.add(gearB);
+    const gearC = makeGear(.47, 12, .18, steel); gearC.rotation.x = Math.PI / 2; gearC.position.set(-1.25, .03, -1.72); gearDeck.add(gearC);
+
+    function rodBetween(a, b, radius, material) {
+      const mid = a.clone().add(b).multiplyScalar(.5);
+      const length = a.distanceTo(b);
+      const rod = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, length, 12), material);
+      rod.position.copy(mid); rod.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize());
+      rod.castShadow = rod.receiveShadow = true; world.add(rod); return rod;
+    }
+    for (let i = 0; i < 4; i++) {
+      const a = i * Math.PI / 2 + Math.PI / 4;
+      rodBetween(new THREE.Vector3(Math.cos(a) * 3.75, 1.18, Math.sin(a) * 3.75), new THREE.Vector3(Math.cos(a) * 2.25, 5.1, Math.sin(a) * 2.25), .115, iron);
+    }
+    world.add(cylinder(.34, .47, 2.4, brass, 2.35, 32));
+    world.add(cylinder(.54, .54, .18, steel, 3.62, 32));
+
+    const sunSystem = new THREE.Group(); sunSystem.position.y = 3.82; world.add(sunSystem);
+    const sun = new THREE.Mesh(new THREE.SphereGeometry(.8, 48, 32), sunMat); sun.castShadow = true; sunSystem.add(sun);
+    const sunCage = new THREE.Mesh(new THREE.TorusGeometry(1.05, .06, 10, 70), brass); sunCage.rotation.x = Math.PI / 2.8; sunSystem.add(sunCage);
+    const sunCage2 = sunCage.clone(); sunCage2.rotation.y = Math.PI / 2; sunSystem.add(sunCage2);
+    const sunHub = cylinder(.2, .2, .86, brass, 0); sunHub.position.y = 0; sunSystem.add(sunHub);
+
+    function orbitRing(radius, color, tube = .035) {
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, tube, 10, 128), metal(color, .34, .85));
+      ring.rotation.x = Math.PI / 2; ring.castShadow = ring.receiveShadow = true; return ring;
+    }
+    const earthRing = orbitRing(5.05, '#9ba8a2'); earthRing.position.y = 3.78; world.add(earthRing);
+    const moonRing = orbitRing(1.18, '#c4964b', .025);
+
+    const earthOrbit = new THREE.Group(); sunSystem.add(earthOrbit);
+    const earthCarriage = new THREE.Group(); earthCarriage.position.set(5.05, 0, 0); earthOrbit.add(earthCarriage);
+    const earthArm = new THREE.Mesh(new THREE.CylinderGeometry(.07, .07, 5.05, 12), steel); earthArm.rotation.z = Math.PI / 2; earthArm.position.x = -2.52; earthArm.castShadow = true; sunSystem.add(earthArm);
+    const earthGear = makeGear(.48, 14, .15, brass); earthGear.rotation.x = Math.PI / 2; earthGear.position.y = -.38; earthCarriage.add(earthGear);
+    const earth = new THREE.Mesh(new THREE.SphereGeometry(.42, 32, 24), earthMat); earth.position.y = .26; earth.castShadow = true; earth.userData = { kind: 'earth', name: '地球', period: '365.25 天' }; earthCarriage.add(earth);
+    const earthBand = new THREE.Mesh(new THREE.TorusGeometry(.47, .025, 8, 40), steel); earthBand.position.copy(earth.position); earthBand.rotation.x = .55; earthCarriage.add(earthBand);
+    moonRing.position.copy(earth.position); moonRing.rotation.z = .18; earthCarriage.add(moonRing);
+
+    const moonOrbit = new THREE.Group(); moonOrbit.position.copy(earth.position); earthCarriage.add(moonOrbit);
+    const moonCarriage = new THREE.Group(); moonCarriage.position.set(1.18, 0, 0); moonOrbit.add(moonCarriage);
+    const moon = new THREE.Mesh(new THREE.SphereGeometry(.16, 24, 18), moonMat); moon.castShadow = true; moon.userData = { kind: 'moon', name: '月球', period: '27.32 天' }; moonCarriage.add(moon);
+    const moonStem = new THREE.Mesh(new THREE.CylinderGeometry(.025, .025, .6, 8), brass); moonStem.position.y = -.25; moonStem.castShadow = true; moonCarriage.add(moonStem);
+
+    const pickables = [earth, moon];
+    const raycaster = new THREE.Raycaster(); const pointer = new THREE.Vector2();
+    const info = { panel: document.querySelector('#panel'), name: document.querySelector('#body-name'), period: document.querySelector('#period'), position: document.querySelector('#position') };
+    let selected = null, paused = matchMedia('(prefers-reduced-motion: reduce)').matches, speed = 1;
+    const reduce = document.querySelector('#reduce'); reduce.checked = paused;
+    const pause = document.querySelector('#pause');
+    const pauseIcon = (isPaused) => pause.innerHTML = isPaused ? '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+    pauseIcon(paused);
+
+    let cameraMove = null;
+    function focusBody(body) {
+      selected = body;
+      info.panel.classList.remove('empty'); info.name.textContent = body.userData.name; info.period.textContent = body.userData.period;
+      const target = new THREE.Vector3(); body.getWorldPosition(target);
+      const offset = body.userData.kind === 'earth' ? new THREE.Vector3(2.7, 1.55, 3.0) : new THREE.Vector3(1.45, .85, 1.8);
+      cameraMove = { startPos: camera.position.clone(), startTarget: controls.target.clone(), endPos: target.clone().add(offset), endTarget: target, t: 0 };
+    }
+    function resetView() { selected = null; info.panel.classList.add('empty'); cameraMove = { startPos: camera.position.clone(), startTarget: controls.target.clone(), endPos: initialCamera.clone(), endTarget: initialTarget.clone(), t: 0 }; }
+    document.querySelector('#pause').onclick = () => { paused = !paused; pauseIcon(paused); };
+    document.querySelector('#reset').onclick = resetView;
+    document.querySelector('#speed').oninput = e => speed = Number(e.target.value);
+    reduce.onchange = e => { paused = e.target.checked; pauseIcon(paused); };
+
+    renderer.domElement.addEventListener('pointerdown', event => {
+      pointer.x = (event.clientX / innerWidth) * 2 - 1; pointer.y = -(event.clientY / innerHeight) * 2 + 1;
+      raycaster.setFromCamera(pointer, camera);
+      const hit = raycaster.intersectObjects(pickables, false)[0];
+      if (hit) focusBody(hit.object);
+    });
+
+    const clock = new THREE.Clock();
+    function updateInfo() {
+      if (!selected) return;
+      const angle = selected.userData.kind === 'earth' ? earthOrbit.rotation.y : moonOrbit.rotation.y;
+      info.position.textContent = `${((THREE.MathUtils.radToDeg(angle) % 360 + 360) % 360).toFixed(1)}°`;
+    }
+    function tick() {
+      const dt = Math.min(clock.getDelta(), .05);
+      if (!paused) {
+        earthOrbit.rotation.y += dt * .26 * speed;
+        moonOrbit.rotation.y += dt * 1.8 * speed;
+        earth.rotation.y += dt * .8 * speed;
+        centralGear.rotation.z -= dt * .44 * speed;
+        gearA.rotation.z += dt * 1.0 * speed; gearB.rotation.z -= dt * 1.32 * speed; gearC.rotation.z += dt * 1.58 * speed;
+        sunCage.rotation.y += dt * .13 * speed; sunCage2.rotation.z -= dt * .11 * speed;
+      }
+      if (cameraMove) {
+        cameraMove.t = Math.min(1, cameraMove.t + dt * 1.7);
+        const eased = 1 - Math.pow(1 - cameraMove.t, 3);
+        camera.position.lerpVectors(cameraMove.startPos, cameraMove.endPos, eased);
+        controls.target.lerpVectors(cameraMove.startTarget, cameraMove.endTarget, eased);
+        if (cameraMove.t === 1) cameraMove = null;
+      }
+      updateInfo(); controls.update(); renderer.render(scene, camera); requestAnimationFrame(tick);
+    }
+    addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+    tick();
+  </script>
+</body>
+</html>

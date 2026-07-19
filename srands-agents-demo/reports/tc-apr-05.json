@@ -1,0 +1,24 @@
+{
+  "id": "TC-APR-05",
+  "name": "forbidden 模式直接拒绝",
+  "status": "PASS",
+  "elapsed_seconds": 0.004,
+  "events_count": 1,
+  "events": [
+    {
+      "tool_result": "{'toolUseId': 'tooluse_bash_998060102', 'status': 'error', 'content': [{'text': \"Tool 'bash' is forbidden\"}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "工具被拒绝（status=error）",
+      "expected": "error",
+      "actual": "error",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

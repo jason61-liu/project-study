@@ -1,0 +1,54 @@
+{
+  "id": "TC-EVT-04",
+  "name": "AfterToolCallEvent → agent.tool_result",
+  "status": "PASS",
+  "elapsed_seconds": 0.011,
+  "events_count": 3,
+  "events": [
+    {
+      "type": "agent.tool_use",
+      "id": "tooluse_bash_372383329",
+      "name": "bash",
+      "input": {
+        "command": "echo tool_result_test"
+      }
+    },
+    {
+      "type": "agent.tool_result",
+      "tool_use_id": "tooluse_bash_372383329",
+      "content": [
+        {
+          "text": "{\"output\": \"tool_result_test\\n\", \"error\": \"\"}"
+        }
+      ],
+      "is_error": false
+    },
+    {
+      "tool_result": "{'toolUseId': 'tooluse_bash_372383329', 'status': 'success', 'content': [{'text': '{\"output\": \"tool_result_test\\\\n\", \"error\": \"\"}'}]}"
+    }
+  ],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 3,
+  "assertions": [
+    {
+      "assertion": "产生 agent.tool_result 事件",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "tool_use_id 存在",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "is_error=false",
+      "expected": "False",
+      "actual": "False",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

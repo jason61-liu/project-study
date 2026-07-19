@@ -1,0 +1,26 @@
+{
+  "id": "TC-SUB-01",
+  "name": "主 Agent 委派子 Agent 执行任务",
+  "status": "PASS",
+  "elapsed_seconds": 7.83,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "委派成功完成",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "stop_reason 正常",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

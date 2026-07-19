@@ -1,0 +1,20 @@
+{
+  "id": "TC-EVT-07",
+  "name": "异常 → session.error",
+  "status": "PASS",
+  "elapsed_seconds": 0.267,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "无效 API key 触发真实异常",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

@@ -1,0 +1,26 @@
+{
+  "id": "TC-MCP-06",
+  "name": "adapter 层过滤全局缓存泄露",
+  "status": "PASS",
+  "elapsed_seconds": 0.0,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 2,
+  "assertions": [
+    {
+      "assertion": "filesystem_read 被过滤",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    },
+    {
+      "assertion": "github_create_issue 保留",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}

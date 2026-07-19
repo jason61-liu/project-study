@@ -1,0 +1,20 @@
+{
+  "id": "TC-APR-03",
+  "name": "manual 模式 interrupt 暂停 + 拒绝",
+  "status": "PASS",
+  "elapsed_seconds": 2.58,
+  "events_count": 0,
+  "events": [],
+  "hooks_count": 0,
+  "hooks": [],
+  "assertions_count": 1,
+  "assertions": [
+    {
+      "assertion": "拒绝后 agent 不崩溃",
+      "expected": "True",
+      "actual": "True",
+      "match": true
+    }
+  ],
+  "blocker": null
+}
