@@ -44,6 +44,10 @@ $$
 
 > 图源：Vaswani et al., 2017, Figure 2。左侧是单个 Head 的 Scaled Dot-Product Attention，右侧是多个 Head 并行计算、拼接并进行输出投影。
 
+![从隐藏状态到 Attention 输出的完整张量流水线](./assets/transformer-core-concepts/attention-tensor-flow.png)
+
+> 暗黑极客风张量图：从 `[B,T,D]` 出发，依次展示 Q/K/V 投影、拆分 Head、缩放点积、Mask、Softmax 与 Value 汇总。
+
 ### 2.1 从隐藏状态投影出 Q、K、V
 
 设输入隐藏状态为：
@@ -154,6 +158,10 @@ $$
 | Cross-Attention | Decoder 隐藏状态 | Encoder 最终输出 | $T_q$ 与 $T_k$ 可以不同 |
 
 ## 3. 因果 Mask
+
+![因果 Mask 与 Multi-Head 拼接、输出投影](./assets/transformer-core-concepts/causal-mask-and-multi-head.png)
+
+> 左侧展示因果 Mask 的下三角允许区域；右侧展示多个 Head 并行输出经过 transpose、concat 和 $W_O$ 回到 `[B,T,D]`。
 
 ### 3.1 为什么需要 Mask
 
@@ -286,6 +294,10 @@ out = o_proj(merged)                               # [B, T, D]
 ```
 
 ## 5. 残差连接、LayerNorm 与 RMSNorm
+
+![Norm、残差、普通 FFN 与 SwiGLU](./assets/transformer-core-concepts/norm-residual-and-swiglu.png)
+
+> 上半部分对比 LayerNorm、RMSNorm、Post-Norm 与 Pre-Norm；下半部分对比普通 FFN 与 SwiGLU 的数据路径。
 
 ### 5.1 残差连接
 
@@ -456,6 +468,10 @@ output = (value * gate) @ W_down  # [B, T, D]
 ## 7. 一个现代 Decoder Block 的形状账本
 
 下面使用 Pre-RMSNorm、标准 MHA 和 SwiGLU。所有残差主干始终保持 `[B, T, D]`：
+
+![现代 Decoder Block 数据流与形状账本](./assets/transformer-core-concepts/decoder-block-shape-ledger.png)
+
+> 左侧沿数据流追踪两次 Pre-RMSNorm、Attention、SwiGLU 和残差相加；右侧集中列出四类关键张量形状。
 
 | 步骤 | 操作 | 输出形状 |
 |---:|---|---|

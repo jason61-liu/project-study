@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760">
+  <style>
+    text { font-family: 'Hiragino Sans GB', 'Heiti SC', 'Arial Unicode MS', Menlo, monospace; fill: #e2e8f0; }
+    .title { font-size: 28px; font-weight: 700; }
+    .subtitle { font-size: 14px; fill: #94a3b8; }
+    .node-title { font-size: 16px; font-weight: 600; }
+    .shape { font-size: 13px; fill: #cbd5e1; }
+    .note { font-size: 13px; fill: #94a3b8; }
+    .edge-label { font-size: 12px; font-weight: 600; }
+  </style>
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f0f1a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient>
+    <marker id="blue-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#3b82f6"/></marker>
+    <marker id="purple-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a855f7"/></marker>
+    <marker id="green-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#10b981"/></marker>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg-grad)"/>
+  <text x="60" y="55" class="title">从隐藏状态到 Attention 输出：完整张量流水线</text>
+  <text x="60" y="82" class="subtitle">每个 Batch、每个 Head 独立计算；Softmax 始终沿 Key 维度 T_k 归一化</text>
+
+  <!-- edges -->
+  <path d="M210 350 H260 V170 H300" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+  <path d="M210 350 H260 V350 H300" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple-arrow)"/>
+  <path d="M210 350 H260 V530 H300" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#green-arrow)"/>
+  <path d="M460 170 H530" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+  <path d="M460 350 H530" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple-arrow)"/>
+  <path d="M690 170 H730 V245 H760" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+  <path d="M690 350 H730 V295 H760" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple-arrow)"/>
+  <path d="M920 270 H965" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+  <path d="M1045 320 V450" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+  <path d="M460 530 H965" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#green-arrow)"/>
+  <path d="M1125 500 H1160" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue-arrow)"/>
+
+  <!-- nodes -->
+  <rect x="50" y="295" width="160" height="110" rx="6" fill="#1c1917" stroke="#f97316" stroke-width="2"/>
+  <text x="130" y="330" text-anchor="middle" class="node-title">输入隐藏状态 X</text>
+  <text x="130" y="360" text-anchor="middle" class="shape">[B, T, D]</text>
+  <text x="130" y="385" text-anchor="middle" class="note">每个 token 一个 D 维向量</text>
+
+  <rect x="300" y="120" width="160" height="100" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="380" y="153" text-anchor="middle" class="node-title">Query 投影</text>
+  <text x="380" y="181" text-anchor="middle" class="shape">Q = XW_Q</text>
+  <text x="380" y="204" text-anchor="middle" class="note">“我要匹配什么？”</text>
+  <rect x="300" y="300" width="160" height="100" rx="6" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+  <text x="380" y="333" text-anchor="middle" class="node-title">Key 投影</text>
+  <text x="380" y="361" text-anchor="middle" class="shape">K = XW_K</text>
+  <text x="380" y="384" text-anchor="middle" class="note">“我能被怎样匹配？”</text>
+  <rect x="300" y="480" width="160" height="100" rx="6" fill="#052e16" stroke="#10b981" stroke-width="2"/>
+  <text x="380" y="513" text-anchor="middle" class="node-title">Value 投影</text>
+  <text x="380" y="541" text-anchor="middle" class="shape">V = XW_V</text>
+  <text x="380" y="564" text-anchor="middle" class="note">“匹配后取走什么？”</text>
+
+  <rect x="530" y="120" width="160" height="100" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="610" y="151" text-anchor="middle" class="node-title">拆分 Head</text>
+  <text x="610" y="179" text-anchor="middle" class="shape">[B,H,T_q,D_k]</text>
+  <text x="610" y="203" text-anchor="middle" class="note">reshape + transpose</text>
+  <rect x="530" y="300" width="160" height="100" rx="6" fill="#1e1b4b" stroke="#a855f7" stroke-width="2"/>
+  <text x="610" y="331" text-anchor="middle" class="node-title">拆分 Head</text>
+  <text x="610" y="359" text-anchor="middle" class="shape">[B,H,T_k,D_k]</text>
+  <text x="610" y="383" text-anchor="middle" class="note">K 最后两维转置参与点积</text>
+
+  <rect x="760" y="215" width="160" height="110" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="2"/>
+  <text x="840" y="249" text-anchor="middle" class="node-title">缩放点积</text>
+  <text x="840" y="278" text-anchor="middle" class="shape">S = QK^T / √D_k</text>
+  <text x="840" y="303" text-anchor="middle" class="shape">[B,H,T_q,T_k]</text>
+
+  <rect x="965" y="220" width="160" height="100" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1045" y="252" text-anchor="middle" class="node-title">Mask + Softmax</text>
+  <text x="1045" y="280" text-anchor="middle" class="shape">dim = T_k</text>
+  <text x="1045" y="303" text-anchor="middle" class="note">每个 Query 的权重和为 1</text>
+
+  <rect x="965" y="450" width="160" height="100" rx="6" fill="#052e16" stroke="#10b981" stroke-width="2"/>
+  <text x="1045" y="482" text-anchor="middle" class="node-title">加权汇总 Value</text>
+  <text x="1045" y="510" text-anchor="middle" class="shape">Z = AV</text>
+  <text x="1045" y="533" text-anchor="middle" class="shape">[B,H,T_q,D_v]</text>
+
+  <rect x="1160" y="455" width="30" height="90" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1175" y="490" text-anchor="middle" class="node-title" transform="rotate(90 1175 490)">输出</text>
+
+  <rect x="55" y="650" width="1090" height="58" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text x="80" y="677" class="node-title">两个必须记住的形状</text>
+  <text x="300" y="677" class="shape">Attention Logit / Weight = [B,H,T_q,T_k]</text>
+  <text x="730" y="677" class="shape">Head 输出 = [B,H,T_q,D_v]</text>
+  <text x="80" y="697" class="note">蓝：Query / 主计算　紫：Key / 匹配　绿：Value / 内容汇总</text>
+</svg>

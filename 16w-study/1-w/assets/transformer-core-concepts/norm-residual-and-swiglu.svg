@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850">
+  <style>
+    text { font-family:'Hiragino Sans GB','Heiti SC','Arial Unicode MS',Menlo,monospace; fill:#e2e8f0; }
+    .title{font-size:28px;font-weight:700}.subtitle{font-size:14px;fill:#94a3b8}.section{font-size:18px;font-weight:700}
+    .label{font-size:14px;font-weight:700}.small{font-size:12px;fill:#94a3b8}.mono{font-size:13px;fill:#cbd5e1}
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f0f1a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient>
+    <marker id="blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#3b82f6"/></marker>
+    <marker id="purple" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#a855f7"/></marker>
+    <marker id="orange" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#f97316"/></marker>
+    <marker id="green" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#10b981"/></marker>
+  </defs>
+  <rect width="1200" height="850" fill="url(#bg)"/>
+  <text x="55" y="52" class="title">Norm、残差与 FFN：稳定主干，逐 token 加工通道</text>
+  <text x="55" y="79" class="subtitle">Norm 不改变形状；残差主干始终保持 [B,T,D]；SwiGLU 用门控选择候选特征</text>
+
+  <rect data-graph-role="decoration" x="45" y="110" width="540" height="300" rx="8" fill="#0f172a" stroke="#334155"/>
+  <rect data-graph-role="decoration" x="615" y="110" width="540" height="300" rx="8" fill="#0f172a" stroke="#334155"/>
+  <text x="75" y="150" class="section">01 / LayerNorm vs RMSNorm</text>
+  <text x="645" y="150" class="section">02 / Post-Norm vs Pre-Norm</text>
+
+  <!-- norm comparison -->
+  <rect x="75" y="180" width="225" height="180" rx="6" fill="#1e3a5f" stroke="#3b82f6"/>
+  <text x="187" y="215" text-anchor="middle" class="label">LayerNorm</text>
+  <text x="187" y="248" text-anchor="middle" class="mono">x - mean(x)</text>
+  <line x1="120" y1="260" x2="255" y2="260" stroke="#64748b"/>
+  <text x="187" y="285" text-anchor="middle" class="mono">√(var(x)+ε)</text>
+  <text x="187" y="320" text-anchor="middle" class="small">减均值 + 方差缩放</text>
+  <text x="187" y="342" text-anchor="middle" class="small">可学习 γ、β</text>
+  <rect x="330" y="180" width="225" height="180" rx="6" fill="#1e1b4b" stroke="#a855f7"/>
+  <text x="442" y="215" text-anchor="middle" class="label">RMSNorm</text>
+  <text x="442" y="248" text-anchor="middle" class="mono">x</text>
+  <line x1="375" y1="260" x2="510" y2="260" stroke="#64748b"/>
+  <text x="442" y="285" text-anchor="middle" class="mono">√(mean(x^2)+ε)</text>
+  <text x="442" y="320" text-anchor="middle" class="small">不减均值 + RMS 缩放</text>
+  <text x="442" y="342" text-anchor="middle" class="small">通常只有可学习 g</text>
+  <text x="315" y="390" text-anchor="middle" class="small">共同点：沿每个 token 的隐藏维 D 归一化；[B,T,D] → [B,T,D]</text>
+
+  <!-- pre/post edges first -->
+  <path d="M665 230 H705" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M805 230 H845" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M945 230 H985" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M665 330 H705" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M805 330 H845" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M945 330 H985" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M665 230 V280 H965 V330" fill="none" stroke="#f97316" stroke-width="1.7" stroke-dasharray="6 4" marker-end="url(#orange)"/>
+  <path d="M665 330 V380 H1065 V355" fill="none" stroke="#f97316" stroke-width="1.7" stroke-dasharray="6 4" marker-end="url(#orange)"/>
+
+  <text x="655" y="205" class="small">Post-Norm</text>
+  <rect x="625" y="215" width="40" height="30" rx="5" fill="#111827" stroke="#475569"/><text x="645" y="235" text-anchor="middle" class="mono">x</text>
+  <rect x="705" y="205" width="100" height="50" rx="6" fill="#1e3a5f" stroke="#3b82f6"/><text x="755" y="235" text-anchor="middle" class="label">F(x)</text>
+  <rect x="845" y="205" width="100" height="50" rx="6" fill="#1c1917" stroke="#f97316"/><text x="895" y="235" text-anchor="middle" class="label">x + F(x)</text>
+  <rect x="985" y="205" width="130" height="50" rx="6" fill="#1e1b4b" stroke="#a855f7"/><text x="1050" y="235" text-anchor="middle" class="label">Norm</text>
+
+  <text x="655" y="305" class="small">Pre-Norm</text>
+  <rect x="625" y="315" width="40" height="30" rx="5" fill="#111827" stroke="#475569"/><text x="645" y="335" text-anchor="middle" class="mono">x</text>
+  <rect x="705" y="305" width="100" height="50" rx="6" fill="#1e1b4b" stroke="#a855f7"/><text x="755" y="335" text-anchor="middle" class="label">Norm</text>
+  <rect x="845" y="305" width="100" height="50" rx="6" fill="#1e3a5f" stroke="#3b82f6"/><text x="895" y="335" text-anchor="middle" class="label">F(·)</text>
+  <rect x="985" y="305" width="130" height="50" rx="6" fill="#052e16" stroke="#10b981"/><text x="1050" y="335" text-anchor="middle" class="label">x + F(Norm(x))</text>
+  <text x="645" y="402" class="small">橙色虚线 = 恒等残差路径；Pre-Norm 的主干更接近梯度“高速公路”</text>
+
+  <!-- FFN panel -->
+  <rect data-graph-role="decoration" x="45" y="440" width="1110" height="350" rx="8" fill="#0f172a" stroke="#334155"/>
+  <text x="75" y="480" class="section">03 / 普通 FFN 与 SwiGLU</text>
+  <text x="75" y="506" class="small">Attention 混合 token 位置；FFN 对每个 token 独立、共享参数，只混合隐藏通道</text>
+
+  <!-- FFN arrows -->
+  <path d="M170 595 H250" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M390 595 H470" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M610 595 H690" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M170 710 H260 V665 H340" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M170 710 H260 V755 H340" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#green)"/>
+  <path d="M490 665 H550 V710 H610" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M490 755 H550 V710 H610" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#green)"/>
+  <path d="M750 710 H825" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M965 710 H1040" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+
+  <text x="75" y="560" class="label">普通 FFN</text>
+  <rect x="75" y="575" width="95" height="42" rx="6" fill="#111827" stroke="#475569"/><text x="122" y="602" text-anchor="middle" class="mono">[B,T,D]</text>
+  <rect x="250" y="565" width="140" height="62" rx="6" fill="#1e3a5f" stroke="#3b82f6"/><text x="320" y="590" text-anchor="middle" class="label">W_up</text><text x="320" y="612" text-anchor="middle" class="small">→ D_ff</text>
+  <rect x="470" y="565" width="140" height="62" rx="6" fill="#1e1b4b" stroke="#a855f7"/><text x="540" y="590" text-anchor="middle" class="label">GELU / ReLU</text><text x="540" y="612" text-anchor="middle" class="small">非线性</text>
+  <rect x="690" y="565" width="140" height="62" rx="6" fill="#052e16" stroke="#10b981"/><text x="760" y="590" text-anchor="middle" class="label">W_down</text><text x="760" y="612" text-anchor="middle" class="small">→ D</text>
+  <text x="880" y="600" class="mono">D → D_ff → D</text>
+
+  <text x="75" y="688" class="label">SwiGLU</text>
+  <rect x="75" y="690" width="95" height="42" rx="6" fill="#111827" stroke="#475569"/><text x="122" y="717" text-anchor="middle" class="mono">[B,T,D]</text>
+  <rect x="340" y="638" width="150" height="55" rx="6" fill="#1e1b4b" stroke="#a855f7"/><text x="415" y="661" text-anchor="middle" class="label">W_gate + SiLU</text><text x="415" y="681" text-anchor="middle" class="small">门控分支 g</text>
+  <rect x="340" y="728" width="150" height="55" rx="6" fill="#052e16" stroke="#10b981"/><text x="415" y="751" text-anchor="middle" class="label">W_up</text><text x="415" y="771" text-anchor="middle" class="small">候选特征 u</text>
+  <circle cx="680" cy="710" r="40" fill="#1c1917" stroke="#f97316" stroke-width="2"/><text x="680" y="716" text-anchor="middle" class="label">g ⊙ u</text>
+  <rect x="825" y="680" width="140" height="62" rx="6" fill="#1e3a5f" stroke="#3b82f6"/><text x="895" y="705" text-anchor="middle" class="label">W_down</text><text x="895" y="727" text-anchor="middle" class="small">→ D</text>
+  <rect x="1040" y="690" width="90" height="42" rx="6" fill="#052e16" stroke="#10b981"/><text x="1085" y="717" text-anchor="middle" class="mono">[B,T,D]</text>
+</svg>

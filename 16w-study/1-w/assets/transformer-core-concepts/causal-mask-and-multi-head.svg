@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <style>
+    text { font-family:'Hiragino Sans GB','Heiti SC','Arial Unicode MS',Menlo,monospace; fill:#e2e8f0; }
+    .title { font-size:28px; font-weight:700; }
+    .subtitle { font-size:14px; fill:#94a3b8; }
+    .section { font-size:18px; font-weight:700; }
+    .label { font-size:14px; font-weight:600; }
+    .small { font-size:12px; fill:#94a3b8; }
+    .mono { font-size:13px; fill:#cbd5e1; }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f0f1a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient>
+    <marker id="blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#3b82f6"/></marker>
+    <marker id="purple" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#a855f7"/></marker>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <text x="55" y="52" class="title">因果 Mask 与 Multi-Head：屏蔽未来，再合并多个视角</text>
+  <text x="55" y="79" class="subtitle">训练时三角 Mask 防止答案泄漏；多个 Head 并行计算后必须 transpose、concat、W_O</text>
+
+  <!-- panel backgrounds -->
+  <rect data-graph-role="decoration" x="45" y="110" width="510" height="620" rx="8" fill="#0f172a" stroke="#334155"/>
+  <rect data-graph-role="decoration" x="585" y="110" width="570" height="620" rx="8" fill="#0f172a" stroke="#334155"/>
+  <text x="75" y="150" class="section">01 / Causal Mask</text>
+  <text x="615" y="150" class="section">02 / Multi-Head 拼接与输出投影</text>
+
+  <!-- mask grid -->
+  <text x="100" y="198" class="small">列 = Key 位置 j</text>
+  <text x="65" y="330" class="small" transform="rotate(-90 65 330)">行 = Query 位置 i</text>
+  <g transform="translate(115,220)">
+    <text x="25" y="-10" text-anchor="middle" class="mono">K0</text><text x="85" y="-10" text-anchor="middle" class="mono">K1</text><text x="145" y="-10" text-anchor="middle" class="mono">K2</text><text x="205" y="-10" text-anchor="middle" class="mono">K3</text>
+    <text x="-18" y="37" text-anchor="middle" class="mono">Q0</text><text x="-18" y="97" text-anchor="middle" class="mono">Q1</text><text x="-18" y="157" text-anchor="middle" class="mono">Q2</text><text x="-18" y="217" text-anchor="middle" class="mono">Q3</text>
+    <rect x="0" y="0" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="25" y="31" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="60" y="0" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="85" y="31" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="120" y="0" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="145" y="31" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="180" y="0" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="205" y="31" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="0" y="60" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="25" y="91" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="60" y="60" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="85" y="91" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="120" y="60" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="145" y="91" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="180" y="60" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="205" y="91" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="0" y="120" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="25" y="151" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="60" y="120" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="85" y="151" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="120" y="120" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="145" y="151" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="180" y="120" width="50" height="50" rx="4" fill="#450a0a" stroke="#ef4444"/><text x="205" y="151" text-anchor="middle" fill="#ef4444">-inf</text>
+    <rect x="0" y="180" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="25" y="211" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="60" y="180" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="85" y="211" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="120" y="180" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="145" y="211" text-anchor="middle" fill="#10b981">0</text>
+    <rect x="180" y="180" width="50" height="50" rx="4" fill="#052e16" stroke="#10b981"/><text x="205" y="211" text-anchor="middle" fill="#10b981">0</text>
+  </g>
+  <rect x="375" y="230" width="145" height="90" rx="6" fill="#1e3a5f" stroke="#3b82f6"/>
+  <text x="447" y="260" text-anchor="middle" class="label">允许区域</text>
+  <text x="447" y="285" text-anchor="middle" class="small">j ≤ i</text>
+  <text x="447" y="305" text-anchor="middle" class="small">历史 + 自己</text>
+  <rect x="375" y="345" width="145" height="90" rx="6" fill="#450a0a" stroke="#ef4444"/>
+  <text x="447" y="375" text-anchor="middle" class="label">屏蔽区域</text>
+  <text x="447" y="400" text-anchor="middle" class="small">j &gt; i</text>
+  <text x="447" y="420" text-anchor="middle" class="small">未来 token</text>
+  <rect x="80" y="500" width="440" height="92" rx="6" fill="#1e1b4b" stroke="#a855f7"/>
+  <text x="300" y="532" text-anchor="middle" class="label">必须在 Softmax 之前加入</text>
+  <text x="300" y="558" text-anchor="middle" class="mono">A = softmax(QK^T / √D_k + M)</text>
+  <text x="300" y="580" text-anchor="middle" class="small">exp(-inf) = 0，非法位置概率严格为 0</text>
+  <text x="80" y="635" class="small">训练：完整序列并行 + 三角 Mask</text>
+  <text x="80" y="660" class="small">推理：新 Query 关注全部历史；KV Cache 复用 K/V</text>
+  <text x="80" y="685" class="small">广播：Mask [1,1,T_q,T_k] → Logit [B,H,T_q,T_k]</text>
+
+  <!-- multi-head edges -->
+  <path d="M715 225 H780" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M715 325 H780" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M715 425 H780" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M715 525 H780" fill="none" stroke="#f97316" stroke-width="2" marker-end="url(#purple)"/>
+  <path d="M930 375 H975" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+  <path d="M1085 375 V500" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#blue)"/>
+
+  <text x="620" y="205" class="small">并行，不是串行</text>
+  <rect x="620" y="220" width="95" height="58" rx="6" fill="#1e3a5f" stroke="#3b82f6"/><text x="667" y="245" text-anchor="middle" class="label">Head 1</text><text x="667" y="265" text-anchor="middle" class="small">[B,T,D_v]</text>
+  <rect x="620" y="320" width="95" height="58" rx="6" fill="#1e1b4b" stroke="#a855f7"/><text x="667" y="345" text-anchor="middle" class="label">Head 2</text><text x="667" y="365" text-anchor="middle" class="small">[B,T,D_v]</text>
+  <rect x="620" y="420" width="95" height="58" rx="6" fill="#052e16" stroke="#10b981"/><text x="667" y="445" text-anchor="middle" class="label">Head 3</text><text x="667" y="465" text-anchor="middle" class="small">[B,T,D_v]</text>
+  <rect x="620" y="520" width="95" height="58" rx="6" fill="#1c1917" stroke="#f97316"/><text x="667" y="545" text-anchor="middle" class="label">Head H</text><text x="667" y="565" text-anchor="middle" class="small">[B,T,D_v]</text>
+
+  <rect x="780" y="205" width="150" height="340" rx="6" fill="#111827" stroke="#475569"/>
+  <text x="855" y="245" text-anchor="middle" class="label">transpose</text>
+  <text x="855" y="275" text-anchor="middle" class="mono">[B,H,T,D_v]</text>
+  <text x="855" y="315" text-anchor="middle" fill="#94a3b8">↓</text>
+  <text x="855" y="350" text-anchor="middle" class="mono">[B,T,H,D_v]</text>
+  <text x="855" y="395" text-anchor="middle" class="label">concat / reshape</text>
+  <text x="855" y="430" text-anchor="middle" class="mono">[B,T,H·D_v]</text>
+  <text x="855" y="475" text-anchor="middle" class="small">先换维度顺序</text>
+  <text x="855" y="500" text-anchor="middle" class="small">再合并 Head 通道</text>
+
+  <rect x="975" y="315" width="110" height="120" rx="6" fill="#1e3a5f" stroke="#3b82f6"/>
+  <text x="1030" y="350" text-anchor="middle" class="label">输出投影</text>
+  <text x="1030" y="380" text-anchor="middle" class="mono">W_O</text>
+  <text x="1030" y="410" text-anchor="middle" class="small">跨 Head 混合</text>
+  <rect x="1010" y="500" width="150" height="95" rx="6" fill="#052e16" stroke="#10b981"/>
+  <text x="1085" y="532" text-anchor="middle" class="label">Attention 输出</text>
+  <text x="1085" y="561" text-anchor="middle" class="mono">[B,T,D]</text>
+  <text x="1085" y="584" text-anchor="middle" class="small">可与残差相加</text>
+
+  <rect x="620" y="630" width="510" height="65" rx="6" fill="#111827" stroke="#475569"/>
+  <text x="642" y="658" class="label">W_O 不等于词表投影</text>
+  <text x="642" y="682" class="small">W_O 位于每个 Attention Block 内；LM Head 才把最终 D 维映射到词表 Vocab</text>
+</svg>
