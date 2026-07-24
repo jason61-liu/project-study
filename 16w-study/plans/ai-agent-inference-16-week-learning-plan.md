@@ -129,27 +129,27 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [Attention Is All You Need](https://arxiv.org/abs/1706.03762) 的模型结构、Attention 和复杂度部分，写一页摘要。
-- [ ] 掌握 Q/K/V 张量形状、因果 Mask、Multi-head 拼接、输出投影、RMSNorm/LayerNorm 与 MLP/SwiGLU。
-- [ ] 比较 MHA、MQA、GQA 对质量、KV Cache 和带宽的影响。
-- [ ] 解释 RoPE、Tokenizer、Context Window、Temperature、Top-k 和 Top-p。
-- [ ] 写出 KV Cache 显存估算公式，并计算一个 7B 模型在 4K、16K 上下文下的示例。
-- [ ] 阅读 DeepSeek-V3 的 MLA/MoE 概览和 Kimi Linear 的 KDA 概览，画出 MHA/GQA、MLA、混合线性注意力的“状态大小—计算—表达能力”对比图；本周只求建立坐标，不深挖内核。
+- [x] 阅读 [Attention Is All You Need](https://arxiv.org/abs/1706.03762) 的模型结构、Attention 和复杂度部分，写一页摘要。
+- [x] 掌握 Q/K/V 张量形状、因果 Mask、Multi-head 拼接、输出投影、RMSNorm/LayerNorm 与 MLP/SwiGLU。
+- [x] 比较 MHA、MQA、GQA 对质量、KV Cache 和带宽的影响。
+- [x] 解释 RoPE、Tokenizer、Context Window、Temperature、Top-k 和 Top-p。
+- [x] 写出 KV Cache 显存估算公式，并计算一个 7B 模型在 4K、16K 上下文下的示例。
+- [x] 阅读 DeepSeek-V3 的 MLA/MoE 概览和 Kimi Linear 的 KDA 概览，画出 MHA/GQA、MLA、混合线性注意力的“状态大小—计算—表达能力”对比图；本周只求建立坐标，不深挖内核。
 
 ### 编码实验
 
-- [ ] 使用 PyTorch 手写单头和多头 Causal Attention，不调用封装的 Attention 层。
-- [ ] 用随机张量验证输出形状、Mask 和数值稳定性。
-- [ ] 编写至少 5 个测试，覆盖长度 1、不同 Batch、不同 Head 和无效形状。
-- [ ] 编写最小自回归生成循环，观察每次 Decode 只生成一个 Token。
-- [ ] 记录使用与不使用 KV Cache 时的计算差异和理论复杂度。
+- [x] 使用 PyTorch 手写单头和多头 Causal Attention，不调用封装的 Attention 层。
+- [x] 用随机张量验证输出形状、Mask 和数值稳定性。
+- [x] 编写至少 5 个测试，覆盖长度 1、不同 Batch、不同 Head 和无效形状。
+- [x] 编写最小自回归生成循环，观察每次 Decode 只生成一个 Token。
+- [x] 记录使用与不使用 KV Cache 时的计算差异和理论复杂度。
 
 ### 面试与验收
 
-- [ ] 完成 15 道 Transformer/推理基础题并记录答案。
-- [ ] 进行一次 10 分钟白板讲解：一个 Token 如何经过模型并生成下一个 Token。
-- [ ] 能回答“为什么 Decode 往往受显存带宽限制，而 Prefill 更偏计算密集”。
-- [ ] 代码可以独立运行，测试全部通过，并提交本周复盘。
+- [x] 完成 15 道 Transformer/推理基础题并记录答案。
+- [x] 进行一次 10 分钟白板讲解：一个 Token 如何经过模型并生成下一个 Token。
+- [x] 能回答“为什么 Decode 往往受显存带宽限制，而 Prefill 更偏计算密集”。
+- [x] 代码可以独立运行，测试全部通过，并提交本周复盘。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
