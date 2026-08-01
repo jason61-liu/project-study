@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920">
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .title { font-size: 26px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .section { font-size: 17px; font-weight: 700; fill: #111827; }
+    .node { font-size: 14px; font-weight: 700; fill: #111827; }
+    .small { font-size: 12px; fill: #6b7280; }
+    .label { font-size: 12px; font-weight: 600; fill: #374151; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="920" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">最小 Agent：协议、运行循环与有界执行</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">Schema 保证形状，Call ID 保证因果关联，ReAct 负责推进，预算与终止条件负责收敛</text>
+  <rect x="40" y="105" width="540" height="335" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" data-graph-role="container" data-container-id="protocol" data-semantic-role="boundary" data-graph-bounds="40,105,580,440"/>
+  <text x="64" y="137" class="section">A. Schema 与工具结果回传</text>
+  <rect x="620" y="105" width="540" height="335" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5" data-graph-role="container" data-container-id="stream" data-semantic-role="boundary" data-graph-bounds="620,105,1160,440"/>
+  <text x="644" y="137" class="section">B. 流式生命周期与韧性</text>
+  <rect x="40" y="475" width="540" height="335" rx="12" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5" data-graph-role="container" data-container-id="react" data-semantic-role="boundary" data-graph-bounds="40,475,580,810"/>
+  <text x="64" y="507" class="section">C. ReAct：推理—行动—观察</text>
+  <rect x="620" y="475" width="540" height="335" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5" data-graph-role="container" data-container-id="budget" data-semantic-role="boundary" data-graph-bounds="620,475,1160,810"/>
+  <text x="644" y="507" class="section">D. 多维预算与显式终止</text>
+  <rect x="68" y="170" width="130" height="66" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="133.0" y="199" text-anchor="middle" class="node">JSON Schema</text>
+  <text x="133.0" y="220" text-anchor="middle" class="small">类型 / required / enum</text>
+  <rect x="245" y="170" width="130" height="66" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="310.0" y="199" text-anchor="middle" class="node">模型输出</text>
+  <text x="310.0" y="220" text-anchor="middle" class="small">strict 约束形状</text>
+  <rect x="422" y="170" width="130" height="66" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="487.0" y="199" text-anchor="middle" class="node">function_call</text>
+  <text x="487.0" y="220" text-anchor="middle" class="small">name + call_id + args</text>
+  <rect x="422" y="300" width="130" height="66" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="487.0" y="329" text-anchor="middle" class="node">工具执行器</text>
+  <text x="487.0" y="350" text-anchor="middle" class="small">鉴权 + 业务校验</text>
+  <rect x="245" y="300" width="130" height="66" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="310.0" y="329" text-anchor="middle" class="node">call_output</text>
+  <text x="310.0" y="350" text-anchor="middle" class="small">相同 call_id</text>
+  <path d="M 198 203 L 241 203" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 375 203 L 418 203" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 487 236 L 487 296" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 422 333 L 379 333" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 310 300 L 310 240" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="400" y="322" text-anchor="middle" class="small">执行结果</text>
+  <text x="324" y="275" class="small">回传下一轮</text>
+  <rect x="68" y="275" width="142" height="91" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.2"/>
+  <text x="139" y="301" text-anchor="middle" class="label">三层校验</text>
+  <text x="84" y="324" class="small">1. JSON 可解析</text>
+  <text x="84" y="344" class="small">2. Schema 合法</text>
+  <text x="84" y="364" class="small">3. 业务语义安全</text>
+  <rect x="650" y="175" width="105" height="60" rx="8" fill="#ffffff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="702.5" y="204" text-anchor="middle" class="node">created</text>
+  <text x="702.5" y="225" text-anchor="middle" class="small">有序事件</text>
+  <rect x="774" y="175" width="105" height="60" rx="8" fill="#ffffff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="826.5" y="204" text-anchor="middle" class="node">delta × N</text>
+  <text x="826.5" y="225" text-anchor="middle" class="small">有序事件</text>
+  <rect x="898" y="175" width="105" height="60" rx="8" fill="#ffffff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="950.5" y="204" text-anchor="middle" class="node">item.done</text>
+  <text x="950.5" y="225" text-anchor="middle" class="small">有序事件</text>
+  <rect x="1022" y="175" width="105" height="60" rx="8" fill="#ffffff" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="1074.5" y="204" text-anchor="middle" class="node">completed</text>
+  <text x="1074.5" y="225" text-anchor="middle" class="small">有序事件</text>
+  <path d="M 755 205 L 770 205" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 879 205 L 894 205" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 1003 205 L 1018 205" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="664" y="305" width="120" height="60" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="724.0" y="334" text-anchor="middle" class="node">Timeout</text>
+  <text x="724.0" y="355" text-anchor="middle" class="small">截止时间耗尽</text>
+  <rect x="830" y="305" width="120" height="60" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="890.0" y="334" text-anchor="middle" class="node">Cancel</text>
+  <text x="890.0" y="355" text-anchor="middle" class="small">客户端停止消费</text>
+  <rect x="996" y="305" width="120" height="60" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="1056.0" y="334" text-anchor="middle" class="node">429</text>
+  <text x="1056.0" y="355" text-anchor="middle" class="small">RPM / TPM 耗尽</text>
+  <path d="M 826 235 L 826 267 L 724 267 L 724 301" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <path d="M 950 235 L 950 267 L 890 267 L 890 301" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <path d="M 1074 235 L 1074 301" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <text x="890" y="395" text-anchor="middle" class="small">只重试可恢复错误；遵守 Retry-After，并限制次数与总耗时</text>
+  <rect x="205" y="530" width="150" height="66" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="280.0" y="559" text-anchor="middle" class="node">Thought</text>
+  <text x="280.0" y="580" text-anchor="middle" class="small">分解目标 / 更新计划</text>
+  <rect x="395" y="530" width="150" height="66" rx="8" fill="#ffffff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="470.0" y="559" text-anchor="middle" class="node">Action</text>
+  <text x="470.0" y="580" text-anchor="middle" class="small">选择工具与参数</text>
+  <rect x="395" y="675" width="150" height="66" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="470.0" y="704" text-anchor="middle" class="node">Environment</text>
+  <text x="470.0" y="725" text-anchor="middle" class="small">工具或外部环境</text>
+  <rect x="205" y="675" width="150" height="66" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="280.0" y="704" text-anchor="middle" class="node">Observation</text>
+  <text x="280.0" y="725" text-anchor="middle" class="small">事实、错误与状态变化</text>
+  <path d="M 355 563 L 391 563" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <path d="M 470 596 L 470 671" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <path d="M 395 708 L 359 708" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 280 675 L 280 600" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <polygon points="100,635 145,595 190,635 145,675" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="145" y="630" text-anchor="middle" class="label">完成？</text>
+  <text x="145" y="647" text-anchor="middle" class="small">证据充分</text>
+  <path d="M 205 563 L 145 563 L 145 591" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <path d="M 145 675 L 145 752 L 280 752 L 280 745" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="170" y="769" class="small">否：带观察进入下一步</text>
+  <text x="126" y="582" text-anchor="end" class="small">是 → Final</text>
+  <rect x="648" y="530" width="105" height="58" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="700.5" y="559" text-anchor="middle" class="node">Step</text>
+  <text x="700.5" y="580" text-anchor="middle" class="small">n ≤ N</text>
+  <rect x="772" y="530" width="105" height="58" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="824.5" y="559" text-anchor="middle" class="node">Token</text>
+  <text x="824.5" y="580" text-anchor="middle" class="small">Σtokens ≤ T</text>
+  <rect x="896" y="530" width="105" height="58" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="948.5" y="559" text-anchor="middle" class="node">Cost</text>
+  <text x="948.5" y="580" text-anchor="middle" class="small">Σcost ≤ C</text>
+  <rect x="1020" y="530" width="105" height="58" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="1072.5" y="559" text-anchor="middle" class="node">Time</text>
+  <text x="1072.5" y="580" text-anchor="middle" class="small">now ≤ deadline</text>
+  <polygon points="845,665 890,625 935,665 890,705" fill="#ffffff" stroke="#ea580c" stroke-width="1.8"/>
+  <text x="890" y="661" text-anchor="middle" class="label">继续？</text>
+  <text x="890" y="679" text-anchor="middle" class="small">先检查完成</text>
+  <path d="M 700 588 L 700 610 L 890 610 L 890 621" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow-gray)"/>
+  <path d="M 824 588 L 824 610 L 890 610 L 890 621" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow-gray)"/>
+  <path d="M 948 588 L 948 610 L 890 610 L 890 621" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow-gray)"/>
+  <path d="M 1072 588 L 1072 610 L 890 610 L 890 621" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow-gray)"/>
+  <rect x="650" y="728" width="170" height="58" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text x="735.0" y="757" text-anchor="middle" class="node">CONTINUE</text>
+  <text x="735.0" y="778" text-anchor="middle" class="small">仍有预算且可推进</text>
+  <rect x="960" y="728" width="170" height="58" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="1045.0" y="757" text-anchor="middle" class="node">STOP</text>
+  <text x="1045.0" y="778" text-anchor="middle" class="small">完成或预算耗尽</text>
+  <path d="M 845 665 L 735 665 L 735 724" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 935 665 L 1045 665 L 1045 724" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="760" y="650" class="small">有剩余</text>
+  <text x="982" y="650" class="small">完成 / 耗尽</text>
+  <line x1="54" y1="858" x2="86" y2="858" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="96" y="863" class="small">协议与事件流</text>
+  <line x1="238" y1="858" x2="270" y2="858" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="280" y="863" class="small">结果 / 继续</text>
+  <line x1="416" y1="858" x2="448" y2="858" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="458" y="863" class="small">Agent 循环</text>
+  <line x1="590" y1="858" x2="622" y2="858" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
+  <text x="632" y="863" class="small">失败 / 终止</text>
+  <text x="1144" y="863" text-anchor="end" class="small">正确性来自约束与验证；可靠性来自有界状态机，而不是更长的 Prompt</text>
+</svg>

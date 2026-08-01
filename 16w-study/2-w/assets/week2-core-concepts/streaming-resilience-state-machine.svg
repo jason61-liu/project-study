@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .heading { font-size: 16px; font-weight: 700; fill: #111827; }
+    .body { font-size: 13px; fill: #374151; }
+    .small { font-size: 12px; fill: #6b7280; }
+    .badge { font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">流式响应与韧性状态机</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">只有 completed 才能正式提交；断流、取消和超时都必须保留明确终态</text>
+  <rect x="40" y="105" width="1120" height="475" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" data-graph-role="container" data-container-id="stream" data-semantic-role="boundary" data-graph-bounds="40,105,1160,580"/>
+  <text x="65" y="138" class="heading">SSE 生命周期</text>
+  <path d="M 200 260 L 241 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 385 260 L 426 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 570 260 L 611 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 755 260 L 796 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 940 260 L 981 260" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect id="request" x="60" y="215" width="140" height="90" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="130.0" y="247" text-anchor="middle" class="heading">Request</text>
+  <text x="130.0" y="271" text-anchor="middle" class="small">整体 Deadline</text>
+  <rect id="created" x="245" y="215" width="140" height="90" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="315.0" y="247" text-anchor="middle" class="heading">created</text>
+  <text x="315.0" y="271" text-anchor="middle" class="small">记录 response_id</text>
+  <rect id="delta" x="430" y="215" width="140" height="90" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="500.0" y="247" text-anchor="middle" class="heading">delta × N</text>
+  <text x="500.0" y="271" text-anchor="middle" class="small">按 Item 键重组</text>
+  <rect id="done" x="615" y="215" width="140" height="90" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="685.0" y="247" text-anchor="middle" class="heading">item.done</text>
+  <text x="685.0" y="271" text-anchor="middle" class="small">参数才可解析</text>
+  <rect id="completed" x="800" y="215" width="140" height="90" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="870.0" y="247" text-anchor="middle" class="heading">completed</text>
+  <text x="870.0" y="271" text-anchor="middle" class="small">取得 usage</text>
+  <rect id="commit" x="985" y="215" width="140" height="90" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="1055.0" y="247" text-anchor="middle" class="heading">Commit</text>
+  <text x="1055.0" y="271" text-anchor="middle" class="small">正式结果</text>
+  <path d="M 500 305 L 500 405" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 685 305 L 685 405" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 870 305 L 870 405" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <rect id="error" x="420" y="405" width="160" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="500.0" y="437" text-anchor="middle" class="heading">断流 / error</text>
+  <text x="500.0" y="461" text-anchor="middle" class="small">部分输出不提交</text>
+  <rect id="cancel" x="605" y="405" width="160" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="685.0" y="437" text-anchor="middle" class="heading">取消竞争</text>
+  <text x="685.0" y="461" text-anchor="middle" class="small">查询最终状态</text>
+  <rect id="incomplete" x="790" y="405" width="160" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="870.0" y="437" text-anchor="middle" class="heading">incomplete</text>
+  <text x="870.0" y="461" text-anchor="middle" class="small">记录停止原因</text>
+  <rect x="80" y="510" width="1040" height="45" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="600" y="538" text-anchor="middle" class="body">Connect → 首字节 → Idle → Overall Deadline → Tool Timeout；每层超时独立计量</text>
+  <line x1="70" y1="625" x2="102" y2="625" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="114" y="630" class="small">正常事件流</text>
+  <line x1="260" y1="625" x2="292" y2="625" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="304" y="630" class="small">异常终态</text>
+  <text x="1135" y="630" text-anchor="end" class="small">429：Retry-After 或指数退避 + 抖动 + 总重试上限</text>
+</svg>

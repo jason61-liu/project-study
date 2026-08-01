@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .heading { font-size: 16px; font-weight: 700; fill: #111827; }
+    .body { font-size: 13px; fill: #374151; }
+    .small { font-size: 12px; fill: #6b7280; }
+    .badge { font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">ReAct：推理—行动—观察闭环</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">语言推理维护计划；Action 接触环境；Observation 用外部事实更新下一步决策</text>
+  <rect x="40" y="105" width="820" height="480" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" data-graph-role="container" data-container-id="loop" data-semantic-role="boundary" data-graph-bounds="40,105,860,585"/>
+  <rect x="890" y="105" width="270" height="480" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" data-graph-role="container" data-container-id="evidence" data-semantic-role="boundary" data-graph-bounds="890,105,1160,585"/>
+  <text x="65" y="140" class="heading">方法循环</text>
+  <text x="915" y="140" class="heading">论文证据</text>
+  <path d="M 290 270 L 380 270" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="335" y="254" text-anchor="middle" class="small" fill="#6b7280">选择动作</text>
+  <path d="M 570 270 L 650 270" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="610" y="254" text-anchor="middle" class="small" fill="#6b7280">执行</text>
+  <path d="M 740 315 L 740 455 L 570 455" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="655" y="444" text-anchor="middle" class="small" fill="#15803d">环境结果</text>
+  <path d="M 380 455 L 195 455 L 195 315" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="300" y="444" text-anchor="middle" class="small" fill="#7e22ce">更新状态</text>
+  <rect id="thought" x="100" y="225" width="190" height="90" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="195.0" y="257" text-anchor="middle" class="heading">Thought</text>
+  <text x="195.0" y="281" text-anchor="middle" class="small">分解、跟踪、纠错</text>
+  <rect id="action" x="380" y="225" width="190" height="90" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="475.0" y="257" text-anchor="middle" class="heading">Action</text>
+  <text x="475.0" y="281" text-anchor="middle" class="small">有限动作空间</text>
+  <rect id="environment" x="650" y="225" width="180" height="90" rx="8" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="740.0" y="257" text-anchor="middle" class="heading">Environment</text>
+  <text x="740.0" y="281" text-anchor="middle" class="small">Wikipedia / 工具 / UI</text>
+  <rect id="observation" x="380" y="410" width="190" height="90" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="475.0" y="442" text-anchor="middle" class="heading">Observation</text>
+  <text x="475.0" y="466" text-anchor="middle" class="small">事实、状态或错误</text>
+  <rect x="115" y="520" width="630" height="40" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="430" y="546" text-anchor="middle" class="body">完成 / 请求输入 / 最大步数 / 无进展 / 超时 / 预算耗尽</text>
+  <rect id="HotpotQA" x="915" y="170" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="1025.0" y="202" text-anchor="middle" class="heading">HotpotQA</text>
+  <text x="1025.0" y="226" text-anchor="middle" class="small">ReAct 27.4 &lt; CoT 29.4</text>
+  <rect id="FEVER" x="915" y="262" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="1025.0" y="294" text-anchor="middle" class="heading">FEVER</text>
+  <text x="1025.0" y="318" text-anchor="middle" class="small">ReAct 60.9 &gt; CoT 56.3</text>
+  <rect id="ALFWorld" x="915" y="354" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="1025.0" y="386" text-anchor="middle" class="heading">ALFWorld</text>
+  <text x="1025.0" y="410" text-anchor="middle" class="small">ReAct best 71%</text>
+  <rect id="WebShop" x="915" y="446" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="1025.0" y="478" text-anchor="middle" class="heading">WebShop</text>
+  <text x="1025.0" y="502" text-anchor="middle" class="small">ReAct SR 40.0%</text>
+  <line x1="70" y1="625" x2="102" y2="625" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="114" y="630" class="small">决策与行动</text>
+  <line x1="260" y1="625" x2="292" y2="625" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="304" y="630" class="small">环境观察</text>
+  <line x1="450" y1="625" x2="482" y2="625" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <text x="494" y="630" class="small">反馈更新</text>
+  <text x="1135" y="630" text-anchor="end" class="small">外部落地减少幻觉，但增加搜索错误、循环和副作用风险</text>
+</svg>

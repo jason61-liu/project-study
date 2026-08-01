@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .heading { font-size: 16px; font-weight: 700; fill: #111827; }
+    .body { font-size: 13px; fill: #374151; }
+    .small { font-size: 12px; fill: #6b7280; }
+    .badge { font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">结构化输出与工具结果回传链路</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">Schema 约束结构；应用校验语义与权限；call_id 只负责关联一次 Action 和 Observation</text>
+  <rect x="35" y="105" width="1130" height="475" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" data-graph-role="container" data-container-id="protocol" data-semantic-role="boundary" data-graph-bounds="35,105,1165,580"/>
+  <text x="60" y="138" class="heading">协议主链</text>
+  <path d="M 180 290 L 201 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 340 290 L 361 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 500 290 L 521 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 660 290 L 681 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 820 290 L 841 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 980 290 L 1001 290" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 432 335 L 432 395 L 912 395 L 912 335" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-green)"/>
+  <text x="672" y="385" text-anchor="middle" class="small" fill="#15803d">同一个 call_id 关联请求与结果</text>
+  <rect id="schema" x="45" y="245" width="135" height="90" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="112.5" y="277" text-anchor="middle" class="heading">Tool Schema</text>
+  <text x="112.5" y="301" text-anchor="middle" class="small">限制动作空间</text>
+  <rect id="model" x="205" y="245" width="135" height="90" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="272.5" y="277" text-anchor="middle" class="heading">Model</text>
+  <text x="272.5" y="301" text-anchor="middle" class="small">选择工具或回答</text>
+  <rect id="call" x="365" y="245" width="135" height="90" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="432.5" y="277" text-anchor="middle" class="heading">function_call</text>
+  <text x="432.5" y="301" text-anchor="middle" class="small">call_id + arguments</text>
+  <rect id="gate" x="525" y="245" width="135" height="90" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="592.5" y="277" text-anchor="middle" class="heading">校验闸门</text>
+  <text x="592.5" y="301" text-anchor="middle" class="small">Schema / 业务 / 权限</text>
+  <rect id="tool" x="685" y="245" width="135" height="90" rx="8" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="752.5" y="277" text-anchor="middle" class="heading">Tool</text>
+  <text x="752.5" y="301" text-anchor="middle" class="small">执行与幂等</text>
+  <rect id="output" x="845" y="245" width="135" height="90" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="912.5" y="277" text-anchor="middle" class="heading">call_output</text>
+  <text x="912.5" y="301" text-anchor="middle" class="small">call_id + output</text>
+  <rect id="final" x="1005" y="245" width="135" height="90" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="1072.5" y="277" text-anchor="middle" class="heading">Final</text>
+  <text x="1072.5" y="301" text-anchor="middle" class="small">验证后提交</text>
+  <rect id="1. JSON 语法" x="85" y="455" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="195.0" y="487" text-anchor="middle" class="heading">1. JSON 语法</text>
+  <text x="195.0" y="511" text-anchor="middle" class="small">完整终态后解析</text>
+  <rect id="2. Schema" x="355" y="455" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="465.0" y="487" text-anchor="middle" class="heading">2. Schema</text>
+  <text x="465.0" y="511" text-anchor="middle" class="small">类型、必填、枚举</text>
+  <rect id="3. 业务语义" x="625" y="455" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="735.0" y="487" text-anchor="middle" class="heading">3. 业务语义</text>
+  <text x="735.0" y="511" text-anchor="middle" class="small">跨字段与外部状态</text>
+  <rect id="4. 授权副作用" x="895" y="455" width="220" height="76" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="1005.0" y="487" text-anchor="middle" class="heading">4. 授权副作用</text>
+  <text x="1005.0" y="511" text-anchor="middle" class="small">身份、审批、幂等</text>
+  <line x1="70" y1="625" x2="102" y2="625" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="114" y="630" class="small">协议数据流</text>
+  <line x1="260" y1="625" x2="292" y2="625" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="304" y="630" class="small">关联键</text>
+  <text x="1135" y="630" text-anchor="end" class="small">结构正确 ≠ 事实正确 ≠ 获得授权</text>
+</svg>

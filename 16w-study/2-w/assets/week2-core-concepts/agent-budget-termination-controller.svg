@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680">
+  <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+    .title { font-size: 25px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .heading { font-size: 16px; font-weight: 700; fill: #111827; }
+    .body { font-size: 13px; fill: #374151; }
+    .small { font-size: 12px; fill: #6b7280; }
+    .badge { font-size: 12px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" class="title">Agent 多预算终止控制器</text>
+  <text x="600" y="70" text-anchor="middle" class="subtitle">每次行动前做最坏情况准入；为最终回答和清理保留 Token、费用与时间</text>
+  <rect x="40" y="105" width="1120" height="500" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" data-graph-role="container" data-container-id="budget" data-semantic-role="boundary" data-graph-bounds="40,105,1160,605"/>
+  <rect id="Step / Calls" x="70" y="145" width="220" height="82" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="180.0" y="177" text-anchor="middle" class="heading">Step / Calls</text>
+  <text x="180.0" y="201" text-anchor="middle" class="small">循环与调用次数</text>
+  <path d="M 180 227 L 180 295" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect id="Token" x="350" y="145" width="220" height="82" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="460.0" y="177" text-anchor="middle" class="heading">Token</text>
+  <text x="460.0" y="201" text-anchor="middle" class="small">输入、输出、推理</text>
+  <path d="M 460 227 L 460 295" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect id="Cost" x="630" y="145" width="220" height="82" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="740.0" y="177" text-anchor="middle" class="heading">Cost</text>
+  <text x="740.0" y="201" text-anchor="middle" class="small">模型与工具费用</text>
+  <path d="M 740 227 L 740 295" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect id="Deadline" x="910" y="145" width="220" height="82" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="1020.0" y="177" text-anchor="middle" class="heading">Deadline</text>
+  <text x="1020.0" y="201" text-anchor="middle" class="small">总时限与子超时</text>
+  <path d="M 1020 227 L 1020 295" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect x="70" y="295" width="1060" height="92" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="600" y="330" text-anchor="middle" class="heading">Admission Controller</text>
+  <text x="600" y="358" text-anchor="middle" class="body">完成谓词 → 安全策略 → 剩余预算 → 收尾预留 → 重复与无进展检测</text>
+  <path d="M 600 387 L 600 425" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+  <polygon points="600,425 690,470 600,515 510,470" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="600" y="466" text-anchor="middle" class="heading">允许下一步？</text>
+  <text x="600" y="487" text-anchor="middle" class="small">先判完成，再判预算</text>
+  <path d="M 510 470 L 255 470 L 255 525" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <path d="M 600 515 L 600 525" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 690 470 L 945 470 L 945 525" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <rect id="completed" x="145" y="525" width="220" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="255.0" y="557" text-anchor="middle" class="heading">COMPLETED</text>
+  <text x="255.0" y="581" text-anchor="middle" class="small">满足显式完成谓词</text>
+  <rect id="stop" x="490" y="525" width="220" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="600.0" y="557" text-anchor="middle" class="heading">STOP</text>
+  <text x="600.0" y="581" text-anchor="middle" class="small">预算 / 超时 / 取消</text>
+  <rect id="next" x="835" y="525" width="220" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="945.0" y="557" text-anchor="middle" class="heading">NEXT STEP</text>
+  <text x="945.0" y="581" text-anchor="middle" class="small">执行后按实际 usage 对账</text>
+  <line x1="70" y1="645" x2="102" y2="645" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="114" y="650" class="small">预算输入与继续</text>
+  <line x1="260" y1="645" x2="292" y2="645" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="304" y="650" class="small">成功完成</text>
+  <line x1="450" y1="645" x2="482" y2="645" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="494" y="650" class="small">受控终止</text>
+</svg>
