@@ -1,0 +1,30 @@
+[
+  {
+    "id": "normal",
+    "question": "为受监管客服研究任务推荐固定 Workflow、ReAct 或 Plan-and-Execute，并说明控制权、安全、延迟与恢复依据。",
+    "fault": "none",
+    "required_terms": ["Workflow", "Runtime", "延迟", "恢复"],
+    "required_sources": ["arch-boundary", "safety-runtime", "latency-cost", "observability"]
+  },
+  {
+    "id": "retrieval_failure",
+    "question": "在检索服务可能短暂失败时，为受监管客服研究任务推荐架构，并说明证据获取和恢复策略。",
+    "fault": "retrieval_failure",
+    "required_terms": ["重试", "Runtime", "证据", "恢复"],
+    "required_sources": ["safety-runtime", "observability"]
+  },
+  {
+    "id": "tool_failure",
+    "question": "在读取部分研究资料可能失败时，比较三类架构并给出可降级、可审计的推荐。",
+    "fault": "tool_failure",
+    "required_terms": ["部分", "Trace", "降级", "Workflow"],
+    "required_sources": ["arch-boundary", "observability"]
+  },
+  {
+    "id": "plan_invalidated",
+    "question": "研究过程中资料版本会变化，比较长计划和逐步反馈，并给出适合受监管客服的推荐。",
+    "fault": "plan_invalidated",
+    "required_terms": ["重规划", "Rolling-Horizon", "证据", "Runtime"],
+    "required_sources": ["planning", "safety-runtime"]
+  }
+]

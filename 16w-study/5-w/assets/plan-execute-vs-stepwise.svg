@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.metric{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="840" fill="#0a0a0a"/>
+<ellipse cx="700" cy="390" rx="620" ry="330" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">Plan-and-Execute vs 逐步决策</text>
+<text x="700" y="73" text-anchor="middle" class="sub">核心变量是承诺视野：一次规划多远、环境变化后多快重新获得反馈</text>
+<rect x="35" y="105" width="640" height="590" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="53" y="133" class="sec" fill="#38bdf8">PLAN-AND-EXECUTE · LONG HORIZON</text>
+<rect x="80" y="170" width="160" height="74" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="160.0" y="200" text-anchor="middle" class="nm" fill="#38bdf8">Global Plan</text>
+<text x="160.0" y="223" text-anchor="middle" class="sm">P=[s₁…sₙ]</text>
+<rect x="80" y="330" width="115" height="66" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="137.5" y="360" text-anchor="middle" class="nm" fill="#94a3b8">Execute s₁</text>
+<text x="137.5" y="383" text-anchor="middle" class="sm">固定计划</text>
+<path d="M195 363 H220" fill="none" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="220" y="330" width="115" height="66" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="277.5" y="360" text-anchor="middle" class="nm" fill="#94a3b8">Execute s₂</text>
+<text x="277.5" y="383" text-anchor="middle" class="sm">固定计划</text>
+<path d="M335 363 H360" fill="none" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="360" y="330" width="115" height="66" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="417.5" y="360" text-anchor="middle" class="nm" fill="#94a3b8">Execute s₃</text>
+<text x="417.5" y="383" text-anchor="middle" class="sm">固定计划</text>
+<path d="M475 363 H500" fill="none" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="500" y="330" width="115" height="66" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="557.5" y="360" text-anchor="middle" class="nm" fill="#94a3b8">Verify</text>
+<text x="557.5" y="383" text-anchor="middle" class="sm">固定计划</text>
+<path d="M160 244 V300 H137 V330" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="285" y="287" text-anchor="middle" class="al">一次生成全局依赖与顺序</text>
+<path d="M220 413 H565" stroke="#f87171" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="392" y="438" text-anchor="middle" class="sm">计划漂移区：旧假设继续影响后续步骤</text>
+<rect x="155" y="515" width="400" height="82" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="355.0" y="545" text-anchor="middle" class="nm" fill="#f87171">优势 / 风险</text>
+<text x="355.0" y="568" text-anchor="middle" class="sm">全局一致、少调用 / 脆弱、重规划昂贵</text>
+<rect x="725" y="105" width="640" height="590" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="743" y="133" class="sec" fill="#d4a574">STEPWISE · SHORT HORIZON</text>
+<rect x="770" y="240" width="125" height="76" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="774" y="244" width="117" height="68" rx="6" fill="none" stroke="#d4a574" stroke-width=".6" opacity=".55"/>
+<text x="832.5" y="270" text-anchor="middle" class="nm" fill="#d4a574">Decide</text>
+<text x="832.5" y="293" text-anchor="middle" class="sm">one step</text>
+<rect x="930" y="240" width="125" height="76" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="992.5" y="270" text-anchor="middle" class="nm" fill="#fdba74">Act</text>
+<text x="992.5" y="293" text-anchor="middle" class="sm">one step</text>
+<rect x="1090" y="240" width="125" height="76" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1152.5" y="270" text-anchor="middle" class="nm" fill="#6ee7b7">Observe</text>
+<text x="1152.5" y="293" text-anchor="middle" class="sm">one step</text>
+<path d="M895 278 H930" fill="none" stroke="#fdba74" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<path d="M1055 278 H1090" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<path d="M1152 316 V380 H832 V316" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="995" y="370" text-anchor="middle" class="al">每步用新证据更新</text>
+<rect x="805" y="470" width="450" height="82" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1030.0" y="500" text-anchor="middle" class="nm" fill="#a78bfa">优势 / 风险</text>
+<text x="1030.0" y="523" text-anchor="middle" class="sm">适应变化、易恢复 / 局部贪心、调用多</text>
+<rect x="255" y="625" width="890" height="100" rx="12" fill="#15120f" stroke="#d4a574" stroke-width="1.5"/>
+<text x="700" y="653" text-anchor="middle" class="nm">推荐：Rolling-Horizon Hybrid</text>
+<text x="700" y="678" text-anchor="middle" class="sm">先产出目标、约束、里程碑和依赖；只承诺未来 k 步；每个里程碑用证据重规划</text>
+<text x="700" y="701" text-anchor="middle" class="xs">不可逆动作前缩短视野并请求确认，可逆探索阶段允许更长批次</text>
+<line x1="70" y1="808" x2="104" y2="808" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="115" y="812" text-anchor="start" class="sm">长期计划</text>
+<line x1="285" y1="808" x2="319" y2="808" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="330" y="812" text-anchor="start" class="sm">短期反馈</text>
+<line x1="500" y1="808" x2="534" y2="808" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="545" y="812" text-anchor="start" class="sm">环境事实</text>
+<line x1="715" y1="808" x2="749" y2="808" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="760" y="812" text-anchor="start" class="sm">计划漂移</text>
+</svg>

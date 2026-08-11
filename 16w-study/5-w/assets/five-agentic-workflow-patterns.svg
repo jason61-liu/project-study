@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.metric{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="840" fill="#0a0a0a"/>
+<ellipse cx="700" cy="390" rx="620" ry="330" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">五种可组合的 Agentic Workflow 模式</text>
+<text x="700" y="73" text-anchor="middle" class="sub">区别在依赖拓扑、并发边界、动态分解位置以及质量反馈是否成环</text>
+<rect x="45" y="112" width="1310" height="92" rx="10" fill="#101010" stroke="#38bdf8" stroke-width="1"/>
+<rect x="45" y="112" width="250" height="92" rx="10" fill="#171717" stroke="none"/>
+<text x="70" y="149" text-anchor="start" class="nm" fill="#38bdf8">Prompt Chaining</text>
+<text x="70" y="174" text-anchor="start" class="xs">可分解、强依赖；准确率换延迟</text>
+<text x="330" y="151" text-anchor="start" class="metric">A → Gate → B → Gate → C</text>
+<text x="330" y="179" text-anchor="start" class="sm">L≈ΣLi · C≈ΣCi</text>
+<rect x="1040" y="132" width="270" height="50" rx="7" fill="#1a1a1a" stroke="#38bdf8" stroke-width=".8"/>
+<text x="1175" y="153" text-anchor="middle" class="xs">PRIMARY FAILURE</text>
+<text x="1175" y="173" text-anchor="middle" class="sm">上游格式漂移</text>
+<rect x="45" y="232" width="1310" height="92" rx="10" fill="#101010" stroke="#a78bfa" stroke-width="1"/>
+<rect x="45" y="232" width="250" height="92" rx="10" fill="#171717" stroke="none"/>
+<text x="70" y="269" text-anchor="start" class="nm" fill="#a78bfa">Routing</text>
+<text x="70" y="294" text-anchor="start" class="xs">类别可分；错路由是上界</text>
+<text x="330" y="271" text-anchor="start" class="metric">Classifier → {Specialist A | B | C}</text>
+<text x="330" y="299" text-anchor="start" class="sm">L≈Lr+Lb · P≤Proute</text>
+<rect x="1040" y="252" width="270" height="50" rx="7" fill="#1a1a1a" stroke="#a78bfa" stroke-width=".8"/>
+<text x="1175" y="273" text-anchor="middle" class="xs">PRIMARY FAILURE</text>
+<text x="1175" y="293" text-anchor="middle" class="sm">分类错误</text>
+<rect x="45" y="352" width="1310" height="92" rx="10" fill="#101010" stroke="#6ee7b7" stroke-width="1"/>
+<rect x="45" y="352" width="250" height="92" rx="10" fill="#171717" stroke="none"/>
+<text x="70" y="389" text-anchor="start" class="nm" fill="#6ee7b7">Parallelization</text>
+<text x="70" y="414" text-anchor="start" class="xs">独立子任务或多样性投票</text>
+<text x="330" y="391" text-anchor="start" class="metric">Fan-out(A,B,C) → Aggregate / Vote</text>
+<text x="330" y="419" text-anchor="start" class="sm">L≈max(Li)+La</text>
+<rect x="1040" y="372" width="270" height="50" rx="7" fill="#1a1a1a" stroke="#6ee7b7" stroke-width=".8"/>
+<text x="1175" y="393" text-anchor="middle" class="xs">PRIMARY FAILURE</text>
+<text x="1175" y="413" text-anchor="middle" class="sm">相关失败/合并冲突</text>
+<rect x="45" y="472" width="1310" height="92" rx="10" fill="#101010" stroke="#d4a574" stroke-width="1"/>
+<rect x="45" y="472" width="250" height="92" rx="10" fill="#171717" stroke="none"/>
+<text x="70" y="509" text-anchor="start" class="nm" fill="#d4a574">Orchestrator–Workers</text>
+<text x="70" y="534" text-anchor="start" class="xs">子任务事前未知；需动态委派</text>
+<text x="330" y="511" text-anchor="start" class="metric">Orchestrator ⇢ dynamic workers → Synthesis</text>
+<text x="330" y="539" text-anchor="start" class="sm">N 动态 · 合并成本显著</text>
+<rect x="1040" y="492" width="270" height="50" rx="7" fill="#1a1a1a" stroke="#d4a574" stroke-width=".8"/>
+<text x="1175" y="513" text-anchor="middle" class="xs">PRIMARY FAILURE</text>
+<text x="1175" y="533" text-anchor="middle" class="sm">任务重叠/遗漏</text>
+<rect x="45" y="592" width="1310" height="92" rx="10" fill="#101010" stroke="#f87171" stroke-width="1"/>
+<rect x="45" y="592" width="250" height="92" rx="10" fill="#171717" stroke="none"/>
+<text x="70" y="629" text-anchor="start" class="nm" fill="#f87171">Evaluator–Optimizer</text>
+<text x="70" y="654" text-anchor="start" class="xs">评价标准清楚且迭代确有增益</text>
+<text x="330" y="631" text-anchor="start" class="metric">Generate → Evaluate → Refine ↺</text>
+<text x="330" y="659" text-anchor="start" class="sm">C≈Σ(Cgen+Ceval)</text>
+<rect x="1040" y="612" width="270" height="50" rx="7" fill="#1a1a1a" stroke="#f87171" stroke-width=".8"/>
+<text x="1175" y="633" text-anchor="middle" class="xs">PRIMARY FAILURE</text>
+<text x="1175" y="653" text-anchor="middle" class="sm">评价器偏差/死循环</text>
+<rect x="45" y="716" width="1310" height="54" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="740" text-anchor="middle" class="sm">组合不是堆叠：先写依赖 DAG，再决定串行、并行、动态分解和反馈闭环</text>
+<text x="700" y="758" text-anchor="middle" class="xs">每增加一次模型调用，都要证明成功率增益覆盖延迟、成本与新故障面</text>
+<line x1="70" y1="808" x2="104" y2="808" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="115" y="812" text-anchor="start" class="sm">固定依赖</text>
+<line x1="285" y1="808" x2="319" y2="808" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="330" y="812" text-anchor="start" class="sm">并行执行</text>
+<line x1="500" y1="808" x2="534" y2="808" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="545" y="812" text-anchor="start" class="sm">动态编排</text>
+<line x1="715" y1="808" x2="749" y2="808" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="760" y="812" text-anchor="start" class="sm">质量反馈</text>
+</svg>

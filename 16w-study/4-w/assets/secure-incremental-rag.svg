@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<style>
+text{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif}
+.title{fill:#111827;font-size:25px;font-weight:700}.subtitle{fill:#6b7280;font-size:13px}
+.node-title{fill:#111827;font-size:14px;font-weight:650}.detail{fill:#6b7280;font-size:11px}
+.label{fill:#111827;font-size:13px}.lane-title{fill:#fff;font-size:12px;font-weight:700}
+.edge-label{fill:#374151;font-size:11px;font-weight:600}.note-title{fill:#9a3412;font-size:12px;font-weight:700}
+.note-text{fill:#7c2d12;font-size:11px}.legend{fill:#475569;font-size:11px}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+</defs>
+<rect width="1200" height="900" fill="#ffffff"/>
+<text x="600.0" y="38" class="title" text-anchor="middle">增量摄取、权限安全检索与删除传播</text>
+<text x="600.0" y="63" class="subtitle" text-anchor="middle">相关性只决定候选顺序；ACL 决定候选是否允许进入模型上下文</text>
+<rect data-graph-role="container" x="35" y="90" width="1130" height="235" rx="10" fill="#2563eb" fill-opacity="0.035" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="102" width="150" height="24" rx="12" fill="#2563eb"/>
+<rect data-graph-role="container" x="35" y="350" width="1130" height="225" rx="10" fill="#16a34a" fill-opacity="0.035" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="362" width="150" height="24" rx="12" fill="#16a34a"/>
+<rect data-graph-role="container" x="35" y="600" width="1130" height="235" rx="10" fill="#dc2626" fill-opacity="0.035" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="612" width="150" height="24" rx="12" fill="#dc2626"/>
+<path data-graph-role="edge" d="M 220,201 L 255,201" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 420,201 L 455,201" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 620,201 L 655,201" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 820,201 L 880,201" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 537,245 L 537,241 L 1002,241 L 1002,237" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" d="M 200,461 L 245,461" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 390,461 L 435,461" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 580,461 L 625,461" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 770,461 L 815,461" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 960,461 L 1005,461" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 230,711 L 260,711" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 435,711 L 465,711" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 640,711 L 700,711" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 875,711 L 940,711" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<g data-graph-role="node"><rect x="55" y="165" width="165" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="137.5" y="193" class="node-title" text-anchor="middle">源文档/事件</text><text x="137.5" y="214" class="detail" text-anchor="middle">etag · mtime · CDC</text></g>
+<g data-graph-role="node"><rect x="255" y="165" width="165" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="337.5" y="193" class="node-title" text-anchor="middle">版本与去重</text><text x="337.5" y="214" class="detail" text-anchor="middle">content hash · source id</text></g>
+<g data-graph-role="node"><rect x="455" y="165" width="165" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="537.5" y="193" class="node-title" text-anchor="middle">解析与 Chunk</text><text x="537.5" y="214" class="detail" text-anchor="middle">结构边界 · overlap</text></g>
+<g data-graph-role="node"><rect x="655" y="165" width="165" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="737.5" y="193" class="node-title" text-anchor="middle">双路表征</text><text x="737.5" y="214" class="detail" text-anchor="middle">Embedding + BM25</text></g>
+<g data-graph-role="node"><rect x="880" y="165" width="245" height="72" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="1002.5" y="193" class="node-title" text-anchor="middle">索引提交</text><text x="1002.5" y="214" class="detail" text-anchor="middle">ACL · lineage · version</text></g>
+<g data-graph-role="node"><rect x="455" y="245" width="165" height="55" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/><text x="537.5" y="273" class="node-title" text-anchor="middle">ACL 快照</text><text x="537.5" y="294" class="detail" text-anchor="middle">principal/group/policy v</text></g>
+<g data-graph-role="node"><rect x="55" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="127.5" y="453" class="node-title" text-anchor="middle">Query + Identity</text><text x="127.5" y="474" class="detail" text-anchor="middle">user · tenant · groups</text></g>
+<g data-graph-role="node"><rect x="245" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="317.5" y="453" class="node-title" text-anchor="middle">查询理解</text><text x="317.5" y="474" class="detail" text-anchor="middle">rewrite · filters</text></g>
+<g data-graph-role="node"><rect x="435" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="507.5" y="453" class="node-title" text-anchor="middle">Hybrid Recall</text><text x="507.5" y="474" class="detail" text-anchor="middle">dense + sparse</text></g>
+<g data-graph-role="node"><rect x="625" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="697.5" y="453" class="node-title" text-anchor="middle">Fusion/Rerank</text><text x="697.5" y="474" class="detail" text-anchor="middle">RRF · cross-encoder</text></g>
+<g data-graph-role="node"><rect x="815" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="887.5" y="453" class="node-title" text-anchor="middle">ACL 最终门</text><text x="887.5" y="474" class="detail" text-anchor="middle">deny by default</text></g>
+<g data-graph-role="node"><rect x="1005" y="425" width="145" height="72" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="1077.5" y="453" class="node-title" text-anchor="middle">Context</text><text x="1077.5" y="474" class="detail" text-anchor="middle">citation + provenance</text></g>
+<g data-graph-role="node"><rect x="55" y="675" width="175" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/><text x="142.5" y="703" class="node-title" text-anchor="middle">Tombstone</text><text x="142.5" y="724" class="detail" text-anchor="middle">source/version deleted</text></g>
+<g data-graph-role="node"><rect x="260" y="675" width="175" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/><text x="347.5" y="703" class="node-title" text-anchor="middle">删除事件</text><text x="347.5" y="724" class="detail" text-anchor="middle">outbox + idempotency</text></g>
+<g data-graph-role="node"><rect x="465" y="675" width="175" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/><text x="552.5" y="703" class="node-title" text-anchor="middle">全派生面清理</text><text x="552.5" y="724" class="detail" text-anchor="middle">chunk/vector/BM25/cache</text></g>
+<g data-graph-role="node"><rect x="700" y="675" width="175" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/><text x="787.5" y="703" class="node-title" text-anchor="middle">Shadow Rebuild</text><text x="787.5" y="724" class="detail" text-anchor="middle">snapshot + delta replay</text></g>
+<g data-graph-role="node"><rect x="940" y="675" width="185" height="72" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/><text x="1032.5" y="703" class="node-title" text-anchor="middle">Alias Swap</text><text x="1032.5" y="724" class="detail" text-anchor="middle">校验后原子切换</text></g>
+<text x="124" y="119" class="lane-title" text-anchor="middle">写入：增量摄取</text>
+<rect x="189" y="180" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="237" y="193" class="edge-label" text-anchor="middle">change</text>
+<rect x="389" y="180" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="437" y="193" class="edge-label" text-anchor="middle">new version</text>
+<rect x="589" y="180" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="637" y="193" class="edge-label" text-anchor="middle">chunks</text>
+<rect x="802" y="180" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="850" y="193" class="edge-label" text-anchor="middle">atomic batch</text>
+<rect x="717" y="226" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="765" y="239" class="edge-label" text-anchor="middle">inherit</text>
+<text x="124" y="379" class="lane-title" text-anchor="middle">读取：安全检索</text>
+<rect x="174" y="440" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="222" y="453" class="edge-label" text-anchor="middle">query</text>
+<rect x="364" y="440" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="412" y="453" class="edge-label" text-anchor="middle">filtered</text>
+<rect x="554" y="440" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="602" y="453" class="edge-label" text-anchor="middle">top-N</text>
+<rect x="744" y="440" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="792" y="453" class="edge-label" text-anchor="middle">ranked</text>
+<rect x="934" y="440" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="982" y="453" class="edge-label" text-anchor="middle">allowed</text>
+<rect x="330" y="515" width="540" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="344" y="536" class="note-title" text-anchor="start">安全不变量</text>
+<text x="344" y="555" class="note-text" text-anchor="start">final_context = top-ranked candidates AND currently-authorized resources</text>
+<text x="124" y="629" class="lane-title" text-anchor="middle">删除与重建</text>
+<rect x="197" y="690" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="245" y="703" class="edge-label" text-anchor="middle">delete</text>
+<rect x="402" y="690" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="450" y="703" class="edge-label" text-anchor="middle">fan-out</text>
+<rect x="622" y="690" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="670" y="703" class="edge-label" text-anchor="middle">rebuild</text>
+<rect x="859" y="690" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="907" y="703" class="edge-label" text-anchor="middle">verified</text>
+<rect x="245" y="770" width="710" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="259" y="791" class="note-title" text-anchor="start">重建期间</text>
+<text x="259" y="810" class="note-text" text-anchor="start">双写 delta 或记录变更日志；切换前比较文档数、版本水位、ACL 覆盖率与抽样检索</text>
+<line x1="45" y1="875" x2="73" y2="875" stroke="#2563eb" stroke-width="3"/>
+<text x="81" y="879" class="legend" text-anchor="start">摄取</text>
+<line x1="190" y1="875" x2="218" y2="875" stroke="#16a34a" stroke-width="3"/>
+<text x="226" y="879" class="legend" text-anchor="start">安全读取</text>
+<line x1="335" y1="875" x2="363" y2="875" stroke="#dc2626" stroke-width="3"/>
+<text x="371" y="879" class="legend" text-anchor="start">删除</text>
+<line x1="480" y1="875" x2="508" y2="875" stroke="#9333ea" stroke-width="3"/>
+<text x="516" y="879" class="legend" text-anchor="start">重建</text>
+</svg>

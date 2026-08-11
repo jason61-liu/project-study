@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<style>
+text{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif}
+.title{fill:#111827;font-size:25px;font-weight:700}.subtitle{fill:#6b7280;font-size:13px}
+.node-title{fill:#111827;font-size:14px;font-weight:650}.detail{fill:#6b7280;font-size:11px}
+.label{fill:#111827;font-size:13px}.lane-title{fill:#fff;font-size:12px;font-weight:700}
+.edge-label{fill:#374151;font-size:11px;font-weight:600}.note-title{fill:#9a3412;font-size:12px;font-weight:700}
+.note-text{fill:#7c2d12;font-size:11px}.legend{fill:#475569;font-size:11px}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+</defs>
+<rect width="1200" height="900" fill="#ffffff"/>
+<text x="600.0" y="38" class="title" text-anchor="middle">Agent 状态、记忆、业务事实与缓存的边界</text>
+<text x="600.0" y="63" class="subtitle" text-anchor="middle">不要按“都能保存东西”归为 Memory；应按语义、作用域、权威性和生命周期区分</text>
+<rect data-graph-role="container" x="35" y="90" width="1130" height="190" rx="10" fill="#2563eb" fill-opacity="0.035" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="102" width="150" height="24" rx="12" fill="#2563eb"/>
+<rect data-graph-role="container" x="35" y="310" width="1130" height="225" rx="10" fill="#16a34a" fill-opacity="0.035" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="322" width="150" height="24" rx="12" fill="#16a34a"/>
+<rect data-graph-role="container" x="35" y="565" width="1130" height="220" rx="10" fill="#9333ea" fill-opacity="0.035" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="577" width="150" height="24" rx="12" fill="#9333ea"/>
+<path data-graph-role="edge" d="M 310,427 L 390,427" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 600,427 L 680,427" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 890,427 L 950,427" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" d="M 360,682 L 485,682" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 715,682 L 840,682" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<g data-graph-role="node"><rect x="60" y="165" width="220" height="75" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="170.0" y="193" class="node-title" text-anchor="middle">Conversation History</text><text x="170.0" y="214" class="detail" text-anchor="middle">消息序列；可裁剪</text></g>
+<g data-graph-role="node"><rect x="335" y="165" width="220" height="75" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="445.0" y="193" class="node-title" text-anchor="middle">Checkpoint</text><text x="445.0" y="214" class="detail" text-anchor="middle">thread state；可恢复</text></g>
+<g data-graph-role="node"><rect x="610" y="165" width="220" height="75" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="720.0" y="193" class="node-title" text-anchor="middle">Prompt Cache</text><text x="720.0" y="214" class="detail" text-anchor="middle">输入前缀复用</text></g>
+<g data-graph-role="node"><rect x="885" y="165" width="220" height="75" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="995.0" y="193" class="node-title" text-anchor="middle">KV Cache</text><text x="995.0" y="214" class="detail" text-anchor="middle">单次解码注意力状态</text></g>
+<g data-graph-role="node"><rect x="100" y="395" width="210" height="65" fill="#f0fdf4"/><ellipse cx="205.0" cy="395" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><line x1="100" y1="395" x2="100" y2="460" stroke="#86efac" stroke-width="1.5"/><line x1="310" y1="395" x2="310" y2="460" stroke="#86efac" stroke-width="1.5"/><ellipse cx="205.0" cy="460" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="205.0" y="421" class="node-title" text-anchor="middle">Semantic</text><text x="205.0" y="441" class="detail" text-anchor="middle">用户/世界事实</text></g>
+<g data-graph-role="node"><rect x="390" y="395" width="210" height="65" fill="#f0fdf4"/><ellipse cx="495.0" cy="395" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><line x1="390" y1="395" x2="390" y2="460" stroke="#86efac" stroke-width="1.5"/><line x1="600" y1="395" x2="600" y2="460" stroke="#86efac" stroke-width="1.5"/><ellipse cx="495.0" cy="460" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="495.0" y="421" class="node-title" text-anchor="middle">Episodic</text><text x="495.0" y="441" class="detail" text-anchor="middle">过去事件与轨迹</text></g>
+<g data-graph-role="node"><rect x="680" y="395" width="210" height="65" fill="#f0fdf4"/><ellipse cx="785.0" cy="395" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><line x1="680" y1="395" x2="680" y2="460" stroke="#86efac" stroke-width="1.5"/><line x1="890" y1="395" x2="890" y2="460" stroke="#86efac" stroke-width="1.5"/><ellipse cx="785.0" cy="460" rx="105.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="785.0" y="421" class="node-title" text-anchor="middle">Procedural</text><text x="785.0" y="441" class="detail" text-anchor="middle">规则/策略/示例</text></g>
+<g data-graph-role="node"><rect x="950" y="390" width="155" height="75" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/><text x="1027.5" y="418" class="node-title" text-anchor="middle">Memory Policy</text><text x="1027.5" y="439" class="detail" text-anchor="middle">extract · merge · expire</text></g>
+<g data-graph-role="node"><rect x="115" y="650" width="245" height="70" fill="#faf5ff"/><ellipse cx="237.5" cy="650" rx="122.5" ry="10" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><line x1="115" y1="650" x2="115" y2="720" stroke="#c4b5fd" stroke-width="1.5"/><line x1="360" y1="650" x2="360" y2="720" stroke="#c4b5fd" stroke-width="1.5"/><ellipse cx="237.5" cy="720" rx="122.5" ry="10" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="237.5" y="676" class="node-title" text-anchor="middle">Business Database</text><text x="237.5" y="696" class="detail" text-anchor="middle">订单/余额/权限/审计</text></g>
+<g data-graph-role="node"><rect x="485" y="645" width="230" height="75" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/><text x="600.0" y="673" class="node-title" text-anchor="middle">Tool/API Boundary</text><text x="600.0" y="694" class="detail" text-anchor="middle">transaction + authorization</text></g>
+<g data-graph-role="node"><rect x="840" y="645" width="230" height="75" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/><text x="955.0" y="673" class="node-title" text-anchor="middle">Grounded Observation</text><text x="955.0" y="694" class="detail" text-anchor="middle">version + provenance</text></g>
+<text x="124" y="119" class="lane-title" text-anchor="middle">当前推理与恢复</text>
+<text x="124" y="339" class="lane-title" text-anchor="middle">长期 Agent Memory</text>
+<rect x="302" y="406" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="350" y="419" class="edge-label" text-anchor="middle">retrieve</text>
+<rect x="592" y="406" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="640" y="419" class="edge-label" text-anchor="middle">retrieve</text>
+<rect x="872" y="406" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="920" y="419" class="edge-label" text-anchor="middle">govern</text>
+<text x="124" y="594" class="lane-title" text-anchor="middle">权威业务数据</text>
+<rect x="374" y="661" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="422" y="674" class="edge-label" text-anchor="middle">read/write</text>
+<rect x="729" y="661" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="777" y="674" class="edge-label" text-anchor="middle">facts</text>
+<rect x="185" y="775" width="830" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="199" y="796" class="note-title" text-anchor="start">核心约束</text>
+<text x="199" y="815" class="note-text" text-anchor="start">Memory 是辅助上下文，不是订单/余额/ACL 的 source of truth；Cache 可随时丢弃，Checkpoint 负责恢复而非知识抽取</text>
+<line x1="45" y1="875" x2="73" y2="875" stroke="#2563eb" stroke-width="3"/>
+<text x="81" y="879" class="legend" text-anchor="start">推理状态/缓存</text>
+<line x1="190" y1="875" x2="218" y2="875" stroke="#16a34a" stroke-width="3"/>
+<text x="226" y="879" class="legend" text-anchor="start">长期记忆</text>
+<line x1="335" y1="875" x2="363" y2="875" stroke="#9333ea" stroke-width="3"/>
+<text x="371" y="879" class="legend" text-anchor="start">权威业务事实</text>
+<line x1="480" y1="875" x2="508" y2="875" stroke="#ea580c" stroke-width="3"/>
+<text x="516" y="879" class="legend" text-anchor="start">治理</text>
+</svg>

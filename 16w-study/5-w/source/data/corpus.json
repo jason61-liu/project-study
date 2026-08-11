@@ -1,0 +1,50 @@
+[
+  {
+    "id": "arch-boundary",
+    "title": "Workflow 与 Agent 控制权边界",
+    "content": "Workflow 的路径由代码预定义，适合稳定且可枚举的任务。Agent 由模型根据环境反馈动态选择下一步，适合步骤未知的开放任务。生产系统通常保留权限、预算、Schema 和副作用确认在确定性 Runtime。",
+    "tags": ["workflow", "agent", "control"]
+  },
+  {
+    "id": "latency-cost",
+    "title": "延迟与成本约束",
+    "content": "多轮 Agent 的延迟和成本随步骤数增长且长尾明显。固定 Workflow 更容易给出 p95 上界。架构比较应使用每成功任务成本，而不是单次调用价格。",
+    "tags": ["latency", "cost", "metrics"]
+  },
+  {
+    "id": "safety-runtime",
+    "title": "高风险动作的运行时边界",
+    "content": "身份、Scope、ACL、参数 Schema、幂等键、dry-run 和用户确认必须由 Runtime 强制。模型可以提出动作，但不能自行提升权限或绕过确认。",
+    "tags": ["safety", "runtime", "authorization"]
+  },
+  {
+    "id": "react-feedback",
+    "title": "ReAct 的反馈闭环",
+    "content": "ReAct 交错执行状态推理、动作与 Observation。外部证据能修正假设，但长轨迹会增加 Token、错误累积和提前完成风险，因此需要最大步数、证据完成条件与结构化状态。",
+    "tags": ["react", "observation", "recovery"]
+  },
+  {
+    "id": "planning",
+    "title": "长任务规划策略",
+    "content": "Plan-and-Execute 提供全局一致性但容易计划漂移；逐步决策适应变化却可能局部贪心。Rolling-Horizon Hybrid 保留里程碑，只承诺未来少量步骤，并在证据变化时重规划。",
+    "tags": ["planning", "plan-execute", "hybrid"]
+  },
+  {
+    "id": "observability",
+    "title": "可观测性与恢复",
+    "content": "每个模型调用和工具调用应记录 Trace、步骤、状态、Token、延迟与错误类型。Checkpoint 必须保存结构化状态、证据引用、预算和已提交副作用，不能只保存聊天历史。",
+    "tags": ["trace", "checkpoint", "recovery"]
+  },
+  {
+    "id": "evaluation",
+    "title": "架构评估方法",
+    "content": "架构选择应同时比较成功率、可控性、p95 延迟、每成功任务成本、可观测性和恢复能力。先淘汰违反硬约束的方案，再在 Pareto 前沿中选择。",
+    "tags": ["evaluation", "pareto", "metrics"]
+  },
+  {
+    "id": "distractor",
+    "title": "无关的前端样式建议",
+    "content": "按钮圆角和页面配色属于产品视觉设计，不能证明 Agent 架构在权限、延迟或恢复方面是否合适。",
+    "tags": ["frontend", "design"]
+  }
+]

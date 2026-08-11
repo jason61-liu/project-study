@@ -200,27 +200,27 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [MCP Architecture](https://modelcontextprotocol.io/docs/learn/architecture)，绘制连接和能力协商时序图。
-- [ ] 掌握 Tools、Resources、Prompts 的控制方和适用场景。
-- [ ] 理解 JSON-RPC、STDIO、Streamable HTTP、通知、取消和错误响应。
-- [ ] 整理工具描述、参数枚举、默认值、幂等键、超时、重试，以及成功、业务失败、系统失败和部分成功的返回结构。
-- [ ] 掌握 OAuth 2.0/OIDC、用户身份/Agent 身份/服务身份、Delegated Token、Scope、Token 过期与撤销，画出用户授权后 Agent 调用工具的时序图。
-- [ ] 阅读 [A2A Protocol](https://google-a2a.github.io/A2A/specification/) 概览，区分 MCP 的“Agent—工具/数据”连接与 A2A 的“独立 Agent—Agent”协作。
+- [x] 阅读 [MCP Architecture](https://modelcontextprotocol.io/docs/learn/architecture)，绘制连接和能力协商时序图。
+- [x] 掌握 Tools、Resources、Prompts 的控制方和适用场景。
+- [x] 理解 JSON-RPC、STDIO、Streamable HTTP、通知、取消和错误响应。
+- [x] 整理工具描述、参数枚举、默认值、幂等键、超时、重试，以及成功、业务失败、系统失败和部分成功的返回结构。
+- [x] 掌握 OAuth 2.0/OIDC、用户身份/Agent 身份/服务身份、Delegated Token、Scope、Token 过期与撤销，画出用户授权后 Agent 调用工具的时序图。
+- [x] 阅读 [A2A Protocol](https://google-a2a.github.io/A2A/specification/) 概览，区分 MCP 的“Agent—工具/数据”连接与 A2A 的“独立 Agent—Agent”协作。
 
 ### 编码实验
 
-- [ ] 实现搜索、读取、计算、保存草稿和状态查询 5 个最小工具。
-- [ ] 为全部工具加入 Schema 校验、超时、结构化错误和日志。
-- [ ] 对具有副作用的工具加入幂等键和 dry-run/确认机制，并要求有效用户令牌与最小 Scope；测试缺失、过期、撤销和越权 Scope。
-- [ ] 实现一个只读 MCP Server，暴露至少 2 个 Tools 和 1 个 Resource，并透传 `tenant_id/user_id` 授权上下文而不把 Token 暴露给模型。
-- [ ] 使用 MCP Inspector 或客户端完成发现、调用、错误和取消测试。
+- [x] 实现搜索、读取、计算、保存草稿和状态查询 5 个最小工具。
+- [x] 为全部工具加入 Schema 校验、超时、结构化错误和日志。
+- [x] 对具有副作用的工具加入幂等键和 dry-run/确认机制，并要求有效用户令牌与最小 Scope；测试缺失、过期、撤销和越权 Scope。
+- [x] 实现一个只读 MCP Server，暴露至少 2 个 Tools 和 1 个 Resource，并透传 `tenant_id/user_id` 授权上下文而不把 Token 暴露给模型。
+- [x] 使用 MCP Inspector 或客户端完成发现、调用、错误和取消测试。
 
 ### 面试与验收
 
-- [ ] 写出“函数调用与 MCP 的关系和差异”面试答案。
-- [ ] 完成至少 6 道工具/MCP 设计题。
-- [ ] 进行 10 分钟协议与委托授权时序讲解，说明身份、Token、模型和工具之间的安全边界。
-- [ ] 5 个工具和 MCP Server 均具备正常与异常测试。
+- [x] 写出“函数调用与 MCP 的关系和差异”面试答案。
+- [x] 完成至少 6 道工具/MCP 设计题。
+- [x] 进行 10 分钟协议与委托授权时序讲解，说明身份、Token、模型和工具之间的安全边界。
+- [x] 5 个工具和 MCP Server 均具备正常与异常测试。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
@@ -236,27 +236,27 @@
 
 ### 知识与阅读
 
-- [ ] 掌握文档增量摄取、版本/去重、Chunking、Embedding、混合检索、Reranking、时效性、ACL 继承、删除传播和索引重建；结果必须同时满足相关性与访问权限。
-- [ ] 掌握 Recall@K、MRR、引用正确率、答案忠实度和无答案检测。
-- [ ] 阅读 [Anthropic Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)，掌握选择、去重、摘要、压缩、隔离、溯源、优先级和过期策略。
-- [ ] 区分 Conversation History、Checkpoint、Semantic/Episodic/Procedural Memory、业务数据库、Prompt Cache 和 KV Cache。
-- [ ] 阅读 [LangGraph Memory](https://docs.langchain.com/oss/python/concepts/memory) 与 [Mem0 文档](https://docs.mem0.ai/introduction)，比较线程状态、命名空间记忆、热路径/后台写入、事实抽取及租户隔离。
+- [x] 掌握文档增量摄取、版本/去重、Chunking、Embedding、混合检索、Reranking、时效性、ACL 继承、删除传播和索引重建；结果必须同时满足相关性与访问权限。
+- [x] 掌握 Recall@K、MRR、引用正确率、答案忠实度和无答案检测。
+- [x] 阅读 [Anthropic Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)，掌握选择、去重、摘要、压缩、隔离、溯源、优先级和过期策略。
+- [x] 区分 Conversation History、Checkpoint、Semantic/Episodic/Procedural Memory、业务数据库、Prompt Cache 和 KV Cache。
+- [x] 阅读 [LangGraph Memory](https://docs.langchain.com/oss/python/concepts/memory) 与 [Mem0 文档](https://docs.mem0.ai/introduction)，比较线程状态、命名空间记忆、热路径/后台写入、事实抽取及租户隔离。
 
 ### 编码实验
 
-- [ ] 构建一个带来源引用的最小文档检索链。
-- [ ] 准备至少 20 条检索问题和对应证据。
-- [ ] 实现全历史、摘要历史、检索式记忆三种上下文策略。
-- [ ] 对三种策略记录正确率、输入 Token、延迟和单位任务成本。
-- [ ] 加入无相关证据、冲突证据、超长/恶意文档，以及双租户越权、过期文档和删除后残留测试。
-- [ ] 用同一组多轮任务比较“自建向量记忆基线”和 Mem0，记录写入正确率、Recall@K、错误记忆率、租户隔离、更新/删除一致性、延迟与 Token；没有云 Key 时使用 Mem0 开源版。
+- [x] 构建一个带来源引用的最小文档检索链。
+- [x] 准备至少 20 条检索问题和对应证据。
+- [x] 实现全历史、摘要历史、检索式记忆三种上下文策略。
+- [x] 对三种策略记录正确率、输入 Token、延迟和单位任务成本。
+- [x] 加入无相关证据、冲突证据、超长/恶意文档，以及双租户越权、过期文档和删除后残留测试。
+- [x] 用同一组多轮任务比较“自建向量记忆基线”和 Mem0，记录写入正确率、Recall@K、错误记忆率、租户隔离、更新/删除一致性、延迟与 Token；没有云 Key 时使用 Mem0 开源版。
 
 ### 面试与阶段关卡
 
-- [ ] 完成至少 8 道 RAG/上下文/记忆面试题。
-- [ ] 输出一份上下文/记忆决策表，明确何时不应使用长期记忆、何时必须回到权威业务数据源。
-- [ ] 无笔记讲清前四周的完整数据流：用户输入到工具、上下文和模型输出。
-- [ ] 阶段关卡通过：代码可运行、核心测试通过、有数据和失败案例。
+- [x] 完成至少 8 道 RAG/上下文/记忆面试题。
+- [x] 输出一份上下文/记忆决策表，明确何时不应使用长期记忆、何时必须回到权威业务数据源。
+- [x] 无笔记讲清前四周的完整数据流：用户输入到工具、上下文和模型输出。
+- [x] 阶段关卡通过：代码可运行、核心测试通过、有数据和失败案例。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 

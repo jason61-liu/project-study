@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.metric{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="840" fill="#0a0a0a"/>
+<ellipse cx="700" cy="390" rx="620" ry="330" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">ReAct：证据闭环与轨迹风险</text>
+<text x="700" y="73" text-anchor="middle" class="sub">Thought/State → Action → Observation 的价值来自外部校正，风险来自上下文和错误的累积</text>
+<rect x="35" y="105" width="850" height="575" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="53" y="133" class="sec" fill="#d4a574">ONLINE DECISION LOOP</text>
+<rect x="90" y="215" width="210" height="90" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="94" y="219" width="202" height="82" rx="6" fill="none" stroke="#d4a574" stroke-width=".6" opacity=".55"/>
+<text x="195.0" y="245" text-anchor="middle" class="nm" fill="#d4a574">State / Thought</text>
+<text x="195.0" y="268" text-anchor="middle" class="sm">目标 · 假设 · 下一步</text>
+<rect x="355" y="215" width="210" height="90" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="460.0" y="245" text-anchor="middle" class="nm" fill="#fdba74">Action</text>
+<text x="460.0" y="268" text-anchor="middle" class="sm">tool + validated args</text>
+<rect x="620" y="215" width="210" height="90" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="725.0" y="245" text-anchor="middle" class="nm" fill="#6ee7b7">Observation</text>
+<text x="725.0" y="268" text-anchor="middle" class="sm">外部事实或结构化错误</text>
+<path d="M300 260 H355" fill="none" stroke="#fdba74" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="328" y="248" text-anchor="middle" class="al">decide</text>
+<path d="M565 260 H620" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<text x="592" y="248" text-anchor="middle" class="al">execute</text>
+<path d="M725 305 V375 H195 V305" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="460" y="365" text-anchor="middle" class="al">update belief / replan</text>
+<rect x="90" y="455" width="210" height="86" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="195.0" y="485" text-anchor="middle" class="nm" fill="#38bdf8">Progress State</text>
+<text x="195.0" y="508" text-anchor="middle" class="sm">done · pending · blockers</text>
+<rect x="355" y="455" width="210" height="86" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="460.0" y="485" text-anchor="middle" class="nm" fill="#f87171">Runtime Guard</text>
+<text x="460.0" y="508" text-anchor="middle" class="sm">budget · policy · schema</text>
+<rect x="620" y="455" width="210" height="86" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="725.0" y="485" text-anchor="middle" class="nm" fill="#a78bfa">Completion Check</text>
+<text x="725.0" y="508" text-anchor="middle" class="sm">explicit evidence predicate</text>
+<path d="M195 375 V455" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<path d="M460 375 V455" fill="none" stroke="#f87171" stroke-width="2.0" marker-end="url(#arr-rose)"/>
+<path d="M725 375 V455" fill="none" stroke="#a78bfa" stroke-width="2.0" marker-end="url(#arr-violet)"/>
+<rect x="930" y="105" width="435" height="575" rx="10" fill="#0e0e0e" stroke="#f87171" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="948" y="133" class="sec" fill="#f87171">ERROR COMPOUNDING</text>
+<circle cx="1035" cy="160" r="28" fill="#1a1111" stroke="#f87171" stroke-width="1.4"/>
+<text x="1035" y="164" text-anchor="middle" class="nm">e₁</text>
+<text x="1145" y="165" text-anchor="start" class="sm">错误观察</text>
+<circle cx="1113" cy="255" r="35" fill="#1a1111" stroke="#f87171" stroke-width="1.4"/>
+<text x="1113" y="259" text-anchor="middle" class="nm">e₂</text>
+<text x="1165" y="260" text-anchor="start" class="sm">错误状态摘要</text>
+<circle cx="1191" cy="350" r="42" fill="#1a1111" stroke="#f87171" stroke-width="1.4"/>
+<text x="1191" y="354" text-anchor="middle" class="nm">e₃</text>
+<text x="1135" y="355" text-anchor="end" class="sm">错误工具选择</text>
+<circle cx="1269" cy="445" r="49" fill="#1a1111" stroke="#f87171" stroke-width="1.4"/>
+<text x="1269" y="449" text-anchor="middle" class="nm">e₄</text>
+<text x="1200" y="450" text-anchor="end" class="sm">不可逆副作用</text>
+<line x1="952" y1="160" x2="952" y2="445" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="944" y="305" text-anchor="end" class="al">propagate</text>
+<rect x="975" y="548" width="345" height="90" rx="8" fill="#111111" stroke="#d4a574"/>
+<text x="1148" y="575" text-anchor="middle" class="nm">控制轨迹，而不是隐藏轨迹</text>
+<text x="1148" y="598" text-anchor="middle" class="sm">typed state · evidence refs · compaction</text>
+<text x="1148" y="618" text-anchor="middle" class="sm">max steps · approval · idempotency</text>
+<line x1="70" y1="808" x2="104" y2="808" stroke="#fdba74" stroke-width="2" marker-end="url(#arr-orange)"/>
+<text x="115" y="812" text-anchor="start" class="sm">Action</text>
+<line x1="285" y1="808" x2="319" y2="808" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="330" y="812" text-anchor="start" class="sm">Observation</text>
+<line x1="500" y1="808" x2="534" y2="808" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="545" y="812" text-anchor="start" class="sm">状态更新</text>
+<line x1="715" y1="808" x2="749" y2="808" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="760" y="812" text-anchor="start" class="sm">错误传播</text>
+</svg>

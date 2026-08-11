@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<style>
+text{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif}
+.title{fill:#111827;font-size:25px;font-weight:700}.subtitle{fill:#6b7280;font-size:13px}
+.node-title{fill:#111827;font-size:14px;font-weight:650}.detail{fill:#6b7280;font-size:11px}
+.label{fill:#111827;font-size:13px}.lane-title{fill:#fff;font-size:12px;font-weight:700}
+.edge-label{fill:#374151;font-size:11px;font-weight:600}.note-title{fill:#9a3412;font-size:12px;font-weight:700}
+.note-text{fill:#7c2d12;font-size:11px}.legend{fill:#475569;font-size:11px}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+</defs>
+<rect width="1200" height="900" fill="#ffffff"/>
+<text x="600.0" y="38" class="title" text-anchor="middle">LangGraph Memory 与 Mem0：编排持久化原语 vs 事实记忆层</text>
+<text x="600.0" y="63" class="subtitle" text-anchor="middle">二者可组合：LangGraph 管线程/图状态，Mem0 管跨会话事实抽取与检索</text>
+<rect data-graph-role="container" x="35" y="90" width="545" height="660" rx="10" fill="#1c3c3c" fill-opacity="0.035" stroke="#1c3c3c" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="102" width="150" height="24" rx="12" fill="#1c3c3c"/>
+<rect data-graph-role="container" x="620" y="90" width="545" height="660" rx="10" fill="#6366f1" fill-opacity="0.035" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="634" y="102" width="150" height="24" rx="12" fill="#6366f1"/>
+<path data-graph-role="edge" d="M 290,202 L 335,202" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 290,337 L 335,337" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 290,487 L 335,487" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 850,202 L 920,202" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 850,337 L 920,337" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 850,487 L 920,487" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 580,675 L 620,675" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<g data-graph-role="node"><rect x="80" y="165" width="210" height="75" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/><text x="185.0" y="193" class="node-title" text-anchor="middle">thread_id</text><text x="185.0" y="214" class="detail" text-anchor="middle">一次会话/执行线程</text></g>
+<g data-graph-role="node"><rect x="335" y="170" width="190" height="68" fill="#eff6ff"/><ellipse cx="430.0" cy="170" rx="95.0" ry="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><line x1="335" y1="170" x2="335" y2="238" stroke="#93c5fd" stroke-width="1.5"/><line x1="525" y1="170" x2="525" y2="238" stroke="#93c5fd" stroke-width="1.5"/><ellipse cx="430.0" cy="238" rx="95.0" ry="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="430.0" y="196" class="node-title" text-anchor="middle">Checkpointer</text><text x="430.0" y="216" class="detail" text-anchor="middle">thread-scoped state</text></g>
+<g data-graph-role="node"><rect x="80" y="300" width="210" height="75" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.5"/><text x="185.0" y="328" class="node-title" text-anchor="middle">namespace + key</text><text x="185.0" y="349" class="detail" text-anchor="middle">user/org/app scope</text></g>
+<g data-graph-role="node"><rect x="335" y="305" width="190" height="68" fill="#f0fdf4"/><ellipse cx="430.0" cy="305" rx="95.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><line x1="335" y1="305" x2="335" y2="373" stroke="#86efac" stroke-width="1.5"/><line x1="525" y1="305" x2="525" y2="373" stroke="#86efac" stroke-width="1.5"/><ellipse cx="430.0" cy="373" rx="95.0" ry="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="430.0" y="331" class="node-title" text-anchor="middle">Store</text><text x="430.0" y="351" class="detail" text-anchor="middle">JSON + semantic search</text></g>
+<g data-graph-role="node"><rect x="80" y="450" width="210" height="75" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/><text x="185.0" y="478" class="node-title" text-anchor="middle">Hot Path</text><text x="185.0" y="499" class="detail" text-anchor="middle">立即可见；增加延迟</text></g>
+<g data-graph-role="node"><rect x="335" y="450" width="190" height="75" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="430.0" y="478" class="node-title" text-anchor="middle">Background</text><text x="430.0" y="499" class="detail" text-anchor="middle">解耦；存在新鲜度延迟</text></g>
+<g data-graph-role="node"><rect x="665" y="165" width="185" height="75" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="757.5" y="193" class="node-title" text-anchor="middle">add(messages)</text><text x="757.5" y="214" class="detail" text-anchor="middle">user/agent/run scope</text></g>
+<g data-graph-role="node"><rect x="920" y="165" width="190" height="75" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="1015.0" y="193" class="node-title" text-anchor="middle">Fact Extraction</text><text x="1015.0" y="214" class="detail" text-anchor="middle">LLM + context lookup</text></g>
+<g data-graph-role="node"><rect x="665" y="300" width="185" height="75" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="757.5" y="328" class="node-title" text-anchor="middle">Dedup / Entity</text><text x="757.5" y="349" class="detail" text-anchor="middle">clean durable facts</text></g>
+<g data-graph-role="node"><rect x="920" y="302" width="190" height="72" fill="#eff6ff"/><ellipse cx="1015.0" cy="302" rx="95.0" ry="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><line x1="920" y1="302" x2="920" y2="374" stroke="#93c5fd" stroke-width="1.5"/><line x1="1110" y1="302" x2="1110" y2="374" stroke="#93c5fd" stroke-width="1.5"/><ellipse cx="1015.0" cy="374" rx="95.0" ry="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="1015.0" y="328" class="node-title" text-anchor="middle">Stores</text><text x="1015.0" y="348" class="detail" text-anchor="middle">SQL + vector + entity</text></g>
+<g data-graph-role="node"><rect x="665" y="450" width="185" height="75" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="757.5" y="478" class="node-title" text-anchor="middle">search(query)</text><text x="757.5" y="499" class="detail" text-anchor="middle">filters required</text></g>
+<g data-graph-role="node"><rect x="920" y="450" width="190" height="75" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="1015.0" y="478" class="node-title" text-anchor="middle">Hybrid Rank</text><text x="1015.0" y="499" class="detail" text-anchor="middle">semantic + BM25 + entity</text></g>
+<text x="124" y="119" class="lane-title" text-anchor="middle">LangGraph</text>
+<rect x="264" y="181" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="312" y="194" class="edge-label" text-anchor="middle">checkpoint</text>
+<rect x="264" y="316" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="312" y="329" class="edge-label" text-anchor="middle">put/search</text>
+<rect x="264" y="466" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="312" y="479" class="edge-label" text-anchor="middle">trade-off</text>
+<rect x="75" y="575" width="465" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="89" y="596" class="note-title" text-anchor="start">开发者负责</text>
+<text x="89" y="615" class="note-text" text-anchor="start">定义 state/schema、何时写、提取什么、namespace ACL、冲突合并与遗忘策略</text>
+<text x="709" y="119" class="lane-title" text-anchor="middle">Mem0</text>
+<rect x="837" y="181" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="885" y="194" class="edge-label" text-anchor="middle">extract</text>
+<rect x="837" y="316" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="885" y="329" class="edge-label" text-anchor="middle">persist</text>
+<rect x="837" y="466" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="885" y="479" class="edge-label" text-anchor="middle">retrieve</text>
+<rect x="655" y="575" width="465" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="669" y="596" class="note-title" text-anchor="start">平台/SDK负责较多</text>
+<text x="669" y="615" class="note-text" text-anchor="start">事实抽取、去重、Embedding 和检索；应用仍负责授权、作用域过滤、更新/删除与质量评估</text>
+<rect x="552" y="654" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="600" y="667" class="edge-label" text-anchor="middle">可组合</text>
+<rect x="260" y="780" width="680" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="274" y="801" class="note-title" text-anchor="start">组合方式</text>
+<text x="274" y="820" class="note-text" text-anchor="start">Checkpoint 保存当前图执行状态；LangGraph Store/Mem0 提供跨线程记忆。任何 namespace/filter 都必须从已验证 tenant/user 构造</text>
+<line x1="45" y1="875" x2="73" y2="875" stroke="#2563eb" stroke-width="3"/>
+<text x="81" y="879" class="legend" text-anchor="start">持久化</text>
+<line x1="190" y1="875" x2="218" y2="875" stroke="#16a34a" stroke-width="3"/>
+<text x="226" y="879" class="legend" text-anchor="start">检索</text>
+<line x1="335" y1="875" x2="363" y2="875" stroke="#9333ea" stroke-width="3"/>
+<text x="371" y="879" class="legend" text-anchor="start">提取/异步</text>
+<line x1="480" y1="875" x2="508" y2="875" stroke="#ea580c" stroke-width="3"/>
+<text x="516" y="879" class="legend" text-anchor="start">组合边界</text>
+</svg>

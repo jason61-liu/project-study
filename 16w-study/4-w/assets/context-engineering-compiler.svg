@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850">
+<style>
+text{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif}
+.title{fill:#111827;font-size:25px;font-weight:700}.subtitle{fill:#6b7280;font-size:13px}
+.node-title{fill:#111827;font-size:14px;font-weight:650}.detail{fill:#6b7280;font-size:11px}
+.label{fill:#111827;font-size:13px}.lane-title{fill:#fff;font-size:12px;font-weight:700}
+.edge-label{fill:#374151;font-size:11px;font-weight:600}.note-title{fill:#9a3412;font-size:12px;font-weight:700}
+.note-text{fill:#7c2d12;font-size:11px}.legend{fill:#475569;font-size:11px}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+</defs>
+<rect width="1200" height="850" fill="#ffffff"/>
+<text x="600.0" y="38" class="title" text-anchor="middle">Context Engineering：把有限注意力预算当作编译目标</text>
+<text x="600.0" y="63" class="subtitle" text-anchor="middle">从候选信息宇宙中选择最小、高信号、可溯源且未过期的 Token 集</text>
+<rect data-graph-role="container" x="35" y="90" width="1130" height="185" rx="10" fill="#6b7280" fill-opacity="0.035" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="102" width="150" height="24" rx="12" fill="#6b7280"/>
+<rect data-graph-role="container" x="35" y="300" width="1130" height="260" rx="10" fill="#2563eb" fill-opacity="0.035" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="312" width="150" height="24" rx="12" fill="#2563eb"/>
+<rect data-graph-role="container" x="35" y="590" width="1130" height="175" rx="10" fill="#16a34a" fill-opacity="0.035" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="49" y="602" width="150" height="24" rx="12" fill="#16a34a"/>
+<path data-graph-role="edge" d="M 205,423 L 245,423" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 395,423 L 435,423" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 585,423 L 625,423" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 775,423 L 815,423" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 965,423 L 1005,423" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 145,230 L 145,375" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 360,230 L 360,375" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 575,230 L 575,375" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 790,230 L 790,375" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 1005,230 L 1005,375" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 360,685 L 490,685" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 710,685 L 840,685" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 950,650 L 950,615 L 250,615 L 250,640" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)" stroke-dasharray="7 5"/>
+<g data-graph-role="node"><rect x="55" y="160" width="180" height="70" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/><text x="145.0" y="188" class="node-title" text-anchor="middle">System/Policy</text><text x="145.0" y="209" class="detail" text-anchor="middle">稳定高优先级</text></g>
+<g data-graph-role="node"><rect x="270" y="160" width="180" height="70" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/><text x="360.0" y="188" class="node-title" text-anchor="middle">Tool Schemas</text><text x="360.0" y="209" class="detail" text-anchor="middle">最小可区分集合</text></g>
+<g data-graph-role="node"><rect x="485" y="160" width="180" height="70" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/><text x="575.0" y="188" class="node-title" text-anchor="middle">History</text><text x="575.0" y="209" class="detail" text-anchor="middle">近期消息与决策</text></g>
+<g data-graph-role="node"><rect x="700" y="160" width="180" height="70" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/><text x="790.0" y="188" class="node-title" text-anchor="middle">Retrieved Data</text><text x="790.0" y="209" class="detail" text-anchor="middle">JIT / progressive disclosure</text></g>
+<g data-graph-role="node"><rect x="915" y="160" width="180" height="70" rx="8" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/><text x="1005.0" y="188" class="node-title" text-anchor="middle">Memory/Notes</text><text x="1005.0" y="209" class="detail" text-anchor="middle">跨窗口持久状态</text></g>
+<g data-graph-role="node"><rect x="55" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="130.0" y="413" class="node-title" text-anchor="middle">1 选择</text><text x="130.0" y="434" class="detail" text-anchor="middle">task relevance + ACL</text></g>
+<g data-graph-role="node"><rect x="245" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="320.0" y="413" class="node-title" text-anchor="middle">2 去重</text><text x="320.0" y="434" class="detail" text-anchor="middle">content/entity/citation</text></g>
+<g data-graph-role="node"><rect x="435" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="510.0" y="413" class="node-title" text-anchor="middle">3 优先级/过期</text><text x="510.0" y="434" class="detail" text-anchor="middle">authority * freshness</text></g>
+<g data-graph-role="node"><rect x="625" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="700.0" y="413" class="node-title" text-anchor="middle">4 摘要/压缩</text><text x="700.0" y="434" class="detail" text-anchor="middle">保留决策与未决项</text></g>
+<g data-graph-role="node"><rect x="815" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="890.0" y="413" class="node-title" text-anchor="middle">5 隔离</text><text x="890.0" y="434" class="detail" text-anchor="middle">sub-agent / scratchpad</text></g>
+<g data-graph-role="node"><rect x="1005" y="385" width="150" height="76" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/><text x="1080.0" y="413" class="node-title" text-anchor="middle">6 溯源</text><text x="1080.0" y="434" class="detail" text-anchor="middle">source + version + span</text></g>
+<g data-graph-role="node"><rect x="140" y="650" width="220" height="70" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/><text x="250.0" y="678" class="node-title" text-anchor="middle">Budgeted Context</text><text x="250.0" y="699" class="detail" text-anchor="middle">token cap + reserved output</text></g>
+<g data-graph-role="node"><rect x="490" y="650" width="220" height="70" rx="8" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.5"/><text x="600.0" y="678" class="node-title" text-anchor="middle">LLM / Agent</text><text x="600.0" y="699" class="detail" text-anchor="middle">reason + tool use</text></g>
+<g data-graph-role="node"><rect x="840" y="650" width="220" height="70" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/><text x="950.0" y="678" class="node-title" text-anchor="middle">Trace &amp; Notes</text><text x="950.0" y="699" class="detail" text-anchor="middle">measure · persist · expire</text></g>
+<text x="124" y="119" class="lane-title" text-anchor="middle">候选上下文宇宙</text>
+<text x="124" y="329" class="lane-title" text-anchor="middle">Context Compiler</text>
+<rect x="97" y="281" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="145" y="294" class="edge-label" text-anchor="middle">candidates</text>
+<rect x="312" y="281" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="360" y="294" class="edge-label" text-anchor="middle">candidates</text>
+<rect x="527" y="281" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="575" y="294" class="edge-label" text-anchor="middle">candidates</text>
+<rect x="742" y="281" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="790" y="294" class="edge-label" text-anchor="middle">candidates</text>
+<rect x="957" y="281" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="1005" y="294" class="edge-label" text-anchor="middle">candidates</text>
+<rect x="255" y="485" width="690" height="52" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="269" y="506" class="note-title" text-anchor="start">排序原则</text>
+<text x="269" y="525" class="note-text" text-anchor="start">policy &gt; current task evidence &gt; recent decisions &gt; optional examples；过期或低置信内容降级/剔除</text>
+<text x="124" y="619" class="lane-title" text-anchor="middle">Inference + Feedback</text>
+<rect x="377" y="664" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="425" y="677" class="edge-label" text-anchor="middle">smallest useful set</text>
+<rect x="727" y="664" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="775" y="677" class="edge-label" text-anchor="middle">outcome</text>
+<rect x="552" y="594" width="96" height="18" rx="4" fill="#ffffff" opacity="0.95"/>
+<text x="600" y="607" class="edge-label" text-anchor="middle">next-turn feedback</text>
+<line x1="45" y1="825" x2="73" y2="825" stroke="#6b7280" stroke-width="3"/>
+<text x="81" y="829" class="legend" text-anchor="start">候选</text>
+<line x1="190" y1="825" x2="218" y2="825" stroke="#2563eb" stroke-width="3"/>
+<text x="226" y="829" class="legend" text-anchor="start">编译/裁剪</text>
+<line x1="335" y1="825" x2="363" y2="825" stroke="#16a34a" stroke-width="3"/>
+<text x="371" y="829" class="legend" text-anchor="start">推理</text>
+<line x1="480" y1="825" x2="508" y2="825" stroke="#9333ea" stroke-width="3"/>
+<text x="516" y="829" class="legend" text-anchor="start">反馈</text>
+</svg>

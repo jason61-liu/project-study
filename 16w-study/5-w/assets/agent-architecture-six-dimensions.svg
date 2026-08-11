@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.metric{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="840" fill="#0a0a0a"/>
+<ellipse cx="700" cy="390" rx="620" ry="330" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">Agent 架构选择：六维约束与 Pareto 决策</text>
+<text x="700" y="73" text-anchor="middle" class="sub">不要用“最 Agentic”做目标；先设硬约束，再用可复现实验比较候选方案</text>
+<rect x="35" y="105" width="350" height="580" rx="10" fill="#0e0e0e" stroke="#94a3b8" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="53" y="133" class="sec" fill="#94a3b8">CANDIDATE ARCHITECTURES</text>
+<rect x="75" y="155" width="270" height="76" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="210.0" y="185" text-anchor="middle" class="nm" fill="#94a3b8">A · Single Call</text>
+<text x="210.0" y="208" text-anchor="middle" class="sm">retrieval + schema</text>
+<rect x="75" y="273" width="270" height="76" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="210.0" y="303" text-anchor="middle" class="nm" fill="#38bdf8">B · Fixed Workflow</text>
+<text x="210.0" y="326" text-anchor="middle" class="sm">chain / route / parallel</text>
+<rect x="75" y="391" width="270" height="76" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="79" y="395" width="262" height="68" rx="6" fill="none" stroke="#d4a574" stroke-width=".6" opacity=".55"/>
+<text x="210.0" y="421" text-anchor="middle" class="nm" fill="#d4a574">C · Hybrid</text>
+<text x="210.0" y="444" text-anchor="middle" class="sm">plan + bounded loop</text>
+<rect x="75" y="509" width="270" height="76" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="210.0" y="539" text-anchor="middle" class="nm" fill="#f87171">D · Autonomous Agent</text>
+<text x="210.0" y="562" text-anchor="middle" class="sm">dynamic tools + replanning</text>
+<rect x="435" y="105" width="520" height="580" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="453" y="133" class="sec" fill="#d4a574">MEASUREMENT CONTROL PANEL</text>
+<rect x="475" y="150" width="440" height="58" rx="7" fill="#111111" stroke="#6ee7b7" stroke-width="1"/>
+<text x="495" y="174" text-anchor="start" class="nm">成功率</text>
+<text x="590" y="174" text-anchor="start" class="sm">任务级完成 + 质量阈值</text>
+<text x="890" y="185" text-anchor="middle" class="nm">↑</text>
+<rect x="475" y="232" width="440" height="58" rx="7" fill="#111111" stroke="#a78bfa" stroke-width="1"/>
+<text x="495" y="256" text-anchor="start" class="nm">可控性</text>
+<text x="590" y="256" text-anchor="start" class="sm">越权/偏航/人工干预率</text>
+<text x="890" y="267" text-anchor="middle" class="nm">↑</text>
+<rect x="475" y="314" width="440" height="58" rx="7" fill="#111111" stroke="#fdba74" stroke-width="1"/>
+<text x="495" y="338" text-anchor="start" class="nm">延迟</text>
+<text x="590" y="338" text-anchor="start" class="sm">p50 / p95 / deadline miss</text>
+<text x="890" y="349" text-anchor="middle" class="nm">↓</text>
+<rect x="475" y="396" width="440" height="58" rx="7" fill="#111111" stroke="#f87171" stroke-width="1"/>
+<text x="495" y="420" text-anchor="start" class="nm">成本</text>
+<text x="590" y="420" text-anchor="start" class="sm">token + tool + retry / success</text>
+<text x="890" y="431" text-anchor="middle" class="nm">↓</text>
+<rect x="475" y="478" width="440" height="58" rx="7" fill="#111111" stroke="#38bdf8" stroke-width="1"/>
+<text x="495" y="502" text-anchor="start" class="nm">可观测性</text>
+<text x="590" y="502" text-anchor="start" class="sm">可归因 trace 覆盖率</text>
+<text x="890" y="513" text-anchor="middle" class="nm">↑</text>
+<rect x="475" y="560" width="440" height="58" rx="7" fill="#111111" stroke="#d4a574" stroke-width="1"/>
+<text x="495" y="584" text-anchor="start" class="nm">恢复能力</text>
+<text x="590" y="584" text-anchor="start" class="sm">MTTR + resume/compensate 成功率</text>
+<text x="890" y="595" text-anchor="middle" class="nm">↑</text>
+<rect x="1005" y="105" width="360" height="580" rx="10" fill="#0e0e0e" stroke="#6ee7b7" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="1023" y="133" class="sec" fill="#6ee7b7">DECISION GATES</text>
+<rect x="1045" y="155" width="280" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1185.0" y="185" text-anchor="middle" class="nm" fill="#6ee7b7">1. HARD SLO</text>
+<text x="1185.0" y="208" text-anchor="middle" class="sm">权限、预算、p95、合规</text>
+<path d="M1185 225 V255" fill="none" stroke="#6ee7b7" stroke-width="1.4" marker-end="url(#arr-mint)"/>
+<rect x="1045" y="255" width="280" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1185.0" y="285" text-anchor="middle" class="nm" fill="#6ee7b7">2. EVAL SET</text>
+<text x="1185.0" y="308" text-anchor="middle" class="sm">正常 + 边界 + 对抗</text>
+<path d="M1185 325 V355" fill="none" stroke="#6ee7b7" stroke-width="1.4" marker-end="url(#arr-mint)"/>
+<rect x="1045" y="355" width="280" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1185.0" y="385" text-anchor="middle" class="nm" fill="#6ee7b7">3. PARETO</text>
+<text x="1185.0" y="408" text-anchor="middle" class="sm">剔除被全面支配方案</text>
+<path d="M1185 425 V455" fill="none" stroke="#6ee7b7" stroke-width="1.4" marker-end="url(#arr-mint)"/>
+<rect x="1045" y="455" width="280" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1185.0" y="485" text-anchor="middle" class="nm" fill="#6ee7b7">4. FAILURE TEST</text>
+<text x="1185.0" y="508" text-anchor="middle" class="sm">超时、半成功、恢复</text>
+<path d="M1185 525 V555" fill="none" stroke="#6ee7b7" stroke-width="1.4" marker-end="url(#arr-mint)"/>
+<rect x="1045" y="555" width="280" height="70" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<text x="1185.0" y="585" text-anchor="middle" class="nm" fill="#d4a574">5. ADR</text>
+<text x="1185.0" y="608" text-anchor="middle" class="sm">证据、权衡、回退条件</text>
+<path d="M385 395 H435" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="410" y="382" text-anchor="middle" class="al">eval</text>
+<path d="M955 395 H1005" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<text x="980" y="382" text-anchor="middle" class="al">gate</text>
+<rect x="270" y="718" width="860" height="52" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="742" text-anchor="middle" class="sm">最终选择 = 满足硬约束的 Pareto 前沿方案，而不是加权平均分最高的幻觉精度</text>
+<text x="700" y="760" text-anchor="middle" class="xs">指标必须绑定 trace、数据集版本、模型版本与成本价格快照</text>
+<line x1="70" y1="808" x2="104" y2="808" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr-gray)"/>
+<text x="115" y="812" text-anchor="start" class="sm">候选方案</text>
+<line x1="285" y1="808" x2="319" y2="808" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="330" y="812" text-anchor="start" class="sm">测量</text>
+<line x1="500" y1="808" x2="534" y2="808" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="545" y="812" text-anchor="start" class="sm">约束门禁</text>
+<line x1="715" y1="808" x2="749" y2="808" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="760" y="812" text-anchor="start" class="sm">风险/成本</text>
+</svg>

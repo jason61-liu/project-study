@@ -1,0 +1,5 @@
+mem0ai>=1.0,<2
+qdrant-client>=1.9,<2
+scikit-learn>=1.6,<2
+tiktoken>=0.9,<1
+pytest>=9,<10

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "m01",
+    "tenant_id": "tenant-a",
+    "user_id": "user-1",
+    "writes": ["项目 Phoenix 使用 Python 3.12", "项目 Phoenix 的部署区域是新加坡"],
+    "queries": [
+      {"query":"Phoenix 使用什么语言版本？","expected":["Python 3.12"]},
+      {"query":"Phoenix 部署在哪？","expected":["新加坡"]}
+    ]
+  },
+  {
+    "id": "m02",
+    "tenant_id": "tenant-a",
+    "user_id": "user-1",
+    "writes": ["用户偏好中文技术文档", "用户不喜欢只有概念定义的回答"],
+    "queries": [
+      {"query":"用户偏好什么文档？","expected":["中文技术文档"]},
+      {"query":"回答应避免什么？","expected":["只有概念定义"]}
+    ]
+  },
+  {
+    "id": "m03",
+    "tenant_id": "tenant-a",
+    "user_id": "user-1",
+    "writes": ["当前告警渠道是 Slack", "严重故障升级给 oncall-lead"],
+    "queries": [
+      {"query":"告警发到哪里？","expected":["Slack"]},
+      {"query":"严重故障升级给谁？","expected":["oncall-lead"]}
+    ]
+  },
+  {
+    "id": "m04",
+    "tenant_id": "tenant-a",
+    "user_id": "user-1",
+    "writes": ["周报截止时间是周五 17:00", "周报需要包含风险和下周计划"],
+    "queries": [
+      {"query":"周报什么时候截止？","expected":["周五 17:00"]},
+      {"query":"周报必须包含什么？","expected":["风险", "下周计划"]}
+    ]
+  },
+  {
+    "id": "m05",
+    "tenant_id": "tenant-b",
+    "user_id": "user-1",
+    "writes": ["tenant-b 的项目代号是 NEBULA", "tenant-b 使用 Java 21"],
+    "queries": [
+      {"query":"项目代号是什么？","expected":["NEBULA"]},
+      {"query":"项目使用什么版本？","expected":["Java 21"]}
+    ]
+  },
+  {
+    "id": "m06",
+    "tenant_id": "tenant-a",
+    "user_id": "user-2",
+    "writes": ["user-2 的编辑器是 VS Code", "user-2 的主题是 Solarized Dark"],
+    "queries": [
+      {"query":"编辑器是什么？","expected":["VS Code"]},
+      {"query":"编辑器主题是什么？","expected":["Solarized Dark"]}
+    ]
+  }
+]

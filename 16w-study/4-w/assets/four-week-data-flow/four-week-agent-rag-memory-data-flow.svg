@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+<style>
+text{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif}
+.title{fill:#111827;font-size:27px;font-weight:700}.subtitle{fill:#6b7280;font-size:14px}
+.node-title{fill:#111827;font-size:15px;font-weight:650}.detail{fill:#6b7280;font-size:11.5px}
+.label{fill:#111827;font-size:13px}.lane-title{fill:#ffffff;font-size:12px;font-weight:700}
+.week{fill:#475569;font-size:12px;font-weight:700}.edge-label{fill:#374151;font-size:10.5px;font-weight:600}
+.invariant{fill:#9a3412;font-size:12.5px;font-weight:700}.legend{fill:#475569;font-size:11.5px}
+</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+<marker id="arrow-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6b7280"/></marker>
+</defs>
+<rect width="1400" height="950" fill="#ffffff"/>
+<text x="700" y="40" class="title" text-anchor="middle">前四周完整数据流：用户输入、工具、上下文、记忆与模型输出</text>
+<text x="700" y="66" class="subtitle" text-anchor="middle">概率性模型负责选择与生成；确定性 Host / Runtime 负责身份、权限、预算、Schema 与副作用</text>
+<rect data-graph-role="container" x="30" y="90" width="1340" height="225" rx="12" fill="#2563eb" fill-opacity="0.035" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="8 5"/>
+<rect x="46" y="104" width="390" height="27" rx="13" fill="#2563eb"/>
+<rect data-graph-role="container" x="30" y="340" width="1340" height="230" rx="12" fill="#ea580c" fill-opacity="0.035" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="8 5"/>
+<rect x="46" y="354" width="390" height="27" rx="13" fill="#ea580c"/>
+<rect data-graph-role="container" x="30" y="595" width="1340" height="260" rx="12" fill="#16a34a" fill-opacity="0.035" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="8 5"/>
+<rect x="46" y="609" width="390" height="27" rx="13" fill="#16a34a"/>
+<path data-graph-role="edge" d="M 190,201 L 235,201" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 395,201 L 440,201" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 620,201 L 665,201" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 855,201 L 905,201" fill="none" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 1065,201 L 1120,201" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 985,252 L 985,330 L 700,330 L 700,365 L 588,365 L 588,410" fill="none" stroke="#ea580c" stroke-width="2.2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" d="M 675,461 L 760,461" fill="none" stroke="#ea580c" stroke-width="2.2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" d="M 950,461 L 1040,461" fill="none" stroke="#ea580c" stroke-width="2.2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" d="M 1145,410 L 1145,365 L 1090,365 L 1090,220 L 1065,220" fill="none" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 315,242 L 315,420" fill="none" stroke="#ea580c" stroke-width="2.2" marker-end="url(#arrow-orange)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 205,721 L 245,721" fill="none" stroke="#2563eb" stroke-width="2.2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M 405,721 L 450,721" fill="none" stroke="#7c3aed" stroke-width="2.2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" d="M 615,721 L 655,721" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 738,680 L 738,620 L 450,620 L 450,280 L 665,280 L 665,220" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 1050,721 L 1015,721" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 865,721 L 820,721" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" d="M 835,512 L 835,585 L 940,585 L 940,680" fill="none" stroke="#16a34a" stroke-width="2.2" marker-end="url(#arrow-green)" stroke-dasharray="7 5"/>
+<path data-graph-role="edge" d="M 1145,512 L 1145,640 L 1285,640 L 1285,670" fill="none" stroke="#9333ea" stroke-width="2.2" marker-end="url(#arrow-violet)"/>
+<g data-graph-role="node"><rect x="55" y="160" width="135" height="82" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/><text x="122.5" y="189" class="node-title" text-anchor="middle">用户输入</text><text x="122.5" y="212" class="detail" text-anchor="middle">query · intent</text></g>
+<g data-graph-role="node"><rect x="235" y="160" width="160" height="82" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.6"/><text x="315.0" y="189" class="node-title" text-anchor="middle">Agent Host</text><text x="315.0" y="212" class="detail" text-anchor="middle">identity · trace</text></g>
+<g data-graph-role="node"><rect x="440" y="160" width="180" height="82" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.6"/><text x="530.0" y="189" class="node-title" text-anchor="middle">消息组装</text><text x="530.0" y="212" class="detail" text-anchor="middle">system &gt; developer &gt; user</text></g>
+<g data-graph-role="node"><rect x="665" y="150" width="190" height="102" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.6"/><text x="760.0" y="179" class="node-title" text-anchor="middle">Context Compiler</text><text x="760.0" y="202" class="detail" text-anchor="middle">选择 · 去重 · 压缩 · ACL</text></g>
+<g data-graph-role="node"><rect x="905" y="150" width="160" height="102" rx="9" fill="#faf5ff" stroke="#c4b5fd" stroke-width="1.6"/><text x="985.0" y="179" class="node-title" text-anchor="middle">LLM</text><text x="985.0" y="202" class="detail" text-anchor="middle">Token · Attention · Decode</text></g>
+<g data-graph-role="node"><rect x="1120" y="160" width="210" height="82" rx="9" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.6"/><text x="1225.0" y="189" class="node-title" text-anchor="middle">输出守卫</text><text x="1225.0" y="212" class="detail" text-anchor="middle">Schema · citation · refusal</text></g>
+<g data-graph-role="node"><rect x="245" y="420" width="170" height="82" rx="9" fill="#fff7ed" stroke="#fdba74" stroke-width="1.6"/><text x="330.0" y="449" class="node-title" text-anchor="middle">预算控制器</text><text x="330.0" y="472" class="detail" text-anchor="middle">steps · token · timeout</text></g>
+<g data-graph-role="node"><rect x="500" y="410" width="175" height="102" rx="9" fill="#fff7ed" stroke="#fb923c" stroke-width="1.6"/><text x="587.5" y="439" class="node-title" text-anchor="middle">Tool Call</text><text x="587.5" y="462" class="detail" text-anchor="middle">name · args · call_id</text></g>
+<g data-graph-role="node"><rect x="760" y="410" width="190" height="102" rx="9" fill="#fff7ed" stroke="#fb923c" stroke-width="1.6"/><text x="855.0" y="439" class="node-title" text-anchor="middle">Tool Runtime</text><text x="855.0" y="462" class="detail" text-anchor="middle">Schema · Scope · retry</text></g>
+<g data-graph-role="node"><rect x="1040" y="410" width="210" height="102" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.6"/><text x="1145.0" y="439" class="node-title" text-anchor="middle">MCP / Tools</text><text x="1145.0" y="462" class="detail" text-anchor="middle">discover · call · result</text></g>
+<g data-graph-role="node"><rect x="55" y="680" width="150" height="82" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/><text x="130.0" y="709" class="node-title" text-anchor="middle">文档源</text><text x="130.0" y="732" class="detail" text-anchor="middle">version · delete event</text></g>
+<g data-graph-role="node"><rect x="245" y="680" width="160" height="82" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/><text x="325.0" y="709" class="node-title" text-anchor="middle">增量摄取</text><text x="325.0" y="732" class="detail" text-anchor="middle">chunk · embed · dedup</text></g>
+<g data-graph-role="node"><rect x="450" y="682" width="165" height="76" fill="#eef2ff"/><ellipse cx="532.5" cy="682" rx="82.5" ry="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.6"/><line x1="450" y1="682" x2="450" y2="758" stroke="#818cf8" stroke-width="1.6"/><line x1="615" y1="682" x2="615" y2="758" stroke="#818cf8" stroke-width="1.6"/><ellipse cx="532.5" cy="758" rx="82.5" ry="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.6"/><text x="532.5" y="712" class="node-title" text-anchor="middle">安全索引</text><text x="532.5" y="734" class="detail" text-anchor="middle">dense + BM25 + ACL</text></g>
+<g data-graph-role="node"><rect x="655" y="680" width="165" height="82" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.6"/><text x="737.5" y="709" class="node-title" text-anchor="middle">Hybrid Retrieval</text><text x="737.5" y="732" class="detail" text-anchor="middle">filter · fuse · rerank</text></g>
+<g data-graph-role="node"><rect x="865" y="680" width="150" height="82" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.6"/><text x="940.0" y="709" class="node-title" text-anchor="middle">线程状态</text><text x="940.0" y="732" class="detail" text-anchor="middle">history · checkpoint</text></g>
+<g data-graph-role="node"><rect x="1050" y="682" width="150" height="76" fill="#f0fdf4"/><ellipse cx="1125.0" cy="682" rx="75.0" ry="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.6"/><line x1="1050" y1="682" x2="1050" y2="758" stroke="#4ade80" stroke-width="1.6"/><line x1="1200" y1="682" x2="1200" y2="758" stroke="#4ade80" stroke-width="1.6"/><ellipse cx="1125.0" cy="758" rx="75.0" ry="12" fill="#f0fdf4" stroke="#4ade80" stroke-width="1.6"/><text x="1125.0" y="712" class="node-title" text-anchor="middle">长期记忆</text><text x="1125.0" y="734" class="detail" text-anchor="middle">semantic · episodic</text></g>
+<g data-graph-role="node"><rect x="1230" y="682" width="110" height="76" fill="#faf5ff"/><ellipse cx="1285.0" cy="682" rx="55.0" ry="12" fill="#faf5ff" stroke="#a78bfa" stroke-width="1.6"/><line x1="1230" y1="682" x2="1230" y2="758" stroke="#a78bfa" stroke-width="1.6"/><line x1="1340" y1="682" x2="1340" y2="758" stroke="#a78bfa" stroke-width="1.6"/><ellipse cx="1285.0" cy="758" rx="55.0" ry="12" fill="#faf5ff" stroke="#a78bfa" stroke-width="1.6"/><text x="1285.0" y="712" class="node-title" text-anchor="middle">业务库</text><text x="1285.0" y="734" class="detail" text-anchor="middle">权威事实</text></g>
+<text x="60" y="123" class="lane-title" text-anchor="start">主请求路径：消息信任边界与模型推理</text>
+<text x="1348" y="123" class="week" text-anchor="end">W1 + W2</text>
+<text x="60" y="373" class="lane-title" text-anchor="start">Agent 行动路径：预算、Tool Call、MCP 与 Observation</text>
+<text x="1348" y="373" class="week" text-anchor="end">W2 + W3</text>
+<text x="60" y="628" class="lane-title" text-anchor="start">上下文与数据路径：安全 RAG、线程状态、长期记忆、权威数据</text>
+<text x="1348" y="628" class="week" text-anchor="end">W3 + W4</text>
+<rect x="163.0" y="178" width="98" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="212" y="192" class="edge-label" text-anchor="middle">user message</text>
+<rect x="354.0" y="178" width="126" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="417" y="192" class="edge-label" text-anchor="middle">trusted envelope</text>
+<rect x="568.5" y="178" width="147" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="642" y="192" class="edge-label" text-anchor="middle">messages + identity</text>
+<rect x="820.5" y="178" width="119" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="880" y="192" class="edge-label" text-anchor="middle">budgeted tokens</text>
+<rect x="1029.0" y="178" width="126" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="1092" y="192" class="edge-label" text-anchor="middle">answer / refusal</text>
+<rect x="814.0" y="307" width="56" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="842" y="321" class="edge-label" text-anchor="middle">action</text>
+<rect x="668.0" y="438" width="98" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="717" y="452" class="edge-label" text-anchor="middle">tool request</text>
+<rect x="939.0" y="438" width="112" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="995" y="452" class="edge-label" text-anchor="middle">JSON-RPC / MCP</text>
+<rect x="1053.5" y="278" width="91" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="1099" y="292" class="edge-label" text-anchor="middle">observation</text>
+<rect x="292.5" y="317" width="63" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="324" y="331" class="edge-label" text-anchor="middle">budgets</text>
+<rect x="176.0" y="698" width="98" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="225" y="712" class="edge-label" text-anchor="middle">source event</text>
+<rect x="364.0" y="698" width="126" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="427" y="712" class="edge-label" text-anchor="middle">chunks + lineage</text>
+<rect x="554.5" y="698" width="161" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="635" y="712" class="edge-label" text-anchor="middle">authorized candidates</text>
+<rect x="392.5" y="436" width="133" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="459" y="450" class="edge-label" text-anchor="middle">evidence + memory</text>
+<rect x="997.0" y="698" width="70" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="1032" y="712" class="edge-label" text-anchor="middle">retrieve</text>
+<rect x="793.0" y="698" width="98" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="842" y="712" class="edge-label" text-anchor="middle">recent state</text>
+<rect x="824.0" y="562" width="126" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="887" y="576" class="edge-label" text-anchor="middle">checkpoint write</text>
+<rect x="1159.0" y="617" width="112" height="19" rx="4" fill="#ffffff" opacity="0.96"/><text x="1215" y="631" class="edge-label" text-anchor="middle">authorized API</text>
+<rect x="195" y="805" width="1010" height="34" rx="8" fill="#fff7ed" stroke="#fdba74"/>
+<text x="700" y="827" class="invariant" text-anchor="middle">最终上下文 = 相关证据 AND 当前授权；长期记忆是辅助上下文，业务库才是权威事实源</text>
+<line x1="70" y1="910" x2="102" y2="910" stroke="#2563eb" stroke-width="3"/>
+<text x="112" y="914" class="legend" text-anchor="start">请求/文档</text>
+<line x1="280" y1="910" x2="312" y2="910" stroke="#ea580c" stroke-width="3"/>
+<text x="322" y="914" class="legend" text-anchor="start">行动/控制</text>
+<line x1="490" y1="910" x2="522" y2="910" stroke="#16a34a" stroke-width="3"/>
+<text x="532" y="914" class="legend" text-anchor="start">上下文/记忆</text>
+<line x1="700" y1="910" x2="732" y2="910" stroke="#7c3aed" stroke-width="3"/>
+<text x="742" y="914" class="legend" text-anchor="start">转换/Observation</text>
+<line x1="910" y1="910" x2="942" y2="910" stroke="#9333ea" stroke-width="3"/>
+<text x="952" y="914" class="legend" text-anchor="start">权威业务访问</text>
+</svg>

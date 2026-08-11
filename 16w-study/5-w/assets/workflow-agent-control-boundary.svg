@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,"Times New Roman",serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.metric{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="840" fill="#0a0a0a"/>
+<ellipse cx="700" cy="390" rx="620" ry="330" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">Workflow 与 Agent：控制权边界</text>
+<text x="700" y="73" text-anchor="middle" class="sub">边界不由是否调用 LLM 决定，而由运行时路径和下一步选择权决定</text>
+<rect x="34" y="100" width="400" height="590" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="52" y="128" class="sec" fill="#38bdf8">DETERMINISTIC CONTROL PLANE</text>
+<rect x="500" y="100" width="400" height="590" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="518" y="128" class="sec" fill="#d4a574">MODEL-DIRECTED CONTROL PLANE</text>
+<rect x="966" y="100" width="400" height="590" rx="10" fill="#0e0e0e" stroke="#f87171" stroke-width="1" stroke-dasharray="7 5" opacity=".9"/>
+<text x="984" y="128" class="sec" fill="#f87171">RUNTIME SAFETY PLANE</text>
+<rect x="84" y="160" width="300" height="82" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="234.0" y="190" text-anchor="middle" class="nm" fill="#94a3b8">Single LLM Call</text>
+<text x="234.0" y="213" text-anchor="middle" class="sm">固定输入 → 固定输出契约</text>
+<rect x="84" y="302" width="300" height="82" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<rect x="88" y="306" width="292" height="74" rx="6" fill="none" stroke="#38bdf8" stroke-width=".6" opacity=".55"/>
+<text x="234.0" y="332" text-anchor="middle" class="nm" fill="#38bdf8">Workflow</text>
+<text x="234.0" y="355" text-anchor="middle" class="sm">代码预定义路径、分支与终止</text>
+<rect x="84" y="444" width="300" height="82" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="234.0" y="474" text-anchor="middle" class="nm" fill="#a78bfa">Workflow + LLM Router</text>
+<text x="234.0" y="497" text-anchor="middle" class="sm">模型分类；代码执行有限分支</text>
+<rect x="550" y="235" width="300" height="96" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="554" y="239" width="292" height="88" rx="6" fill="none" stroke="#d4a574" stroke-width=".6" opacity=".55"/>
+<text x="700.0" y="265" text-anchor="middle" class="nm" fill="#d4a574">Agent Loop</text>
+<text x="700.0" y="288" text-anchor="middle" class="sm">模型选择下一步、工具与停止时机</text>
+<rect x="550" y="430" width="300" height="96" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="700.0" y="460" text-anchor="middle" class="nm" fill="#6ee7b7">Environment Feedback</text>
+<text x="700.0" y="483" text-anchor="middle" class="sm">Observation 校正计划与动作</text>
+<rect x="1016" y="154" width="300" height="74" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="1166.0" y="184" text-anchor="middle" class="nm" fill="#f87171">Policy &amp; Identity</text>
+<text x="1166.0" y="207" text-anchor="middle" class="sm">Scope · ACL · approval</text>
+<rect x="1016" y="270" width="300" height="74" rx="8" fill="#111111" stroke="#fbbf24" stroke-width="1.7"/>
+<text x="1166.0" y="300" text-anchor="middle" class="nm" fill="#fbbf24">Budget &amp; Stop</text>
+<text x="1166.0" y="323" text-anchor="middle" class="sm">steps · token · cost · timeout</text>
+<rect x="1016" y="386" width="300" height="74" rx="8" fill="#111111" stroke="#5a9e6f" stroke-width="1.7"/>
+<text x="1166.0" y="416" text-anchor="middle" class="nm" fill="#5a9e6f">Schema &amp; Tool Runtime</text>
+<text x="1166.0" y="439" text-anchor="middle" class="sm">validation · idempotency · sandbox</text>
+<rect x="1016" y="502" width="300" height="74" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1166.0" y="532" text-anchor="middle" class="nm" fill="#a78bfa">Trace &amp; Recovery</text>
+<text x="1166.0" y="555" text-anchor="middle" class="sm">checkpoint · retry · compensate</text>
+<path d="M234 242 V302" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="250" y="278" text-anchor="start" class="al">复杂度递增</text>
+<path d="M234 384 V444" fill="none" stroke="#a78bfa" stroke-width="2.0" marker-end="url(#arr-violet)"/>
+<text x="250" y="420" text-anchor="start" class="al">有限动态性</text>
+<path d="M384 343 H468 V283 H550" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="468" y="267" text-anchor="middle" class="al">路径不可预定义</text>
+<path d="M700 331 V430" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<text x="718" y="385" text-anchor="middle" class="al">action</text>
+<path d="M550 478 H505 V283 H550" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="516" y="462" text-anchor="start" class="al">observe → replan</text>
+<path d="M850 283 H938 V191 H1016" fill="none" stroke="#f87171" stroke-width="2.0" stroke-dasharray="6 4" marker-end="url(#arr-rose)"/>
+<text x="934" y="176" text-anchor="middle" class="al">不可委托的边界</text>
+<path d="M850 478 H938 V539 H1016" fill="none" stroke="#a78bfa" stroke-width="2.0" stroke-dasharray="6 4" marker-end="url(#arr-violet)"/>
+<text x="932" y="560" text-anchor="middle" class="al">trace / checkpoint</text>
+<rect x="84" y="608" width="766" height="54" rx="8" fill="#1a1a1a" stroke="#d4a574" stroke-width="1"/>
+<text x="467" y="632" text-anchor="middle" class="sm">选择原则：先单调用；固定路径用 Workflow；只有步骤未知且环境反馈可验证时才升级 Agent</text>
+<text x="467" y="651" text-anchor="middle" class="xs">模型可以拥有策略选择权，但身份、权限、预算与副作用控制必须留在 Runtime</text>
+<line x1="70" y1="808" x2="104" y2="808" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="115" y="812" text-anchor="start" class="sm">代码路径</text>
+<line x1="285" y1="808" x2="319" y2="808" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="330" y="812" text-anchor="start" class="sm">模型控制</text>
+<line x1="500" y1="808" x2="534" y2="808" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="545" y="812" text-anchor="start" class="sm">环境证据</text>
+<line x1="715" y1="808" x2="749" y2="808" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="760" y="812" text-anchor="start" class="sm">安全约束</text>
+</svg>
