@@ -43,7 +43,7 @@ cd /Users/shiyiliu/workspace/pyproject/16w-study/5-w/source
 python -m pytest -q -p no:cacheprovider
 ```
 
-当前结果：`12 passed`。
+当前完整结果：`26 passed`（原三架构测试与可恢复编排消融测试合计）。
 
 测试中的 `TestResearchModel` 只用于验证状态机、故障恢复、指标聚合和报告格式。它明确标记为 `test-only-not-for-benchmark`，不用于正式架构结论。
 
@@ -118,3 +118,35 @@ python run_experiment.py --repeats 3
 
 正式报告还会在树末尾加入本次实验的数据优选。该推荐只适用于本任务、模型、语料和预算，不能外推为通用架构排名。
 
+## 第六周增量：可恢复编排消融
+
+在不修改原三架构实验语义的前提下，新增：
+
+- `recovery_models.py`：结构化 Plan、逐项状态、四类失败和运行指标；
+- `state_store.py`：原子 JSON Checkpoint 与版本 Compare-And-Swap；
+- `recoverable_agents.py`：可恢复单 Agent 基线，以及仅用于消融的 Manager + Specialist；
+- `data/recovery_tasks.json`：20 条统一任务及故障场景；
+- `run_recovery_ablation.py`：每任务至少三次重复并输出逐轨迹 JSON 和汇总 Markdown；
+- `tests/test_recovery_ablation.py`：中断、部分成功、冲突、重复委派和上下文丢失测试。
+
+四类失败决定不同控制流：
+
+| 分类 | 例子 | Runtime 动作 |
+|---|---|---|
+| `retryable` | 工具短暂不可用、状态冲突 | 有界重试或重新加载权威状态 |
+| `replan_required` | 语料版本使计划失效 | 提升 Plan revision，重置受影响节点 |
+| `human_required` | 缺少授权或确认 | 停在 `waiting_human`，禁止自动绕过 |
+| `unrecoverable` | 非法参数、未知工具 | 终止当前计划 |
+
+运行真实消融：
+
+```bash
+source /Users/shiyiliu/workspace/pyproject/.venv/bin/activate
+export DEEPSEEK_API_KEY="你的 Key"
+export OPENAI_BASE_URL="https://api.deepseek.com"
+export AGENT_TEST_MODEL="deepseek-v4-pro"
+cd /Users/shiyiliu/workspace/pyproject/16w-study/5-w/source
+python run_recovery_ablation.py --repeats 3
+```
+
+默认产生 `20 tasks × 3 repetitions × 2 architectures = 120 trajectories`。其中单 Agent 是主基线；Manager + Specialist 只用于判断委派控制面是否带来足以覆盖额外成本的增益。

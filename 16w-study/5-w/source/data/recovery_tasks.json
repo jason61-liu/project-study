@@ -1,0 +1,22 @@
+[
+  {"id":"t01-control-boundary","question":"说明 Workflow 与 Agent 的控制权边界，并给出 Runtime 的职责。","search_query":"workflow agent control runtime","required_terms":["Workflow","Agent","Runtime"],"required_sources":["arch-boundary"]},
+  {"id":"t02-latency","question":"解释多轮 Agent 的延迟风险和正确的成本口径。","search_query":"agent latency cost success","required_terms":["延迟","成本","成功"],"required_sources":["latency-cost"]},
+  {"id":"t03-safety","question":"高风险工具调用应由哪一层执行权限和幂等校验？","search_query":"runtime authorization idempotency safety","required_terms":["Runtime","权限","幂等"],"required_sources":["safety-runtime"]},
+  {"id":"t04-react","question":"解释 ReAct 的反馈价值与长轨迹风险。","search_query":"react observation recovery token","required_terms":["ReAct","反馈","Token"],"required_sources":["react-feedback"]},
+  {"id":"t05-planning","question":"比较长计划、逐步决策和 Rolling-Horizon。","search_query":"planning plan-execute hybrid rolling horizon","required_terms":["计划","逐步","Rolling-Horizon"],"required_sources":["planning"]},
+  {"id":"t06-observability","question":"可恢复 Agent 的 Checkpoint 和 Trace 应记录什么？","search_query":"trace checkpoint recovery observability","required_terms":["Checkpoint","Trace","恢复"],"required_sources":["observability"]},
+  {"id":"t07-evaluation","question":"如何从成功率、延迟和恢复能力评估 Agent 架构？","search_query":"evaluation pareto metrics latency recovery","required_terms":["成功率","延迟","恢复"],"required_sources":["evaluation"]},
+  {"id":"t08-workflow-safety","question":"为受监管任务说明固定 Workflow 与安全 Runtime 如何配合。","search_query":"workflow safety runtime control","required_terms":["Workflow","安全","Runtime"],"required_sources":["arch-boundary","safety-runtime"]},
+  {"id":"t09-react-observe","question":"为什么 ReAct 必须有 Observation 和最大步骤限制？","search_query":"react observation max steps recovery","required_terms":["Observation","步骤","ReAct"],"required_sources":["react-feedback"]},
+  {"id":"t10-plan-recovery","question":"计划漂移时应怎样重规划并保存恢复证据？","search_query":"planning replan checkpoint recovery","required_terms":["重规划","Checkpoint","证据"],"required_sources":["planning","observability"]},
+  {"id":"t11-retry","question":"检索瞬时失败时给出可审计恢复策略。","search_query":"workflow runtime recovery trace","required_terms":["重试","Trace","恢复"],"required_sources":["observability"],"fault":"retrieval_failure"},
+  {"id":"t12-tool-retry","question":"读取工具瞬时失败时如何有界重试和保留证据？","search_query":"runtime evidence recovery trace","required_terms":["重试","证据","Runtime"],"required_sources":["safety-runtime"],"fault":"tool_failure"},
+  {"id":"t13-version-change","question":"语料版本变化为什么需要重规划而非盲目重试？","search_query":"planning recovery checkpoint","required_terms":["版本","重规划","计划"],"required_sources":["planning"],"fault":"plan_invalidated"},
+  {"id":"t14-partial","question":"部分证据读取成功时如何降级并保持可审计？","search_query":"observability recovery trace evidence","required_terms":["部分","降级","Trace"],"required_sources":["observability"],"fault":"partial_success"},
+  {"id":"t15-context-loss","question":"上下文丢失后为什么要从结构化 Checkpoint 恢复？","search_query":"checkpoint structured state recovery","required_terms":["上下文","Checkpoint","恢复"],"required_sources":["observability"],"fault":"context_lost"},
+  {"id":"t16-process-resume","question":"进程中断后如何避免重复执行并从断点继续？","search_query":"checkpoint recovery idempotency runtime","required_terms":["中断","幂等","Checkpoint"],"required_sources":["observability","safety-runtime"],"fault":"process_interrupt"},
+  {"id":"t17-pareto","question":"为什么 Agent 架构选择应先过滤硬约束再看 Pareto 前沿？","search_query":"evaluation pareto safety metrics","required_terms":["硬约束","Pareto","评估"],"required_sources":["evaluation"]},
+  {"id":"t18-cost-control","question":"为什么多 Agent 不应是默认架构，并说明成本与控制问题。","search_query":"agent cost latency control workflow","required_terms":["多 Agent","成本","控制"],"required_sources":["latency-cost","arch-boundary"]},
+  {"id":"t19-runtime-confirm","question":"不可逆动作需要哪些 Runtime 安全护栏？","search_query":"runtime safety authorization dry-run confirmation","required_terms":["dry-run","确认","权限"],"required_sources":["safety-runtime"]},
+  {"id":"t20-hybrid","question":"为长任务提出兼顾全局目标和环境反馈的混合方案。","search_query":"rolling horizon planning react feedback","required_terms":["Rolling-Horizon","反馈","里程碑"],"required_sources":["planning","react-feedback"]}
+]

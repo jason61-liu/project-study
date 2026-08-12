@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="860" fill="#0a0a0a"/>
+<ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">可恢复执行协议：版本、幂等、断点与补偿</text>
+<text x="700" y="74" text-anchor="middle" class="sub">Exactly-once 通常不可得；目标是 at-least-once 调度下获得业务级 effect-once</text>
+<rect x="35" y="105" width="860" height="620" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-width="1" stroke-dasharray="7 5"/>
+<text x="53" y="133" class="sec" fill="#38bdf8">VERSIONED STATE MACHINE</text>
+<rect x="90" y="170" width="210" height="82" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="195.0" y="199" text-anchor="middle" class="nm" fill="#94a3b8">READY</text>
+<text x="195.0" y="221" text-anchor="middle" class="sm">state_version=7</text>
+<rect x="350" y="170" width="210" height="82" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="455.0" y="199" text-anchor="middle" class="nm" fill="#38bdf8">CLAIMED</text>
+<text x="455.0" y="221" text-anchor="middle" class="sm">lease + worker_id</text>
+<rect x="610" y="170" width="210" height="82" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<rect x="614" y="174" width="202" height="74" rx="6" fill="none" stroke="#fdba74" stroke-width=".6" opacity=".55"/>
+<text x="715.0" y="199" text-anchor="middle" class="nm" fill="#fdba74">EXECUTING</text>
+<text x="715.0" y="221" text-anchor="middle" class="sm">attempt=3</text>
+<rect x="610" y="390" width="210" height="82" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<rect x="614" y="394" width="202" height="74" rx="6" fill="none" stroke="#6ee7b7" stroke-width=".6" opacity=".55"/>
+<text x="715.0" y="419" text-anchor="middle" class="nm" fill="#6ee7b7">COMMITTED</text>
+<text x="715.0" y="441" text-anchor="middle" class="sm">effect_receipt</text>
+<rect x="350" y="390" width="210" height="82" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="455.0" y="419" text-anchor="middle" class="nm" fill="#f87171">COMPENSATING</text>
+<text x="455.0" y="441" text-anchor="middle" class="sm">saga action</text>
+<rect x="90" y="390" width="210" height="82" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="195.0" y="419" text-anchor="middle" class="nm" fill="#f87171">FAILED</text>
+<text x="195.0" y="441" text-anchor="middle" class="sm">terminal reason</text>
+<path d="M300 211 H350" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="325" y="198" text-anchor="middle" class="al">CAS claim</text>
+<path d="M560 211 H610" fill="none" stroke="#fdba74" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="585" y="198" text-anchor="middle" class="al">execute</text>
+<path d="M715 252 V390" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<text x="730" y="326" text-anchor="start" class="al">commit receipt</text>
+<path d="M610 431 H560" fill="none" stroke="#f87171" stroke-width="2.0" marker-end="url(#arr-rose)"/>
+<text x="585" y="418" text-anchor="middle" class="al">compensate</text>
+<path d="M350 431 H300" fill="none" stroke="#f87171" stroke-width="2.0" marker-end="url(#arr-rose)"/>
+<text x="325" y="418" text-anchor="middle" class="al">failed</text>
+<path d="M455 390 V330 H195 V252" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="330" y="319" text-anchor="middle" class="al">retry from checkpoint</text>
+<rect x="90" y="555" width="730" height="112" rx="9" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="455" y="580" text-anchor="middle" class="sm">原子写入：new_state + outbox_event + checkpoint</text>
+<text x="455" y="604" text-anchor="middle" class="mono">CAS: UPDATE ... WHERE state_version = expected_version</text>
+<text x="455" y="628" text-anchor="middle" class="mono">idempotency_key = hash(task_id, operation, business_scope)</text>
+<text x="455" y="650" text-anchor="middle" class="xs">恢复先 reconcile 外部状态，再决定 retry / compensate / manual</text>
+<rect x="945" y="105" width="420" height="620" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5"/>
+<text x="963" y="133" class="sec" fill="#d4a574">RECOVERY LEDGER</text>
+<rect x="985" y="150" width="340" height="70" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="1155.0" y="179" text-anchor="middle" class="nm" fill="#38bdf8">State Version</text>
+<text x="1155.0" y="201" text-anchor="middle" class="sm">拒绝 stale writer</text>
+<rect x="985" y="253" width="340" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1155.0" y="282" text-anchor="middle" class="nm" fill="#6ee7b7">Idempotency Record</text>
+<text x="1155.0" y="304" text-anchor="middle" class="sm">相同 key 返回旧 receipt</text>
+<rect x="985" y="356" width="340" height="70" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="385" text-anchor="middle" class="nm" fill="#a78bfa">Checkpoint</text>
+<text x="1155.0" y="407" text-anchor="middle" class="sm">恢复状态而非聊天文本</text>
+<rect x="985" y="459" width="340" height="70" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="1155.0" y="488" text-anchor="middle" class="nm" fill="#fdba74">Effect Receipt</text>
+<text x="1155.0" y="510" text-anchor="middle" class="sm">区分 unknown / committed</text>
+<rect x="985" y="562" width="340" height="70" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="1155.0" y="591" text-anchor="middle" class="nm" fill="#f87171">Compensation</text>
+<text x="1155.0" y="613" text-anchor="middle" class="sm">语义逆操作，不是 DB rollback</text>
+<path d="M895 420 H920 V392 H945" fill="none" stroke="#d4a574" stroke-width="2.0" stroke-dasharray="6 4" marker-end="url(#arr-gold)"/>
+<text x="920" y="379" text-anchor="middle" class="al">persist</text>
+<rect x="65" y="747" width="1270" height="42" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="772" text-anchor="middle" class="sm">断点必须同时描述：逻辑状态、证据版本、预算余额、在途调用和已提交副作用</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="111" y="828" text-anchor="start" class="sm">状态转移</text>
+<line x1="300" y1="824" x2="334" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="346" y="828" text-anchor="start" class="sm">提交</text>
+<line x1="535" y1="824" x2="569" y2="824" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="581" y="828" text-anchor="start" class="sm">恢复</text>
+<line x1="770" y1="824" x2="804" y2="824" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="816" y="828" text-anchor="start" class="sm">补偿/失败</text>
+</svg>

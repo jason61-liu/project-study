@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="860" fill="#0a0a0a"/>
+<ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">反思与验证：三层证据强度</text>
+<text x="700" y="74" text-anchor="middle" class="sub">自我反思改善候选，外部验证提供独立信号，确定性检查执行不可协商规则</text>
+<rect x="70" y="175" width="250" height="88" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="74" y="179" width="242" height="80" rx="6" fill="none" stroke="#d4a574" stroke-width=".6" opacity=".55"/>
+<text x="195.0" y="204" text-anchor="middle" class="nm" fill="#d4a574">Candidate</text>
+<text x="195.0" y="226" text-anchor="middle" class="sm">模型生成的方案或答案</text>
+<rect x="390" y="130" width="315" height="88" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="547.5" y="159" text-anchor="middle" class="nm" fill="#a78bfa">L1 · Self-Reflection</text>
+<text x="547.5" y="181" text-anchor="middle" class="sm">同模型批评与修订</text>
+<text x="547" y="202" text-anchor="middle" class="xs">低独立性 · 高覆盖</text>
+<rect x="390" y="300" width="315" height="88" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="547.5" y="329" text-anchor="middle" class="nm" fill="#38bdf8">L2 · External Verifier</text>
+<text x="547.5" y="351" text-anchor="middle" class="sm">独立模型 / 环境 / 人工</text>
+<text x="547" y="372" text-anchor="middle" class="xs">中高独立性 · 语义判断</text>
+<rect x="390" y="470" width="315" height="88" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="547.5" y="499" text-anchor="middle" class="nm" fill="#6ee7b7">L3 · Deterministic Checker</text>
+<text x="547.5" y="521" text-anchor="middle" class="sm">Schema / tests / policy engine</text>
+<text x="547" y="542" text-anchor="middle" class="xs">高确定性 · 覆盖有限</text>
+<rect x="790" y="275" width="240" height="100" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="910.0" y="304" text-anchor="middle" class="nm" fill="#fdba74">Evidence Reducer</text>
+<text x="910.0" y="326" text-anchor="middle" class="sm">合并 verdict + provenance</text>
+<rect x="1110" y="175" width="220" height="88" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1220.0" y="204" text-anchor="middle" class="nm" fill="#6ee7b7">Accept</text>
+<text x="1220.0" y="226" text-anchor="middle" class="sm">满足硬门禁与质量阈值</text>
+<rect x="1110" y="455" width="220" height="88" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="1220.0" y="484" text-anchor="middle" class="nm" fill="#f87171">Reject / Revise</text>
+<text x="1220.0" y="506" text-anchor="middle" class="sm">结构化反馈或终止</text>
+<path d="M320 219 H355 V174 H390" fill="none" stroke="#a78bfa" stroke-width="2.0" marker-end="url(#arr-violet)"/>
+<path d="M320 219 H350 V344 H390" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<path d="M320 219 H345 V514 H390" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<path d="M705 174 H750 V315 H790" fill="none" stroke="#a78bfa" stroke-width="2.0" marker-end="url(#arr-violet)"/>
+<path d="M705 344 H790" fill="none" stroke="#38bdf8" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<path d="M705 514 H750 V335 H790" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<path d="M1030 315 H1070 V219 H1110" fill="none" stroke="#6ee7b7" stroke-width="2.0" marker-end="url(#arr-mint)"/>
+<text x="1070" y="205" text-anchor="middle" class="al">hard gates pass</text>
+<path d="M1030 335 H1070 V499 H1110" fill="none" stroke="#f87171" stroke-width="2.0" marker-end="url(#arr-rose)"/>
+<text x="1070" y="486" text-anchor="middle" class="al">fail / uncertainty</text>
+<path d="M1110 499 H1060 V650 H195 V263" fill="none" stroke="#d4a574" stroke-width="2.0" marker-end="url(#arr-gold)"/>
+<text x="620" y="638" text-anchor="middle" class="al">bounded optimize loop · max rounds · min improvement</text>
+<rect x="70" y="700" width="1260" height="70" rx="10" fill="#0e0e0e" stroke="#d4a574" stroke-width="1" stroke-dasharray="7 5"/>
+<text x="88" y="728" class="sec" fill="#d4a574">TRUST ORDER</text>
+<text x="700" y="738" text-anchor="middle" class="sm">事实与权限：权威数据源 / Policy Engine &gt; 外部验证器 &gt; 自我反思；三者不能互相替代</text>
+<text x="700" y="758" text-anchor="middle" class="xs">反思通过不代表测试通过；Judge 高分不能覆盖 Schema、ACL 或业务状态失败</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="111" y="828" text-anchor="start" class="sm">自我反馈</text>
+<line x1="300" y1="824" x2="334" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="346" y="828" text-anchor="start" class="sm">独立验证</text>
+<line x1="535" y1="824" x2="569" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="581" y="828" text-anchor="start" class="sm">确定性门禁</text>
+<line x1="770" y1="824" x2="804" y2="824" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="816" y="828" text-anchor="start" class="sm">拒绝/修订</text>
+</svg>

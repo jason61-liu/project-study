@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+<style>
+text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#6b5f53}.al{font-size:11px;fill:#c9b8a0}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1400" height="860" fill="#0a0a0a"/>
+<ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">五种编排形态的控制权边界</text>
+<text x="700" y="74" text-anchor="middle" class="sub">关键问题：谁选择下一步、谁持有会话、谁能调用工具、谁对最终结果负责</text>
+<rect x="45" y="120" width="1310" height="94" rx="10" fill="#101010" stroke="#38bdf8"/>
+<rect x="45" y="120" width="250" height="94" rx="10" fill="#171717"/>
+<text x="70" y="157" class="nm" fill="#38bdf8">State Machine</text>
+<text x="70" y="183" text-anchor="start" class="xs">固定、强审计</text>
+<text x="340" y="155" text-anchor="start" class="sm">代码按 event + guard 转移</text>
+<text x="340" y="183" text-anchor="start" class="mono">control_owner = Runtime</text>
+<rect x="1040" y="139" width="270" height="55" rx="7" fill="#1a1a1a" stroke="#38bdf8"/>
+<text x="1175" y="162" text-anchor="middle" class="xs">FINAL ACCOUNTABILITY</text>
+<text x="1175" y="184" text-anchor="middle" class="sm">Runtime / service owner</text>
+<rect x="45" y="240" width="1310" height="94" rx="10" fill="#101010" stroke="#6ee7b7"/>
+<rect x="45" y="240" width="250" height="94" rx="10" fill="#171717"/>
+<text x="70" y="277" class="nm" fill="#6ee7b7">Task Queue</text>
+<text x="70" y="303" text-anchor="start" class="xs">异步、可削峰</text>
+<text x="340" y="275" text-anchor="start" class="sm">生产者投递；Worker claim</text>
+<text x="340" y="303" text-anchor="start" class="mono">control_owner = Scheduler</text>
+<rect x="1040" y="259" width="270" height="55" rx="7" fill="#1a1a1a" stroke="#6ee7b7"/>
+<text x="1175" y="282" text-anchor="middle" class="xs">FINAL ACCOUNTABILITY</text>
+<text x="1175" y="304" text-anchor="middle" class="sm">Workflow coordinator</text>
+<rect x="45" y="360" width="1310" height="94" rx="10" fill="#101010" stroke="#d4a574"/>
+<rect x="45" y="360" width="250" height="94" rx="10" fill="#171717"/>
+<text x="70" y="397" class="nm" fill="#d4a574">Manager</text>
+<text x="70" y="423" text-anchor="start" class="xs">动态集中控制</text>
+<text x="340" y="395" text-anchor="start" class="sm">Manager 分解、委派、合并</text>
+<text x="340" y="423" text-anchor="start" class="mono">control_owner = Manager Agent</text>
+<rect x="1040" y="379" width="270" height="55" rx="7" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="1175" y="402" text-anchor="middle" class="xs">FINAL ACCOUNTABILITY</text>
+<text x="1175" y="424" text-anchor="middle" class="sm">Manager + Runtime</text>
+<rect x="45" y="480" width="1310" height="94" rx="10" fill="#101010" stroke="#f87171"/>
+<rect x="45" y="480" width="250" height="94" rx="10" fill="#171717"/>
+<text x="70" y="517" class="nm" fill="#f87171">Handoff</text>
+<text x="70" y="543" text-anchor="start" class="xs">对话/责任转移</text>
+<text x="340" y="515" text-anchor="start" class="sm">当前 Agent 转移会话所有权</text>
+<text x="340" y="543" text-anchor="start" class="mono">control_owner = Receiving Agent</text>
+<rect x="1040" y="499" width="270" height="55" rx="7" fill="#1a1a1a" stroke="#f87171"/>
+<text x="1175" y="522" text-anchor="middle" class="xs">FINAL ACCOUNTABILITY</text>
+<text x="1175" y="544" text-anchor="middle" class="sm">Receiving Agent + Runtime</text>
+<rect x="45" y="600" width="1310" height="94" rx="10" fill="#101010" stroke="#a78bfa"/>
+<rect x="45" y="600" width="250" height="94" rx="10" fill="#171717"/>
+<text x="70" y="637" class="nm" fill="#a78bfa">Agent-as-Tool</text>
+<text x="70" y="663" text-anchor="start" class="xs">子 Agent 无最终控制</text>
+<text x="340" y="635" text-anchor="start" class="sm">父 Agent 调用受限子 Agent</text>
+<text x="340" y="663" text-anchor="start" class="mono">control_owner = Parent Agent</text>
+<rect x="1040" y="619" width="270" height="55" rx="7" fill="#1a1a1a" stroke="#a78bfa"/>
+<text x="1175" y="642" text-anchor="middle" class="xs">FINAL ACCOUNTABILITY</text>
+<text x="1175" y="664" text-anchor="middle" class="sm">Parent Agent + Runtime</text>
+<rect x="45" y="735" width="1310" height="48" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="758" text-anchor="middle" class="sm">Handoff 转移会话责任；Agent-as-Tool 只返回结果。Queue 解耦时间，不自动解决业务依赖与权限</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="111" y="828" text-anchor="start" class="sm">确定性控制</text>
+<line x1="300" y1="824" x2="334" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="346" y="828" text-anchor="start" class="sm">异步调度</text>
+<line x1="535" y1="824" x2="569" y2="824" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="581" y="828" text-anchor="start" class="sm">Manager</text>
+<line x1="770" y1="824" x2="804" y2="824" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="816" y="828" text-anchor="start" class="sm">所有权转移</text>
+<line x1="1005" y1="824" x2="1039" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="1051" y="828" text-anchor="start" class="sm">受限调用</text>
+</svg>

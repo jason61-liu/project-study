@@ -272,26 +272,26 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)，整理 Workflow 与 Agent 边界。
-- [ ] 分析 Prompt Chaining、Routing、并行、Orchestrator-Workers 和 Evaluator-Optimizer。
-- [ ] 解释 ReAct 的优势、轨迹膨胀和错误累积问题。
-- [ ] 比较 Plan-and-Execute 与逐步决策对长任务的影响。
-- [ ] 定义架构选择维度：成功率、可控性、延迟、成本、可观测性和恢复能力。
+- [x] 阅读 [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)，整理 Workflow 与 Agent 边界。
+- [x] 分析 Prompt Chaining、Routing、并行、Orchestrator-Workers 和 Evaluator-Optimizer。
+- [x] 解释 ReAct 的优势、轨迹膨胀和错误累积问题。
+- [x] 比较 Plan-and-Execute 与逐步决策对长任务的影响。
+- [x] 定义架构选择维度：成功率、可控性、延迟、成本、可观测性和恢复能力。
 
 ### 编码实验
 
-- [ ] 选择一个研究任务，分别实现固定 Workflow、ReAct 和 Plan-and-Execute。
-- [ ] 保持模型、工具和测试集一致，避免不可比实验。
-- [ ] 每种架构至少运行 3 次，记录成功率、步骤数、工具数、Token 和延迟。
-- [ ] 构造检索失败、工具失败和计划失效场景。
-- [ ] 输出架构对比表和推荐决策树。
+- [x] 选择一个研究任务，分别实现固定 Workflow、ReAct 和 Plan-and-Execute。
+- [x] 保持模型、工具和测试集一致，避免不可比实验。
+- [x] 每种架构至少运行 3 次，记录成功率、步骤数、工具数、Token 和延迟。
+- [x] 构造检索失败、工具失败和计划失效场景。
+- [x] 输出架构对比表和推荐决策树。
 
 ### 面试与验收
 
-- [ ] 完成至少 8 道 Agent 架构设计题。
-- [ ] 回答“为什么不应该默认使用多 Agent”。
-- [ ] 进行一次 15 分钟架构评审陈述。
-- [ ] 三种实现和实验数据均可复现。
+- [x] 完成至少 8 道 Agent 架构设计题。
+- [x] 回答“为什么不应该默认使用多 Agent”。
+- [x] 进行一次 15 分钟架构评审陈述。
+- [x] 三种实现和实验数据均可复现。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
