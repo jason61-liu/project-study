@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+<style>text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#76695d}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}.al{font-size:11px;fill:#c9b8a0}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient></defs>
+<rect width="1400" height="860" fill="#0a0a0a"/><ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">同一份研究任务，三种委派方式发生了什么</text><text x="700" y="74" text-anchor="middle" class="sub">比较的不是品牌功能数量，而是任务输入、子上下文、返回方式、文件权限与协调成本</text>
+<rect x="35" y="105" width="420" height="610" rx="10" fill="#0e0e0e" stroke="#6ee7b7" stroke-dasharray="7 5"/><text x="53" y="133" class="sec">Deep Agents</text>
+<rect x="490" y="105" width="420" height="610" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-dasharray="7 5"/><text x="508" y="133" class="sec">Claude Subagent</text>
+<rect x="945" y="105" width="420" height="610" rx="10" fill="#0e0e0e" stroke="#a78bfa" stroke-dasharray="7 5"/><text x="963" y="133" class="sec">Agent Team</text>
+<rect x="75" y="155" width="340" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="245.0" y="184" text-anchor="middle" class="nm">父 Agent</text><text x="245.0" y="207" text-anchor="middle" class="sm">task(规范研究契约)</text>
+<rect x="75" y="258" width="340" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="245.0" y="287" text-anchor="middle" class="nm">子上下文</text><text x="245.0" y="310" text-anchor="middle" class="sm">新上下文，独立检索</text>
+<rect x="75" y="361" width="340" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="245.0" y="390" text-anchor="middle" class="nm">返回</text><text x="245.0" y="413" text-anchor="middle" class="sm">一份结构化结果</text>
+<rect x="75" y="464" width="340" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="245.0" y="493" text-anchor="middle" class="nm">文件</text><text x="245.0" y="516" text-anchor="middle" class="sm">虚拟 Backend + 权限</text>
+<rect x="75" y="567" width="340" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="245.0" y="596" text-anchor="middle" class="nm">适合</text><text x="245.0" y="619" text-anchor="middle" class="sm">有界长任务与材料隔离</text>
+<rect x="530" y="155" width="340" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="700.0" y="184" text-anchor="middle" class="nm">父 Agent</text><text x="700.0" y="207" text-anchor="middle" class="sm">按 description 委派</text>
+<rect x="530" y="258" width="340" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="700.0" y="287" text-anchor="middle" class="nm">子上下文</text><text x="700.0" y="310" text-anchor="middle" class="sm">独立窗口 + 任务 Prompt</text>
+<rect x="530" y="361" width="340" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="700.0" y="390" text-anchor="middle" class="nm">返回</text><text x="700.0" y="413" text-anchor="middle" class="sm">报告给父 Agent</text>
+<rect x="530" y="464" width="340" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="700.0" y="493" text-anchor="middle" class="nm">文件</text><text x="700.0" y="516" text-anchor="middle" class="sm">通常共享工作区</text>
+<rect x="530" y="567" width="340" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="700.0" y="596" text-anchor="middle" class="nm">适合</text><text x="700.0" y="619" text-anchor="middle" class="sm">编码项目内专项调查</text>
+<rect x="985" y="155" width="340" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="184" text-anchor="middle" class="nm">Lead</text><text x="1155.0" y="207" text-anchor="middle" class="sm">共享任务表分配工作</text>
+<rect x="985" y="258" width="340" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="287" text-anchor="middle" class="nm">成员</text><text x="1155.0" y="310" text-anchor="middle" class="sm">独立 Session + mailbox</text>
+<rect x="985" y="361" width="340" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="390" text-anchor="middle" class="nm">通信</text><text x="1155.0" y="413" text-anchor="middle" class="sm">成员可横向发送消息</text>
+<rect x="985" y="464" width="340" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="493" text-anchor="middle" class="nm">文件</text><text x="1155.0" y="516" text-anchor="middle" class="sm">必须划分 ownership</text>
+<rect x="985" y="567" width="340" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="596" text-anchor="middle" class="nm">代价</text><text x="1155.0" y="619" text-anchor="middle" class="sm">多上下文 + 协调故障</text>
+<rect x="75" y="700" width="1250" height="64" rx="9" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="727" text-anchor="middle" class="sm">子 Agent 的核心是隔离上下文并返回结果；隔离上下文不等于隔离文件和权限</text>
+<text x="700" y="750" text-anchor="middle" class="xs">若两个固定搜索函数可直接并发，就不必引入 Agent；父 Agent始终负责验收返回证据</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="111" y="828" text-anchor="start" class="sm">Deep Agents</text>
+<line x1="310" y1="824" x2="344" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="356" y="828" text-anchor="start" class="sm">Claude Subagent</text>
+<line x1="555" y1="824" x2="589" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="601" y="828" text-anchor="start" class="sm">Agent Team</text>
+<line x1="800" y1="824" x2="834" y2="824" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="846" y="828" text-anchor="start" class="sm">协调风险</text>
+</svg>

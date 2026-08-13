@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+<style>text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#76695d}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}.al{font-size:11px;fill:#c9b8a0}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient></defs>
+<rect width="1400" height="860" fill="#0a0a0a"/><ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">一次 LangGraph 研究任务怎样运行</text><text x="700" y="74" text-anchor="middle" class="sub">Node 做一步工作；State 留下结果；Edge 选下一步；Reducer 合并两个并行搜索结果</text>
+<rect x="35" y="105" width="940" height="610" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-dasharray="7 5"/><text x="53" y="133" class="sec">运行路径：研究工具授权问题</text>
+<rect x="1025" y="105" width="340" height="610" rx="10" fill="#0e0e0e" stroke="#a78bfa" stroke-dasharray="7 5"/><text x="1043" y="133" class="sec">每一步对 State 做了什么</text>
+<rect x="75" y="165" width="200" height="76" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<text x="175.0" y="194" text-anchor="middle" class="nm">START</text><text x="175.0" y="217" text-anchor="middle" class="sm">question + attempt=0</text>
+<rect x="355" y="145" width="220" height="76" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<rect x="359" y="149" width="212" height="68" rx="6" fill="none" stroke="#38bdf8" opacity=".55"/>
+<text x="465.0" y="174" text-anchor="middle" class="nm">准备查询 Node</text><text x="465.0" y="197" text-anchor="middle" class="sm">返回两个 query + attempt=1</text>
+<rect x="355" y="315" width="220" height="76" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="465.0" y="344" text-anchor="middle" class="nm">固定 Edge</text><text x="465.0" y="367" text-anchor="middle" class="sm">同时启动两个搜索</text>
+<rect x="660" y="145" width="250" height="76" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="785.0" y="174" text-anchor="middle" class="nm">规范搜索 Node</text><text x="785.0" y="197" text-anchor="middle" class="sm">返回 evidence=[P1]</text>
+<rect x="660" y="315" width="250" height="76" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="785.0" y="344" text-anchor="middle" class="nm">案例搜索 Node</text><text x="785.0" y="367" text-anchor="middle" class="sm">返回 evidence=[C1]</text>
+<rect x="500" y="505" width="260" height="84" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<rect x="504" y="509" width="252" height="76" rx="6" fill="none" stroke="#a78bfa" opacity=".55"/>
+<text x="630.0" y="534" text-anchor="middle" class="nm">Reducer 合并</text><text x="630.0" y="557" text-anchor="middle" class="sm">[] + [P1] + [C1]</text>
+<path d="M275 203 H355" fill="none" stroke="#d4a574" stroke-width="2"  marker-end="url(#arr-gold)"/>
+<path d="M465 221 V315" fill="none" stroke="#fdba74" stroke-width="2"  marker-end="url(#arr-orange)"/>
+<path d="M575 353 H620 V183 H660" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<path d="M575 353 H660" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<path d="M785 221 H940 V470 H650 V505" fill="none" stroke="#6ee7b7" stroke-width="2"  marker-end="url(#arr-mint)"/>
+<path d="M785 391 V450 H620 V505" fill="none" stroke="#6ee7b7" stroke-width="2"  marker-end="url(#arr-mint)"/>
+<text x="630" y="448" text-anchor="middle" class="mono">同一轮结束后统一合并</text>
+<rect x="1060" y="150" width="270" height="68" rx="8" fill="#111111" stroke="#94a3b8" stroke-width="1.7"/>
+<text x="1195.0" y="179" text-anchor="middle" class="nm">State 输入</text><text x="1195.0" y="202" text-anchor="middle" class="sm">question, attempt=0</text>
+<rect x="1060" y="255" width="270" height="68" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1195.0" y="284" text-anchor="middle" class="nm">Node 更新</text><text x="1195.0" y="307" text-anchor="middle" class="sm">只返回改动字段</text>
+<rect x="1060" y="360" width="270" height="68" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="1195.0" y="389" text-anchor="middle" class="nm">Edge 调度</text><text x="1195.0" y="412" text-anchor="middle" class="sm">决定下一批节点</text>
+<rect x="1060" y="465" width="270" height="68" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1195.0" y="494" text-anchor="middle" class="nm">Reducer 结果</text><text x="1195.0" y="517" text-anchor="middle" class="sm">evidence=[P1,C1]</text>
+<rect x="1060" y="570" width="270" height="68" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="1195.0" y="599" text-anchor="middle" class="nm">下一步</text><text x="1195.0" y="622" text-anchor="middle" class="sm">evaluate 读取合并结果</text>
+<rect x="75" y="625" width="835" height="58" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="492" y="650" text-anchor="middle" class="mono">new_evidence = merge(old_evidence, node_update)</text>
+<text x="492" y="672" text-anchor="middle" class="xs">Conditional Edge 会在 evaluate 后读取 evidence_ok，选择重试或回答</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="111" y="828" text-anchor="start" class="sm">初始输入</text>
+<line x1="310" y1="824" x2="344" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="356" y="828" text-anchor="start" class="sm">调度下一步</text>
+<line x1="555" y1="824" x2="589" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="601" y="828" text-anchor="start" class="sm">节点更新</text>
+<line x1="800" y1="824" x2="834" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="846" y="828" text-anchor="start" class="sm">字段合并</text>
+</svg>

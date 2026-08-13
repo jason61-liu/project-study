@@ -1,0 +1,11 @@
+[
+  {
+    "id": "week7-runtime-recovery",
+    "question": "解释 Agent Runtime、Checkpoint、幂等审批、Subagent 与上下文隔离怎样共同保证研究报告安全发布。",
+    "search_query": "Agent Runtime Checkpoint 幂等 审批 Subagent 上下文隔离",
+    "required_terms": ["Runtime", "Checkpoint", "幂等", "审批", "Subagent", "上下文"],
+    "required_sources": ["runtime-boundary", "durable-execution", "human-approval", "subagent-context"],
+    "requires_approval": true
+  }
+]
+

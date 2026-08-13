@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+<style>text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#76695d}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}.al{font-size:11px;fill:#c9b8a0}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient></defs>
+<rect width="1400" height="860" fill="#0a0a0a"/><ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">一条报告任务从循环到产品，需要增加哪些责任</text><text x="700" y="74" text-anchor="middle" class="sub">上层包含下层：循环决定行动，Runtime 保持执行，SDK 暴露接口，Harness 提供长期工作环境</text>
+<rect x="90" y="185" width="220" height="100" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<rect x="94" y="189" width="212" height="92" rx="6" fill="none" stroke="#fdba74" opacity=".55"/>
+<text x="200.0" y="214" text-anchor="middle" class="nm">L0 · 原生循环</text><text x="200.0" y="237" text-anchor="middle" class="sm">模型 → Tool → Observation</text>
+<text x="200" y="270" text-anchor="middle" class="xs">让一次任务向前走</text>
+<path d="M310 235 H350" fill="none" stroke="#d4a574" stroke-width="2"  marker-end="url(#arr-gold)"/>
+<rect x="350" y="185" width="220" height="100" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<rect x="354" y="189" width="212" height="92" rx="6" fill="none" stroke="#38bdf8" opacity=".55"/>
+<text x="460.0" y="214" text-anchor="middle" class="nm">L1 · 持久 Runtime</text><text x="460.0" y="237" text-anchor="middle" class="sm">State + Checkpoint + Interrupt</text>
+<text x="460" y="270" text-anchor="middle" class="xs">崩溃或审批后继续</text>
+<path d="M570 235 H610" fill="none" stroke="#d4a574" stroke-width="2"  marker-end="url(#arr-gold)"/>
+<rect x="610" y="185" width="220" height="100" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<rect x="614" y="189" width="212" height="92" rx="6" fill="none" stroke="#a78bfa" opacity=".55"/>
+<text x="720.0" y="214" text-anchor="middle" class="nm">L2 · Agent SDK</text><text x="720.0" y="237" text-anchor="middle" class="sm">Agent + Runner + Event</text>
+<text x="720" y="270" text-anchor="middle" class="xs">让应用可编程接入</text>
+<path d="M830 235 H870" fill="none" stroke="#d4a574" stroke-width="2"  marker-end="url(#arr-gold)"/>
+<rect x="870" y="185" width="220" height="100" rx="8" fill="#111111" stroke="#d4a574" stroke-width="1.7"/>
+<rect x="874" y="189" width="212" height="92" rx="6" fill="none" stroke="#d4a574" opacity=".55"/>
+<text x="980.0" y="214" text-anchor="middle" class="nm">L3 · 产品 Harness</text><text x="980.0" y="237" text-anchor="middle" class="sm">Workspace + Session + 权限</text>
+<text x="980" y="270" text-anchor="middle" class="xs">让用户长期安全使用</text>
+<rect x="60" y="350" width="1280" height="320" rx="10" fill="#0e0e0e" stroke="#f87171" stroke-dasharray="7 5"/><text x="78" y="378" class="sec">沿调用链定位 Hermes 与 Kimi 的执行入口</text>
+<rect x="100" y="400" width="1200" height="38" rx="6" fill="#151515" stroke="#3a342f"/>
+<text x="130" y="424" text-anchor="start" class="sm">Hermes CLI</text>
+<text x="420" y="424" text-anchor="start" class="mono">hermes_cli.main:main</text>
+<text x="1130" y="424" text-anchor="middle" class="xs">参数 / 配置 / Session</text>
+<rect x="100" y="448" width="1200" height="38" rx="6" fill="#151515" stroke="#3a342f"/>
+<text x="130" y="472" text-anchor="start" class="sm">Hermes 装配</text>
+<text x="420" y="472" text-anchor="start" class="mono">run_agent:main</text>
+<text x="1130" y="472" text-anchor="middle" class="xs">创建 Agent 与 Runtime</text>
+<rect x="100" y="496" width="1200" height="38" rx="6" fill="#151515" stroke="#3a342f"/>
+<text x="130" y="520" text-anchor="start" class="sm">Hermes 循环</text>
+<text x="420" y="520" text-anchor="start" class="mono">agent/conversation_loop.py</text>
+<text x="1130" y="520" text-anchor="middle" class="xs">模型 / Tool / 重试</text>
+<rect x="100" y="544" width="1200" height="38" rx="6" fill="#151515" stroke="#3a342f"/>
+<text x="130" y="568" text-anchor="start" class="sm">Kimi SDK</text>
+<text x="420" y="568" text-anchor="start" class="mono">Session.create / resume</text>
+<text x="1130" y="568" text-anchor="middle" class="xs">应用接入面</text>
+<rect x="100" y="592" width="1200" height="38" rx="6" fill="#151515" stroke="#3a342f"/>
+<text x="130" y="616" text-anchor="start" class="sm">Kimi CLI Runtime</text>
+<text x="420" y="616" text-anchor="start" class="mono">KimiCLI + soul/agent</text>
+<text x="1130" y="616" text-anchor="middle" class="xs">工具 / Skills / 审批</text>
+<rect x="90" y="705" width="1220" height="64" rx="8" fill="#1a1a1a" stroke="#d4a574"/>
+<text x="700" y="732" text-anchor="middle" class="sm">故障定位：Tool 错看循环；恢复错看 Runtime；接入错看 SDK；工作区/权限错看 Harness</text>
+<text x="700" y="754" text-anchor="middle" class="xs">Hermes 展示循环怎样产品化；Kimi Agent SDK 通过 Session 复用 Kimi CLI Runtime</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#fdba74" stroke-width="2" marker-end="url(#arr-orange)"/>
+<text x="111" y="828" text-anchor="start" class="sm">原生循环</text>
+<line x1="310" y1="824" x2="344" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="356" y="828" text-anchor="start" class="sm">持久编排</text>
+<line x1="555" y1="824" x2="589" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="601" y="828" text-anchor="start" class="sm">SDK</text>
+<line x1="800" y1="824" x2="834" y2="824" stroke="#d4a574" stroke-width="2" marker-end="url(#arr-gold)"/>
+<text x="846" y="828" text-anchor="start" class="sm">产品 Harness</text>
+</svg>

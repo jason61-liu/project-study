@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+<style>text{font-family:"Arial Unicode MS","Hiragino Sans GB","Heiti SC","Helvetica Neue",Arial,sans-serif}.ttl{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:30px;font-weight:700;fill:#f5f0eb}.sub{font-size:13px;fill:#a39787}.sec{font-family:"Songti SC","Arial Unicode MS",Georgia,serif;font-size:15px;font-weight:700;fill:#c9a96e}.nm{font-size:15px;font-weight:650;fill:#f5f0eb}.sm{font-size:11px;fill:#a39787}.xs{font-size:10px;fill:#76695d}.mono{font-family:"Arial Unicode MS","SF Mono","Courier New",monospace;font-size:11px;fill:#d7c6b5}.al{font-size:11px;fill:#c9b8a0}</style>
+<defs>
+<marker id="arr-gold" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#d4a574"/></marker>
+<marker id="arr-mint" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#6ee7b7"/></marker>
+<marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fdba74"/></marker>
+<marker id="arr-violet" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/></marker>
+<marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#38bdf8"/></marker>
+<marker id="arr-rose" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#f87171"/></marker>
+<marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#94a3b8"/></marker>
+<marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#fbbf24"/></marker>
+<radialGradient id="glow"><stop offset="0" stop-color="#d4a574" stop-opacity=".07"/><stop offset="1" stop-color="#d4a574" stop-opacity="0"/></radialGradient></defs>
+<rect width="1400" height="860" fill="#0a0a0a"/><ellipse cx="700" cy="400" rx="620" ry="340" fill="url(#glow)" data-graph-role="decoration" data-owner="canvas"/>
+<text x="700" y="48" text-anchor="middle" class="ttl">报告审批怎样暂停一天后继续</text><text x="700" y="74" text-anchor="middle" class="sub">Thread 关联两次 HTTP 请求；Checkpoint 保存位置；恢复可能重跑节点，发布必须幂等</text>
+<rect x="35" y="105" width="860" height="610" rx="10" fill="#0e0e0e" stroke="#38bdf8" stroke-dasharray="7 5"/><text x="53" y="133" class="sec">thread_id = report-42 的状态时间线</text>
+<rect x="945" y="105" width="420" height="610" rx="10" fill="#0e0e0e" stroke="#f87171" stroke-dasharray="7 5"/><text x="963" y="133" class="sec">请求、存储与安全责任</text>
+<rect x="90" y="190" width="135" height="72" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="157.5" y="219" text-anchor="middle" class="nm">C0</text><text x="157.5" y="242" text-anchor="middle" class="sm">收到问题</text>
+<rect x="270" y="190" width="135" height="72" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="337.5" y="219" text-anchor="middle" class="nm">C1</text><text x="337.5" y="242" text-anchor="middle" class="sm">草稿完成</text>
+<rect x="450" y="190" width="135" height="72" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="517.5" y="219" text-anchor="middle" class="nm">C2</text><text x="517.5" y="242" text-anchor="middle" class="sm">等待审批</text>
+<rect x="630" y="190" width="135" height="72" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="697.5" y="219" text-anchor="middle" class="nm">C3</text><text x="697.5" y="242" text-anchor="middle" class="sm">批准通过</text>
+<rect x="810" y="190" width="135" height="72" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="877.5" y="219" text-anchor="middle" class="nm">C4</text><text x="877.5" y="242" text-anchor="middle" class="sm">发布完成</text>
+<path d="M225 226 H270" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<path d="M405 226 H450" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<path d="M585 226 H630" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<path d="M765 226 H810" fill="none" stroke="#38bdf8" stroke-width="2"  marker-end="url(#arr-blue)"/>
+<rect x="350" y="350" width="250" height="84" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<rect x="354" y="354" width="242" height="76" rx="6" fill="none" stroke="#f87171" opacity=".55"/>
+<text x="475.0" y="379" text-anchor="middle" class="nm">请求 1：interrupt</text><text x="475.0" y="402" text-anchor="middle" class="sm">保存草稿 v3 后 API 返回</text>
+<path d="M517 262 V350" fill="none" stroke="#f87171" stroke-width="2"  marker-end="url(#arr-rose)"/>
+<rect x="650" y="350" width="205" height="84" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="752.5" y="379" text-anchor="middle" class="nm">请求 2：resume</text><text x="752.5" y="402" text-anchor="middle" class="sm">同一 thread_id + approve</text>
+<path d="M600 392 H650" fill="none" stroke="#6ee7b7" stroke-width="2"  marker-end="url(#arr-mint)"/>
+<rect x="120" y="515" width="250" height="84" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="245.0" y="544" text-anchor="middle" class="nm">从 C1 创建分支</text><text x="245.0" y="567" text-anchor="middle" class="sm">修改语气，不改原时间线</text>
+<path d="M337 262 V480 H245 V515" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-violet)"/>
+<rect x="535" y="515" width="300" height="84" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="685.0" y="544" text-anchor="middle" class="nm">发布 Node 可能重跑</text><text x="685.0" y="567" text-anchor="middle" class="sm">用 publish:draft-7:v3 幂等</text>
+<path d="M717 434 V515" fill="none" stroke="#fdba74" stroke-width="2"  marker-end="url(#arr-orange)"/>
+<rect x="985" y="150" width="340" height="70" rx="8" fill="#111111" stroke="#38bdf8" stroke-width="1.7"/>
+<text x="1155.0" y="179" text-anchor="middle" class="nm">Thread ID</text><text x="1155.0" y="202" text-anchor="middle" class="sm">关联两次请求，不是凭证</text>
+<rect x="985" y="254" width="340" height="70" rx="8" fill="#111111" stroke="#a78bfa" stroke-width="1.7"/>
+<text x="1155.0" y="283" text-anchor="middle" class="nm">Checkpoint</text><text x="1155.0" y="306" text-anchor="middle" class="sm">State + 下一节点 + 元数据</text>
+<rect x="985" y="358" width="340" height="70" rx="8" fill="#111111" stroke="#f87171" stroke-width="1.7"/>
+<text x="1155.0" y="387" text-anchor="middle" class="nm">Interrupt</text><text x="1155.0" y="410" text-anchor="middle" class="sm">持久暂停，进程可退出</text>
+<rect x="985" y="462" width="340" height="70" rx="8" fill="#111111" stroke="#6ee7b7" stroke-width="1.7"/>
+<text x="1155.0" y="491" text-anchor="middle" class="nm">Resume</text><text x="1155.0" y="514" text-anchor="middle" class="sm">验证用户、Scope、草稿版本</text>
+<rect x="985" y="566" width="340" height="70" rx="8" fill="#111111" stroke="#fdba74" stroke-width="1.7"/>
+<text x="1155.0" y="595" text-anchor="middle" class="nm">外部副作用</text><text x="1155.0" y="618" text-anchor="middle" class="sm">幂等键或补偿</text>
+<line x1="65" y1="824" x2="99" y2="824" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="111" y="828" text-anchor="start" class="sm">时间线</text>
+<line x1="310" y1="824" x2="344" y2="824" stroke="#f87171" stroke-width="2" marker-end="url(#arr-rose)"/>
+<text x="356" y="828" text-anchor="start" class="sm">暂停</text>
+<line x1="555" y1="824" x2="589" y2="824" stroke="#6ee7b7" stroke-width="2" marker-end="url(#arr-mint)"/>
+<text x="601" y="828" text-anchor="start" class="sm">恢复</text>
+<line x1="800" y1="824" x2="834" y2="824" stroke="#a78bfa" stroke-width="2" marker-end="url(#arr-violet)"/>
+<text x="846" y="828" text-anchor="start" class="sm">分叉/Time Travel</text>
+</svg>

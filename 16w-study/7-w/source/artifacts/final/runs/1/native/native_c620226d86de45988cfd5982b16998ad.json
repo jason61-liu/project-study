@@ -1,0 +1,150 @@
+{
+  "task": {
+    "id": "week7-runtime-recovery",
+    "question": "解释 Agent Runtime、Checkpoint、幂等审批、Subagent 与上下文隔离怎样共同保证研究报告安全发布。",
+    "search_query": "Agent Runtime Checkpoint 幂等 审批 Subagent 上下文隔离",
+    "required_terms": [
+      "Runtime",
+      "Checkpoint",
+      "幂等",
+      "审批",
+      "Subagent",
+      "上下文"
+    ],
+    "required_sources": [
+      "runtime-boundary",
+      "durable-execution",
+      "human-approval",
+      "subagent-context"
+    ],
+    "requires_approval": true
+  },
+  "answer": "解释 Agent Runtime、Checkpoint、幂等审批、Subagent 与上下文隔离怎样共同保证研究报告安全发布。\n结论：子 Agent 接收有界任务和独立上下文，只返回证据摘要；上下文隔离不自动等于文件系统或权限隔离。；Checkpoint 保存执行状态，但外部副作用仍需幂等键。恢复可能重跑节点，重复提交必须由业务唯一约束去重。；模型只提出 Tool Call。Runtime 校验 Schema、用户权限和租户范围，再执行工具；授权不能交给概率模型。；高风险发布应先 Interrupt，校验审批人身份、Scope 和草稿版本；拒绝后流程必须确定性终止且不得发布。",
+  "citations": [
+    "subagent-context",
+    "durable-execution",
+    "runtime-boundary",
+    "human-approval"
+  ],
+  "draft_id": "draft_a61ff6e50bba",
+  "status": "completed",
+  "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+  "trace": [
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_578823423d244af9",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "search_documents",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320295+00:00",
+      "ended_at": "2026-08-13T15:48:32.320295+00:00",
+      "latency_ms": 0.6417079130187631,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_628542c81e66",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    },
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_29f601ea39134942",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "read_document",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320315+00:00",
+      "ended_at": "2026-08-13T15:48:32.320315+00:00",
+      "latency_ms": 0.00466697383671999,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_26d5b9461e4d",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    },
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_3be2cadc8e514583",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "read_document",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320324+00:00",
+      "ended_at": "2026-08-13T15:48:32.320324+00:00",
+      "latency_ms": 0.003459048457443714,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_4ca2db6a445b",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    },
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_284ad4e1221e47a8",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "read_document",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320331+00:00",
+      "ended_at": "2026-08-13T15:48:32.320331+00:00",
+      "latency_ms": 0.0026670750230550766,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_41cd2931e2c8",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    },
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_dd4cb1bbb34341a2",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "read_document",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320337+00:00",
+      "ended_at": "2026-08-13T15:48:32.320337+00:00",
+      "latency_ms": 0.0023329630494117737,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_c6e3b81d0944",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    },
+    {
+      "trace_id": "trace_aeda82484e894795af243893faa6ee0b",
+      "span_id": "span_a2039a3e81574aea",
+      "parent_span_id": null,
+      "architecture": "native",
+      "kind": "tool",
+      "name": "save_draft",
+      "status": "success",
+      "started_at": "2026-08-13T15:48:32.320665+00:00",
+      "ended_at": "2026-08-13T15:48:32.320665+00:00",
+      "latency_ms": 0.322166015394032,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "call_id": "call_dbcd4761ab65",
+      "detail": {
+        "actor": "main",
+        "error_type": null
+      }
+    }
+  ],
+  "started": 652155.038088708,
+  "publication_id": "pub_f3d6bd1644a0"
+}
