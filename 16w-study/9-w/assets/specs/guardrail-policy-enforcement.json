@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 760,
+  "title": "Layered Guardrails and Deterministic Enforcement",
+  "subtitle": "probabilistic detection informs risk; typed policy gates every side effect",
+  "containers": [
+    {"id": "input", "x": 40, "y": 108, "width": 880, "height": 112, "label": "INPUT GUARDRAIL"},
+    {"id": "tool", "x": 40, "y": 258, "width": 880, "height": 112, "label": "TOOL GUARDRAIL AND POLICY"},
+    {"id": "output", "x": 40, "y": 408, "width": 880, "height": 112, "label": "OUTPUT GUARDRAIL"},
+    {"id": "ops", "x": 40, "y": 558, "width": 880, "height": 120, "label": "AUDIT, METRICS, AND RECOVERY"}
+  ],
+  "nodes": [
+    {"id": "sources", "kind": "document", "x": 70, "y": 142, "width": 180, "height": 60, "label": "User / Web / Tool", "sublabel": "untrusted content", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "ingress", "kind": "double_rect", "x": 310, "y": 142, "width": 180, "height": 60, "label": "Input Guardrail", "sublabel": "parse · provenance · taint", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "model", "kind": "rect", "x": 550, "y": 142, "width": 180, "height": 60, "label": "Model / Planner", "sublabel": "candidate answer + action", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "intent", "kind": "document", "x": 760, "y": 142, "width": 130, "height": 60, "label": "Intent", "sublabel": "goal + budget", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "call", "kind": "rect", "x": 760, "y": 292, "width": 130, "height": 60, "label": "Tool Call", "sublabel": "name + args + ID", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "schema", "kind": "rect", "x": 550, "y": 292, "width": 180, "height": 60, "label": "Canonicalize + Schema", "sublabel": "typed request", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "policy", "kind": "double_rect", "x": 310, "y": 292, "width": 180, "height": 60, "label": "PDP + PEP", "sublabel": "RBAC · ABAC · scope", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "runtime", "kind": "rect", "x": 70, "y": 292, "width": 180, "height": 60, "label": "Sandbox / API", "sublabel": "bounded execution", "fill": "#f3f4f6", "stroke": "#374151", "flat": true},
+    {"id": "result", "kind": "document", "x": 70, "y": 450, "width": 180, "height": 60, "label": "Tool Result + Receipt", "sublabel": "untrusted observation", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "outguard", "kind": "double_rect", "x": 310, "y": 450, "width": 180, "height": 60, "label": "Output Guardrail", "sublabel": "DLP · schema · evidence", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "response", "kind": "rect", "x": 550, "y": 450, "width": 180, "height": 60, "label": "Safe Response", "sublabel": "preview ≠ executed", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "consumer", "kind": "user_avatar", "x": 760, "y": 450, "width": 130, "height": 60, "label": "Consumer", "sublabel": "user / agent", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "decisions", "kind": "rect", "x": 210, "y": 602, "width": 210, "height": 60, "label": "Decision Log", "sublabel": "policy + input hash", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "response-control", "kind": "double_rect", "x": 540, "y": 602, "width": 210, "height": 60, "label": "Alert + Revoke + Replay", "sublabel": "contain and verify", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true}
+  ],
+  "arrows": [
+    {"id": "screen", "source": "sources", "target": "ingress", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "context", "source": "ingress", "target": "model", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "bind", "source": "model", "target": "intent", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "propose", "source": "intent", "target": "call", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "validate", "source": "call", "target": "schema", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "decide", "source": "schema", "target": "policy", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "execute", "source": "policy", "target": "runtime", "source_port": "left", "target_port": "right", "flow": "write"},
+    {"id": "observe", "source": "runtime", "target": "result", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "filter", "source": "result", "target": "outguard", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "render", "source": "outguard", "target": "response", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "deliver", "source": "response", "target": "consumer", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "log", "source": "result", "target": "decisions", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "recover", "source": "decisions", "target": "response-control", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "footer": "Input reduces exposure · Tool PEP blocks unsafe effects · Output controls disclosure · Audit enables recovery",
+  "footer_x": 48,
+  "footer_y": 736
+}

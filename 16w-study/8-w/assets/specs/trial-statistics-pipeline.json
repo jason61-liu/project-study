@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 660,
+  "title": "Repeated-Trial Statistical Pipeline",
+  "subtitle": "isolate randomness, preserve task hierarchy, and make uncertainty explicit",
+  "containers": [
+    {"id": "frozen", "x": 40, "y": 112, "width": 880, "height": 104, "label": "Frozen Experimental Contract"},
+    {"id": "trials", "x": 40, "y": 258, "width": 880, "height": 124, "label": "Isolated Repeated Trials"},
+    {"id": "statistics", "x": 40, "y": 430, "width": 880, "height": 116, "label": "Hierarchical Estimation and Release Decision"}
+  ],
+  "nodes": [
+    {"id": "suite", "kind": "document", "x": 70, "y": 140, "width": 170, "height": 58, "label": "Task Suite", "sublabel": "task + split + weights", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "versions", "kind": "rect", "x": 315, "y": 140, "width": 190, "height": 58, "label": "Version Manifest", "sublabel": "model + prompt + graders", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "snapshot", "kind": "cylinder", "x": 590, "y": 140, "width": 200, "height": 58, "label": "Environment Snapshot", "sublabel": "corpus + clock + state", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "trial-batch", "kind": "double_rect", "x": 620, "y": 300, "width": 200, "height": 60, "label": "Trial 1 … k", "sublabel": "fresh isolated namespaces", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "trial-results", "kind": "document", "x": 350, "y": 300, "width": 190, "height": 60, "label": "Trial Results", "sublabel": "success + trace + outcome", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "task-estimate", "kind": "double_rect", "x": 80, "y": 300, "width": 190, "height": 60, "label": "Per-Task Estimate", "sublabel": "within-task variance", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "bootstrap", "kind": "rect", "x": 80, "y": 468, "width": 210, "height": 62, "label": "Paired Hierarchical Bootstrap", "sublabel": "tasks, then trials", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "decision", "kind": "double_rect", "x": 390, "y": 468, "width": 210, "height": 62, "label": "Estimate + CI + Gate", "sublabel": "effect, risk, uncertainty", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true}
+  ],
+  "arrows": [
+    {"id": "bind-versions", "source": "suite", "target": "versions", "source_port": "right", "target_port": "left", "flow": "control", "label": "bind"},
+    {"id": "bind-state", "source": "versions", "target": "snapshot", "source_port": "right", "target_port": "left", "flow": "control", "label": "freeze"},
+    {"id": "spawn", "source": "snapshot", "target": "trial-batch", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "collect", "source": "trial-batch", "target": "trial-results", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "estimate", "source": "trial-results", "target": "task-estimate", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "resample", "source": "task-estimate", "target": "bootstrap", "source_port": "bottom", "target_port": "top", "flow": "async"},
+    {"id": "infer", "source": "bootstrap", "target": "decision", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "footer": "Task count measures coverage · repeated trials measure within-task variability",
+  "footer_x": 48,
+  "footer_y": 636
+}

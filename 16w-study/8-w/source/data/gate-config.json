@@ -1,0 +1,12 @@
+{
+  "min_task_count": 50,
+  "min_overall_success_rate": 0.95,
+  "min_category_success_rate": {
+    "normal": 0.95,
+    "boundary": 0.90,
+    "failure": 0.95,
+    "adversarial": 0.95
+  },
+  "max_success_drop": 0.02,
+  "max_llm_judge_misjudgment_rate": 0.10
+}

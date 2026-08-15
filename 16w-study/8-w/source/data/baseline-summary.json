@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "run_id": "baseline-reference-2026-08-14",
+  "agent_version": "reference-agent@1.0.0",
+  "task_count": 60,
+  "trial_count": 60,
+  "strict_success_rate": 1.0,
+  "category_success_rate": {
+    "adversarial": 1.0,
+    "boundary": 1.0,
+    "failure": 1.0,
+    "normal": 1.0
+  },
+  "grader_pass_rate": {},
+  "status_counts": {
+    "completed": 24,
+    "refused": 15,
+    "needs_clarification": 6,
+    "tool_error": 15
+  },
+  "average_latency_ms": 1.89,
+  "total_input_tokens": null,
+  "total_output_tokens": null,
+  "judge_requested": false,
+  "judge_expected": 0,
+  "judge_completed": 0,
+  "judge_errors": 0,
+  "created_at": "2026-08-14T15:34:07Z"
+}

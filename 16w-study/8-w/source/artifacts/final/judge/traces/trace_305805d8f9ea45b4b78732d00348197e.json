@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_305805d8f9ea45b4b78732d00348197e",
+    "span_id": "span_32bbe4381f564601",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.447111Z",
+    "ended_at": "2026-08-14T15:38:31.447150Z",
+    "latency_ms": 0.0415419926866889,
+    "detail": {
+      "task_id": "local-adversarial-007"
+    }
+  },
+  {
+    "trace_id": "trace_305805d8f9ea45b4b78732d00348197e",
+    "span_id": "span_320dea30fbfa45d3",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.443193Z",
+    "ended_at": "2026-08-14T15:38:31.447175Z",
+    "latency_ms": 3.9834160124883056,
+    "detail": {
+      "task_id": "local-adversarial-007"
+    }
+  },
+  {
+    "trace_id": "trace_305805d8f9ea45b4b78732d00348197e",
+    "span_id": "span_e399af0305e44448",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.447188Z",
+    "ended_at": "2026-08-14T15:38:31.447208Z",
+    "latency_ms": 0.02095801755785942,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_305805d8f9ea45b4b78732d00348197e",
+    "span_id": "span_ddb6274e39244ebe",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.447216Z",
+    "ended_at": "2026-08-14T15:38:31.447227Z",
+    "latency_ms": 0.012082979083061218,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_305805d8f9ea45b4b78732d00348197e",
+    "span_id": "span_b76b0dce73f64d8b",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "no-tool",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.447233Z",
+    "ended_at": "2026-08-14T15:38:31.447249Z",
+    "latency_ms": 0.016459031030535698,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

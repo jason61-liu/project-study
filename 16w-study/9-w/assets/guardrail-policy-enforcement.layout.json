@@ -1,0 +1,459 @@
+{
+  "canvas": {
+    "height": 760.0,
+    "width": 960.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 12,
+      "max_bridged_crossings": 8,
+      "max_route_stretch": 5.0,
+      "max_total_bends": 100,
+      "min_container_gutter": 0.0,
+      "min_label_clearance": 2.0,
+      "min_node_gap": 0.0,
+      "min_segment_length": 0.0,
+      "profile": "standard"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.661,
+      "minimum_container_gutter": 10.0,
+      "minimum_node_gap": 30.0,
+      "shortest_segment": 4.08,
+      "total_bends": 6
+    },
+    "ok": true,
+    "profile": "standard",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "screen",
+      "length": 60.0,
+      "route": [
+        [
+          250.0,
+          172.0
+        ],
+        [
+          310.0,
+          172.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "sources",
+      "source_port": [
+        250.0,
+        172.0
+      ],
+      "target": "ingress",
+      "target_port": [
+        310.0,
+        172.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "context",
+      "length": 60.0,
+      "route": [
+        [
+          490.0,
+          172.0
+        ],
+        [
+          550.0,
+          172.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "ingress",
+      "source_port": [
+        490.0,
+        172.0
+      ],
+      "target": "model",
+      "target_port": [
+        550.0,
+        172.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "bind",
+      "length": 30.0,
+      "route": [
+        [
+          730.0,
+          172.0
+        ],
+        [
+          760.0,
+          172.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "model",
+      "source_port": [
+        730.0,
+        172.0
+      ],
+      "target": "intent",
+      "target_port": [
+        760.0,
+        172.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "propose",
+      "length": 90.0,
+      "route": [
+        [
+          825.0,
+          202.0
+        ],
+        [
+          825.0,
+          292.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "intent",
+      "source_port": [
+        825.0,
+        202.0
+      ],
+      "target": "call",
+      "target_port": [
+        825.0,
+        292.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "validate",
+      "length": 30.0,
+      "route": [
+        [
+          760.0,
+          322.0
+        ],
+        [
+          730.0,
+          322.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "call",
+      "source_port": [
+        760.0,
+        322.0
+      ],
+      "target": "schema",
+      "target_port": [
+        730.0,
+        322.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "decide",
+      "length": 60.0,
+      "route": [
+        [
+          550.0,
+          322.0
+        ],
+        [
+          490.0,
+          322.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "schema",
+      "source_port": [
+        550.0,
+        322.0
+      ],
+      "target": "policy",
+      "target_port": [
+        490.0,
+        322.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "execute",
+      "length": 60.0,
+      "route": [
+        [
+          310.0,
+          322.0
+        ],
+        [
+          250.0,
+          322.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "policy",
+      "source_port": [
+        310.0,
+        322.0
+      ],
+      "target": "runtime",
+      "target_port": [
+        250.0,
+        322.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 4,
+      "bridges": [],
+      "crossings": [],
+      "id": "observe",
+      "length": 162.8,
+      "route": [
+        [
+          160.0,
+          352.0
+        ],
+        [
+          160.0,
+          372.4
+        ],
+        [
+          192.4,
+          372.4
+        ],
+        [
+          192.4,
+          445.92
+        ],
+        [
+          160.0,
+          445.92
+        ],
+        [
+          160.0,
+          450.0
+        ]
+      ],
+      "route_stretch": 1.661,
+      "source": "runtime",
+      "source_port": [
+        160.0,
+        352.0
+      ],
+      "target": "result",
+      "target_port": [
+        160.0,
+        450.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "filter",
+      "length": 60.0,
+      "route": [
+        [
+          250.0,
+          480.0
+        ],
+        [
+          310.0,
+          480.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "result",
+      "source_port": [
+        250.0,
+        480.0
+      ],
+      "target": "outguard",
+      "target_port": [
+        310.0,
+        480.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "render",
+      "length": 60.0,
+      "route": [
+        [
+          490.0,
+          480.0
+        ],
+        [
+          550.0,
+          480.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "outguard",
+      "source_port": [
+        490.0,
+        480.0
+      ],
+      "target": "response",
+      "target_port": [
+        550.0,
+        480.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "deliver",
+      "length": 30.0,
+      "route": [
+        [
+          730.0,
+          480.0
+        ],
+        [
+          760.0,
+          480.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "response",
+      "source_port": [
+        730.0,
+        480.0
+      ],
+      "target": "consumer",
+      "target_port": [
+        760.0,
+        480.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 2,
+      "bridges": [],
+      "crossings": [],
+      "id": "log",
+      "length": 247.0,
+      "route": [
+        [
+          160.0,
+          510.0
+        ],
+        [
+          160.0,
+          534.0
+        ],
+        [
+          315.0,
+          534.0
+        ],
+        [
+          315.0,
+          602.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "result",
+      "source_port": [
+        160.0,
+        510.0
+      ],
+      "target": "decisions",
+      "target_port": [
+        315.0,
+        602.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "recover",
+      "length": 120.0,
+      "route": [
+        [
+          420.0,
+          632.0
+        ],
+        [
+          540.0,
+          632.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "decisions",
+      "source_port": [
+        420.0,
+        632.0
+      ],
+      "target": "response-control",
+      "target_port": [
+        540.0,
+        632.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": null
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 13,
+    "nodes": 14
+  },
+  "text_metrics": "heuristic-v1"
+}

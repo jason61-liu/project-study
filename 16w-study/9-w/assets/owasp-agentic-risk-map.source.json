@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 1200,
+  "height": 760,
+  "title": "OWASP Agentic Top 10 2026 风险传播地图",
+  "subtitle": "风险编号是分类；箭头表示常见放大路径，而非唯一因果关系",
+  "containers": [
+    {"id": "entry", "x": 40, "y": 120, "width": 1120, "height": 130, "label": "攻击入口与信任破坏"},
+    {"id": "execution", "x": 40, "y": 300, "width": 1120, "height": 130, "label": "能力、身份与执行面"},
+    {"id": "impact", "x": 40, "y": 480, "width": 1120, "height": 130, "label": "系统性放大与治理失效"}
+  ],
+  "nodes": [
+    {"id": "asi01", "kind": "double_rect", "x": 70, "y": 165, "width": 220, "height": 62, "label": "ASI01 Goal Hijack", "sublabel": "直接/间接注入改变目标", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "asi04", "kind": "rect", "x": 340, "y": 165, "width": 220, "height": 62, "label": "ASI04 Supply Chain", "sublabel": "模型、工具、MCP、依赖污染", "fill": "#fff7ed", "stroke": "#ea580c"},
+    {"id": "asi06", "kind": "cylinder", "x": 610, "y": 165, "width": 220, "height": 62, "label": "ASI06 Memory Poisoning", "sublabel": "RAG/摘要/长期记忆持久污染", "fill": "#faf5ff", "stroke": "#9333ea"},
+    {"id": "asi07", "kind": "rect", "x": 880, "y": 165, "width": 220, "height": 62, "label": "ASI07 Inter-Agent", "sublabel": "消息伪造、重放与语义欺骗", "fill": "#eff6ff", "stroke": "#2563eb"},
+
+    {"id": "asi02", "kind": "rect", "x": 70, "y": 345, "width": 220, "height": 62, "label": "ASI02 Tool Misuse", "sublabel": "合法工具被用于错误目的", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "asi03", "kind": "rect", "x": 340, "y": 345, "width": 220, "height": 62, "label": "ASI03 Privilege Abuse", "sublabel": "委托链、Scope、凭证继承滥用", "fill": "#fff7ed", "stroke": "#ea580c"},
+    {"id": "asi05", "kind": "rect", "x": 610, "y": 345, "width": 220, "height": 62, "label": "ASI05 Unexpected RCE", "sublabel": "生成代码、命令和插件执行", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "asi09", "kind": "rect", "x": 880, "y": 345, "width": 220, "height": 62, "label": "ASI09 Human Trust", "sublabel": "自动化偏见与诱导确认", "fill": "#eff6ff", "stroke": "#2563eb"},
+
+    {"id": "asi08", "kind": "rect", "x": 185, "y": 525, "width": 260, "height": 62, "label": "ASI08 Cascading Failures", "sublabel": "错误跨 Agent、会话和工具放大", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "asi10", "kind": "double_rect", "x": 755, "y": 525, "width": 260, "height": 62, "label": "ASI10 Rogue Agents", "sublabel": "持续偏离目标并规避治理", "fill": "#faf5ff", "stroke": "#9333ea"}
+  ],
+  "arrows": [
+    {"id": "goal-tool", "source": "asi01", "target": "asi02", "source_port": "bottom", "target_port": "top", "flow": "feedback", "label": "目标转向"},
+    {"id": "supply-priv", "source": "asi04", "target": "asi03", "source_port": "bottom", "target_port": "top", "flow": "data", "label": "信任继承"},
+    {"id": "memory-rce", "source": "asi06", "target": "asi05", "source_port": "bottom", "target_port": "top", "flow": "write", "label": "持久触发"},
+    {"id": "comm-human", "source": "asi07", "target": "asi09", "source_port": "bottom", "target_port": "top", "flow": "read", "label": "伪造意图"},
+    {"id": "tool-cascade", "source": "asi02", "target": "asi08", "source_port": "bottom", "target_port": "top", "flow": "feedback", "label": "副作用扩散"},
+    {"id": "priv-cascade", "source": "asi03", "target": "asi08", "source_port": "bottom", "target_port": "top", "flow": "data", "label": "权限放大"},
+    {"id": "rce-rogue", "source": "asi05", "target": "asi10", "source_port": "bottom", "target_port": "top", "flow": "feedback", "label": "控制失陷"},
+    {"id": "human-rogue", "source": "asi09", "target": "asi10", "source_port": "bottom", "target_port": "top", "flow": "read", "label": "错误放行"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 48,
+  "legend_y": 660,
+  "legend_locked": true,
+  "legend": [
+    {"flow": "feedback", "label": "高危执行/放大"},
+    {"flow": "data", "label": "身份与供应链"},
+    {"flow": "write", "label": "持久状态污染"},
+    {"flow": "read", "label": "通信与人工信任"}
+  ],
+  "footer": "OWASP Agentic Top 10 2026 · defense-in-depth risk map",
+  "footer_x": 48,
+  "footer_y": 735
+}

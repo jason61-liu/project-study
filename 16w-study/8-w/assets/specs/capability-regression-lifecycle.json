@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 650,
+  "title": "Capability to Regression Lifecycle",
+  "subtitle": "exploration creates headroom; stabilization turns it into a release contract",
+  "containers": [
+    {"id": "explore", "x": 40, "y": 112, "width": 880, "height": 122, "label": "Capability Track · Find the frontier"},
+    {"id": "stabilize", "x": 40, "y": 280, "width": 880, "height": 122, "label": "Graduation Gate · Make success repeatable"},
+    {"id": "protect", "x": 40, "y": 448, "width": 880, "height": 104, "label": "Regression Track · Protect known behavior"}
+  ],
+  "nodes": [
+    {"id": "hard-tasks", "kind": "document", "x": 70, "y": 150, "width": 170, "height": 62, "label": "New Hard Tasks", "sublabel": "low baseline pass rate", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "diagnose", "kind": "rect", "x": 330, "y": 150, "width": 180, "height": 62, "label": "Trace Diagnosis", "sublabel": "find missing capability", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "improve", "kind": "double_rect", "x": 620, "y": 150, "width": 190, "height": 62, "label": "System Improvement", "sublabel": "model / prompt / tools", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "reliable", "kind": "rect", "x": 620, "y": 318, "width": 190, "height": 62, "label": "Repeated Trials", "sublabel": "high pass^k + low variance", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "grader", "kind": "rect", "x": 385, "y": 318, "width": 190, "height": 62, "label": "Stable Grader", "sublabel": "clear outcome contract", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "graduate", "kind": "double_rect", "x": 100, "y": 318, "width": 170, "height": 62, "label": "Graduate", "sublabel": "freeze task + versions", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "regression", "kind": "document", "x": 90, "y": 478, "width": 190, "height": 58, "label": "Regression Suite", "sublabel": "near-saturated known tasks", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "release", "kind": "double_rect", "x": 400, "y": 478, "width": 180, "height": 58, "label": "Release Gate", "sublabel": "no unsafe regression", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true},
+    {"id": "production", "kind": "rect", "x": 680, "y": 478, "width": 170, "height": 58, "label": "Production Signals", "sublabel": "new failures return", "fill": "#f8fafc", "stroke": "#94a3b8", "flat": true}
+  ],
+  "arrows": [
+    {"id": "observe", "source": "hard-tasks", "target": "diagnose", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "change", "source": "diagnose", "target": "improve", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "repeat", "source": "improve", "target": "reliable", "source_port": "bottom", "target_port": "top", "flow": "async"},
+    {"id": "calibrate", "source": "reliable", "target": "grader", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "approve", "source": "grader", "target": "graduate", "source_port": "left", "target_port": "right", "flow": "write"},
+    {"id": "gate", "source": "regression", "target": "release", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "ship", "source": "release", "target": "production", "source_port": "right", "target_port": "left", "flow": "control"}
+  ],
+  "footer": "Capability asks what is newly possible; regression asks what must never break",
+  "footer_x": 48,
+  "footer_y": 630
+}

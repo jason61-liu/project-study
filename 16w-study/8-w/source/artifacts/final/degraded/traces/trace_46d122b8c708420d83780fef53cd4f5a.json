@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_46d122b8c708420d83780fef53cd4f5a",
+    "span_id": "span_c073e880a9ac47ee",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.440249Z",
+    "ended_at": "2026-08-14T15:34:07.440254Z",
+    "latency_ms": 0.00466697383671999,
+    "detail": {
+      "task_id": "local-boundary-009"
+    }
+  },
+  {
+    "trace_id": "trace_46d122b8c708420d83780fef53cd4f5a",
+    "span_id": "span_7e8fc9a56da74b71",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "degraded-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.438170Z",
+    "ended_at": "2026-08-14T15:34:07.440256Z",
+    "latency_ms": 2.0858340431004763,
+    "detail": {
+      "task_id": "local-boundary-009"
+    }
+  },
+  {
+    "trace_id": "trace_46d122b8c708420d83780fef53cd4f5a",
+    "span_id": "span_54295ef5d0a64e33",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.438166Z",
+    "ended_at": "2026-08-14T15:34:07.440258Z",
+    "latency_ms": 2.0922920666635036,
+    "detail": {
+      "task_id": "local-boundary-009"
+    }
+  },
+  {
+    "trace_id": "trace_46d122b8c708420d83780fef53cd4f5a",
+    "span_id": "span_500f203105c449e3",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.440261Z",
+    "ended_at": "2026-08-14T15:34:07.440265Z",
+    "latency_ms": 0.0038750004023313522,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_46d122b8c708420d83780fef53cd4f5a",
+    "span_id": "span_f08fef34973f4fac",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.440267Z",
+    "ended_at": "2026-08-14T15:34:07.440270Z",
+    "latency_ms": 0.003625056706368923,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

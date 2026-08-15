@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_6419483558f84fbab461953e346472e8",
+    "span_id": "span_0a0e7e9a26624a81",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437643Z",
+    "ended_at": "2026-08-14T15:34:07.437652Z",
+    "latency_ms": 0.009041046723723412,
+    "detail": {
+      "task_id": "local-normal-015"
+    }
+  },
+  {
+    "trace_id": "trace_6419483558f84fbab461953e346472e8",
+    "span_id": "span_6d729197ad034df9",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435341Z",
+    "ended_at": "2026-08-14T15:34:07.437655Z",
+    "latency_ms": 2.313709002919495,
+    "detail": {
+      "task_id": "local-normal-015"
+    }
+  },
+  {
+    "trace_id": "trace_6419483558f84fbab461953e346472e8",
+    "span_id": "span_8b113e75a4bc4ab2",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437657Z",
+    "ended_at": "2026-08-14T15:34:07.437661Z",
+    "latency_ms": 0.0036249402910470963,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_6419483558f84fbab461953e346472e8",
+    "span_id": "span_94bda40ab8084a16",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437663Z",
+    "ended_at": "2026-08-14T15:34:07.437667Z",
+    "latency_ms": 0.0037919962778687477,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_6419483558f84fbab461953e346472e8",
+    "span_id": "span_cc02dc763e5b4342",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437669Z",
+    "ended_at": "2026-08-14T15:34:07.437671Z",
+    "latency_ms": 0.0029159709811210632,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

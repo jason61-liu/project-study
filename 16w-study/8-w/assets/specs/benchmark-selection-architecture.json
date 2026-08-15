@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 700,
+  "title": "Benchmark Selection Architecture",
+  "subtitle": "match the authoritative outcome and system boundary to the project risk",
+  "containers": [
+    {"id": "requirements", "x": 40, "y": 112, "width": 880, "height": 104, "label": "Target Project Boundary"},
+    {"id": "candidates", "x": 40, "y": 258, "width": 880, "height": 176, "label": "External Benchmark Lenses"},
+    {"id": "portfolio", "x": 40, "y": 482, "width": 880, "height": 120, "label": "Selected Evaluation Portfolio"}
+  ],
+  "nodes": [
+    {"id": "project", "kind": "double_rect", "x": 90, "y": 142, "width": 250, "height": 58, "label": "Weeks 2–7 Agent System", "sublabel": "RAG + policy + tools + state + recovery", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "risk", "kind": "rect", "x": 540, "y": 142, "width": 270, "height": 58, "label": "Required Evidence", "sublabel": "Outcome · ACL · citations · trace · cost", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "bfcl", "kind": "rect", "x": 64, "y": 300, "width": 180, "height": 92, "label": "BFCL", "sublabel": "tool-call protocol", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "tau", "kind": "double_rect", "x": 278, "y": 300, "width": 180, "height": 92, "label": "τ-bench Family", "sublabel": "policy + state outcome", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "gaia", "kind": "rect", "x": 492, "y": 300, "width": 180, "height": 92, "label": "GAIA", "sublabel": "open research", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "swe", "kind": "rect", "x": 706, "y": 300, "width": 180, "height": 92, "label": "SWE-bench", "sublabel": "repo repair tests", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "component", "kind": "rect", "x": 64, "y": 520, "width": 220, "height": 62, "label": "Component Regression", "sublabel": "BFCL Multi Turn + relevance", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "primary", "kind": "double_rect", "x": 328, "y": 520, "width": 260, "height": 62, "label": "Primary External Suite", "sublabel": "τ³ banking_knowledge / base", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "local", "kind": "rect", "x": 632, "y": 520, "width": 250, "height": 62, "label": "Private Product Holdout", "sublabel": "ACL + approval + citations + recovery", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true}
+  ],
+  "arrows": [
+    {"id": "derive", "source": "project", "target": "risk", "source_port": "right", "target_port": "left", "flow": "control", "label": "derive risks"},
+    {"id": "screen-tau", "source": "risk", "target": "tau", "source_port": "bottom", "target_port": "top", "flow": "data", "route_points": [[675, 238], [368, 238]]},
+    {"id": "select-primary", "source": "tau", "target": "primary", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "select-component", "source": "bfcl", "target": "component", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "combine-component", "source": "component", "target": "primary", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "augment", "source": "primary", "target": "local", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "footer": "Primary: τ³ banking_knowledge · Component: BFCL · Authority: private product holdout",
+  "footer_x": 48,
+  "footer_y": 682
+}

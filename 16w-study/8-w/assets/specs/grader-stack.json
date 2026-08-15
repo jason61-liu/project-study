@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 680,
+  "title": "Layered Grader Architecture",
+  "subtitle": "use deterministic facts first; spend semantic and human judgment selectively",
+  "containers": [
+    {"id": "evidence", "x": 40, "y": 112, "width": 880, "height": 110, "label": "Trial Evidence"},
+    {"id": "automatic", "x": 40, "y": 264, "width": 880, "height": 134, "label": "Automatic Grading Pipeline"},
+    {"id": "calibration", "x": 40, "y": 446, "width": 880, "height": 112, "label": "Escalation and Calibration"}
+  ],
+  "nodes": [
+    {"id": "artifacts", "kind": "document", "x": 70, "y": 146, "width": 200, "height": 58, "label": "Trial Artifacts", "sublabel": "Trace + Outcome + Answer", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "deterministic", "kind": "double_rect", "x": 340, "y": 146, "width": 200, "height": 58, "label": "Deterministic Gates", "sublabel": "schema · ACL · state · tests", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "semantic", "kind": "rect", "x": 610, "y": 146, "width": 200, "height": 58, "label": "Semantic Graders", "sublabel": "Rubric + Pairwise + Judge", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "aggregate", "kind": "double_rect", "x": 610, "y": 306, "width": 200, "height": 66, "label": "Verdict", "sublabel": "gates + diagnostics", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "sample", "kind": "rect", "x": 390, "y": 306, "width": 190, "height": 66, "label": "Risk Sampler", "sublabel": "failure · drift · disagreement", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "human", "kind": "user_avatar", "x": 100, "y": 306, "width": 190, "height": 66, "label": "Human / SME", "sublabel": "blind review", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "calibrate", "kind": "document", "x": 100, "y": 480, "width": 190, "height": 62, "label": "Calibration Set", "sublabel": "judge agreement + drift", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "release", "kind": "double_rect", "x": 390, "y": 480, "width": 190, "height": 62, "label": "Release Metrics", "sublabel": "score + confidence", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true}
+  ],
+  "arrows": [
+    {"id": "facts", "source": "artifacts", "target": "deterministic", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "meaning", "source": "deterministic", "target": "semantic", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "verdict", "source": "semantic", "target": "aggregate", "source_port": "bottom", "target_port": "top", "flow": "feedback"},
+    {"id": "sample-risk", "source": "aggregate", "target": "sample", "source_port": "left", "target_port": "right", "flow": "async"},
+    {"id": "review", "source": "sample", "target": "human", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "report", "source": "calibrate", "target": "release", "source_port": "right", "target_port": "left", "flow": "data"}
+  ],
+  "footer": "Hard facts gate first · semantic judgment is calibrated · humans focus on risk",
+  "footer_x": 48,
+  "footer_y": 654
+}

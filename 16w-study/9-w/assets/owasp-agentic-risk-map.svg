@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="standard" data-max-bends-per-edge="12" data-max-total-bends="100" data-max-route-stretch="5.0" data-max-bridged-crossings="8" data-min-node-gap="0.0" data-min-container-gutter="0.0" data-min-label-clearance="2.0" data-min-segment-length="0.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Hiragino Sans GB', 'Arial Unicode MS', 'Heiti SC', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="1200.0" height="760.0" fill="#ffffff"/>
+  <text x="600.0" y="56" text-anchor="middle" class="title">OWASP Agentic Top 10 2026 风险传播地图</text>
+  <text x="600.0" y="82" text-anchor="middle" class="subtitle">风险编号是分类；箭头表示常见放大路径，而非唯一因果关系</text>
+  <g id="entry" data-graph-role="container" data-container-id="entry" data-semantic-role="boundary" data-graph-bounds="40,120,1160,250">
+  <rect data-graph-role="container" x="40.0" y="120.0" width="1120.0" height="130.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="144.0" class="section">攻击入口与信任破坏</text>
+    <rect id="entry-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="126" width="147" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="execution" data-graph-role="container" data-container-id="execution" data-semantic-role="boundary" data-graph-bounds="40,300,1160,430">
+  <rect data-graph-role="container" x="40.0" y="300.0" width="1120.0" height="130.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="324.0" class="section">能力、身份与执行面</text>
+    <rect id="execution-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="306" width="147" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="impact" data-graph-role="container" data-container-id="impact" data-semantic-role="boundary" data-graph-bounds="40,480,1160,610">
+  <rect data-graph-role="container" x="40.0" y="480.0" width="1120.0" height="130.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="504.0" class="section">系统性放大与治理失效</text>
+    <rect id="impact-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="486" width="160" height="30" fill="none" stroke="none"/>
+  </g>
+  <path id="goal-tool" data-graph-role="edge" data-edge-id="goal-tool" data-source="asi01" data-target="asi02" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="4" data-route-stretch="1.254" data-bridges="" d="M 180,227 L 180,247.4 L 195,247.4 L 195,337.86 L 180,337.86 L 180,345" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <path id="supply-priv" data-graph-role="edge" data-edge-id="supply-priv" data-source="asi04" data-target="asi03" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 450,227 L 450,345" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="memory-rce" data-graph-role="edge" data-edge-id="memory-rce" data-source="asi06" data-target="asi05" data-edge-kind="flow" data-topic-id="" data-flow="write" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 720,227 L 720,345" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowB)"/>
+  <path id="comm-human" data-graph-role="edge" data-edge-id="comm-human" data-source="asi07" data-target="asi09" data-edge-kind="flow" data-topic-id="" data-flow="read" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 990,227 L 990,345" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowC)"/>
+  <path id="tool-cascade" data-graph-role="edge" data-edge-id="tool-cascade" data-source="asi02" data-target="asi08" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 180,407 L 180,431 L 324,431 L 324,525" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <path id="priv-cascade-bridge-mask" data-graph-role="bridge-mask" data-owner="priv-cascade" d="M 450,407 L 450,462 L 329,462 A 5 5 0 0 1 319,462 L 306,462 L 306,525" fill="none" stroke="#ffffff" stroke-width="6.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="priv-cascade" data-graph-role="edge" data-edge-id="priv-cascade" data-source="asi03" data-target="asi08" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="324,462" d="M 450,407 L 450,462 L 329,462 A 5 5 0 0 1 319,462 L 306,462 L 306,525" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="rce-rogue" data-graph-role="edge" data-edge-id="rce-rogue" data-source="asi05" data-target="asi10" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 720,407 L 720,431 L 894,431 L 894,525" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <path id="human-rogue-bridge-mask" data-graph-role="bridge-mask" data-owner="human-rogue" d="M 990,407 L 990,427.4 L 876,427.4 L 876,525" fill="none" stroke="#ffffff" stroke-width="6.9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="human-rogue" data-graph-role="edge" data-edge-id="human-rogue" data-source="asi09" data-target="asi10" data-edge-kind="flow" data-topic-id="" data-flow="read" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="876,431" d="M 990,407 L 990,427.4 L 876,427.4 L 876,525" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowC)"/>
+  <g id="node-asi01" data-graph-role="node" data-node-id="asi01" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,165,290,227">
+  <rect x="70.0" y="165.0" width="220.0" height="62.0" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <rect x="76.0" y="171.0" width="208.0" height="50.0" rx="7.0" fill="none" stroke="#dc2626" stroke-width="1.2" opacity="0.65"/>
+  <text x="180.0" y="196.0" text-anchor="middle" class="node-title" font-size="18.0">ASI01 Goal Hijack</text>
+  <text x="180.0" y="218.0" text-anchor="middle" class="node-sub">直接/间接注入改变目标</text>
+  </g>
+  <g id="node-asi04" data-graph-role="node" data-node-id="asi04" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="340,165,560,227">
+  <rect x="340.0" y="165.0" width="220.0" height="62.0" rx="10.0" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="450.0" y="196.0" text-anchor="middle" class="node-title" font-size="18.0">ASI04 Supply Chain</text>
+  <text x="450.0" y="218.0" text-anchor="middle" class="node-sub">模型、工具、MCP、依赖污染</text>
+  </g>
+  <g id="node-asi06" data-graph-role="node" data-node-id="asi06" data-semantic-role="cylinder" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="610,165,830,227">
+  <ellipse cx="720.0" cy="172.75" rx="55.0" ry="7.75" fill="#faf5ff" stroke="#9333ea" stroke-width="2.2"/>
+  <rect x="610.0" y="172.75" width="220.0" height="46.5" fill="#faf5ff" stroke="#9333ea" stroke-width="2.2"/>
+  <ellipse cx="720.0" cy="219.25" rx="55.0" ry="7.75" fill="#faf5ff" stroke="#9333ea" stroke-width="2.2"/>
+  <ellipse cx="720.0" cy="188.56" rx="55.0" ry="7.75" fill="none" stroke="#9333ea" stroke-opacity="0.45" stroke-width="1.2"/>
+  <ellipse cx="720.0" cy="202.2" rx="55.0" ry="7.75" fill="none" stroke="#9333ea" stroke-opacity="0.25" stroke-width="1.2"/>
+  <text x="720.0" y="190.0" text-anchor="middle" class="node-title" font-size="15.4">ASI06 Memory Poisoning</text>
+  <text x="720.0" y="214.0" text-anchor="middle" class="node-sub">RAG/摘要/长期记忆持久污染</text>
+  </g>
+  <g id="node-asi07" data-graph-role="node" data-node-id="asi07" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="880,165,1100,227">
+  <rect x="880.0" y="165.0" width="220.0" height="62.0" rx="10.0" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="990.0" y="196.0" text-anchor="middle" class="node-title" font-size="18.0">ASI07 Inter-Agent</text>
+  <text x="990.0" y="218.0" text-anchor="middle" class="node-sub">消息伪造、重放与语义欺骗</text>
+  </g>
+  <g id="node-asi02" data-graph-role="node" data-node-id="asi02" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,345,290,407">
+  <rect x="70.0" y="345.0" width="220.0" height="62.0" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="180.0" y="376.0" text-anchor="middle" class="node-title" font-size="18.0">ASI02 Tool Misuse</text>
+  <text x="180.0" y="398.0" text-anchor="middle" class="node-sub">合法工具被用于错误目的</text>
+  </g>
+  <g id="node-asi03" data-graph-role="node" data-node-id="asi03" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="340,345,560,407">
+  <rect x="340.0" y="345.0" width="220.0" height="62.0" rx="10.0" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="450.0" y="376.0" text-anchor="middle" class="node-title" font-size="16.96">ASI03 Privilege Abuse</text>
+  <text x="450.0" y="398.0" text-anchor="middle" class="node-sub">委托链、Scope、凭证继承滥用</text>
+  </g>
+  <g id="node-asi05" data-graph-role="node" data-node-id="asi05" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="610,345,830,407">
+  <rect x="610.0" y="345.0" width="220.0" height="62.0" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="720.0" y="376.0" text-anchor="middle" class="node-title" font-size="16.64">ASI05 Unexpected RCE</text>
+  <text x="720.0" y="398.0" text-anchor="middle" class="node-sub">生成代码、命令和插件执行</text>
+  </g>
+  <g id="node-asi09" data-graph-role="node" data-node-id="asi09" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="880,345,1100,407">
+  <rect x="880.0" y="345.0" width="220.0" height="62.0" rx="10.0" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="990.0" y="376.0" text-anchor="middle" class="node-title" font-size="18.0">ASI09 Human Trust</text>
+  <text x="990.0" y="398.0" text-anchor="middle" class="node-sub">自动化偏见与诱导确认</text>
+  </g>
+  <g id="node-asi08" data-graph-role="node" data-node-id="asi08" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="185,525,445,587">
+  <rect x="185.0" y="525.0" width="260.0" height="62.0" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8" filter="url(#shadowSoft)"/>
+  <text x="315.0" y="556.0" text-anchor="middle" class="node-title" font-size="17.56">ASI08 Cascading Failures</text>
+  <text x="315.0" y="578.0" text-anchor="middle" class="node-sub">错误跨 Agent、会话和工具放大</text>
+  </g>
+  <g id="node-asi10" data-graph-role="node" data-node-id="asi10" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="755,525,1015,587">
+  <rect x="755.0" y="525.0" width="260.0" height="62.0" rx="10.0" fill="#faf5ff" stroke="#9333ea" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <rect x="761.0" y="531.0" width="248.0" height="50.0" rx="7.0" fill="none" stroke="#9333ea" stroke-width="1.2" opacity="0.65"/>
+  <text x="885.0" y="556.0" text-anchor="middle" class="node-title" font-size="18.0">ASI10 Rogue Agents</text>
+  <text x="885.0" y="578.0" text-anchor="middle" class="node-sub">持续偏离目标并规避治理</text>
+  </g>
+  <g id="goal-tool-label" data-graph-role="label" data-owner="goal-tool" data-graph-bounds="130,278.63,192,298.63">
+  <rect x="130.0" y="278.63" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="161.0" y="292.63" text-anchor="middle" class="arrow-label">目标转向</text>
+  </g>
+  <g id="supply-priv-label" data-graph-role="label" data-owner="supply-priv" data-graph-bounds="385,272,447,292">
+  <rect x="385.0" y="272.0" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="416.0" y="286.0" text-anchor="middle" class="arrow-label">信任继承</text>
+  </g>
+  <g id="memory-rce-label" data-graph-role="label" data-owner="memory-rce" data-graph-bounds="655,272,717,292">
+  <rect x="655.0" y="272.0" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="686.0" y="286.0" text-anchor="middle" class="arrow-label">持久触发</text>
+  </g>
+  <g id="comm-human-label" data-graph-role="label" data-owner="comm-human" data-graph-bounds="925,272,987,292">
+  <rect x="925.0" y="272.0" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="956.0" y="286.0" text-anchor="middle" class="arrow-label">伪造意图</text>
+  </g>
+  <g id="tool-cascade-label" data-graph-role="label" data-owner="tool-cascade" data-graph-bounds="215,418,289,438">
+  <rect x="215.0" y="418.0" width="74.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="252.0" y="432.0" text-anchor="middle" class="arrow-label">副作用扩散</text>
+  </g>
+  <g id="priv-cascade-label" data-graph-role="label" data-owner="priv-cascade" data-graph-bounds="347,431,409,451">
+  <rect x="347.0" y="431.0" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="378.0" y="445.0" text-anchor="middle" class="arrow-label">权限放大</text>
+  </g>
+  <g id="rce-rogue-label" data-graph-role="label" data-owner="rce-rogue" data-graph-bounds="776,418,838,438">
+  <rect x="776.0" y="418.0" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="807.0" y="432.0" text-anchor="middle" class="arrow-label">控制失陷</text>
+  </g>
+  <g id="human-rogue-label" data-graph-role="label" data-owner="human-rogue" data-graph-bounds="902,414.4,964,434.4">
+  <rect x="902.0" y="414.4" width="62.0" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="933.0" y="428.4" text-anchor="middle" class="arrow-label">错误放行</text>
+  </g>
+  <g id="legend" data-graph-role="legend">
+    <rect id="legend-zone" data-graph-role="reserved" data-reserved-kind="legend" x="38" y="646" width="580.96" height="46" rx="10" fill="none" stroke="none"/>
+    <line data-graph-role="decoration" x1="48.0" y1="660.0" x2="78.0" y2="660.0" stroke="#ef4444" stroke-width="2.4" marker-end="url(#arrowG)"/>
+    <text data-graph-role="decoration" x="88.0" y="664.0" class="legend">高危执行/放大</text>
+    <line data-graph-role="decoration" x1="194.96" y1="660.0" x2="224.96" y2="660.0" stroke="#f97316" stroke-width="2.4" marker-end="url(#arrowE)"/>
+    <text data-graph-role="decoration" x="234.96" y="664.0" class="legend">身份与供应链</text>
+    <line data-graph-role="decoration" x1="334.96000000000004" y1="660.0" x2="364.96000000000004" y2="660.0" stroke="#10b981" stroke-width="2.4" marker-end="url(#arrowB)"/>
+    <text data-graph-role="decoration" x="374.96000000000004" y="664.0" class="legend">持久状态污染</text>
+    <line data-graph-role="decoration" x1="474.96000000000004" y1="660.0" x2="504.96000000000004" y2="660.0" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arrowC)"/>
+    <text data-graph-role="decoration" x="514.96" y="664.0" class="legend">通信与人工信任</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,723,419,739">
+  <text x="48.0" y="735.0" class="footnote">OWASP Agentic Top 10 2026 · defense-in-depth risk map</text>
+  </g>
+</svg>

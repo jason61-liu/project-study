@@ -1,0 +1,58 @@
+[
+  {
+    "trace_id": "trace_7b36fe8fe7a9493196d9fa0c7342fdbf",
+    "span_id": "span_2a2aac1c1f43473e",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437781Z",
+    "ended_at": "2026-08-14T15:34:07.437789Z",
+    "latency_ms": 0.008458970114588737,
+    "detail": {
+      "task_id": "local-boundary-001"
+    }
+  },
+  {
+    "trace_id": "trace_7b36fe8fe7a9493196d9fa0c7342fdbf",
+    "span_id": "span_2d9c5c03205d4be7",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435349Z",
+    "ended_at": "2026-08-14T15:34:07.437792Z",
+    "latency_ms": 2.443125005811453,
+    "detail": {
+      "task_id": "local-boundary-001"
+    }
+  },
+  {
+    "trace_id": "trace_7b36fe8fe7a9493196d9fa0c7342fdbf",
+    "span_id": "span_b27421a80f3c4f42",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437794Z",
+    "ended_at": "2026-08-14T15:34:07.437798Z",
+    "latency_ms": 0.0037499703466892242,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_7b36fe8fe7a9493196d9fa0c7342fdbf",
+    "span_id": "span_c19883f7f40b4a4e",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437800Z",
+    "ended_at": "2026-08-14T15:34:07.437803Z",
+    "latency_ms": 0.0036249402910470963,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

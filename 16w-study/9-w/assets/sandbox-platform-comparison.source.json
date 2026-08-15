@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 1280,
+  "height": 760,
+  "title": "Agent Sandbox 平台边界与兼容路径",
+  "subtitle": "同样的 SDK 表面不等于相同隔离强度、控制面或部署前提",
+  "containers": [
+    {"id": "client", "x": 40, "y": 120, "width": 1200, "height": 120, "label": "客户端协议"},
+    {"id": "platform", "x": 40, "y": 290, "width": 1200, "height": 130, "label": "平台与部署责任"},
+    {"id": "runtime", "x": 40, "y": 470, "width": 1200, "height": 145, "label": "默认/可选隔离运行时"}
+  ],
+  "nodes": [
+    {"id": "e2b-sdk-1", "kind": "rect", "x": 65, "y": 160, "width": 245, "height": 58, "label": "E2B SDK", "sublabel": "官方协议与 SDK", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "os-sdk", "kind": "rect", "x": 365, "y": 160, "width": 245, "height": 58, "label": "OpenSandbox SDK", "sublabel": "自有 Sandbox Protocol", "fill": "#f0fdf4", "stroke": "#16a34a"},
+    {"id": "e2b-sdk-2", "kind": "rect", "x": 665, "y": 160, "width": 245, "height": 58, "label": "E2B SDK", "sublabel": "完整兼容声明", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "e2b-sdk-3", "kind": "rect", "x": 965, "y": 160, "width": 245, "height": 58, "label": "E2B SDK", "sublabel": "兼容接口与 Volume", "fill": "#eff6ff", "stroke": "#2563eb"},
+
+    {"id": "e2b", "kind": "double_rect", "x": 65, "y": 330, "width": 245, "height": 66, "label": "E2B", "sublabel": "托管优先；可 Terraform 自建", "fill": "#faf5ff", "stroke": "#9333ea"},
+    {"id": "opensandbox", "kind": "double_rect", "x": 365, "y": 330, "width": 245, "height": 66, "label": "OpenSandbox", "sublabel": "自建 Docker / Kubernetes", "fill": "#f0fdf4", "stroke": "#16a34a"},
+    {"id": "agentsandbox", "kind": "double_rect", "x": 665, "y": 330, "width": 245, "height": 66, "label": "Agent-Sandbox", "sublabel": "自建 Kubernetes 1.26+", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "cube", "kind": "double_rect", "x": 965, "y": 330, "width": 245, "height": 66, "label": "CubeSandbox", "sublabel": "自建单机/集群；Terraform/K8s", "fill": "#fff7ed", "stroke": "#ea580c"},
+
+    {"id": "fc", "kind": "rect", "x": 65, "y": 520, "width": 245, "height": 72, "label": "Firecracker MicroVM", "sublabel": "快照恢复；KVM；控制/数据面分离", "fill": "#faf5ff", "stroke": "#9333ea"},
+    {"id": "selectable", "kind": "rect", "x": 365, "y": 520, "width": 245, "height": 72, "label": "可插拔运行时", "sublabel": "runc / gVisor / Kata / Firecracker", "fill": "#f0fdf4", "stroke": "#16a34a"},
+    {"id": "k8s", "kind": "rect", "x": 665, "y": 520, "width": 245, "height": 72, "label": "Kubernetes Workload", "sublabel": "ReplicaSet；隔离继承集群 Runtime", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "rustvmm", "kind": "rect", "x": 965, "y": 520, "width": 245, "height": 72, "label": "RustVMM + KVM MicroVM", "sublabel": "独立内核；<60ms 官方基准口径", "fill": "#fff7ed", "stroke": "#ea580c"}
+  ],
+  "arrows": [
+    {"id": "e2b-api", "source": "e2b-sdk-1", "target": "e2b", "source_port": "bottom", "target_port": "top", "flow": "read", "label": "native"},
+    {"id": "os-api", "source": "os-sdk", "target": "opensandbox", "source_port": "bottom", "target_port": "top", "flow": "write", "label": "own protocol"},
+    {"id": "as-api", "source": "e2b-sdk-2", "target": "agentsandbox", "source_port": "bottom", "target_port": "top", "flow": "read", "label": "drop-in"},
+    {"id": "cube-api", "source": "e2b-sdk-3", "target": "cube", "source_port": "bottom", "target_port": "top", "flow": "read", "label": "compatible"},
+    {"id": "e2b-runtime", "source": "e2b", "target": "fc", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "orchestrate"},
+    {"id": "os-runtime", "source": "opensandbox", "target": "selectable", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "RuntimeClass"},
+    {"id": "as-runtime", "source": "agentsandbox", "target": "k8s", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "ReplicaSet"},
+    {"id": "cube-runtime", "source": "cube", "target": "rustvmm", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "CubeHypervisor"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 48,
+  "legend_y": 660,
+  "legend_locked": true,
+  "legend": [
+    {"flow": "read", "label": "E2B 兼容路径"},
+    {"flow": "write", "label": "项目自有协议"},
+    {"flow": "control", "label": "平台到隔离运行时"}
+  ],
+  "footer": "冷启动数字必须连同硬件、模板缓存、并发和测量点一起解释",
+  "footer_x": 48,
+  "footer_y": 735
+}

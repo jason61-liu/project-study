@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 1200,
+  "height": 680,
+  "title": "Agent Sandbox Platform Comparison",
+  "subtitle": "deployment ownership, isolation primitive, E2B compatibility, startup evidence, and prerequisites",
+  "containers": [
+    {"id": "e2b", "x": 30, "y": 112, "width": 270, "height": 480, "label": "E2B"},
+    {"id": "open", "x": 320, "y": 112, "width": 270, "height": 480, "label": "OPENSANDBOX"},
+    {"id": "agent", "x": 610, "y": 112, "width": 270, "height": 480, "label": "AGENT-SANDBOX"},
+    {"id": "cube", "x": 900, "y": 112, "width": 270, "height": 480, "label": "CUBESANDBOX"}
+  ],
+  "nodes": [
+    {"id": "e2b-host", "kind": "double_rect", "x": 60, "y": 158, "width": 210, "height": 64, "label": "Managed Cloud", "sublabel": "open infra also self-hostable", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "e2b-iso", "kind": "rect", "x": 60, "y": 250, "width": 210, "height": 64, "label": "Firecracker MicroVM", "sublabel": "dedicated guest kernel", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e2b-api", "kind": "rect", "x": 60, "y": 342, "width": 210, "height": 64, "label": "Native E2B API", "sublabel": "SDK + templates + volumes", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "e2b-start", "kind": "document", "x": 60, "y": 434, "width": 210, "height": 64, "label": "Vendor: <200ms / 80ms", "sublabel": "same-region public claims", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "e2b-pre", "kind": "terminal", "x": 60, "y": 526, "width": 210, "height": 50, "label": "Self-host: Linux + KVM", "sublabel": "full cloud stack", "fill": "#111827", "stroke": "#374151"},
+
+    {"id": "open-host", "kind": "double_rect", "x": 350, "y": 158, "width": 210, "height": 64, "label": "Self-hosted", "sublabel": "Docker or Kubernetes", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "open-iso", "kind": "rect", "x": 350, "y": 250, "width": 210, "height": 64, "label": "Pluggable Isolation", "sublabel": "runc · gVisor · Kata · FC", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "open-api", "kind": "rect", "x": 350, "y": 342, "width": 210, "height": 64, "label": "OpenSandbox Protocol", "sublabel": "not advertised E2B drop-in", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "open-start", "kind": "document", "x": 350, "y": 434, "width": 210, "height": 64, "label": "No portable E2E number", "sublabel": "runtime estimates + pools", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "open-pre", "kind": "terminal", "x": 350, "y": 526, "width": 210, "height": 50, "label": "Docker / K8s", "sublabel": "install secure runtime", "fill": "#111827", "stroke": "#374151"},
+
+    {"id": "agent-host", "kind": "double_rect", "x": 640, "y": 158, "width": 210, "height": 64, "label": "Self-hosted K8s", "sublabel": "single control component", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "agent-iso", "kind": "rect", "x": 640, "y": 250, "width": 210, "height": 64, "label": "Pod / RuntimeClass", "sublabel": "runc or stronger runtime", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "agent-api", "kind": "rect", "x": 640, "y": 342, "width": 210, "height": 64, "label": "E2B SDK Drop-in", "sublabel": "README full-compat claim", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "agent-start", "kind": "document", "x": 640, "y": 434, "width": 210, "height": 64, "label": "Warm Pool", "sublabel": "no standardized public E2E", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "agent-pre", "kind": "terminal", "x": 640, "y": 526, "width": 210, "height": 50, "label": "Kubernetes 1.26+", "sublabel": "ingress + storage + runtime", "fill": "#111827", "stroke": "#374151"},
+
+    {"id": "cube-host", "kind": "double_rect", "x": 930, "y": 158, "width": 210, "height": 64, "label": "Self-hosted Cluster", "sublabel": "single / multi-node", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "cube-iso", "kind": "rect", "x": 930, "y": 250, "width": 210, "height": 64, "label": "RustVMM KVM MicroVM", "sublabel": "guest kernel + eBPF", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "cube-api", "kind": "rect", "x": 930, "y": 342, "width": 210, "height": 64, "label": "E2B SDK Compatible", "sublabel": "contract gaps still roadmap", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "cube-start", "kind": "document", "x": 930, "y": 434, "width": 210, "height": 64, "label": "Bare metal: <60ms", "sublabel": "50c P95 90ms · P99 137ms", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "cube-pre", "kind": "terminal", "x": 930, "y": 526, "width": 210, "height": 50, "label": "Quickstart: x86_64 + KVM", "sublabel": "ARM64 is release/path specific", "fill": "#111827", "stroke": "#374151"}
+  ],
+  "arrows": [],
+  "footer": "Do not rank unlike latency claims · fix version, hardware, runtime, image, concurrency, and t0→first-command boundary",
+  "footer_x": 38,
+  "footer_y": 654
+}

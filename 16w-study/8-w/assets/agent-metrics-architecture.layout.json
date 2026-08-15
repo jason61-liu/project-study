@@ -1,0 +1,261 @@
+{
+  "canvas": {
+    "height": 680.0,
+    "width": 960.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 12,
+      "max_bridged_crossings": 8,
+      "max_route_stretch": 5.0,
+      "max_total_bends": 100,
+      "min_container_gutter": 0.0,
+      "min_label_clearance": 2.0,
+      "min_node_gap": 0.0,
+      "min_segment_length": 0.0,
+      "profile": "standard"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": 16.0,
+      "minimum_node_gap": 90.0,
+      "shortest_segment": 90.0,
+      "total_bends": 0
+    },
+    "ok": true,
+    "profile": "standard",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "ingest",
+      "length": 90.0,
+      "route": [
+        [
+          270.0,
+          173.0
+        ],
+        [
+          360.0,
+          173.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "raw",
+      "source_port": [
+        270.0,
+        173.0
+      ],
+      "target": "normalize",
+      "target_port": [
+        360.0,
+        173.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "calculate",
+      "length": 90.0,
+      "route": [
+        [
+          580.0,
+          173.0
+        ],
+        [
+          670.0,
+          173.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "normalize",
+      "source_port": [
+        580.0,
+        173.0
+      ],
+      "target": "metric-engine",
+      "target_port": [
+        670.0,
+        173.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "success-metric",
+      "length": 100.0,
+      "route": [
+        [
+          760.0,
+          202.0
+        ],
+        [
+          760.0,
+          302.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "metric-engine",
+      "source_port": [
+        760.0,
+        202.0
+      ],
+      "target": "success",
+      "target_port": [
+        760.0,
+        302.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "quality-metric",
+      "length": 90.0,
+      "route": [
+        [
+          670.0,
+          337.0
+        ],
+        [
+          580.0,
+          337.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "success",
+      "source_port": [
+        670.0,
+        337.0
+      ],
+      "target": "quality",
+      "target_port": [
+        580.0,
+        337.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "efficiency-metric",
+      "length": 100.0,
+      "route": [
+        [
+          390.0,
+          337.0
+        ],
+        [
+          290.0,
+          337.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "quality",
+      "source_port": [
+        390.0,
+        337.0
+      ],
+      "target": "efficiency",
+      "target_port": [
+        290.0,
+        337.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "hard",
+      "length": 95.0,
+      "route": [
+        [
+          290.0,
+          511.0
+        ],
+        [
+          385.0,
+          511.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "slices",
+      "source_port": [
+        290.0,
+        511.0
+      ],
+      "target": "gates",
+      "target_port": [
+        385.0,
+        511.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "optimize",
+      "length": 95.0,
+      "route": [
+        [
+          565.0,
+          511.0
+        ],
+        [
+          660.0,
+          511.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "gates",
+      "source_port": [
+        565.0,
+        511.0
+      ],
+      "target": "pareto",
+      "target_port": [
+        660.0,
+        511.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": null
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 7,
+    "nodes": 9
+  },
+  "text_metrics": "heuristic-v1"
+}

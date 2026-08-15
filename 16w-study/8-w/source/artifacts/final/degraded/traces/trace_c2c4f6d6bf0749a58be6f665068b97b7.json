@@ -1,0 +1,58 @@
+[
+  {
+    "trace_id": "trace_c2c4f6d6bf0749a58be6f665068b97b7",
+    "span_id": "span_af648198bf3442d8",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "degraded-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.444440Z",
+    "ended_at": "2026-08-14T15:34:07.444444Z",
+    "latency_ms": 0.004332978278398514,
+    "detail": {
+      "task_id": "local-adversarial-005"
+    }
+  },
+  {
+    "trace_id": "trace_c2c4f6d6bf0749a58be6f665068b97b7",
+    "span_id": "span_e584db9e73d140b1",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.444432Z",
+    "ended_at": "2026-08-14T15:34:07.444447Z",
+    "latency_ms": 0.015874975360929966,
+    "detail": {
+      "task_id": "local-adversarial-005"
+    }
+  },
+  {
+    "trace_id": "trace_c2c4f6d6bf0749a58be6f665068b97b7",
+    "span_id": "span_c5bcbbcd4e51468a",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.444450Z",
+    "ended_at": "2026-08-14T15:34:07.444455Z",
+    "latency_ms": 0.005165929906070232,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_c2c4f6d6bf0749a58be6f665068b97b7",
+    "span_id": "span_c1820af5e8fa49b1",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "truthful",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.444457Z",
+    "ended_at": "2026-08-14T15:34:07.444461Z",
+    "latency_ms": 0.004292000085115433,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

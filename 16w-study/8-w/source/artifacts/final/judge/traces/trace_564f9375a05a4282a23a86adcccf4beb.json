@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_564f9375a05a4282a23a86adcccf4beb",
+    "span_id": "span_22868bea20af418a",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:27.285525Z",
+    "ended_at": "2026-08-14T15:38:27.285548Z",
+    "latency_ms": 0.02366607077419758,
+    "detail": {
+      "task_id": "local-boundary-002"
+    }
+  },
+  {
+    "trace_id": "trace_564f9375a05a4282a23a86adcccf4beb",
+    "span_id": "span_2c47dedb13ff45e6",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:27.284308Z",
+    "ended_at": "2026-08-14T15:38:27.285558Z",
+    "latency_ms": 1.2499999720603228,
+    "detail": {
+      "task_id": "local-boundary-002"
+    }
+  },
+  {
+    "trace_id": "trace_564f9375a05a4282a23a86adcccf4beb",
+    "span_id": "span_26877f2107c243ba",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:27.285572Z",
+    "ended_at": "2026-08-14T15:38:27.285583Z",
+    "latency_ms": 0.011499971151351929,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_564f9375a05a4282a23a86adcccf4beb",
+    "span_id": "span_658ed916e3094a9a",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:27.285587Z",
+    "ended_at": "2026-08-14T15:38:27.285594Z",
+    "latency_ms": 0.007292022928595543,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_564f9375a05a4282a23a86adcccf4beb",
+    "span_id": "span_eb910939a6b042e9",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "semantic-quality",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:27.285597Z",
+    "ended_at": "2026-08-14T15:38:31.371946Z",
+    "latency_ms": 4086.367208044976,
+    "detail": {
+      "kind": "llm_rubric"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 650,
+  "title": "Prompt Injection to Side Effect",
+  "subtitle": "the attack moves through language; the safety decision must move through typed enforcement",
+  "containers": [
+    {"id": "attack", "x": 40, "y": 110, "width": 880, "height": 136, "label": "UNTRUSTED LANGUAGE PATH"},
+    {"id": "enforce", "x": 40, "y": 294, "width": 880, "height": 136, "label": "DETERMINISTIC EXECUTION PATH"},
+    {"id": "evidence", "x": 40, "y": 478, "width": 880, "height": 92, "label": "EVIDENCE AND RECOVERY"}
+  ],
+  "nodes": [
+    {"id": "source", "kind": "document", "x": 64, "y": 154, "width": 170, "height": 66, "label": "Web / Email / File", "sublabel": "indirect injection", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "context", "kind": "rect", "x": 278, "y": 154, "width": 170, "height": 66, "label": "Model Context", "sublabel": "data mixed with instructions", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "hijack", "kind": "double_rect", "x": 492, "y": 154, "width": 170, "height": 66, "label": "Goal Hijack", "sublabel": "intent / plan drift", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "toolcall", "kind": "rect", "x": 706, "y": 154, "width": 170, "height": 66, "label": "Tool Call", "sublabel": "candidate side effect", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "canonical", "kind": "rect", "x": 706, "y": 338, "width": 170, "height": 66, "label": "Canonicalize + Schema", "sublabel": "typed parameters", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "pep", "kind": "double_rect", "x": 492, "y": 338, "width": 170, "height": 66, "label": "Policy PEP", "sublabel": "identity · scope · tenant", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "approval", "kind": "user_avatar", "x": 278, "y": 338, "width": 170, "height": 66, "label": "Bound Approval", "sublabel": "intent hash + TTL", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "business", "kind": "cylinder", "x": 64, "y": 338, "width": 170, "height": 66, "label": "Business System", "sublabel": "authoritative side effect", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "audit", "kind": "document", "x": 210, "y": 510, "width": 220, "height": 48, "label": "Trace + Decision + Receipt", "sublabel": "attribution and outcome", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "revoke", "kind": "double_rect", "x": 540, "y": 510, "width": 220, "height": 48, "label": "Revoke + Contain", "sublabel": "token · tool · sandbox", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true}
+  ],
+  "arrows": [
+    {"id": "ingest", "source": "source", "target": "context", "source_port": "right", "target_port": "left", "flow": "data", "label": "content"},
+    {"id": "redirect", "source": "context", "target": "hijack", "source_port": "right", "target_port": "left", "flow": "feedback", "label": "influence"},
+    {"id": "propose", "source": "hijack", "target": "toolcall", "source_port": "right", "target_port": "left", "flow": "control", "label": "propose"},
+    {"id": "type", "source": "toolcall", "target": "canonical", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "authorize", "source": "canonical", "target": "pep", "source_port": "left", "target_port": "right", "flow": "control", "label": "authorize"},
+    {"id": "confirm", "source": "pep", "target": "approval", "source_port": "left", "target_port": "right", "flow": "async", "label": "if high risk"},
+    {"id": "execute", "source": "approval", "target": "business", "source_port": "left", "target_port": "right", "flow": "write", "label": "execute"},
+    {"id": "receipt", "source": "business", "target": "audit", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "respond", "source": "audit", "target": "revoke", "source_port": "right", "target_port": "left", "flow": "feedback", "label": "anomaly"}
+  ],
+  "footer": "Injection detection is a signal · authorization and side-effect constraints are the boundary",
+  "footer_x": 48,
+  "footer_y": 626
+}

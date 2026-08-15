@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_de06483c5e4e47dba1f93e05890f1e52",
+    "span_id": "span_261d36facda94af4",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.436444Z",
+    "ended_at": "2026-08-14T15:34:07.436464Z",
+    "latency_ms": 0.021041021682322025,
+    "detail": {
+      "task_id": "local-normal-009"
+    }
+  },
+  {
+    "trace_id": "trace_de06483c5e4e47dba1f93e05890f1e52",
+    "span_id": "span_810e8b64a61448e2",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435285Z",
+    "ended_at": "2026-08-14T15:34:07.436471Z",
+    "latency_ms": 1.1862500105053186,
+    "detail": {
+      "task_id": "local-normal-009"
+    }
+  },
+  {
+    "trace_id": "trace_de06483c5e4e47dba1f93e05890f1e52",
+    "span_id": "span_0450b2039fc44445",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.436476Z",
+    "ended_at": "2026-08-14T15:34:07.436483Z",
+    "latency_ms": 0.0072909751906991005,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_de06483c5e4e47dba1f93e05890f1e52",
+    "span_id": "span_2da2339f56384190",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.436486Z",
+    "ended_at": "2026-08-14T15:34:07.436491Z",
+    "latency_ms": 0.0049578957259655,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_de06483c5e4e47dba1f93e05890f1e52",
+    "span_id": "span_e1a8af68ada9443c",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.436493Z",
+    "ended_at": "2026-08-14T15:34:07.436498Z",
+    "latency_ms": 0.004584086127579212,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

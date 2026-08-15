@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 690,
+  "title": "Delegated Identity Propagation",
+  "subtitle": "raw credential stops at the Host; immutable subject, actor, tenant and scope continue",
+  "containers": [
+    {"id": "identity", "x": 40, "y": 108, "width": 880, "height": 112, "label": "IDENTITY TRUST DOMAIN"},
+    {"id": "host", "x": 40, "y": 258, "width": 880, "height": 112, "label": "AGENT HOST · CREDENTIAL BOUNDARY"},
+    {"id": "enforce", "x": 40, "y": 408, "width": 880, "height": 112, "label": "TOOL ENFORCEMENT BOUNDARY"},
+    {"id": "resource", "x": 40, "y": 558, "width": 880, "height": 86, "label": "RESOURCE AND AUDIT DOMAIN"}
+  ],
+  "nodes": [
+    {"id": "subject", "kind": "user_avatar", "x": 650, "y": 142, "width": 190, "height": 60, "label": "[SUBJECT] Alice", "sublabel": "tenant-a member", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "idp", "kind": "external", "x": 330, "y": 142, "width": 190, "height": 60, "label": "OIDC / OAuth IdP", "sublabel": "iss · aud · sub · act", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "token", "kind": "document", "x": 70, "y": 142, "width": 190, "height": 60, "label": "Delegated Token", "sublabel": "tenant · scope · jti · exp", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "verifier", "kind": "double_rect", "x": 70, "y": 292, "width": 190, "height": 60, "label": "Host Token Verifier", "sublabel": "signature + revoke", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "principal", "kind": "rect", "x": 340, "y": 292, "width": 210, "height": 60, "label": "Verified Principal", "sublabel": "sub + act + tenant + scope", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "model", "kind": "rect", "x": 650, "y": 292, "width": 190, "height": 60, "label": "Model / Planner", "sublabel": "business args only", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "gateway", "kind": "double_rect", "x": 650, "y": 442, "width": 190, "height": 60, "label": "Tool Gateway", "sublabel": "allowlist + schema", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "pdp", "kind": "double_rect", "x": 340, "y": 442, "width": 210, "height": 60, "label": "PDP / PEP", "sublabel": "RBAC · ABAC · scope", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "approval", "kind": "user_avatar", "x": 70, "y": 442, "width": 190, "height": 60, "label": "Security Approver", "sublabel": "exact action hash", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "tenant", "kind": "cylinder", "x": 340, "y": 586, "width": 170, "height": 54, "label": "[TENANT] tenant-a", "sublabel": "RAG · memory · cache", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "runtime", "kind": "rect", "x": 570, "y": 586, "width": 160, "height": 54, "label": "E2B Runtime", "sublabel": "ephemeral identity", "fill": "#f3f4f6", "stroke": "#374151", "flat": true},
+    {"id": "audit", "kind": "rect", "x": 790, "y": 586, "width": 100, "height": 54, "label": "Audit", "sublabel": "jti only", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true}
+  ],
+  "arrows": [
+    {"id": "login", "label": "authenticate", "source": "subject", "target": "idp", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "issue", "label": "delegation", "source": "idp", "target": "token", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "verify", "label": "raw token", "source": "token", "target": "verifier", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "claims", "label": "verified claims", "source": "verifier", "target": "principal", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "no-credential", "label": "no token", "source": "principal", "target": "model", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "intent", "label": "tool + args", "source": "model", "target": "gateway", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "authorize", "label": "principal + resource", "source": "gateway", "target": "pdp", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "hitl", "label": "high risk", "source": "pdp", "target": "approval", "source_port": "left", "target_port": "right", "flow": "feedback"},
+    {"id": "rows", "label": "tenant scoped", "source": "pdp", "target": "tenant", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "execute", "label": "bounded action", "source": "tenant", "target": "runtime", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "receipt", "label": "redacted event", "source": "runtime", "target": "audit", "source_port": "right", "target_port": "left", "flow": "write"}
+  ],
+  "footer": "Effective authority = user delegation ∩ agent role ∩ scope ∩ resource attributes ∩ approved action",
+  "footer_x": 48,
+  "footer_y": 670
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_7ce24bef3a9549b289cb3fbb8a804d05",
+    "span_id": "span_d3341368c06b43cc",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437128Z",
+    "ended_at": "2026-08-14T15:34:07.437140Z",
+    "latency_ms": 0.01291697844862938,
+    "detail": {
+      "task_id": "local-normal-012"
+    }
+  },
+  {
+    "trace_id": "trace_7ce24bef3a9549b289cb3fbb8a804d05",
+    "span_id": "span_d8dfb86baf234030",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435317Z",
+    "ended_at": "2026-08-14T15:34:07.437144Z",
+    "latency_ms": 1.8273750320076942,
+    "detail": {
+      "task_id": "local-normal-012"
+    }
+  },
+  {
+    "trace_id": "trace_7ce24bef3a9549b289cb3fbb8a804d05",
+    "span_id": "span_210271856fe148df",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437147Z",
+    "ended_at": "2026-08-14T15:34:07.437153Z",
+    "latency_ms": 0.005375011824071407,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_7ce24bef3a9549b289cb3fbb8a804d05",
+    "span_id": "span_1417d1d6a43840c1",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437155Z",
+    "ended_at": "2026-08-14T15:34:07.437159Z",
+    "latency_ms": 0.004292000085115433,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_7ce24bef3a9549b289cb3fbb8a804d05",
+    "span_id": "span_67662149375448b5",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.437161Z",
+    "ended_at": "2026-08-14T15:34:07.437164Z",
+    "latency_ms": 0.0035830307751893997,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

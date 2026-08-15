@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1200,
+  "height": 760,
+  "title": "Agent 委托授权与确定性执行边界",
+  "subtitle": "ID Token 终止于登录会话；受众受限 Access Token 只进入工具执行面",
+  "containers": [
+    {"id": "identity", "x": 40, "y": 120, "width": 1120, "height": 125, "label": "身份域：认证与用户会话"},
+    {"id": "control", "x": 40, "y": 290, "width": 1120, "height": 140, "label": "Agent 控制域：模型不接触原始凭证"},
+    {"id": "execution", "x": 40, "y": 480, "width": 1120, "height": 135, "label": "资源域：每次调用重新授权并审计"}
+  ],
+  "nodes": [
+    {"id": "user", "kind": "speech", "x": 75, "y": 162, "width": 170, "height": 58, "label": "用户", "sublabel": "登录 + 明确授权", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "idp", "kind": "rect", "x": 365, "y": 162, "width": 210, "height": 58, "label": "OIDC / OAuth IdP", "sublabel": "认证、同意、Token 签发", "fill": "#faf5ff", "stroke": "#9333ea"},
+    {"id": "session", "kind": "rect", "x": 745, "y": 162, "width": 270, "height": 58, "label": "Agent BFF / Session", "sublabel": "验证 ID Token；保存服务端会话", "fill": "#f0fdf4", "stroke": "#16a34a"},
+
+    {"id": "model", "kind": "double_rect", "x": 75, "y": 335, "width": 190, "height": 62, "label": "LLM / Planner", "sublabel": "只输出结构化 Tool Intent", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "broker", "kind": "rect", "x": 365, "y": 335, "width": 210, "height": 62, "label": "Token Broker", "sublabel": "Token Exchange + audience/scope", "fill": "#fff7ed", "stroke": "#ea580c"},
+    {"id": "policy", "kind": "double_rect", "x": 690, "y": 335, "width": 210, "height": 62, "label": "Policy Engine", "sublabel": "RBAC + ABAC + intent + risk", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "hitl", "kind": "speech", "x": 960, "y": 335, "width": 170, "height": 62, "label": "HITL", "sublabel": "高风险动作确认", "fill": "#fff7ed", "stroke": "#ea580c", "flat": true},
+
+    {"id": "vault", "kind": "cylinder", "x": 75, "y": 525, "width": 190, "height": 64, "label": "Secret Vault", "sublabel": "短期凭证与轮换", "fill": "#faf5ff", "stroke": "#9333ea"},
+    {"id": "gateway", "kind": "rect", "x": 365, "y": 525, "width": 210, "height": 64, "label": "Tool Gateway", "sublabel": "Schema、幂等、超时、策略", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "resource", "kind": "rect", "x": 690, "y": 525, "width": 210, "height": 64, "label": "Resource Server", "sublabel": "校验 aud/scope/sub/act/tenant", "fill": "#f0fdf4", "stroke": "#16a34a"},
+    {"id": "audit", "kind": "cylinder", "x": 960, "y": 525, "width": 170, "height": 64, "label": "Audit Store", "sublabel": "主体、意图、决策、结果", "fill": "#eff6ff", "stroke": "#2563eb"}
+  ],
+  "arrows": [
+    {"id": "login", "source": "user", "target": "idp", "source_port": "right", "target_port": "left", "flow": "control", "label": "Auth Code + PKCE"},
+    {"id": "session-token", "source": "idp", "target": "session", "source_port": "right", "target_port": "left", "flow": "read", "label": "ID Token / grant"},
+    {"id": "plan", "source": "session", "target": "model", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "脱敏上下文"},
+    {"id": "intent", "source": "model", "target": "broker", "source_port": "right", "target_port": "left", "flow": "data", "label": "Tool Intent"},
+    {"id": "authorize", "source": "broker", "target": "policy", "source_port": "right", "target_port": "left", "flow": "control", "label": "sub + act + scope"},
+    {"id": "approve", "source": "policy", "target": "hitl", "source_port": "right", "target_port": "left", "flow": "feedback", "label": "step-up / confirm"},
+    {"id": "issue", "source": "vault", "target": "gateway", "source_port": "right", "target_port": "left", "flow": "write", "label": "短期 Secret"},
+    {"id": "execute", "source": "policy", "target": "gateway", "source_port": "bottom", "target_port": "top", "flow": "feedback", "label": "Permit + constraints"},
+    {"id": "call", "source": "gateway", "target": "resource", "source_port": "right", "target_port": "left", "flow": "read", "label": "sender-bound token"},
+    {"id": "write-audit", "source": "resource", "target": "audit", "source_port": "right", "target_port": "left", "flow": "async", "label": "result + receipt"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 48,
+  "legend_y": 660,
+  "legend_locked": true,
+  "legend": [
+    {"flow": "control", "label": "认证/策略控制"},
+    {"flow": "data", "label": "模型结构化意图"},
+    {"flow": "read", "label": "Token 与资源调用"},
+    {"flow": "feedback", "label": "审批/执行许可"},
+    {"flow": "async", "label": "不可抵赖审计"}
+  ],
+  "footer": "模型决定意图，策略系统决定权限，工具网关执行动作",
+  "footer_x": 48,
+  "footer_y": 735
+}

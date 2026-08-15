@@ -1,0 +1,86 @@
+[
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_9badfcafb9fe4820",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434705Z",
+    "ended_at": "2026-08-14T15:34:07.434714Z",
+    "latency_ms": 0.009334064088761806,
+    "detail": {
+      "task_id": "local-normal-004"
+    }
+  },
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_0ea31d1c50c04faa",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "degraded-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.433007Z",
+    "ended_at": "2026-08-14T15:34:07.434716Z",
+    "latency_ms": 1.7094590002670884,
+    "detail": {
+      "task_id": "local-normal-004"
+    }
+  },
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_54f9333766034113",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.433002Z",
+    "ended_at": "2026-08-14T15:34:07.434719Z",
+    "latency_ms": 1.716792001388967,
+    "detail": {
+      "task_id": "local-normal-004"
+    }
+  },
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_90ddb3b64abd423a",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434721Z",
+    "ended_at": "2026-08-14T15:34:07.434725Z",
+    "latency_ms": 0.004124944098293781,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_52bb3177d75c49c3",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434727Z",
+    "ended_at": "2026-08-14T15:34:07.434730Z",
+    "latency_ms": 0.0037080608308315277,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_bddb43b91323499db1cd258dc3c6a7d0",
+    "span_id": "span_c4e624c000914b15",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434732Z",
+    "ended_at": "2026-08-14T15:34:07.434736Z",
+    "latency_ms": 0.003500026650726795,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

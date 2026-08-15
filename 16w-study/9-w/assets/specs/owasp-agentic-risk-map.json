@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 700,
+  "title": "OWASP Agentic Top 10 Risk Propagation",
+  "subtitle": "entry vectors become persistent, privileged, and high-impact behavior unless enforcement breaks the chain",
+  "containers": [
+    {"id": "entry", "x": 40, "y": 108, "width": 880, "height": 104, "label": "ENTRY AND TRUST MANIPULATION"},
+    {"id": "amplify", "x": 40, "y": 246, "width": 880, "height": 104, "label": "PERSISTENCE AND AMPLIFICATION"},
+    {"id": "impact", "x": 40, "y": 384, "width": 880, "height": 104, "label": "EXECUTION AND IMPACT"},
+    {"id": "control", "x": 40, "y": 522, "width": 880, "height": 102, "label": "DETERMINISTIC BREAKPOINTS"}
+  ],
+  "nodes": [
+    {"id": "asi04", "kind": "document", "x": 90, "y": 140, "width": 190, "height": 56, "label": "ASI04 Supply Chain", "sublabel": "tools · prompts · artifacts", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "asi01", "kind": "double_rect", "x": 385, "y": 140, "width": 190, "height": 56, "label": "ASI01 Goal Hijack", "sublabel": "instruction / intent drift", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "asi07", "kind": "rect", "x": 680, "y": 140, "width": 190, "height": 56, "label": "ASI07 Agent Comms", "sublabel": "spoof · replay · tamper", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "asi06", "kind": "cylinder", "x": 90, "y": 278, "width": 190, "height": 56, "label": "ASI06 Memory Poisoning", "sublabel": "persistent context", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "asi03", "kind": "double_rect", "x": 385, "y": 278, "width": 190, "height": 56, "label": "ASI03 Identity Abuse", "sublabel": "delegation + privilege", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "asi08", "kind": "rect", "x": 680, "y": 278, "width": 190, "height": 56, "label": "ASI08 Cascading Failure", "sublabel": "amplified downstream", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "asi02", "kind": "rect", "x": 60, "y": 416, "width": 170, "height": 56, "label": "ASI02 Tool Misuse", "sublabel": "unsafe legitimate action", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "asi05", "kind": "terminal", "x": 280, "y": 416, "width": 170, "height": 56, "label": "ASI05 RCE", "sublabel": "code / sandbox escape", "fill": "#111827", "stroke": "#374151"},
+    {"id": "asi09", "kind": "user_avatar", "x": 510, "y": 416, "width": 170, "height": 56, "label": "ASI09 Human Trust", "sublabel": "deceptive approval", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true},
+    {"id": "asi10", "kind": "double_rect", "x": 730, "y": 416, "width": 170, "height": 56, "label": "ASI10 Rogue Agent", "sublabel": "behavioral divergence", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "pep", "kind": "double_rect", "x": 120, "y": 554, "width": 190, "height": 54, "label": "Identity + Policy PEP", "sublabel": "scope · tenant · approval", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "sandbox", "kind": "rect", "x": 385, "y": 554, "width": 190, "height": 54, "label": "Sandbox + Egress", "sublabel": "resource + network limits", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "audit", "kind": "document", "x": 650, "y": 554, "width": 190, "height": 54, "label": "Audit + Revocation", "sublabel": "detect · contain · recover", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true}
+  ],
+  "arrows": [
+    {"id": "supply-memory", "source": "asi04", "target": "asi06", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "goal-identity", "source": "asi01", "target": "asi03", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "comms-cascade", "source": "asi07", "target": "asi08", "source_port": "bottom", "target_port": "top", "flow": "async"},
+    {"id": "memory-tool", "source": "asi06", "target": "asi02", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "identity-rce", "source": "asi03", "target": "asi05", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "cascade-human", "source": "asi08", "target": "asi09", "source_port": "bottom", "target_port": "top", "flow": "feedback"},
+    {"id": "cascade-rogue", "source": "asi08", "target": "asi10", "source_port": "bottom", "target_port": "top", "flow": "feedback"},
+    {"id": "tool-pep", "source": "asi02", "target": "pep", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "rce-sandbox", "source": "asi05", "target": "sandbox", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "human-audit", "source": "asi09", "target": "audit", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "rogue-audit", "source": "asi10", "target": "audit", "source_port": "bottom", "target_port": "top", "flow": "feedback"}
+  ],
+  "footer": "Risk classes compose into attack paths · controls must break the path outside the model",
+  "footer_x": 48,
+  "footer_y": 676
+}

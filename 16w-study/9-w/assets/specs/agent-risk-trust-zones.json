@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 760,
+  "title": "Composite Agent Risk Across Trust Zones",
+  "subtitle": "provenance, tenant identity, privilege, and runtime isolation must survive every handoff",
+  "containers": [
+    {"id": "supply", "x": 40, "y": 108, "width": 880, "height": 112, "label": "SUPPLY AND INGESTION"},
+    {"id": "memory", "x": 40, "y": 258, "width": 880, "height": 112, "label": "MEMORY AND IDENTITY"},
+    {"id": "execute", "x": 40, "y": 408, "width": 880, "height": 112, "label": "TENANT DATA AND CODE EXECUTION"},
+    {"id": "recover", "x": 40, "y": 558, "width": 880, "height": 120, "label": "CONTAINMENT AND RECOVERY"}
+  ],
+  "nodes": [
+    {"id": "artifact", "kind": "document", "x": 70, "y": 144, "width": 180, "height": 58, "label": "Tool / File / Image", "sublabel": "untrusted artifact", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "verify", "kind": "double_rect", "x": 310, "y": 144, "width": 180, "height": 58, "label": "Provenance Gate", "sublabel": "signature · digest · CDR", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "ingest", "kind": "rect", "x": 550, "y": 144, "width": 180, "height": 58, "label": "Tenant Ingestion", "sublabel": "classify + namespace", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "memory-store", "kind": "cylinder", "x": 700, "y": 290, "width": 170, "height": 58, "label": "Memory / RAG", "sublabel": "source + TTL + tenant", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "planner", "kind": "double_rect", "x": 470, "y": 290, "width": 170, "height": 58, "label": "Agent Planner", "sublabel": "taint-aware context", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "broker", "kind": "rect", "x": 240, "y": 290, "width": 170, "height": 58, "label": "Token Broker", "sublabel": "sub + act + aud + scope", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "pep", "kind": "double_rect", "x": 60, "y": 290, "width": 140, "height": 58, "label": "Tool PEP", "sublabel": "ABAC + budget", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "tenant-db", "kind": "cylinder", "x": 60, "y": 450, "width": 170, "height": 58, "label": "Tenant Data", "sublabel": "row ACL + namespace", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "sandbox", "kind": "rect", "x": 290, "y": 450, "width": 170, "height": 58, "label": "Code Sandbox", "sublabel": "CPU · FS · time limits", "fill": "#f3f4f6", "stroke": "#374151", "flat": true},
+    {"id": "egress", "kind": "rect", "x": 520, "y": 450, "width": 170, "height": 58, "label": "Egress Proxy", "sublabel": "allowlist + secret inject", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "sink", "kind": "external", "x": 750, "y": 450, "width": 150, "height": 58, "label": "External Sink", "sublabel": "approved destination", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true},
+    {"id": "ledger", "kind": "rect", "x": 210, "y": 602, "width": 220, "height": 60, "label": "Audit + Deletion Ledger", "sublabel": "lineage and recovery", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "kill", "kind": "double_rect", "x": 540, "y": 602, "width": 220, "height": 60, "label": "Revoke + Kill Switch", "sublabel": "identity · artifact · runtime", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true}
+  ],
+  "arrows": [
+    {"id": "verify-artifact", "source": "artifact", "target": "verify", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "label", "source": "verify", "target": "ingest", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "store", "source": "ingest", "target": "memory-store", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "retrieve", "source": "memory-store", "target": "planner", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "delegate", "source": "planner", "target": "broker", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "authorize", "source": "broker", "target": "pep", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "data", "source": "pep", "target": "tenant-db", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "code", "source": "tenant-db", "target": "sandbox", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "network", "source": "sandbox", "target": "egress", "source_port": "right", "target_port": "left", "flow": "async"},
+    {"id": "external", "source": "egress", "target": "sink", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "audit", "source": "tenant-db", "target": "ledger", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "contain", "source": "ledger", "target": "kill", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "footer": "A sandbox limits code impact; identity, tenant filters, provenance, and egress limit legitimate-API abuse",
+  "footer_x": 48,
+  "footer_y": 736
+}

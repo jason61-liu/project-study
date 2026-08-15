@@ -1,0 +1,86 @@
+[
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_fd1ea4216afd4d28",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.997590Z",
+    "ended_at": "2026-08-14T15:38:11.999436Z",
+    "latency_ms": 1.8651250284165144,
+    "detail": {
+      "task_id": "local-normal-003"
+    }
+  },
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_c4f8670a69614bc3",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.826042Z",
+    "ended_at": "2026-08-14T15:38:11.999591Z",
+    "latency_ms": 173.5509999562055,
+    "detail": {
+      "task_id": "local-normal-003"
+    }
+  },
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_97b1992bbd4d4039",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.999634Z",
+    "ended_at": "2026-08-14T15:38:11.999655Z",
+    "latency_ms": 0.02158398274332285,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_70ef53a8ddb64d63",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.999660Z",
+    "ended_at": "2026-08-14T15:38:11.999917Z",
+    "latency_ms": 0.2579999854788184,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_0c8233cf59e34a6a",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.999922Z",
+    "ended_at": "2026-08-14T15:38:11.999932Z",
+    "latency_ms": 0.01029099803417921,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_13adfcedae6e42f9b484a6f4174435aa",
+    "span_id": "span_73021f6111d94b64",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "semantic-quality",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:11.999935Z",
+    "ended_at": "2026-08-14T15:38:20.398294Z",
+    "latency_ms": 8398.344792076387,
+    "detail": {
+      "kind": "llm_rubric"
+    }
+  }
+]

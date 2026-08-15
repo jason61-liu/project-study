@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "mode": "data-flow",
+  "template_type": "data-flow",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 760,
+  "title": "Week 9 Secure Agent Data Flow",
+  "subtitle": "untrusted content becomes data; identity and policy gate every asset and side effect",
+  "containers": [
+    {"id": "entry", "x": 40, "y": 108, "width": 880, "height": 118, "label": "TRUST BOUNDARY 1 · UNTRUSTED ENTRIES"},
+    {"id": "agent", "x": 40, "y": 264, "width": 880, "height": 118, "label": "TRUST BOUNDARY 2 · AGENT AND DETERMINISTIC CONTROL"},
+    {"id": "assets", "x": 40, "y": 420, "width": 880, "height": 118, "label": "TRUST BOUNDARY 3 · TENANT ASSETS AND ISOLATED EXECUTION"},
+    {"id": "impact", "x": 40, "y": 576, "width": 880, "height": 108, "label": "AUDIT, IMPACT CONTAINMENT, AND DELETION"}
+  ],
+  "nodes": [
+    {"id": "user", "kind": "user_avatar", "x": 70, "y": 146, "width": 190, "height": 62, "label": "[ENTRY] User / Web / File", "sublabel": "request + untrusted artifact", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "ingress", "kind": "double_rect", "x": 360, "y": 146, "width": 190, "height": 62, "label": "Input Envelope", "sublabel": "provenance + PII mask", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "model", "kind": "rect", "x": 650, "y": 146, "width": 190, "height": 62, "label": "Model Context", "sublabel": "no credentials", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "planner", "kind": "double_rect", "x": 72, "y": 302, "width": 160, "height": 62, "label": "Agent Planner", "sublabel": "candidate action", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "gateway", "kind": "double_rect", "x": 300, "y": 302, "width": 170, "height": 62, "label": "Tool Gateway", "sublabel": "allowlist + schema", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "pep", "kind": "double_rect", "x": 540, "y": 302, "width": 170, "height": 62, "label": "RBAC / ABAC PEP", "sublabel": "scope + tenant", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "approval", "kind": "user_avatar", "x": 770, "y": 302, "width": 118, "height": 62, "label": "Approval", "sublabel": "action hash", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "data", "kind": "cylinder", "x": 540, "y": 458, "width": 190, "height": 62, "label": "[ASSET] Tenant Data", "sublabel": "RAG · memory · cache", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "sandbox", "kind": "rect", "x": 300, "y": 458, "width": 180, "height": 62, "label": "[ASSET] E2B", "sublabel": "1 CPU · 512 MiB · TTL", "fill": "#f3f4f6", "stroke": "#374151", "flat": true},
+    {"id": "egress", "kind": "rect", "x": 70, "y": 458, "width": 170, "height": 62, "label": "Network Egress", "sublabel": "deny_out = all", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "audit", "kind": "rect", "x": 190, "y": 618, "width": 210, "height": 54, "label": "Sanitized Audit", "sublabel": "subject · actor · jti", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "delete", "kind": "double_rect", "x": 520, "y": 618, "width": 240, "height": 54, "label": "Export / Delete Orchestrator", "sublabel": "approval + tombstone", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true}
+  ],
+  "arrows": [
+    {"id": "request", "label": "input data", "label_style": "offset", "source": "user", "target": "ingress", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "safe-context", "label": "safe context", "label_style": "offset", "source": "ingress", "target": "model", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "plan", "label": "tool intent", "source": "planner", "target": "gateway", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "authorize", "label": "typed action", "source": "gateway", "target": "pep", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "approve", "label": "high risk", "source": "pep", "target": "approval", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "tenant-access", "label": "tenant rows", "source": "pep", "target": "data", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "code", "label": "argv / code", "source": "data", "target": "sandbox", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "network", "label": "denied", "source": "sandbox", "target": "egress", "source_port": "left", "target_port": "right", "flow": "async"},
+    {"id": "audit-data", "label": "redacted", "source": "sandbox", "target": "audit", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "lifecycle", "label": "delete proof", "source": "audit", "target": "delete", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "footer": "Assets: tenant data + sandbox · Subjects: user + agent · Entries: user/web/tool · Impacts: leak, cross-tenant access, destructive action, RCE",
+  "footer_x": 48,
+  "footer_y": 736
+}

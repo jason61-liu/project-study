@@ -307,26 +307,26 @@
 
 ### 知识与阅读
 
-- [ ] 掌握任务分解、依赖图、子目标、完成条件和重规划触发器。
-- [ ] 区分自我反思、外部验证器和确定性检查器。
-- [ ] 比较状态机、任务队列、Manager、Handoff 和 Agent-as-Tool 的控制权边界。
-- [ ] 分析串行/并行编排、多 Agent 的上下文重复、错误传播、调度和成本问题。
-- [ ] 定义状态版本、幂等执行、断点和补偿动作。
+- [x] 掌握任务分解、依赖图、子目标、完成条件和重规划触发器。
+- [x] 区分自我反思、外部验证器和确定性检查器。
+- [x] 比较状态机、任务队列、Manager、Handoff 和 Agent-as-Tool 的控制权边界。
+- [x] 分析串行/并行编排、多 Agent 的上下文重复、错误传播、调度和成本问题。
+- [x] 定义状态版本、幂等执行、断点和补偿动作。
 
 ### 编码实验
 
-- [ ] 为第 5 周任务加入结构化 Plan 和逐项完成状态。
-- [ ] 实现失败分类：可重试、需重规划、需人工介入、不可恢复。
-- [ ] 实现可恢复的单 Agent 基线；仅为消融增加 Manager + Specialist 对照版本。
-- [ ] 对至少 20 条任务运行消融实验并记录三次重复结果。
-- [ ] 测试进程中断、部分成功、状态冲突、重复委派和上下文丢失。
+- [x] 为第 5 周任务加入结构化 Plan 和逐项完成状态。
+- [x] 实现失败分类：可重试、需重规划、需人工介入、不可恢复。
+- [x] 实现可恢复的单 Agent 基线；仅为消融增加 Manager + Specialist 对照版本。
+- [x] 对至少 20 条任务运行消融实验并记录三次重复结果。
+- [x] 测试进程中断、部分成功、状态冲突、重复委派和上下文丢失。
 
 ### 面试与验收
 
-- [ ] 完成至少 8 道规划、恢复与任务编排面试题。
-- [ ] 写出单 Agent、Workflow、多 Agent 的采用条件和反例清单。
-- [ ] 无笔记解释 Manager 与 Handoff 的控制权差异。
-- [ ] 消融报告同时包含收益、代价和统计波动。
+- [x] 完成至少 8 道规划、恢复与任务编排面试题。
+- [x] 写出单 Agent、Workflow、多 Agent 的采用条件和反例清单。
+- [x] 无笔记解释 Manager 与 Handoff 的控制权差异。
+- [x] 消融报告同时包含收益、代价和统计波动。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
@@ -342,27 +342,27 @@
 
 ### 知识与阅读
 
-- [ ] 学习 LangGraph State、Node、Edge、Conditional Edge 和 Reducer。
-- [ ] 学习 Checkpoint、Thread、Interrupt、HITL、恢复和 Time Travel。
-- [ ] 阅读 [OpenAI Agents SDK Agents](https://openai.github.io/openai-agents-python/agents/) 与 [Tracing](https://openai.github.io/openai-agents-python/tracing/)，掌握 Runner、Tool、Handoff、Guardrail 和 Trace/Span。
-- [ ] 阅读 [Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview)、[Claude Code Subagents](https://code.claude.com/docs/en/sub-agents) 与 [Claude Agent SDK Subagents](https://code.claude.com/docs/en/agent-sdk/subagents)，比较 Planning、Subagent、Filesystem Context、Skills、Memory 和 Agent Team。
-- [ ] 定位 [Hermes Agent](https://github.com/nousresearch/hermes-agent) 与 [Kimi Agent SDK](https://github.com/MoonshotAI/kimi-agent-sdk) 的核心入口，并建立“原生循环 → LangGraph → Agents SDK → 产品化 Harness”映射表。
+- [x] 学习 LangGraph State、Node、Edge、Conditional Edge 和 Reducer。
+- [x] 学习 Checkpoint、Thread、Interrupt、HITL、恢复和 Time Travel。
+- [x] 阅读 [OpenAI Agents SDK Agents](https://openai.github.io/openai-agents-python/agents/) 与 [Tracing](https://openai.github.io/openai-agents-python/tracing/)，掌握 Runner、Tool、Handoff、Guardrail 和 Trace/Span。
+- [x] 阅读 [Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview)、[Claude Code Subagents](https://code.claude.com/docs/en/sub-agents) 与 [Claude Agent SDK Subagents](https://code.claude.com/docs/en/agent-sdk/subagents)，比较 Planning、Subagent、Filesystem Context、Skills、Memory 和 Agent Team。
+- [x] 定位 [Hermes Agent](https://github.com/nousresearch/hermes-agent) 与 [Kimi Agent SDK](https://github.com/MoonshotAI/kimi-agent-sdk) 的核心入口，并建立“原生循环 → LangGraph → Agents SDK → 产品化 Harness”映射表。
 
 ### 编码实验
 
-- [ ] 用 LangGraph 重构第 6 周系统，并保留原生基线。
-- [ ] 加入持久化、人工审批、中断恢复和可重复执行。
-- [ ] 使用 Agents SDK 实现等价的工具、Handoff 和 Guardrail 流程。
-- [ ] 在 Deep Agents 或 Claude Agent SDK 中任选一个实现同任务最小版本，验证子 Agent 与上下文隔离；不重复实现全部框架。
-- [ ] 为原生、LangGraph、Agents SDK 及所选 Harness 版本采集相同任务的轨迹和指标。
-- [ ] 测试状态恢复、重复提交、审批拒绝和工具异常。
+- [x] 用 LangGraph 重构第 6 周系统，并保留原生基线。
+- [x] 加入持久化、人工审批、中断恢复和可重复执行。
+- [x] 使用 Agents SDK 实现等价的工具、Handoff 和 Guardrail 流程。
+- [x] 在 Deep Agents 或 Claude Agent SDK 中任选一个实现同任务最小版本，验证子 Agent 与上下文隔离；不重复实现全部框架。
+- [x] 为原生、LangGraph、Agents SDK 及所选 Harness 版本采集相同任务的轨迹和指标。
+- [x] 测试状态恢复、重复提交、审批拒绝和工具异常。
 
 ### 面试与验收
 
-- [ ] 完成至少 8 道 Agent 框架面试题。
-- [ ] 输出选型表：LangGraph、OpenAI Agents SDK、Deep Agents、Claude Agent SDK、Hermes Agent、Kimi Agent SDK，并补充 PydanticAI、AutoGen、Google ADK 的定位、抽象泄漏和锁定风险。
-- [ ] 进行 15 分钟源码入口与运行时流程讲解。
-- [ ] 主实现、对照实现和所选 Harness 最小版本均可运行，关键行为与原生基线一致。
+- [x] 完成至少 8 道 Agent 框架面试题。
+- [x] 输出选型表：LangGraph、OpenAI Agents SDK、Deep Agents、Claude Agent SDK、Hermes Agent、Kimi Agent SDK，并补充 PydanticAI、AutoGen、Google ADK 的定位、抽象泄漏和锁定风险。
+- [x] 进行 15 分钟源码入口与运行时流程讲解。
+- [x] 主实现、对照实现和所选 Harness 最小版本均可运行，关键行为与原生基线一致。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
@@ -380,27 +380,27 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)，整理 Task/Trial/Grader/Trace/Outcome/Harness。
-- [ ] 区分 Capability Eval 与 Regression Eval。
-- [ ] 设计确定性检查、Rubric、Pairwise、LLM-as-Judge 和人工抽检。
-- [ ] 学习多次 Trial、置信区间、非确定性和评测污染问题。
-- [ ] 定义成功率、工具正确率、引用正确率、步骤数、Token、延迟和成本指标。
-- [ ] 阅读 BFCL、τ-bench、GAIA 的任务与评分设计；Coding Agent 方向再阅读 SWE-bench，选择与目标项目最相关的一个子集。
+- [x] 阅读 [Demystifying Evals for AI Agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)，整理 Task/Trial/Grader/Trace/Outcome/Harness。
+- [x] 区分 Capability Eval 与 Regression Eval。
+- [x] 设计确定性检查、Rubric、Pairwise、LLM-as-Judge 和人工抽检。
+- [x] 学习多次 Trial、置信区间、非确定性和评测污染问题。
+- [x] 定义成功率、工具正确率、引用正确率、步骤数、Token、延迟和成本指标。
+- [x] 阅读 BFCL、τ-bench、GAIA 的任务与评分设计；Coding Agent 方向再阅读 SWE-bench，选择与目标项目最相关的一个子集。
 
 ### 编码实验
 
-- [ ] 建立至少 50 条版本化任务，覆盖正常、边界、失败和对抗输入。
-- [ ] 为每条任务定义输入、环境、成功条件和至少一个 Grader。
-- [ ] 实现评测 Harness、并发运行、轨迹保存和结果聚合，并把所选标准 Benchmark 子集适配到统一 Task/Trial/Grader Schema 后实际运行。
-- [ ] 人工复核至少 20 条 LLM Judge 结果，记录误判类型。
-- [ ] 建立基线、回归阈值和 CI Eval Gate，运行一次 Prompt/架构变更并验证劣化版本会被阻断。
+- [x] 建立至少 50 条版本化任务，覆盖正常、边界、失败和对抗输入。
+- [x] 为每条任务定义输入、环境、成功条件和至少一个 Grader。
+- [x] 实现评测 Harness、并发运行、轨迹保存和结果聚合，并把所选标准 Benchmark 子集适配到统一 Task/Trial/Grader Schema 后实际运行。
+- [x] 人工复核至少 20 条 LLM Judge 结果，记录误判类型。
+- [x] 建立基线、回归阈值和 CI Eval Gate，运行一次 Prompt/架构变更并验证劣化版本会被阻断。
 
 ### 面试与阶段关卡
 
-- [ ] 完成至少 10 道 Agent 评测面试题。
-- [ ] 输出评测集数据卡，说明覆盖范围、缺陷和泄漏风险。
-- [ ] 无笔记讲清为什么最终答案正确不代表 Agent 行为安全。
-- [ ] 阶段关卡通过：50+ 任务可重复运行，结果可追溯到完整轨迹。
+- [x] 完成至少 10 道 Agent 评测面试题。
+- [x] 输出评测集数据卡，说明覆盖范围、缺陷和泄漏风险。
+- [x] 无笔记讲清为什么最终答案正确不代表 Agent 行为安全。
+- [x] 阶段关卡通过：50+ 任务可重复运行，结果可追溯到完整轨迹。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 

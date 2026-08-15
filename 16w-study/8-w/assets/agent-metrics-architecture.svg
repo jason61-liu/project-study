@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="standard" data-max-bends-per-edge="12" data-max-total-bends="100" data-max-route-stretch="5.0" data-max-bridged-crossings="8" data-min-node-gap="0.0" data-min-container-gutter="0.0" data-min-label-clearance="2.0" data-min-segment-length="0.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960.0" height="680.0" fill="#ffffff"/>
+  <text x="480.0" y="56" text-anchor="middle" class="title">Agent Evaluation Metrics Architecture</text>
+  <text x="480.0" y="82" text-anchor="middle" class="subtitle">raw run evidence becomes hard gates, quality measures, and efficiency trade-offs</text>
+  <g id="telemetry" data-graph-role="container" data-container-id="telemetry" data-semantic-role="boundary" data-graph-bounds="40,112,920,218">
+  <rect data-graph-role="container" x="40.0" y="112.0" width="880.0" height="106.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="136.0" class="section">CANONICAL RUN EVIDENCE</text>
+    <rect id="telemetry-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="118" width="183.4" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="metrics" data-graph-role="container" data-container-id="metrics" data-semantic-role="boundary" data-graph-bounds="40,260,920,398">
+  <rect data-graph-role="container" x="40.0" y="260.0" width="880.0" height="138.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="284.0" class="section">METRIC FAMILIES</text>
+    <rect id="metrics-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="266" width="136.34" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="decision" data-graph-role="container" data-container-id="decision" data-semantic-role="boundary" data-graph-bounds="40,446,920,558">
+  <rect data-graph-role="container" x="40.0" y="446.0" width="880.0" height="112.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="470.0" class="section">AGGREGATION AND RELEASE POLICY</text>
+    <rect id="decision-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="452" width="240.86" height="30" fill="none" stroke="none"/>
+  </g>
+  <path id="ingest" data-graph-role="edge" data-edge-id="ingest" data-source="raw" data-target="normalize" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 270,173 L 360,173" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="calculate" data-graph-role="edge" data-edge-id="calculate" data-source="normalize" data-target="metric-engine" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 580,173 L 670,173" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="success-metric" data-graph-role="edge" data-edge-id="success-metric" data-source="metric-engine" data-target="success" data-edge-kind="flow" data-topic-id="" data-flow="write" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 760,202 L 760,302" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowB)"/>
+  <path id="quality-metric" data-graph-role="edge" data-edge-id="quality-metric" data-source="success" data-target="quality" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 670,337 L 580,337" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="efficiency-metric" data-graph-role="edge" data-edge-id="efficiency-metric" data-source="quality" data-target="efficiency" data-edge-kind="flow" data-topic-id="" data-flow="async" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 390,337 L 290,337" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="hard" data-graph-role="edge" data-edge-id="hard" data-source="slices" data-target="gates" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 290,511 L 385,511" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <path id="optimize" data-graph-role="edge" data-edge-id="optimize" data-source="gates" data-target="pareto" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 565,511 L 660,511" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <g id="node-raw" data-graph-role="node" data-node-id="raw" data-semantic-role="document" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,144,270,202">
+  <path d="M 70.0 144.0 L 257.24 144.0 L 270.0 156.76 L 270.0 202.0 L 70.0 202.0 Z" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.0"/>
+  <path d="M 257.24 144.0 L 257.24 156.76 L 270.0 156.76" fill="none" stroke="#3b82f6" stroke-width="2.0"/>
+  <line x1="88.0" y1="170.0" x2="242.0" y2="170.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="88.0" y1="184.0" x2="242.0" y2="184.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="88.0" y1="198.0" x2="242.0" y2="198.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="88.0" y1="212.0" x2="242.0" y2="212.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <text x="170.0" y="228.0" text-anchor="middle" class="node-title" font-size="18.0">Raw Run Evidence</text>
+  <text x="170.0" y="246.0" text-anchor="middle" class="node-sub">Trace + Outcome + Usage</text>
+  </g>
+  <g id="node-normalize" data-graph-role="node" data-node-id="normalize" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="360,144,580,202">
+  <rect x="360.0" y="144.0" width="220.0" height="58.0" rx="10.0" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2.0"/>
+  <rect x="366.0" y="150.0" width="208.0" height="46.0" rx="7.0" fill="none" stroke="#14b8a6" stroke-width="1.2" opacity="0.65"/>
+  <text x="470.0" y="173.0" text-anchor="middle" class="node-title" font-size="14.75">Canonical Event Schema</text>
+  <text x="470.0" y="195.0" text-anchor="middle" class="node-sub">run / task / trial / versions</text>
+  </g>
+  <g id="node-metric-engine" data-graph-role="node" data-node-id="metric-engine" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="670,144,850,202">
+  <rect x="670.0" y="144.0" width="180.0" height="58.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="760.0" y="173.0" text-anchor="middle" class="node-title" font-size="18.0">Metric Engine</text>
+  <text x="760.0" y="195.0" text-anchor="middle" class="node-sub">formulas + denominators</text>
+  </g>
+  <g id="node-success" data-graph-role="node" data-node-id="success" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="670,302,850,372">
+  <rect x="670.0" y="302.0" width="180.0" height="70.0" rx="10.0" fill="#fff1f2" stroke="#ef4444" stroke-width="2.0"/>
+  <rect x="676.0" y="308.0" width="168.0" height="58.0" rx="7.0" fill="none" stroke="#ef4444" stroke-width="1.2" opacity="0.65"/>
+  <text x="760.0" y="337.0" text-anchor="middle" class="node-title" font-size="15.5">Success + Safety</text>
+  <text x="760.0" y="359.0" text-anchor="middle" class="node-sub">outcome · ACL · budget</text>
+  </g>
+  <g id="node-quality" data-graph-role="node" data-node-id="quality" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="390,302,580,372">
+  <rect x="390.0" y="302.0" width="190.0" height="70.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="485.0" y="337.0" text-anchor="middle" class="node-title" font-size="13.5">Tool + Citation Quality</text>
+  <text x="485.0" y="359.0" text-anchor="middle" class="node-sub">select · args · support</text>
+  </g>
+  <g id="node-efficiency" data-graph-role="node" data-node-id="efficiency" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="100,302,290,372">
+  <rect x="100.0" y="302.0" width="190.0" height="70.0" rx="10.0" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.8"/>
+  <text x="195.0" y="337.0" text-anchor="middle" class="node-title" font-size="18.0">Efficiency</text>
+  <text x="195.0" y="359.0" text-anchor="middle" class="node-sub">steps · tokens · latency · cost</text>
+  </g>
+  <g id="node-slices" data-graph-role="node" data-node-id="slices" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="100,480,290,542">
+  <rect x="100.0" y="480.0" width="190.0" height="62.0" rx="10.0" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2.0"/>
+  <rect x="106.0" y="486.0" width="178.0" height="50.0" rx="7.0" fill="none" stroke="#14b8a6" stroke-width="1.2" opacity="0.65"/>
+  <text x="195.0" y="511.0" text-anchor="middle" class="node-title" font-size="17.13">Slice Aggregator</text>
+  <text x="195.0" y="533.0" text-anchor="middle" class="node-sub">task · risk · tenant · failure</text>
+  </g>
+  <g id="node-gates" data-graph-role="node" data-node-id="gates" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="385,480,565,542">
+  <rect x="385.0" y="480.0" width="180.0" height="62.0" rx="10.0" fill="#fff1f2" stroke="#ef4444" stroke-width="2.0"/>
+  <rect x="391.0" y="486.0" width="168.0" height="50.0" rx="7.0" fill="none" stroke="#ef4444" stroke-width="1.2" opacity="0.65"/>
+  <text x="475.0" y="511.0" text-anchor="middle" class="node-title" font-size="18.0">Hard Gates</text>
+  <text x="475.0" y="533.0" text-anchor="middle" class="node-sub">security + minimum quality</text>
+  </g>
+  <g id="node-pareto" data-graph-role="node" data-node-id="pareto" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="660,480,850,542">
+  <rect x="660.0" y="480.0" width="190.0" height="62.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="755.0" y="511.0" text-anchor="middle" class="node-title" font-size="18.0">Pareto Decision</text>
+  <text x="755.0" y="533.0" text-anchor="middle" class="node-sub">quality / latency / cost</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,642,629,658">
+  <text x="48.0" y="654.0" class="footnote">Never average away security failures · optimize efficiency after quality gates pass</text>
+  </g>
+</svg>

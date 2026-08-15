@@ -1,0 +1,29 @@
+name: week8-agent-eval-gate
+
+on:
+  pull_request:
+    paths:
+      - "8-w/source/**"
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r 8-w/source/requirements.txt
+      - run: python -m pytest -q -o asyncio_mode=auto 8-w/source/tests
+      - run: python 8-w/source/generate_tasks.py
+      - run: >-
+          python 8-w/source/run_eval.py local
+          --agent baseline
+          --output "${RUNNER_TEMP}/week8-candidate"
+          --concurrency 8
+      - run: >-
+          python 8-w/source/ci_gate.py
+          --baseline 8-w/source/data/baseline-summary.json
+          --candidate "${RUNNER_TEMP}/week8-candidate/summary.json"
+          --config 8-w/source/data/gate-config.json
+          --output "${RUNNER_TEMP}/week8-gate-result.json"

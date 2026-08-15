@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 680,
+  "title": "Agent Evaluation System",
+  "subtitle": "task specification, trial execution, evidence capture, and grading",
+  "containers": [
+    {"id": "eval-control", "x": 40, "y": 112, "width": 880, "height": 112, "label": "Evaluation Control Plane"},
+    {"id": "agent-runtime", "x": 40, "y": 272, "width": 880, "height": 120, "label": "Isolated Trial Runtime"},
+    {"id": "evidence-grade", "x": 40, "y": 440, "width": 880, "height": 120, "label": "Evidence and Decision"}
+  ],
+  "nodes": [
+    {"id": "task", "kind": "document", "x": 64, "y": 148, "width": 150, "height": 58, "label": "Task", "sublabel": "input + success contract", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "eval-harness", "kind": "double_rect", "x": 300, "y": 148, "width": 190, "height": 58, "label": "Evaluation Harness", "sublabel": "schedule + isolate + aggregate", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "trial", "kind": "rect", "x": 640, "y": 148, "width": 170, "height": 58, "label": "Trial", "sublabel": "one concrete attempt", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "agent-harness", "kind": "double_rect", "x": 630, "y": 312, "width": 190, "height": 62, "label": "Agent Harness", "sublabel": "loop + tools + budgets", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "environment", "kind": "rect", "x": 390, "y": 312, "width": 190, "height": 62, "label": "Model / Tools / Env", "sublabel": "real execution boundary", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "capture", "kind": "rect", "x": 100, "y": 312, "width": 190, "height": 62, "label": "Evidence Capture", "sublabel": "events + state diff", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "evidence-bundle", "kind": "document", "x": 100, "y": 480, "width": 190, "height": 62, "label": "Trace + Outcome", "sublabel": "trajectory + world state", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "graders", "kind": "double_rect", "x": 390, "y": 480, "width": 190, "height": 62, "label": "Graders", "sublabel": "code + rubric + human", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "report", "kind": "rect", "x": 680, "y": 480, "width": 170, "height": 62, "label": "Score + Report", "sublabel": "decision + diagnosis", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true}
+  ],
+  "arrows": [
+    {"id": "load", "source": "task", "target": "eval-harness", "source_port": "right", "target_port": "left", "flow": "control", "label": "load"},
+    {"id": "schedule", "source": "eval-harness", "target": "trial", "source_port": "right", "target_port": "left", "flow": "control", "label": "schedule"},
+    {"id": "run", "source": "trial", "target": "agent-harness", "source_port": "bottom", "target_port": "top", "flow": "async"},
+    {"id": "act", "source": "agent-harness", "target": "environment", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "observe", "source": "environment", "target": "capture", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "persist", "source": "capture", "target": "evidence-bundle", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "grade", "source": "evidence-bundle", "target": "graders", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "verdict", "source": "graders", "target": "report", "source_port": "right", "target_port": "left", "flow": "feedback", "label": "scores"}
+  ],
+  "footer": "Style 1 · Flat system architecture · evaluate model and harness together",
+  "footer_x": 48,
+  "footer_y": 654
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 1200,
+  "height": 720,
+  "title": "提示注入到高影响副作用：攻击链与强制控制点",
+  "subtitle": "模型可被影响，因此授权、工具参数与副作用必须在模型外重新校验",
+  "containers": [
+    {"id": "content-zone", "x": 40, "y": 120, "width": 1120, "height": 125, "label": "不可信内容域：数据可以被读取，但没有指令权"},
+    {"id": "decision-zone", "x": 40, "y": 285, "width": 1120, "height": 145, "label": "概率决策域：检测 Goal Drift，但不授予权限"},
+    {"id": "effect-zone", "x": 40, "y": 480, "width": 1120, "height": 125, "label": "确定性执行域：策略、资源授权、确认与沙箱"}
+  ],
+  "nodes": [
+    {"id": "payload", "kind": "document", "x": 75, "y": 155, "width": 205, "height": 64, "label": "网页 / 邮件 / PDF", "sublabel": "隐藏的间接注入载荷", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "observation", "kind": "rect", "x": 390, "y": 155, "width": 235, "height": 64, "label": "带来源的 Observation", "sublabel": "provenance + tenant + taint", "fill": "#fff7ed", "stroke": "#ea580c"},
+    {"id": "capsule", "kind": "double_rect", "x": 780, "y": 155, "width": 300, "height": 64, "label": "不可变 Intent Capsule", "sublabel": "goal / subject / resource / budget", "fill": "#f0fdf4", "stroke": "#16a34a"},
+
+    {"id": "model", "kind": "double_rect", "x": 155, "y": 330, "width": 245, "height": 68, "label": "LLM / Planner", "sublabel": "可能发生 Goal Hijack", "fill": "#eff6ff", "stroke": "#2563eb"},
+    {"id": "candidate", "kind": "rect", "x": 505, "y": 330, "width": 245, "height": 68, "label": "结构化 Tool Intent", "sublabel": "工具、资源、规范化参数", "fill": "#fff7ed", "stroke": "#ea580c"},
+    {"id": "policy", "kind": "double_rect", "x": 855, "y": 330, "width": 245, "height": 68, "label": "Goal Diff + Policy", "sublabel": "拒绝目标、范围或风险升级", "fill": "#fef2f2", "stroke": "#dc2626"},
+
+    {"id": "gateway", "kind": "rect", "x": 225, "y": 520, "width": 250, "height": 64, "label": "Tool Gateway", "sublabel": "Schema / ABAC / Scope / HITL", "fill": "#fef2f2", "stroke": "#dc2626"},
+    {"id": "effect", "kind": "rect", "x": 725, "y": 520, "width": 250, "height": 64, "label": "受限副作用", "sublabel": "幂等、审计、可补偿或拒绝", "fill": "#f0fdf4", "stroke": "#16a34a"}
+  ],
+  "arrows": [
+    {"id": "ingest", "source": "payload", "target": "observation", "source_port": "right", "target_port": "left", "flow": "feedback", "label": "解析 + 来源标签"},
+    {"id": "context", "source": "observation", "target": "model", "source_port": "bottom", "target_port": "top", "flow": "feedback", "label": "只作为数据"},
+    {"id": "plan", "source": "model", "target": "candidate", "source_port": "right", "target_port": "left", "flow": "data", "label": "候选动作"},
+    {"id": "anchor", "source": "capsule", "target": "policy", "source_port": "bottom", "target_port": "top", "flow": "write", "label": "约束基线"},
+    {"id": "check", "source": "candidate", "target": "policy", "source_port": "right", "target_port": "left", "flow": "control", "label": "规范化后比较"},
+    {"id": "permit", "source": "policy", "target": "gateway", "source_port": "bottom", "target_port": "top", "flow": "control", "label": "许可 + 约束"},
+    {"id": "execute", "source": "gateway", "target": "effect", "source_port": "right", "target_port": "left", "flow": "read", "label": "短期 Token + action receipt"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 48,
+  "legend_y": 640,
+  "legend_locked": true,
+  "legend": [
+    {"flow": "feedback", "label": "不可信内容流"},
+    {"flow": "data", "label": "模型候选意图"},
+    {"flow": "control", "label": "确定性策略"},
+    {"flow": "read", "label": "受授权执行"}
+  ],
+  "footer": "输入检测可降低成功率；真正的安全边界是模型外的授权与副作用控制",
+  "footer_x": 48,
+  "footer_y": 700
+}

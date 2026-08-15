@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_e2de9cdaf894487e803af07d537cd550",
+    "span_id": "span_f4d3b786de574728",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435012Z",
+    "ended_at": "2026-08-14T15:34:07.435019Z",
+    "latency_ms": 0.007375027053058147,
+    "detail": {
+      "task_id": "local-normal-007"
+    }
+  },
+  {
+    "trace_id": "trace_e2de9cdaf894487e803af07d537cd550",
+    "span_id": "span_10293561ddc348cf",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.432995Z",
+    "ended_at": "2026-08-14T15:34:07.435022Z",
+    "latency_ms": 2.0270829554647207,
+    "detail": {
+      "task_id": "local-normal-007"
+    }
+  },
+  {
+    "trace_id": "trace_e2de9cdaf894487e803af07d537cd550",
+    "span_id": "span_1479a77f4c7648e8",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435024Z",
+    "ended_at": "2026-08-14T15:34:07.435027Z",
+    "latency_ms": 0.0038750004023313522,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_e2de9cdaf894487e803af07d537cd550",
+    "span_id": "span_8fd918ef57834aab",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435029Z",
+    "ended_at": "2026-08-14T15:34:07.435033Z",
+    "latency_ms": 0.003500026650726795,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_e2de9cdaf894487e803af07d537cd550",
+    "span_id": "span_667dc2e6f4a447c7",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "citation",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.435035Z",
+    "ended_at": "2026-08-14T15:34:07.435039Z",
+    "latency_ms": 0.004749977961182594,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

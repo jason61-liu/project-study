@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="standard" data-max-bends-per-edge="12" data-max-total-bends="100" data-max-route-stretch="5.0" data-max-bridged-crossings="8" data-min-node-gap="0.0" data-min-container-gutter="0.0" data-min-label-clearance="2.0" data-min-segment-length="0.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960.0" height="700.0" fill="#ffffff"/>
+  <text x="480.0" y="56" text-anchor="middle" class="title">Benchmark Selection Architecture</text>
+  <text x="480.0" y="82" text-anchor="middle" class="subtitle">match the authoritative outcome and system boundary to the project risk</text>
+  <g id="requirements" data-graph-role="container" data-container-id="requirements" data-semantic-role="boundary" data-graph-bounds="40,112,920,216">
+  <rect data-graph-role="container" x="40.0" y="112.0" width="880.0" height="104.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="136.0" class="section">TARGET PROJECT BOUNDARY</text>
+    <rect id="requirements-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="118" width="197.7" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="candidates" data-graph-role="container" data-container-id="candidates" data-semantic-role="boundary" data-graph-bounds="40,258,920,434">
+  <rect data-graph-role="container" x="40.0" y="258.0" width="880.0" height="176.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="282.0" class="section">EXTERNAL BENCHMARK LENSES</text>
+    <rect id="candidates-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="264" width="215.9" height="30" fill="none" stroke="none"/>
+  </g>
+  <g id="portfolio" data-graph-role="container" data-container-id="portfolio" data-semantic-role="boundary" data-graph-bounds="40,482,920,602">
+  <rect data-graph-role="container" x="40.0" y="482.0" width="880.0" height="120.0" rx="16.0" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+  <text x="58.0" y="506.0" class="section">SELECTED EVALUATION PORTFOLIO</text>
+    <rect id="portfolio-header" data-graph-role="reserved" data-reserved-kind="container-header" x="48" y="488" width="236.18" height="30" fill="none" stroke="none"/>
+  </g>
+  <path id="screen-tau" data-graph-role="edge" data-edge-id="screen-tau" data-source="risk" data-target="tau" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 675,200 L 675,238 L 368,238 L 368,300" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="derive" data-graph-role="edge" data-edge-id="derive" data-source="project" data-target="risk" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 340,171 L 540,171" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="select-primary" data-graph-role="edge" data-edge-id="select-primary" data-source="tau" data-target="primary" data-edge-kind="flow" data-topic-id="" data-flow="write" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 368,392 L 368,412.4 L 458,412.4 L 458,520" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowB)"/>
+  <path id="select-component" data-graph-role="edge" data-edge-id="select-component" data-source="bfcl" data-target="component" data-edge-kind="flow" data-topic-id="" data-flow="write" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="3" data-route-stretch="2.432" data-bridges="" d="M 154,392 L 154,412.4 L 48,412.4 L 48,520 L 174,520" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowB)"/>
+  <path id="combine-component" data-graph-role="edge" data-edge-id="combine-component" data-source="component" data-target="primary" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 284,551 L 328,551" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <path id="augment" data-graph-role="edge" data-edge-id="augment" data-source="primary" data-target="local" data-edge-kind="flow" data-topic-id="" data-flow="feedback" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 588,551 L 632,551" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowG)"/>
+  <g id="node-project" data-graph-role="node" data-node-id="project" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="90,142,340,200">
+  <rect x="90.0" y="142.0" width="250.0" height="58.0" rx="10.0" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2.0"/>
+  <rect x="96.0" y="148.0" width="238.0" height="46.0" rx="7.0" fill="none" stroke="#8b5cf6" stroke-width="1.2" opacity="0.65"/>
+  <text x="215.0" y="171.0" text-anchor="middle" class="node-title" font-size="16.35">Weeks 2–7 Agent System</text>
+  <text x="215.0" y="193.0" text-anchor="middle" class="node-sub">RAG + policy + tools + state + recovery</text>
+  </g>
+  <g id="node-risk" data-graph-role="node" data-node-id="risk" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="540,142,810,200">
+  <rect x="540.0" y="142.0" width="270.0" height="58.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="675.0" y="171.0" text-anchor="middle" class="node-title" font-size="18.0">Required Evidence</text>
+  <text x="675.0" y="193.0" text-anchor="middle" class="node-sub">Outcome · ACL · citations · trace · cost</text>
+  </g>
+  <g id="node-bfcl" data-graph-role="node" data-node-id="bfcl" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="64,300,244,392">
+  <rect x="64.0" y="300.0" width="180.0" height="92.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="154.0" y="346.0" text-anchor="middle" class="node-title" font-size="18.0">BFCL</text>
+  <text x="154.0" y="368.0" text-anchor="middle" class="node-sub">tool-call protocol</text>
+  </g>
+  <g id="node-tau" data-graph-role="node" data-node-id="tau" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="278,300,458,392">
+  <rect x="278.0" y="300.0" width="180.0" height="92.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.0"/>
+  <rect x="284.0" y="306.0" width="168.0" height="80.0" rx="7.0" fill="none" stroke="#22c55e" stroke-width="1.2" opacity="0.65"/>
+  <text x="368.0" y="346.0" text-anchor="middle" class="node-title" font-size="18.0">τ-bench Family</text>
+  <text x="368.0" y="368.0" text-anchor="middle" class="node-sub">policy + state outcome</text>
+  </g>
+  <g id="node-gaia" data-graph-role="node" data-node-id="gaia" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="492,300,672,392">
+  <rect x="492.0" y="300.0" width="180.0" height="92.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="582.0" y="346.0" text-anchor="middle" class="node-title" font-size="18.0">GAIA</text>
+  <text x="582.0" y="368.0" text-anchor="middle" class="node-sub">open research</text>
+  </g>
+  <g id="node-swe" data-graph-role="node" data-node-id="swe" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="706,300,886,392">
+  <rect x="706.0" y="300.0" width="180.0" height="92.0" rx="10.0" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.8"/>
+  <text x="796.0" y="346.0" text-anchor="middle" class="node-title" font-size="18.0">SWE-bench</text>
+  <text x="796.0" y="368.0" text-anchor="middle" class="node-sub">repo repair tests</text>
+  </g>
+  <g id="node-component" data-graph-role="node" data-node-id="component" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="64,520,284,582">
+  <rect x="64.0" y="520.0" width="220.0" height="62.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="174.0" y="551.0" text-anchor="middle" class="node-title" font-size="16.32">Component Regression</text>
+  <text x="174.0" y="573.0" text-anchor="middle" class="node-sub">BFCL Multi Turn + relevance</text>
+  </g>
+  <g id="node-primary" data-graph-role="node" data-node-id="primary" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="328,520,588,582">
+  <rect x="328.0" y="520.0" width="260.0" height="62.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.0"/>
+  <rect x="334.0" y="526.0" width="248.0" height="50.0" rx="7.0" fill="none" stroke="#22c55e" stroke-width="1.2" opacity="0.65"/>
+  <text x="458.0" y="551.0" text-anchor="middle" class="node-title" font-size="18.0">Primary External Suite</text>
+  <text x="458.0" y="573.0" text-anchor="middle" class="node-sub">τ³ banking_knowledge / base</text>
+  </g>
+  <g id="node-local" data-graph-role="node" data-node-id="local" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="632,520,882,582">
+  <rect x="632.0" y="520.0" width="250.0" height="62.0" rx="10.0" fill="#fff1f2" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="757.0" y="551.0" text-anchor="middle" class="node-title" font-size="16.9">Private Product Holdout</text>
+  <text x="757.0" y="573.0" text-anchor="middle" class="node-sub">ACL + approval + citations + recovery</text>
+  </g>
+  <g id="derive-label" data-graph-role="label" data-owner="derive" data-graph-bounds="395.68,140,484.32,160">
+  <rect x="395.68" y="140.0" width="88.64" height="20" rx="6" fill="#ffffff" opacity="0.94"/>
+  <text x="440.0" y="154.0" text-anchor="middle" class="arrow-label">derive risks</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,670,636,686">
+  <text x="48.0" y="682.0" class="footnote">Primary: τ³ banking_knowledge · Component: BFCL · Authority: private product holdout</text>
+  </g>
+</svg>

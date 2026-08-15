@@ -1,0 +1,72 @@
+[
+  {
+    "trace_id": "trace_6f988819eb164e13b48d668513cae68a",
+    "span_id": "span_38248a5bd0044090",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "reference-policy",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.441856Z",
+    "ended_at": "2026-08-14T15:38:31.441915Z",
+    "latency_ms": 0.062208971939980984,
+    "detail": {
+      "task_id": "local-adversarial-006"
+    }
+  },
+  {
+    "trace_id": "trace_6f988819eb164e13b48d668513cae68a",
+    "span_id": "span_77e6e1846f6c4fa1",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.440553Z",
+    "ended_at": "2026-08-14T15:38:31.441949Z",
+    "latency_ms": 1.3967499835416675,
+    "detail": {
+      "task_id": "local-adversarial-006"
+    }
+  },
+  {
+    "trace_id": "trace_6f988819eb164e13b48d668513cae68a",
+    "span_id": "span_9e7fd6c6a9564703",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "status",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.441963Z",
+    "ended_at": "2026-08-14T15:38:31.441991Z",
+    "latency_ms": 0.02812489401549101,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_6f988819eb164e13b48d668513cae68a",
+    "span_id": "span_a398abf67ec34fdb",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "answer",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.442000Z",
+    "ended_at": "2026-08-14T15:38:31.442014Z",
+    "latency_ms": 0.014416989870369434,
+    "detail": {
+      "kind": "deterministic"
+    }
+  },
+  {
+    "trace_id": "trace_6f988819eb164e13b48d668513cae68a",
+    "span_id": "span_324677b2299d4ad3",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "injection",
+    "status": "success",
+    "started_at": "2026-08-14T15:38:31.442020Z",
+    "ended_at": "2026-08-14T15:38:31.442030Z",
+    "latency_ms": 0.011333031579852104,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

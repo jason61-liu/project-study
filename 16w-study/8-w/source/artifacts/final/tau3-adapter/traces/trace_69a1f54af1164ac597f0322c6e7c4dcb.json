@@ -1,0 +1,44 @@
+[
+  {
+    "trace_id": "trace_69a1f54af1164ac597f0322c6e7c4dcb",
+    "span_id": "span_5e9bd80e7af64493",
+    "parent_span_id": null,
+    "kind": "agent",
+    "name": "tau-contract-replay",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434328Z",
+    "ended_at": "2026-08-14T15:34:07.434334Z",
+    "latency_ms": 0.005499925464391708,
+    "detail": {
+      "task_id": "tau3-banking-task-003"
+    }
+  },
+  {
+    "trace_id": "trace_69a1f54af1164ac597f0322c6e7c4dcb",
+    "span_id": "span_bd08ef2f78a842b6",
+    "parent_span_id": null,
+    "kind": "trial",
+    "name": "agent-run",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.432622Z",
+    "ended_at": "2026-08-14T15:34:07.434337Z",
+    "latency_ms": 1.7149589257314801,
+    "detail": {
+      "task_id": "tau3-banking-task-003"
+    }
+  },
+  {
+    "trace_id": "trace_69a1f54af1164ac597f0322c6e7c4dcb",
+    "span_id": "span_93bf979029ac43fe",
+    "parent_span_id": null,
+    "kind": "grader",
+    "name": "tau-actions",
+    "status": "success",
+    "started_at": "2026-08-14T15:34:07.434339Z",
+    "ended_at": "2026-08-14T15:34:07.434344Z",
+    "latency_ms": 0.005166977643966675,
+    "detail": {
+      "kind": "deterministic"
+    }
+  }
+]

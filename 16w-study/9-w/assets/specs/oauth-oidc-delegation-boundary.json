@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 700,
+  "title": "OAuth / OIDC Delegated Agent Authorization",
+  "subtitle": "authenticate the user, preserve the agent actor, narrow the token, and enforce at the resource",
+  "containers": [
+    {"id": "identity", "x": 40, "y": 108, "width": 880, "height": 112, "label": "IDENTITY AND USER CONSENT"},
+    {"id": "delegation", "x": 40, "y": 258, "width": 880, "height": 112, "label": "AGENT DELEGATION AND POLICY"},
+    {"id": "resource", "x": 40, "y": 408, "width": 880, "height": 112, "label": "TOOL AND RESOURCE ENFORCEMENT"},
+    {"id": "govern", "x": 40, "y": 558, "width": 880, "height": 76, "label": "SECRETS, AUDIT, AND REVOCATION"}
+  ],
+  "nodes": [
+    {"id": "user", "kind": "user_avatar", "x": 70, "y": 142, "width": 170, "height": 60, "label": "End User", "sublabel": "subject + consent", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "client", "kind": "rect", "x": 300, "y": 142, "width": 170, "height": 60, "label": "OIDC Client", "sublabel": "code + PKCE + nonce", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "as", "kind": "double_rect", "x": 530, "y": 142, "width": 170, "height": 60, "label": "AS / OpenID Provider", "sublabel": "ID + access tokens", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "session", "kind": "cylinder", "x": 760, "y": 142, "width": 130, "height": 60, "label": "Session", "sublabel": "server-side token", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "runtime", "kind": "double_rect", "x": 70, "y": 292, "width": 170, "height": 60, "label": "Agent Runtime", "sublabel": "actor + intent", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "broker", "kind": "rect", "x": 300, "y": 292, "width": 170, "height": 60, "label": "Token Broker / STS", "sublabel": "sub + act + aud + scope", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "pdp", "kind": "double_rect", "x": 530, "y": 292, "width": 170, "height": 60, "label": "RBAC + ABAC PDP", "sublabel": "allow / deny / approve", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "approval", "kind": "user_avatar", "x": 760, "y": 292, "width": 130, "height": 60, "label": "Approval", "sublabel": "bound intent", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "pep", "kind": "double_rect", "x": 760, "y": 442, "width": 130, "height": 60, "label": "Tool PEP", "sublabel": "validate + enforce", "fill": "#eff6ff", "stroke": "#2563eb", "flat": true},
+    {"id": "rs", "kind": "cylinder", "x": 530, "y": 442, "width": 170, "height": 60, "label": "Resource Server", "sublabel": "tenant ACL + outcome", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "receipt", "kind": "document", "x": 300, "y": 442, "width": 170, "height": 60, "label": "Side-effect Receipt", "sublabel": "resource version + idempotency", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "trace", "kind": "document", "x": 70, "y": 442, "width": 170, "height": 60, "label": "Audit Event", "sublabel": "subject + actor + decision", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "vault", "kind": "cylinder", "x": 210, "y": 580, "width": 210, "height": 44, "label": "Secret Manager", "sublabel": "lease · rotate · revoke", "fill": "#ecfdf5", "stroke": "#10b981"},
+    {"id": "audit-store", "kind": "cylinder", "x": 540, "y": 580, "width": 210, "height": 44, "label": "Immutable Audit Store", "sublabel": "retention + deletion ledger", "fill": "#f0fdfa", "stroke": "#14b8a6"}
+  ],
+  "arrows": [
+    {"id": "login", "source": "user", "target": "client", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "authorize", "source": "client", "target": "as", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "token", "source": "as", "target": "session", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "start", "source": "user", "target": "runtime", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "exchange", "source": "runtime", "target": "broker", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "decide", "source": "broker", "target": "pdp", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "approve", "source": "pdp", "target": "approval", "source_port": "right", "target_port": "left", "flow": "async"},
+    {"id": "enforce", "source": "approval", "target": "pep", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "call", "source": "pep", "target": "rs", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "outcome", "source": "rs", "target": "receipt", "source_port": "left", "target_port": "right", "flow": "write"},
+    {"id": "record", "source": "receipt", "target": "trace", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "secret", "source": "trace", "target": "vault", "source_port": "bottom", "target_port": "top", "flow": "feedback"},
+    {"id": "persist", "source": "vault", "target": "audit-store", "source_port": "right", "target_port": "left", "flow": "write"}
+  ],
+  "footer": "The model proposes; the token broker narrows; the PDP decides; the PEP and resource server enforce",
+  "footer_x": 48,
+  "footer_y": 676
+}

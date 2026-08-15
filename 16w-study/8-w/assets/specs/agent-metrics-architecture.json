@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "standard",
+  "width": 960,
+  "height": 680,
+  "title": "Agent Evaluation Metrics Architecture",
+  "subtitle": "raw run evidence becomes hard gates, quality measures, and efficiency trade-offs",
+  "containers": [
+    {"id": "telemetry", "x": 40, "y": 112, "width": 880, "height": 106, "label": "Canonical Run Evidence"},
+    {"id": "metrics", "x": 40, "y": 260, "width": 880, "height": 138, "label": "Metric Families"},
+    {"id": "decision", "x": 40, "y": 446, "width": 880, "height": 112, "label": "Aggregation and Release Policy"}
+  ],
+  "nodes": [
+    {"id": "raw", "kind": "document", "x": 70, "y": 144, "width": 200, "height": 58, "label": "Raw Run Evidence", "sublabel": "Trace + Outcome + Usage", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "normalize", "kind": "double_rect", "x": 360, "y": 144, "width": 220, "height": 58, "label": "Canonical Event Schema", "sublabel": "run / task / trial / versions", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "metric-engine", "kind": "rect", "x": 670, "y": 144, "width": 180, "height": 58, "label": "Metric Engine", "sublabel": "formulas + denominators", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "success", "kind": "double_rect", "x": 670, "y": 302, "width": 180, "height": 70, "label": "Success + Safety", "sublabel": "outcome · ACL · budget", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "quality", "kind": "rect", "x": 390, "y": 302, "width": 190, "height": 70, "label": "Tool + Citation Quality", "sublabel": "select · args · support", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "efficiency", "kind": "rect", "x": 100, "y": 302, "width": 190, "height": 70, "label": "Efficiency", "sublabel": "steps · tokens · latency · cost", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "slices", "kind": "double_rect", "x": 100, "y": 480, "width": 190, "height": 62, "label": "Slice Aggregator", "sublabel": "task · risk · tenant · failure", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "gates", "kind": "double_rect", "x": 385, "y": 480, "width": 180, "height": 62, "label": "Hard Gates", "sublabel": "security + minimum quality", "fill": "#fff1f2", "stroke": "#ef4444", "flat": true},
+    {"id": "pareto", "kind": "rect", "x": 660, "y": 480, "width": 190, "height": 62, "label": "Pareto Decision", "sublabel": "quality / latency / cost", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true}
+  ],
+  "arrows": [
+    {"id": "ingest", "source": "raw", "target": "normalize", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "calculate", "source": "normalize", "target": "metric-engine", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "success-metric", "source": "metric-engine", "target": "success", "source_port": "bottom", "target_port": "top", "flow": "write"},
+    {"id": "quality-metric", "source": "success", "target": "quality", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "efficiency-metric", "source": "quality", "target": "efficiency", "source_port": "left", "target_port": "right", "flow": "async"},
+    {"id": "hard", "source": "slices", "target": "gates", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "optimize", "source": "gates", "target": "pareto", "source_port": "right", "target_port": "left", "flow": "control"}
+  ],
+  "footer": "Never average away security failures · optimize efficiency after quality gates pass",
+  "footer_x": 48,
+  "footer_y": 654
+}

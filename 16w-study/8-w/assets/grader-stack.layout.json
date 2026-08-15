@@ -1,0 +1,232 @@
+{
+  "canvas": {
+    "height": 680.0,
+    "width": 960.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 12,
+      "max_bridged_crossings": 8,
+      "max_route_stretch": 5.0,
+      "max_total_bends": 100,
+      "min_container_gutter": 0.0,
+      "min_label_clearance": 2.0,
+      "min_node_gap": 0.0,
+      "min_segment_length": 0.0,
+      "profile": "standard"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": 16.0,
+      "minimum_node_gap": 30.0,
+      "shortest_segment": 30.0,
+      "total_bends": 0
+    },
+    "ok": true,
+    "profile": "standard",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "facts",
+      "length": 70.0,
+      "route": [
+        [
+          270.0,
+          175.0
+        ],
+        [
+          340.0,
+          175.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "artifacts",
+      "source_port": [
+        270.0,
+        175.0
+      ],
+      "target": "deterministic",
+      "target_port": [
+        340.0,
+        175.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "meaning",
+      "length": 70.0,
+      "route": [
+        [
+          540.0,
+          175.0
+        ],
+        [
+          610.0,
+          175.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "deterministic",
+      "source_port": [
+        540.0,
+        175.0
+      ],
+      "target": "semantic",
+      "target_port": [
+        610.0,
+        175.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "verdict",
+      "length": 102.0,
+      "route": [
+        [
+          710.0,
+          204.0
+        ],
+        [
+          710.0,
+          306.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "semantic",
+      "source_port": [
+        710.0,
+        204.0
+      ],
+      "target": "aggregate",
+      "target_port": [
+        710.0,
+        306.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "sample-risk",
+      "length": 30.0,
+      "route": [
+        [
+          610.0,
+          339.0
+        ],
+        [
+          580.0,
+          339.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "aggregate",
+      "source_port": [
+        610.0,
+        339.0
+      ],
+      "target": "sample",
+      "target_port": [
+        580.0,
+        339.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "review",
+      "length": 100.0,
+      "route": [
+        [
+          390.0,
+          339.0
+        ],
+        [
+          290.0,
+          339.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "sample",
+      "source_port": [
+        390.0,
+        339.0
+      ],
+      "target": "human",
+      "target_port": [
+        290.0,
+        339.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "report",
+      "length": 100.0,
+      "route": [
+        [
+          290.0,
+          511.0
+        ],
+        [
+          390.0,
+          511.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "calibrate",
+      "source_port": [
+        290.0,
+        511.0
+      ],
+      "target": "release",
+      "target_port": [
+        390.0,
+        511.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": null
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 6,
+    "nodes": 8
+  },
+  "text_metrics": "heuristic-v1"
+}

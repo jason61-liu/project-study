@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" width="960" height="760" data-generator="fireworks-tech-graph" data-schema-version="1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="standard" data-max-bends-per-edge="4" data-max-total-bends="40" data-max-route-stretch="5.0" data-max-bridged-crossings="0" data-min-node-gap="0" data-min-container-gutter="0" data-min-label-clearance="2" data-min-segment-length="0">
+  <defs>
+    <marker id="arrow-data" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+    <marker id="arrow-control" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker>
+    <marker id="arrow-write" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/></marker>
+    <marker id="arrow-risk" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/></marker>
+    <style>
+      text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .title { font-size: 30px; font-weight: 700; fill: #111827; }
+      .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+      .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.2px; }
+      .node-title { font-size: 15px; font-weight: 700; fill: #111827; }
+      .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+      .edge-label { font-size: 11px; font-weight: 600; fill: #6b7280; }
+      .legend, .footer { font-size: 11px; font-weight: 500; fill: #64748b; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960" height="760" fill="#ffffff"/>
+  <text x="480" y="52" text-anchor="middle" class="title">Delegated Identity Propagation</text>
+  <text x="480" y="78" text-anchor="middle" class="subtitle">raw credential stops at the Host; immutable subject, actor, tenant and scope continue</text>
+  <g id="identity" data-graph-role="container" data-container-id="identity" data-semantic-role="boundary" data-graph-bounds="40,108,920,220">
+    <rect data-graph-role="container" x="40" y="108" width="880" height="112" rx="16" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+    <text x="58" y="132" class="section">IDENTITY TRUST DOMAIN</text>
+  </g>
+  <g id="host" data-graph-role="container" data-container-id="host" data-semantic-role="boundary" data-graph-bounds="40,258,920,370">
+    <rect data-graph-role="container" x="40" y="258" width="880" height="112" rx="16" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+    <text x="58" y="282" class="section">AGENT HOST · RAW CREDENTIAL STOPS HERE</text>
+  </g>
+  <g id="enforce" data-graph-role="container" data-container-id="enforce" data-semantic-role="boundary" data-graph-bounds="40,408,920,520">
+    <rect data-graph-role="container" x="40" y="408" width="880" height="112" rx="16" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+    <text x="58" y="432" class="section">TOOL ENFORCEMENT BOUNDARY</text>
+  </g>
+  <g id="resource" data-graph-role="container" data-container-id="resource" data-semantic-role="boundary" data-graph-bounds="40,558,920,678">
+    <rect data-graph-role="container" x="40" y="558" width="880" height="120" rx="16" fill="none" stroke="#dbe5f1" stroke-width="1.4" stroke-dasharray="6 5"/>
+    <text x="58" y="582" class="section">RESOURCE AND AUDIT DOMAIN</text>
+  </g>
+  <path id="login" data-graph-role="edge" data-edge-id="login" data-source="subject" data-target="idp" data-edge-kind="flow" data-flow="control" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 670,172 L 560,172" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-control)"/>
+  <path id="issue" data-graph-role="edge" data-edge-id="issue" data-source="idp" data-target="token" data-edge-kind="flow" data-flow="data" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,172 L 260,172" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-data)"/>
+  <path id="verify" data-graph-role="edge" data-edge-id="verify" data-source="token" data-target="verifier" data-edge-kind="flow" data-flow="control" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 165,202 L 165,292" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-control)"/>
+  <path id="claims" data-graph-role="edge" data-edge-id="claims" data-source="verifier" data-target="principal" data-edge-kind="flow" data-flow="data" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 260,322 L 370,322" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-data)"/>
+  <path id="model-view" data-graph-role="edge" data-edge-id="model-view" data-source="principal" data-target="model" data-edge-kind="flow" data-flow="risk" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 560,322 L 670,322" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-risk)"/>
+  <path id="intent" data-graph-role="edge" data-edge-id="intent" data-source="model" data-target="gateway" data-edge-kind="flow" data-flow="control" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 765,352 L 765,442" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-control)"/>
+  <path id="decision" data-graph-role="edge" data-edge-id="decision" data-source="gateway" data-target="pdp" data-edge-kind="flow" data-flow="control" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 670,472 L 560,472" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-control)"/>
+  <path id="hitl" data-graph-role="edge" data-edge-id="hitl" data-source="pdp" data-target="approval" data-edge-kind="flow" data-flow="risk" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,472 L 260,472" fill="none" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-risk)"/>
+  <path id="tenant-bind" data-graph-role="edge" data-edge-id="tenant-bind" data-source="pdp" data-target="tenant" data-edge-kind="flow" data-flow="data" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 465,502 L 465,552 L 375,552 L 375,602" fill="none" stroke="#2563eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-data)"/>
+  <path id="execute" data-graph-role="edge" data-edge-id="execute" data-source="tenant" data-target="runtime" data-edge-kind="flow" data-flow="control" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 470,632 L 540,632" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-control)"/>
+  <path id="receipt" data-graph-role="edge" data-edge-id="receipt" data-source="runtime" data-target="receipt" data-edge-kind="flow" data-flow="write" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 690,632 L 760,632" fill="none" stroke="#10b981" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-write)"/>
+  <g id="node-token" data-graph-role="node" data-node-id="token" data-semantic-role="component" data-graph-bounds="70,142,260,202">
+    <rect x="70" y="142" width="190" height="60" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <text x="165.0" y="169" text-anchor="middle" class="node-title">Delegated Token</text>
+    <text x="165.0" y="190" text-anchor="middle" class="node-sub">tenant · scope · jti · exp</text>
+  </g>
+  <g id="node-idp" data-graph-role="node" data-node-id="idp" data-semantic-role="component" data-graph-bounds="370,142,560,202">
+    <rect x="370" y="142" width="190" height="60" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="465.0" y="169" text-anchor="middle" class="node-title">OIDC / OAuth IdP</text>
+    <text x="465.0" y="190" text-anchor="middle" class="node-sub">iss · aud · sub · act</text>
+  </g>
+  <g id="node-subject" data-graph-role="node" data-node-id="subject" data-semantic-role="component" data-graph-bounds="670,142,860,202">
+    <rect x="670" y="142" width="190" height="60" rx="10" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2"/>
+    <text x="765.0" y="169" text-anchor="middle" class="node-title">[SUBJECT] Alice</text>
+    <text x="765.0" y="190" text-anchor="middle" class="node-sub">tenant-a member</text>
+  </g>
+  <g id="node-verifier" data-graph-role="node" data-node-id="verifier" data-semantic-role="component" data-graph-bounds="70,292,260,352">
+    <rect x="70" y="292" width="190" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="165.0" y="319" text-anchor="middle" class="node-title">Host Token Verifier</text>
+    <text x="165.0" y="340" text-anchor="middle" class="node-sub">signature + revoke</text>
+  </g>
+  <g id="node-principal" data-graph-role="node" data-node-id="principal" data-semantic-role="component" data-graph-bounds="370,292,560,352">
+    <rect x="370" y="292" width="190" height="60" rx="10" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2"/>
+    <text x="465.0" y="319" text-anchor="middle" class="node-title">Verified Principal</text>
+    <text x="465.0" y="340" text-anchor="middle" class="node-sub">sub + act + tenant + scope</text>
+  </g>
+  <g id="node-model" data-graph-role="node" data-node-id="model" data-semantic-role="component" data-graph-bounds="670,292,860,352">
+    <rect x="670" y="292" width="190" height="60" rx="10" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="765.0" y="319" text-anchor="middle" class="node-title">Model / Planner</text>
+    <text x="765.0" y="340" text-anchor="middle" class="node-sub">business args only</text>
+  </g>
+  <g id="node-approval" data-graph-role="node" data-node-id="approval" data-semantic-role="component" data-graph-bounds="70,442,260,502">
+    <rect x="70" y="442" width="190" height="60" rx="10" fill="#fff1f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="165.0" y="469" text-anchor="middle" class="node-title">Security Approver</text>
+    <text x="165.0" y="490" text-anchor="middle" class="node-sub">separation of duties</text>
+  </g>
+  <g id="node-pdp" data-graph-role="node" data-node-id="pdp" data-semantic-role="component" data-graph-bounds="370,442,560,502">
+    <rect x="370" y="442" width="190" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="465.0" y="469" text-anchor="middle" class="node-title">PDP / PEP</text>
+    <text x="465.0" y="490" text-anchor="middle" class="node-sub">RBAC · ABAC · scope</text>
+  </g>
+  <g id="node-gateway" data-graph-role="node" data-node-id="gateway" data-semantic-role="component" data-graph-bounds="670,442,860,502">
+    <rect x="670" y="442" width="190" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="765.0" y="469" text-anchor="middle" class="node-title">Tool Gateway</text>
+    <text x="765.0" y="490" text-anchor="middle" class="node-sub">allowlist + schema</text>
+  </g>
+  <g id="node-tenant" data-graph-role="node" data-node-id="tenant" data-semantic-role="component" data-graph-bounds="280,602,470,662">
+    <rect x="280" y="602" width="190" height="60" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="375.0" y="629" text-anchor="middle" class="node-title">[TENANT] tenant-a</text>
+    <text x="375.0" y="650" text-anchor="middle" class="node-sub">RAG · memory · cache</text>
+  </g>
+  <g id="node-runtime" data-graph-role="node" data-node-id="runtime" data-semantic-role="component" data-graph-bounds="540,602,690,662">
+    <rect x="540" y="602" width="150" height="60" rx="10" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+    <text x="615.0" y="629" text-anchor="middle" class="node-title">E2B Runtime</text>
+    <text x="615.0" y="650" text-anchor="middle" class="node-sub">ephemeral</text>
+  </g>
+  <g id="node-receipt" data-graph-role="node" data-node-id="receipt" data-semantic-role="component" data-graph-bounds="760,602,890,662">
+    <rect x="760" y="602" width="130" height="60" rx="10" fill="#f0fdfa" stroke="#14b8a6" stroke-width="2"/>
+    <text x="825.0" y="629" text-anchor="middle" class="node-title">Audit Receipt</text>
+    <text x="825.0" y="650" text-anchor="middle" class="node-sub">jti only</text>
+  </g>
+  <text x="615" y="163" text-anchor="middle" class="edge-label">authenticate</text>
+  <text x="315" y="163" text-anchor="middle" class="edge-label">delegation</text>
+  <text x="206" y="250" text-anchor="middle" class="edge-label">raw token</text>
+  <text x="315" y="313" text-anchor="middle" class="edge-label">verified claims</text>
+  <text x="615" y="313" text-anchor="middle" class="edge-label">no credential</text>
+  <text x="807" y="400" text-anchor="middle" class="edge-label">tool + args</text>
+  <text x="615" y="463" text-anchor="middle" class="edge-label">principal + resource</text>
+  <text x="315" y="463" text-anchor="middle" class="edge-label">high risk</text>
+  <text x="418" y="544" text-anchor="middle" class="edge-label">tenant scoped</text>
+  <text x="505" y="623" text-anchor="middle" class="edge-label">bounded</text>
+  <text x="725" y="623" text-anchor="middle" class="edge-label">redacted</text>
+  <line x1="90" y1="708" x2="118" y2="708" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arrow-data)"/>
+  <text x="128" y="712" class="legend">data</text>
+  <line x1="280" y1="708" x2="308" y2="708" stroke="#7c3aed" stroke-width="2.4" marker-end="url(#arrow-control)"/>
+  <text x="318" y="712" class="legend">control</text>
+  <line x1="470" y1="708" x2="498" y2="708" stroke="#10b981" stroke-width="2.4" marker-end="url(#arrow-write)"/>
+  <text x="508" y="712" class="legend">audit/write</text>
+  <line x1="660" y1="708" x2="688" y2="708" stroke="#ef4444" stroke-width="2.4" marker-end="url(#arrow-risk)"/>
+  <text x="698" y="712" class="legend">deny/impact</text>
+  <text x="48" y="742" class="footer">Effective authority = delegation AND role AND scope AND resource attributes AND approved action</text>
+</svg>
