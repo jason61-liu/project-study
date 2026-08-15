@@ -1,9 +1,0 @@
-{
-  "passed": false,
-  "baseline_run_id": "baseline-reference-2026-08-14",
-  "candidate_run_id": "eval_a02dd6c512cf4096",
-  "violations": [
-    "human_review_count 0 < 20"
-  ],
-  "checked_at": "2026-08-14T15:40:23.474548Z"
-}
