@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 740,
+  "title": "Benchmark Factors: What Moves the Numbers",
+  "subtitle": "each independent variable biases a specific metric — fix every other knob to isolate one effect",
+  "nodes": [
+    {"id": "concurrency", "kind": "rect", "x": 70, "y": 140, "width": 260, "height": 66, "label": "Concurrency", "sublabel": "in-flight requests", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "input", "kind": "document", "x": 70, "y": 248, "width": 260, "height": 66, "label": "Input Length", "sublabel": "prompt tokens", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "output", "kind": "rect", "x": 70, "y": 356, "width": 260, "height": 66, "label": "Output Length", "sublabel": "completion tokens", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "stream", "kind": "rect", "x": 70, "y": 464, "width": 260, "height": 66, "label": "Streaming", "sublabel": "incremental vs batch", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "ratelimit", "kind": "double_rect", "x": 70, "y": 572, "width": 260, "height": 66, "label": "Rate Limit", "sublabel": "RPM / TPM ceiling", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+
+    {"id": "e-concurrency", "kind": "rect", "x": 560, "y": 140, "width": 380, "height": 66, "label": "Throughput · Tail Latency", "sublabel": "saturates shared GPU & queue", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "e-input", "kind": "document", "x": 560, "y": 248, "width": 380, "height": 66, "label": "TTFT", "sublabel": "prefill cost grows with prompt", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "e-output", "kind": "rect", "x": 560, "y": 356, "width": 380, "height": 66, "label": "TPOT · E2E · Cost", "sublabel": "decode iterates once per token", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "e-stream", "kind": "rect", "x": 560, "y": 464, "width": 380, "height": 66, "label": "TTFT (lower)", "sublabel": "first token before completion", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "e-ratelimit", "kind": "double_rect", "x": 560, "y": 572, "width": 380, "height": 66, "label": "Throughput (capped)", "sublabel": "429 · queueing · retries", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true}
+  ],
+  "arrows": [
+    {"id": "a-concurrency", "source": "concurrency", "target": "e-concurrency", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-input", "source": "input", "target": "e-input", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-output", "source": "output", "target": "e-output", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-stream", "source": "stream", "target": "e-stream", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-ratelimit", "source": "ratelimit", "target": "e-ratelimit", "source_port": "right", "target_port": "left", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "independent variable → affected metric"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 672,
+  "legend_locked": false,
+  "footer": "Blue = prompt side · Orange = completion side · Teal = latency metric · Purple = throughput metric",
+  "footer_x": 48,
+  "footer_y": 700
+}

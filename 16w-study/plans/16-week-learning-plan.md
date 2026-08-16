@@ -416,27 +416,27 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)，建立风险映射。
-- [ ] 掌握直接/间接 Prompt Injection、Goal Hijack、Tool Misuse 和 Excessive Agency。
-- [ ] 分析记忆污染、敏感信息泄漏、身份与权限滥用、跨租户访问、供应链和 RCE 风险。
-- [ ] 设计 OAuth/OIDC 信任边界、用户委托授权、RBAC/ABAC、Scope、Secret 轮换、PII 脱敏、保留/删除、审计字段和人工确认策略。
-- [ ] 区分输入 Guardrail、工具 Guardrail、输出 Guardrail 和确定性策略执行。
-- [ ] 比较 [E2B](https://www.e2b.dev/docs)、[OpenSandbox](https://github.com/alibaba/OpenSandbox)、[Agent Sandbox](https://github.com/agent-sandbox/agent-sandbox) 与 [CubeSandbox](https://github.com/tencentcloud/CubeSandbox) 的托管/自建、容器/微虚机、E2B 兼容、冷启动、多租户和部署前提；记录 CubeSandbox 的 x86_64/KVM 要求。
+- [x] 阅读 [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)，建立风险映射。
+- [x] 掌握直接/间接 Prompt Injection、Goal Hijack、Tool Misuse 和 Excessive Agency。
+- [x] 分析记忆污染、敏感信息泄漏、身份与权限滥用、跨租户访问、供应链和 RCE 风险。
+- [x] 设计 OAuth/OIDC 信任边界、用户委托授权、RBAC/ABAC、Scope、Secret 轮换、PII 脱敏、保留/删除、审计字段和人工确认策略。
+- [x] 区分输入 Guardrail、工具 Guardrail、输出 Guardrail 和确定性策略执行。
+- [x] 比较 [E2B](https://www.e2b.dev/docs)、[OpenSandbox](https://github.com/alibaba/OpenSandbox)、[Agent Sandbox](https://github.com/agent-sandbox/agent-sandbox) 与 [CubeSandbox](https://github.com/tencentcloud/CubeSandbox) 的托管/自建、容器/微虚机、E2B 兼容、冷启动、多租户和部署前提；记录 CubeSandbox 的 x86_64/KVM 要求。
 
 ### 编码实验
 
-- [ ] 为项目绘制数据流图、身份传播图和威胁模型，标记资产、租户、主体、入口、信任边界和影响。
-- [ ] 实现工具 Allowlist、参数校验、RBAC/ABAC、最小 Scope、Token 撤销和高风险动作审批；模型上下文与日志不得出现原始凭证。
-- [ ] 在 E2B 或 OpenSandbox 中任选一个接入代码/Shell 工具，实际限制网络出口、文件系统、Secret、CPU/内存、执行时间和生命周期；无法本地部署时使用托管 E2B。
-- [ ] 建立至少 15 条攻击测试，覆盖注入、越权、跨租户 RAG/记忆/缓存访问、数据外泄、恶意工具结果和 Sandbox 逃逸尝试。
-- [ ] 记录每条攻击的预期防护、实际结果和残余风险，并测试 PII 日志脱敏、租户数据导出与彻底删除。
+- [x] 为项目绘制数据流图、身份传播图和威胁模型，标记资产、租户、主体、入口、信任边界和影响。
+- [x] 实现工具 Allowlist、参数校验、RBAC/ABAC、最小 Scope、Token 撤销和高风险动作审批；模型上下文与日志不得出现原始凭证。
+- [x] 在 E2B 或 OpenSandbox 中任选一个接入代码/Shell 工具，实际限制网络出口、文件系统、Secret、CPU/内存、执行时间和生命周期；无法本地部署时使用托管 E2B。
+- [x] 建立至少 15 条攻击测试，覆盖注入、越权、跨租户 RAG/记忆/缓存访问、数据外泄、恶意工具结果和 Sandbox 逃逸尝试。
+- [x] 记录每条攻击的预期防护、实际结果和残余风险，并测试 PII 日志脱敏、租户数据导出与彻底删除。
 
 ### 面试与验收
 
-- [ ] 完成至少 10 道 Agent 安全面试题。
-- [ ] 回答“为什么仅靠 Prompt 不能构成安全边界”。
-- [ ] 进行一次 15 分钟威胁建模评审。
-- [ ] 关键高风险操作均有确定性策略或人工审批。
+- [x] 完成至少 10 道 Agent 安全面试题。
+- [x] 回答“为什么仅靠 Prompt 不能构成安全边界”。
+- [x] 进行一次 15 分钟威胁建模评审。
+- [x] 关键高风险操作均有确定性策略或人工审批。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 

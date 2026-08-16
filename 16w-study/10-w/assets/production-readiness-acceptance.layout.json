@@ -1,0 +1,393 @@
+{
+  "canvas": {
+    "height": 740.0,
+    "width": 1100.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 2,
+      "max_bridged_crossings": 0,
+      "max_route_stretch": 1.35,
+      "max_total_bends": 8,
+      "min_container_gutter": 20.0,
+      "min_label_clearance": 4.0,
+      "min_node_gap": 40.0,
+      "min_segment_length": 16.0,
+      "profile": "showcase"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": 30.0,
+      "minimum_node_gap": 60.0,
+      "shortest_segment": 60.0,
+      "total_bends": 0
+    },
+    "ok": true,
+    "profile": "showcase",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "measure-load",
+      "length": 60.0,
+      "route": [
+        [
+          250.0,
+          181.0
+        ],
+        [
+          310.0,
+          181.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "load",
+      "source_port": [
+        250.0,
+        181.0
+      ],
+      "target": "admission",
+      "target_port": [
+        310.0,
+        181.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "admit",
+      "length": 60.0,
+      "route": [
+        [
+          490.0,
+          181.0
+        ],
+        [
+          550.0,
+          181.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "admission",
+      "source_port": [
+        490.0,
+        181.0
+      ],
+      "target": "queue",
+      "target_port": [
+        550.0,
+        181.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "claim",
+      "length": 60.0,
+      "route": [
+        [
+          730.0,
+          181.0
+        ],
+        [
+          790.0,
+          181.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "queue",
+      "source_port": [
+        730.0,
+        181.0
+      ],
+      "target": "worker",
+      "target_port": [
+        790.0,
+        181.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "invoke",
+      "length": 104.0,
+      "route": [
+        [
+          885.0,
+          214.0
+        ],
+        [
+          885.0,
+          318.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "worker",
+      "source_port": [
+        885.0,
+        214.0
+      ],
+      "target": "model",
+      "target_port": [
+        885.0,
+        318.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "tool-call",
+      "length": 60.0,
+      "route": [
+        [
+          790.0,
+          351.0
+        ],
+        [
+          730.0,
+          351.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "model",
+      "source_port": [
+        790.0,
+        351.0
+      ],
+      "target": "tool",
+      "target_port": [
+        730.0,
+        351.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "commit",
+      "length": 60.0,
+      "route": [
+        [
+          550.0,
+          351.0
+        ],
+        [
+          490.0,
+          351.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "tool",
+      "source_port": [
+        550.0,
+        351.0
+      ],
+      "target": "effect",
+      "target_port": [
+        490.0,
+        351.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "observe",
+      "length": 60.0,
+      "route": [
+        [
+          310.0,
+          351.0
+        ],
+        [
+          250.0,
+          351.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "effect",
+      "source_port": [
+        310.0,
+        351.0
+      ],
+      "target": "telemetry",
+      "target_port": [
+        250.0,
+        351.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "aggregate",
+      "length": 104.0,
+      "route": [
+        [
+          160.0,
+          384.0
+        ],
+        [
+          160.0,
+          488.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "telemetry",
+      "source_port": [
+        160.0,
+        384.0
+      ],
+      "target": "slo",
+      "target_port": [
+        160.0,
+        488.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "evaluate",
+      "length": 60.0,
+      "route": [
+        [
+          250.0,
+          521.0
+        ],
+        [
+          310.0,
+          521.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "slo",
+      "source_port": [
+        250.0,
+        521.0
+      ],
+      "target": "gate",
+      "target_port": [
+        310.0,
+        521.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "release",
+      "length": 60.0,
+      "route": [
+        [
+          490.0,
+          521.0
+        ],
+        [
+          550.0,
+          521.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "gate",
+      "source_port": [
+        490.0,
+        521.0
+      ],
+      "target": "canary",
+      "target_port": [
+        550.0,
+        521.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "decide",
+      "length": 60.0,
+      "route": [
+        [
+          730.0,
+          521.0
+        ],
+        [
+          790.0,
+          521.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "canary",
+      "source_port": [
+        730.0,
+        521.0
+      ],
+      "target": "stable",
+      "target_port": [
+        790.0,
+        521.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": {
+      "actual": [
+        70.0,
+        630.0
+      ],
+      "bounds": [
+        60.0,
+        616.0,
+        729.28,
+        662.0
+      ],
+      "moved": false,
+      "requested": [
+        70.0,
+        630.0
+      ]
+    }
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 11,
+    "nodes": 12
+  },
+  "text_metrics": "heuristic-v1"
+}

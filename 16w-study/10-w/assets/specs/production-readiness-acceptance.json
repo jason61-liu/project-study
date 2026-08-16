@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 740,
+  "title": "Production Agent Acceptance Control Loop",
+  "subtitle": "capacity protects execution; evidence drives SLO and release decisions",
+  "containers": [
+    {"id": "control-loop", "x": 40, "y": 112, "width": 1020, "height": 474, "label": "Production reliability control plane · traffic → bounded execution → evidence → release action"}
+  ],
+  "nodes": [
+    {"id": "load", "kind": "document", "x": 70, "y": 148, "width": 180, "height": 66, "label": "Peak Workload", "sublabel": "arrival rate + burst", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "admission", "kind": "rect", "x": 310, "y": 148, "width": 180, "height": 66, "label": "Admission Control", "sublabel": "rate limit + backpressure", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "queue", "kind": "queue", "x": 550, "y": 148, "width": 180, "height": 66, "label": "Durable Queue", "sublabel": "checkpoint + lease", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "worker", "kind": "double_rect", "x": 790, "y": 148, "width": 190, "height": 66, "label": "Worker Runtime", "sublabel": "heartbeat + fencing", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+
+    {"id": "model", "kind": "double_rect", "x": 790, "y": 318, "width": 190, "height": 66, "label": "Model Boundary", "sublabel": "timeout + retry budget", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "tool", "kind": "rect", "x": 550, "y": 318, "width": 180, "height": 66, "label": "Tool Boundary", "sublabel": "scope + approval", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "effect", "kind": "cylinder", "x": 310, "y": 318, "width": 180, "height": 66, "label": "Effect Ledger", "sublabel": "idempotency + query", "fill": "#f0fdf4", "stroke": "#22c55e"},
+    {"id": "telemetry", "kind": "document", "x": 70, "y": 318, "width": 180, "height": 66, "label": "OTel Evidence", "sublabel": "trace + metric + log", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+
+    {"id": "slo", "kind": "double_rect", "x": 70, "y": 488, "width": 180, "height": 66, "label": "Three SLOs", "sublabel": "availability + P95 + cost", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "gate", "kind": "rect", "x": 310, "y": 488, "width": 180, "height": 66, "label": "Acceptance Gate", "sublabel": "faults + no duplicate effect", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "canary", "kind": "double_rect", "x": 550, "y": 488, "width": 180, "height": 66, "label": "Shadow → Canary", "sublabel": "version-bound evidence", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "stable", "kind": "rect", "x": 790, "y": 488, "width": 190, "height": 66, "label": "Promote / Rollback", "sublabel": "restore stable fingerprint", "fill": "#fff1f2", "stroke": "#fb7185", "flat": true}
+  ],
+  "arrows": [
+    {"id": "measure-load", "source": "load", "target": "admission", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "admit", "source": "admission", "target": "queue", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "claim", "source": "queue", "target": "worker", "source_port": "right", "target_port": "left", "flow": "async"},
+    {"id": "invoke", "source": "worker", "target": "model", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "tool-call", "source": "model", "target": "tool", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "commit", "source": "tool", "target": "effect", "source_port": "left", "target_port": "right", "flow": "write"},
+    {"id": "observe", "source": "effect", "target": "telemetry", "source_port": "left", "target_port": "right", "flow": "data"},
+    {"id": "aggregate", "source": "telemetry", "target": "slo", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "evaluate", "source": "slo", "target": "gate", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "release", "source": "gate", "target": "canary", "source_port": "right", "target_port": "left", "flow": "feedback"},
+    {"id": "decide", "source": "canary", "target": "stable", "source_port": "right", "target_port": "left", "flow": "feedback"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "request / orchestration"},
+    {"flow": "write", "label": "durable effect"},
+    {"flow": "data", "label": "evidence"},
+    {"flow": "feedback", "label": "release decision"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 630,
+  "legend_locked": true,
+  "footer": "Every retry, timeout, cost charge and side effect remains inside one measurable task contract",
+  "footer_x": 48,
+  "footer_y": 714
+}

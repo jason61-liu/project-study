@@ -1,0 +1,178 @@
+{
+  "canvas": {
+    "height": 620.0,
+    "width": 1100.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 2,
+      "max_bridged_crossings": 0,
+      "max_route_stretch": 1.35,
+      "max_total_bends": 8,
+      "min_container_gutter": 20.0,
+      "min_label_clearance": 4.0,
+      "min_node_gap": 40.0,
+      "min_segment_length": 16.0,
+      "profile": "showcase"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": null,
+      "minimum_node_gap": 80.0,
+      "shortest_segment": 80.0,
+      "total_bends": 0
+    },
+    "ok": true,
+    "profile": "showcase",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "c-n",
+      "length": 80.0,
+      "route": [
+        [
+          350.0,
+          181.0
+        ],
+        [
+          430.0,
+          181.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "client-queue",
+      "source_port": [
+        350.0,
+        181.0
+      ],
+      "target": "network",
+      "target_port": [
+        430.0,
+        181.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "n-s",
+      "length": 80.0,
+      "route": [
+        [
+          670.0,
+          181.0
+        ],
+        [
+          750.0,
+          181.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "network",
+      "source_port": [
+        670.0,
+        181.0
+      ],
+      "target": "server-queue",
+      "target_port": [
+        750.0,
+        181.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "s-p",
+      "length": 102.0,
+      "route": [
+        [
+          870.0,
+          214.0
+        ],
+        [
+          870.0,
+          316.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "server-queue",
+      "source_port": [
+        870.0,
+        214.0
+      ],
+      "target": "prefill",
+      "target_port": [
+        870.0,
+        316.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "p-d",
+      "length": 80.0,
+      "route": [
+        [
+          750.0,
+          349.0
+        ],
+        [
+          670.0,
+          349.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "prefill",
+      "source_port": [
+        750.0,
+        349.0
+      ],
+      "target": "decode",
+      "target_port": [
+        670.0,
+        349.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "d-t",
+      "length": 80.0,
+      "route": [
+        [
+          430.0,
+          349.0
+        ],
+        [
+          350.0,
+          349.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "decode",
+      "source_port": [
+        430.0,
+        349.0
+      ],
+      "target": "tool",
+      "target_port": [
+        350.0,
+        349.0
+      ],
+      "waypoints": []
+    }
+  ]
+}

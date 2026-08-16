@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="1100.0" height="520.0" fill="#ffffff"/>
+  <text x="550.0" y="56" text-anchor="middle" class="title">Cost per Successful Task</text>
+  <text x="550.0" y="82" text-anchor="middle" class="subtitle">amortize total spend over deduplicated successful logical tasks, not over raw API calls</text>
+  <path id="total-success" data-graph-role="edge" data-edge-id="total-success" data-source="total" data-target="success" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 350,181 L 430,181" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="success-result" data-graph-role="edge" data-edge-id="success-result" data-source="success" data-target="result" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 670,181 L 750,181" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <g id="node-total" data-graph-role="node" data-node-id="total" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="110,148,350,214">
+  <rect x="110.0" y="148.0" width="240.0" height="66.0" rx="10.0" fill="#f1f5f9" stroke="#64748b" stroke-width="2.0"/>
+  <rect x="116.0" y="154.0" width="228.0" height="54.0" rx="7.0" fill="none" stroke="#64748b" stroke-width="1.2" opacity="0.65"/>
+  <text x="230.0" y="181.0" text-anchor="middle" class="node-title" font-size="15.96">Total Cost (numerator)</text>
+  <text x="230.0" y="203.0" text-anchor="middle" class="node-sub">model · tool · infra · retries</text>
+  </g>
+  <g id="node-success" data-graph-role="node" data-node-id="success" data-semantic-role="document" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="430,148,670,214">
+  <path d="M 430.0 148.0 L 655.48 148.0 L 670.0 162.52 L 670.0 214.0 L 430.0 214.0 Z" fill="#f0fdf4" stroke="#22c55e" stroke-width="2.0"/>
+  <path d="M 655.48 148.0 L 655.48 162.52 L 670.0 162.52" fill="none" stroke="#22c55e" stroke-width="2.0"/>
+  <line x1="448.0" y1="174.0" x2="642.0" y2="174.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="448.0" y1="188.0" x2="642.0" y2="188.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="448.0" y1="202.0" x2="642.0" y2="202.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <line x1="448.0" y1="216.0" x2="642.0" y2="216.0" stroke="#c4b5fd" stroke-width="1.2"/>
+  <text x="550.0" y="240.0" text-anchor="middle" class="node-title" font-size="12.16">Successful Tasks (denominator)</text>
+  <text x="550.0" y="258.0" text-anchor="middle" class="node-sub">deduplicated goodput</text>
+  </g>
+  <g id="node-result" data-graph-role="node" data-node-id="result" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="750,148,990,214">
+  <rect x="750.0" y="148.0" width="240.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.0"/>
+  <rect x="756.0" y="154.0" width="228.0" height="54.0" rx="7.0" fill="none" stroke="#3b82f6" stroke-width="1.2" opacity="0.65"/>
+  <text x="870.0" y="181.0" text-anchor="middle" class="node-title" font-size="14.81">Cost per Successful Task</text>
+  <text x="870.0" y="203.0" text-anchor="middle" class="node-sub">total ÷ successful tasks</text>
+  </g>
+  <g id="legend" data-graph-role="legend">
+    <rect id="legend-zone" data-graph-role="reserved" data-reserved-kind="legend" x="60" y="286" width="436.8" height="46" rx="10" fill="none" stroke="none"/>
+    <line data-graph-role="decoration" x1="70.0" y1="300.0" x2="100.0" y2="300.0" stroke="#7c3aed" stroke-width="2.4" marker-end="url(#arrowA)"/>
+    <text data-graph-role="decoration" x="110.0" y="304.0" class="legend">divide by successful tasks</text>
+    <line data-graph-role="decoration" x1="301.68" y1="300.0" x2="331.68" y2="300.0" stroke="#f97316" stroke-width="2.4" marker-end="url(#arrowE)"/>
+    <text data-graph-role="decoration" x="341.68" y="304.0" class="legend">unit cost per success</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,428,846,444">
+  <text x="48.0" y="440.0" class="footnote">Goodput counts successful logical tasks, not raw requests; retries inflate the numerator but never the denominator</text>
+  </g>
+</svg>

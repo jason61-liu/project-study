@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 520,
+  "title": "Cost per Successful Task",
+  "subtitle": "amortize total spend over deduplicated successful logical tasks, not over raw API calls",
+  "nodes": [
+    {"id": "total", "kind": "double_rect", "x": 110, "y": 148, "width": 240, "height": 66, "label": "Total Cost (numerator)", "sublabel": "model · tool · infra · retries", "fill": "#f1f5f9", "stroke": "#64748b", "flat": true},
+    {"id": "success", "kind": "document", "x": 430, "y": 148, "width": 240, "height": 66, "label": "Successful Tasks (denominator)", "sublabel": "deduplicated goodput", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "result", "kind": "double_rect", "x": 750, "y": 148, "width": 240, "height": 66, "label": "Cost per Successful Task", "sublabel": "total ÷ successful tasks", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true}
+  ],
+  "arrows": [
+    {"id": "total-success", "source": "total", "target": "success", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "success-result", "source": "success", "target": "result", "source_port": "right", "target_port": "left", "flow": "data"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "divide by successful tasks"},
+    {"flow": "data", "label": "unit cost per success"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 300,
+  "legend_locked": true,
+  "footer": "Goodput counts successful logical tasks, not raw requests; retries inflate the numerator but never the denominator",
+  "footer_x": 48,
+  "footer_y": 440
+}

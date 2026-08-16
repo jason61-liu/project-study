@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 620,
+  "title": "Repeatable API Benchmark Methodology",
+  "subtitle": "warm-up, fixed dataset and repeated trials feed statistics, confidence intervals and capacity math",
+  "nodes": [
+    {"id": "warmup", "kind": "rect", "x": 110, "y": 148, "width": 240, "height": 66, "label": "Warm-up", "sublabel": "exclude cold start · cache miss", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "dataset", "kind": "document", "x": 430, "y": 148, "width": 240, "height": 66, "label": "Fixed Dataset", "sublabel": "versioned · reproducible", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "trials", "kind": "rect", "x": 750, "y": 148, "width": 240, "height": 66, "label": "Repeated Trials", "sublabel": "≥ 5 per configuration", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+
+    {"id": "outlier", "kind": "rect", "x": 110, "y": 316, "width": 240, "height": 66, "label": "Outlier Handling", "sublabel": "jitter · throttling spikes", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "ci", "kind": "double_rect", "x": 430, "y": 316, "width": 240, "height": 66, "label": "Confidence Interval", "sublabel": "P50 · P95 · P99 ranges", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "little", "kind": "double_rect", "x": 750, "y": 316, "width": 240, "height": 66, "label": "Little's Law", "sublabel": "L = λW → concurrency", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true}
+  ],
+  "arrows": [
+    {"id": "warmup-dataset", "source": "warmup", "target": "dataset", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "dataset-trials", "source": "dataset", "target": "trials", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "trials-little", "source": "trials", "target": "little", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "little-ci", "source": "little", "target": "ci", "source_port": "left", "target_port": "right", "flow": "control"},
+    {"id": "ci-outlier", "source": "ci", "target": "outlier", "source_port": "left", "target_port": "right", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "method sequence"},
+    {"flow": "data", "label": "feed measured latency/throughput"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 460,
+  "legend_locked": true,
+  "footer": "Report a distribution (P50/P95/P99) with confidence intervals, never a single call's numbers; derive capacity via Little's Law",
+  "footer_x": 48,
+  "footer_y": 570
+}

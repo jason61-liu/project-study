@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 660,
+  "title": "LLM Inference Metrics: Latency, Throughput and Goodput",
+  "subtitle": "TTFT, TPOT and end-to-end latency describe one user turn; throughput and goodput describe capacity and value",
+  "containers": [
+    {"id": "latency-band", "x": 40, "y": 112, "width": 1020, "height": 130, "label": "Latency · user-perceived time for a single turn"},
+    {"id": "throughput-band", "x": 40, "y": 280, "width": 1020, "height": 130, "label": "Throughput & Goodput · aggregate capacity and useful output"}
+  ],
+  "nodes": [
+    {"id": "ttft", "kind": "document", "x": 110, "y": 148, "width": 240, "height": 66, "label": "TTFT", "sublabel": "time to first token", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "tpot", "kind": "rect", "x": 430, "y": 148, "width": 240, "height": 66, "label": "TPOT / ITL", "sublabel": "inter-token latency", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "e2e", "kind": "double_rect", "x": 750, "y": 148, "width": 240, "height": 66, "label": "End-to-End Latency", "sublabel": "request → last token", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+
+    {"id": "tput", "kind": "rect", "x": 110, "y": 316, "width": 240, "height": 66, "label": "Throughput", "sublabel": "tokens/s · requests/s", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "goodput", "kind": "cylinder", "x": 430, "y": 316, "width": 240, "height": 66, "label": "Goodput", "sublabel": "useful tokens / time", "fill": "#f0fdf4", "stroke": "#22c55e"}
+  ],
+  "arrows": [
+    {"id": "ttft-tpot", "source": "ttft", "target": "tpot", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "tpot-e2e", "source": "tpot", "target": "e2e", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "tput-goodput", "source": "tput", "target": "goodput", "source_port": "right", "target_port": "left", "flow": "data"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "time accumulates across one turn"},
+    {"flow": "data", "label": "capacity refines into useful output"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 470,
+  "legend_locked": true,
+  "footer": "E2E ≈ TTFT + Σ TPOT · Throughput = Concurrency ÷ Mean Latency (Little's Law) · Goodput deducts retries, rejected and wasted tokens",
+  "footer_x": 48,
+  "footer_y": 620
+}
