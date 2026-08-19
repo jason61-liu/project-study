@@ -1,0 +1,140 @@
+{
+  "canvas": {
+    "height": 640.0,
+    "width": 1100.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 2,
+      "max_bridged_crossings": 0,
+      "max_route_stretch": 1.35,
+      "max_total_bends": 8,
+      "min_container_gutter": 20.0,
+      "min_label_clearance": 4.0,
+      "min_node_gap": 40.0,
+      "min_segment_length": 16.0,
+      "profile": "showcase"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": 30.0,
+      "minimum_node_gap": 40.0,
+      "shortest_segment": 18.3,
+      "total_bends": 2
+    },
+    "ok": true,
+    "profile": "showcase",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "logical-table",
+      "length": 50.0,
+      "route": [
+        [
+          650.0,
+          236.0
+        ],
+        [
+          650.0,
+          286.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "p-logical",
+      "source_port": [
+        650.0,
+        236.0
+      ],
+      "target": "p-table",
+      "target_port": [
+        650.0,
+        286.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 2,
+      "bridges": [],
+      "crossings": [],
+      "id": "table-phys",
+      "length": 108.0,
+      "route": [
+        [
+          750.0,
+          319.0
+        ],
+        [
+          768.3,
+          319.0
+        ],
+        [
+          768.3,
+          261.0
+        ],
+        [
+          800.0,
+          261.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "p-table",
+      "source_port": [
+        750.0,
+        319.0
+      ],
+      "target": "p-phys",
+      "target_port": [
+        800.0,
+        261.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": {
+      "actual": [
+        66.0,
+        538.0
+      ],
+      "bounds": [
+        56.0,
+        524.0,
+        280.32,
+        570.0
+      ],
+      "moved": true,
+      "requested": [
+        70.0,
+        552.0
+      ]
+    }
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 2,
+    "nodes": 6
+  },
+  "text_metrics": "heuristic-v1"
+}

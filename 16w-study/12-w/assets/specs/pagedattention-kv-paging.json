@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 640,
+  "title": "PagedAttention: Paging KV Cache into Blocks",
+  "subtitle": "contiguous per-sequence allocation fragments memory; fixed-size blocks plus a block table remove the waste and enable sharing",
+  "containers": [
+    {"id": "before", "x": 40, "y": 120, "width": 430, "height": 400, "label": "Before · contiguous allocation", "header_prefix": "01"},
+    {"id": "after", "x": 510, "y": 120, "width": 550, "height": 400, "label": "After · PagedAttention", "header_prefix": "02"}
+  ],
+  "nodes": [
+    {"id": "c-a", "kind": "rect", "x": 70, "y": 170, "width": 370, "height": 66, "label": "Sequence A · reserved 8 slots", "sublabel": "uses 4 → 4 slots internal waste", "fill": "#fef2f2", "stroke": "#ef4444", "flat": true},
+    {"id": "c-b", "kind": "rect", "x": 70, "y": 276, "width": 370, "height": 66, "label": "Sequence B · reserved 8 slots", "sublabel": "uses 2 → 6 slots internal waste", "fill": "#fef2f2", "stroke": "#ef4444", "flat": true},
+    {"id": "c-c", "kind": "rect", "x": 70, "y": 382, "width": 370, "height": 66, "label": "Sequence C · reserved 8 slots", "sublabel": "gaps between sequences = external waste", "fill": "#fef2f2", "stroke": "#ef4444", "flat": true},
+    {"id": "p-logical", "kind": "rect", "x": 550, "y": 170, "width": 200, "height": 66, "label": "Logical KV", "sublabel": "sequence tokens", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "p-table", "kind": "double_rect", "x": 550, "y": 286, "width": 200, "height": 66, "label": "Block Table", "sublabel": "A → [b0, b1, b3]", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "p-phys", "kind": "rect", "x": 800, "y": 170, "width": 220, "height": 182, "label": "Physical Blocks", "sublabel": "fixed-size pages · shared · no waste", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true}
+  ],
+  "arrows": [
+    {"id": "logical-table", "source": "p-logical", "target": "p-table", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "table-phys", "source": "p-table", "target": "p-phys", "source_port": "right", "target_port": "left", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "logical → physical mapping"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 552,
+  "legend_locked": false,
+  "footer": "Contiguous allocation over-provisions for max length; fixed-size blocks remove internal and external waste and enable sharing",
+  "footer_x": 48,
+  "footer_y": 592
+}

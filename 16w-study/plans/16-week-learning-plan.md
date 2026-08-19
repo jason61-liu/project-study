@@ -488,26 +488,26 @@
 
 ### 知识与阅读
 
-- [ ] 定义 TTFT、TPOT、Tokens/s、Requests/s、P50/P95/P99 和 Goodput。
-- [ ] 理解并发、输入长度、输出长度、流式响应和速率限制对结果的影响。
-- [ ] 区分客户端排队、网络、服务端排队、Prefill、Decode 和工具时间。
-- [ ] 学习 Warm-up、固定数据集、重复 Trial、异常值、置信区间和 Little's Law 的容量含义。
-- [ ] 定义单位成功任务成本，而非仅计算单次 API Token 费用。
+- [x] 定义 TTFT、TPOT、Tokens/s、Requests/s、P50/P95/P99 和 Goodput。
+- [x] 理解并发、输入长度、输出长度、流式响应和速率限制对结果的影响。
+- [x] 区分客户端排队、网络、服务端排队、Prefill、Decode 和工具时间。
+- [x] 学习 Warm-up、固定数据集、重复 Trial、异常值、置信区间和 Little's Law 的容量含义。
+- [x] 定义单位成功任务成本，而非仅计算单次 API Token 费用。
 
 ### 编码实验
 
-- [ ] 编写异步 API Benchmark，记录请求级时间线和 Token 用量。
-- [ ] 设计短/长输入、短/长输出以及并发 1/4/16 等工作负载。
-- [ ] 每组配置至少重复 5 次，输出 P50/P95/P99。
-- [ ] 绘制并发—吞吐、并发—尾延迟和质量—成本图表。
-- [ ] 将模型调用指标与 Agent 端到端成功任务指标关联。
+- [x] 编写异步 API Benchmark，记录请求级时间线和 Token 用量。
+- [x] 设计短/长输入、短/长输出以及并发 1/4/16 等工作负载。
+- [x] 每组配置至少重复 5 次，输出 P50/P95/P99。
+- [x] 绘制并发—吞吐、并发—尾延迟和质量—成本图表。
+- [x] 将模型调用指标与 Agent 端到端成功任务指标关联。
 
 ### 面试与验收
 
-- [ ] 完成至少 10 道推理性能面试题。
-- [ ] 回答“Tokens/s 更高为什么不一定意味着用户体验更好”。
-- [ ] 进行 10 分钟性能报告讲解。
-- [ ] Benchmark 配置、数据和结果可复现。
+- [x] 完成至少 10 道推理性能面试题。
+- [x] 回答“Tokens/s 更高为什么不一定意味着用户体验更好”。
+- [x] 进行 10 分钟性能报告讲解。
+- [x] Benchmark 配置、数据和结果可复现。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
@@ -523,12 +523,12 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [PagedAttention](https://arxiv.org/abs/2309.06180)，整理 KV Cache 碎片与分页思想。
-- [ ] 阅读 [vLLM 文档](https://docs.vllm.ai/en/latest/) 的 Serving、Benchmark 和缓存相关章节。
-- [ ] 阅读 [SGLang 文档](https://docs.sglang.io/) 的 Runtime、Radix Cache 和 Serving 概览。
-- [ ] 阅读 [LMCache Quickstart](https://docs.lmcache.ai/getting_started/quickstart.html) 与 [Integration](https://docs.lmcache.ai/developer_guide/integration.html)，说明它如何与 vLLM/SGLang/TensorRT-LLM 配合及如何度量命中与传输。
-- [ ] 阅读 [Mooncake](https://arxiv.org/abs/2407.00079) 的 KV-centric 架构，并对照 [NVIDIA Dynamo Disaggregated Serving](https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving) 和 [llm-d P/D](https://github.com/llm-d/llm-d/blob/main/guides/pd-disaggregation/README.md)。
-- [ ] 阅读 [TensorRT-LLM 文档](https://nvidia.github.io/TensorRT-LLM/)，掌握 Continuous Batching、Prefix Cache、Chunked Prefill、调度、抢占、KV-aware Routing 与 Prefill/Decode 解耦的收益条件。
+- [x] 阅读 [PagedAttention](https://arxiv.org/abs/2309.06180)，整理 KV Cache 碎片与分页思想。
+- [x] 阅读 [vLLM 文档](https://docs.vllm.ai/en/latest/) 的 Serving、Benchmark 和缓存相关章节。
+- [x] 阅读 [SGLang 文档](https://docs.sglang.io/) 的 Runtime、Radix Cache 和 Serving 概览。
+- [x] 阅读 [LMCache Quickstart](https://docs.lmcache.ai/getting_started/quickstart.html) 与 [Integration](https://docs.lmcache.ai/developer_guide/integration.html)，说明它如何与 vLLM/SGLang/TensorRT-LLM 配合及如何度量命中与传输。
+- [x] 阅读 [Mooncake](https://arxiv.org/abs/2407.00079) 的 KV-centric 架构，并对照 [NVIDIA Dynamo Disaggregated Serving](https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving) 和 [llm-d P/D](https://github.com/llm-d/llm-d/blob/main/guides/pd-disaggregation/README.md)。
+- [x] 阅读 [TensorRT-LLM 文档](https://nvidia.github.io/TensorRT-LLM/)，掌握 Continuous Batching、Prefix Cache、Chunked Prefill、调度、抢占、KV-aware Routing 与 Prefill/Decode 解耦的收益条件。
 
 ### 编码与分析
 
@@ -540,10 +540,10 @@
 
 ### 面试与阶段关卡
 
-- [ ] 完成至少 12 道 Serving 面试题。
-- [ ] 白板讲解 PagedAttention、Radix/Prefix Cache、分层 KV Cache 的关系和差异。
-- [ ] 回答“何时 P/D 解耦或远端 KV Cache 反而更慢”，明确 KV 传输和网络条件。
-- [ ] 阶段关卡通过：能从 Agent 请求特征推导 Serving 需求。
+- [x] 完成至少 12 道 Serving 面试题。
+- [x] 白板讲解 PagedAttention、Radix/Prefix Cache、分层 KV Cache 的关系和差异。
+- [x] 回答“何时 P/D 解耦或远端 KV Cache 反而更慢”，明确 KV 传输和网络条件。
+- [x] 阶段关卡通过：能从 Agent 请求特征推导 Serving 需求。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 

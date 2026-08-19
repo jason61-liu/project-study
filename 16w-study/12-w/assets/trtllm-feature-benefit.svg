@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 840" width="1100" height="840" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="1100.0" height="840.0" fill="#ffffff"/>
+  <text x="550.0" y="56" text-anchor="middle" class="title">TensorRT-LLM Features: When Each One Pays Off</text>
+  <text x="550.0" y="82" text-anchor="middle" class="subtitle">each serving feature helps only under a specific workload condition — enabling it blindly can cost more than it saves</text>
+  <path id="a-cb" data-graph-role="edge" data-edge-id="a-cb" data-source="cb" data-target="e-cb" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,173 L 640,173" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a-pc" data-graph-role="edge" data-edge-id="a-pc" data-source="pc" data-target="e-pc" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,279 L 640,279" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a-cp" data-graph-role="edge" data-edge-id="a-cp" data-source="cp" data-target="e-cp" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,385 L 640,385" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a-sp" data-graph-role="edge" data-edge-id="a-sp" data-source="sp" data-target="e-sp" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,491 L 640,491" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a-kr" data-graph-role="edge" data-edge-id="a-kr" data-source="kr" data-target="e-kr" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,597 L 640,597" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a-pd" data-graph-role="edge" data-edge-id="a-pd" data-source="pd" data-target="e-pd" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 370,703 L 640,703" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <g id="node-cb" data-graph-role="node" data-node-id="cb" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,140,370,206">
+  <rect x="70.0" y="140.0" width="300.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="220.0" y="173.0" text-anchor="middle" class="node-title" font-size="18.0">Continuous Batching</text>
+  <text x="220.0" y="195.0" text-anchor="middle" class="node-sub">in-flight · iteration-level</text>
+  </g>
+  <g id="node-pc" data-graph-role="node" data-node-id="pc" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,246,370,312">
+  <rect x="70.0" y="246.0" width="300.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="220.0" y="279.0" text-anchor="middle" class="node-title" font-size="18.0">Prefix Cache</text>
+  <text x="220.0" y="301.0" text-anchor="middle" class="node-sub">reuse shared prompt KV</text>
+  </g>
+  <g id="node-cp" data-graph-role="node" data-node-id="cp" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,352,370,418">
+  <rect x="70.0" y="352.0" width="300.0" height="66.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="220.0" y="385.0" text-anchor="middle" class="node-title" font-size="18.0">Chunked Prefill</text>
+  <text x="220.0" y="407.0" text-anchor="middle" class="node-sub">split long prefill</text>
+  </g>
+  <g id="node-sp" data-graph-role="node" data-node-id="sp" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,458,370,524">
+  <rect x="70.0" y="458.0" width="300.0" height="66.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="220.0" y="491.0" text-anchor="middle" class="node-title" font-size="18.0">Scheduling &amp; Preemption</text>
+  <text x="220.0" y="513.0" text-anchor="middle" class="node-sub">policy · swap stalled seqs</text>
+  </g>
+  <g id="node-kr" data-graph-role="node" data-node-id="kr" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,564,370,630">
+  <rect x="70.0" y="564.0" width="300.0" height="66.0" rx="10.0" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.8"/>
+  <text x="220.0" y="597.0" text-anchor="middle" class="node-title" font-size="18.0">KV-aware Routing</text>
+  <text x="220.0" y="619.0" text-anchor="middle" class="node-sub">route to cache owner</text>
+  </g>
+  <g id="node-pd" data-graph-role="node" data-node-id="pd" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,670,370,736">
+  <rect x="70.0" y="670.0" width="300.0" height="66.0" rx="10.0" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1.8"/>
+  <text x="220.0" y="703.0" text-anchor="middle" class="node-title" font-size="18.0">P/D Disaggregation</text>
+  <text x="220.0" y="725.0" text-anchor="middle" class="node-sub">split prefill &amp; decode</text>
+  </g>
+  <g id="node-e-cb" data-graph-role="node" data-node-id="e-cb" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,140,1000,206">
+  <rect x="640.0" y="140.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="173.0" text-anchor="middle" class="node-title" font-size="18.0">many concurrent short requests</text>
+  <text x="820.0" y="195.0" text-anchor="middle" class="node-sub">hide latency · raise throughput</text>
+  </g>
+  <g id="node-e-pc" data-graph-role="node" data-node-id="e-pc" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,246,1000,312">
+  <rect x="640.0" y="246.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="279.0" text-anchor="middle" class="node-title" font-size="17.53">shared system prompt / multi-turn</text>
+  <text x="820.0" y="301.0" text-anchor="middle" class="node-sub">skip re-prefill of prefix</text>
+  </g>
+  <g id="node-e-cp" data-graph-role="node" data-node-id="e-cp" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,352,1000,418">
+  <rect x="640.0" y="352.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="385.0" text-anchor="middle" class="node-title" font-size="15.46">long prompt + latency-sensitive decode</text>
+  <text x="820.0" y="407.0" text-anchor="middle" class="node-sub">no stall of ongoing generation</text>
+  </g>
+  <g id="node-e-sp" data-graph-role="node" data-node-id="e-sp" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,458,1000,524">
+  <rect x="640.0" y="458.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="491.0" text-anchor="middle" class="node-title" font-size="18.0">long seqs starve short ones</text>
+  <text x="820.0" y="513.0" text-anchor="middle" class="node-sub">reclaim memory · fair share</text>
+  </g>
+  <g id="node-e-kr" data-graph-role="node" data-node-id="e-kr" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,564,1000,630">
+  <rect x="640.0" y="564.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="597.0" text-anchor="middle" class="node-title" font-size="18.0">same context across workers</text>
+  <text x="820.0" y="619.0" text-anchor="middle" class="node-sub">avoid redundant prefill</text>
+  </g>
+  <g id="node-e-pd" data-graph-role="node" data-node-id="e-pd" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="640,670,1000,736">
+  <rect x="640.0" y="670.0" width="360.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="820.0" y="703.0" text-anchor="middle" class="node-title" font-size="18.0">high ISL:OSL · MoE · pool scaling</text>
+  <text x="820.0" y="725.0" text-anchor="middle" class="node-sub">independent P/D scale</text>
+  </g>
+  <g id="legend" data-graph-role="legend">
+    <rect id="legend-zone" data-graph-role="reserved" data-reserved-kind="legend" x="56" y="84" width="359.2" height="46" rx="10" fill="none" stroke="none"/>
+    <line data-graph-role="decoration" x1="66.0" y1="98.0" x2="96.0" y2="98.0" stroke="#7c3aed" stroke-width="2.4" marker-end="url(#arrowA)"/>
+    <text data-graph-role="decoration" x="106.0" y="102.0" class="legend">feature → workload condition that makes it pay</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,796,825,812">
+  <text x="48.0" y="808.0" class="footnote">Blue = throughput · orange = latency/fairness · purple = routing/disaggregation · green = the winning condition</text>
+  </g>
+</svg>

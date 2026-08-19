@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #9ca3af; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #94a3b8; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #94a3b8; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="1100.0" height="520.0" fill="#ffffff"/>
+  <text x="550.0" y="56" text-anchor="middle" class="title">LMCache: KV Cache Layer between Engines and Storage</text>
+  <text x="550.0" y="82" text-anchor="middle" class="subtitle">per-engine connectors intercept KV ops, the CacheEngine pools and dedups them, and pluggable backends store them across memory tiers</text>
+  <path id="engines-conn" data-graph-role="edge" data-edge-id="engines-conn" data-source="engines" data-target="connectors" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 270,183 L 330,183" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="conn-engine" data-graph-role="edge" data-edge-id="conn-engine" data-source="connectors" data-target="engine" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 540,183 L 600,183" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="engine-backends" data-graph-role="edge" data-edge-id="engine-backends" data-source="engine" data-target="backends" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 810,183 L 870,183" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="engine-metrics" data-graph-role="edge" data-edge-id="engine-metrics" data-source="engine" data-target="metrics" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 705,216 L 705,340" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <g id="node-engines" data-graph-role="node" data-node-id="engines" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="60,150,270,216">
+  <rect x="60.0" y="150.0" width="210.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="165.0" y="183.0" text-anchor="middle" class="node-title" font-size="18.0">Serving Engines</text>
+  <text x="165.0" y="205.0" text-anchor="middle" class="node-sub">vLLM · SGLang · TensorRT-LLM</text>
+  </g>
+  <g id="node-connectors" data-graph-role="node" data-node-id="connectors" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="330,150,540,216">
+  <rect x="330.0" y="150.0" width="210.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="435.0" y="183.0" text-anchor="middle" class="node-title" font-size="18.0">GPU Connectors</text>
+  <text x="435.0" y="205.0" text-anchor="middle" class="node-sub">intercept KV · from_gpu / to_gpu</text>
+  </g>
+  <g id="node-engine" data-graph-role="node" data-node-id="engine" data-semantic-role="double_rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="600,150,810,216">
+  <rect x="600.0" y="150.0" width="210.0" height="66.0" rx="10.0" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.0"/>
+  <rect x="606.0" y="156.0" width="198.0" height="54.0" rx="7.0" fill="none" stroke="#3b82f6" stroke-width="1.2" opacity="0.65"/>
+  <text x="705.0" y="183.0" text-anchor="middle" class="node-title" font-size="18.0">LMCache Engine</text>
+  <text x="705.0" y="205.0" text-anchor="middle" class="node-sub">CacheEngine · pooling · hit / miss</text>
+  </g>
+  <g id="node-backends" data-graph-role="node" data-node-id="backends" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="870,150,1080,216">
+  <rect x="870.0" y="150.0" width="210.0" height="66.0" rx="10.0" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.8"/>
+  <text x="975.0" y="183.0" text-anchor="middle" class="node-title" font-size="18.0">Storage Backends</text>
+  <text x="975.0" y="205.0" text-anchor="middle" class="node-sub">DRAM · SSD · Redis · P2P</text>
+  </g>
+  <g id="node-metrics" data-graph-role="node" data-node-id="metrics" data-semantic-role="rect" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="600,340,810,406">
+  <rect x="600.0" y="340.0" width="210.0" height="66.0" rx="10.0" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
+  <text x="705.0" y="373.0" text-anchor="middle" class="node-title" font-size="18.0">Measured</text>
+  <text x="705.0" y="395.0" text-anchor="middle" class="node-sub">hit rate · TTFT · transferred bytes</text>
+  </g>
+  <g id="legend" data-graph-role="legend">
+    <rect id="legend-zone" data-graph-role="reserved" data-reserved-kind="legend" x="56" y="428" width="438.48" height="46" rx="10" fill="none" stroke="none"/>
+    <line data-graph-role="decoration" x1="66.0" y1="442.0" x2="96.0" y2="442.0" stroke="#7c3aed" stroke-width="2.4" marker-end="url(#arrowA)"/>
+    <text data-graph-role="decoration" x="106.0" y="446.0" class="legend">intercept / route KV ops</text>
+    <line data-graph-role="decoration" x1="287.36" y1="442.0" x2="317.36" y2="442.0" stroke="#f97316" stroke-width="2.4" marker-end="url(#arrowE)"/>
+    <text data-graph-role="decoration" x="327.36" y="446.0" class="legend">offload / load KV blocks</text>
+  </g>
+  <g id="footer" data-graph-role="reserved" data-graph-bounds="48,480,881,496">
+  <text x="48.0" y="492.0" class="footnote">A hit loads the cached prefix and skips recompute; a miss computes and writes KV — track hit rate and transferred bytes</text>
+  </g>
+</svg>

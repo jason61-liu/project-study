@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 560,
+  "title": "vLLM Serving Stack",
+  "subtitle": "control plane (top): a continuous-batching scheduler and PagedAttention block manager · data plane (bottom): prefill / decode workers over a shared paged KV cache",
+  "nodes": [
+    {"id": "scheduler", "kind": "double_rect", "x": 140, "y": 150, "width": 240, "height": 66, "label": "Scheduler", "sublabel": "continuous batching · preemption", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "block-manager", "kind": "rect", "x": 500, "y": 150, "width": 240, "height": 66, "label": "Block Manager", "sublabel": "PagedAttention · block table", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "prefix-cache", "kind": "cylinder", "x": 820, "y": 150, "width": 220, "height": 66, "label": "Prefix Cache", "sublabel": "shared prompt reuse", "fill": "#f0fdf4", "stroke": "#22c55e"},
+    {"id": "prefill", "kind": "rect", "x": 140, "y": 360, "width": 240, "height": 66, "label": "Prefill Worker", "sublabel": "compute-bound · TTFT", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "decode", "kind": "rect", "x": 500, "y": 360, "width": 240, "height": 66, "label": "Decode Worker", "sublabel": "memory-bound · TPOT", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "kv-cache", "kind": "cylinder", "x": 820, "y": 360, "width": 220, "height": 66, "label": "Paged KV Cache", "sublabel": "GPU blocks", "fill": "#f0fdf4", "stroke": "#22c55e"}
+  ],
+  "arrows": [
+    {"id": "sched-bm", "source": "scheduler", "target": "block-manager", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "bm-pc", "source": "block-manager", "target": "prefix-cache", "source_port": "right", "target_port": "left", "flow": "read"},
+    {"id": "sched-prefill", "source": "scheduler", "target": "prefill", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "prefill-decode", "source": "prefill", "target": "decode", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "decode-kv", "source": "decode", "target": "kv-cache", "source_port": "right", "target_port": "left", "flow": "write"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "schedule / dispatch"},
+    {"flow": "read", "label": "lookup cached prefix"},
+    {"flow": "data", "label": "KV handoff"},
+    {"flow": "write", "label": "store new KV"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 476,
+  "legend_locked": false,
+  "footer": "Blue = control plane · teal = data plane · green = cache; scheduler → block manager → prefill → decode → KV cache",
+  "footer_x": 48,
+  "footer_y": 528
+}

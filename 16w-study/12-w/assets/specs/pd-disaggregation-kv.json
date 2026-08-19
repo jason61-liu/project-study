@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 520,
+  "title": "Prefill / Decode Disaggregation with KV Transfer",
+  "subtitle": "a router splits prefill and decode into independently scalable fleets, connected by a KV transfer engine",
+  "nodes": [
+    {"id": "router", "kind": "double_rect", "x": 60, "y": 140, "width": 240, "height": 66, "label": "Router", "sublabel": "KV-aware · route P/D", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "prefill", "kind": "rect", "x": 430, "y": 140, "width": 240, "height": 66, "label": "Prefill Pool", "sublabel": "compute KV · TTFT", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "transfer", "kind": "rect", "x": 800, "y": 140, "width": 240, "height": 66, "label": "KV Transfer Engine", "sublabel": "RDMA · NIXL · Mooncake TE", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "decode", "kind": "rect", "x": 800, "y": 340, "width": 240, "height": 66, "label": "Decode Pool", "sublabel": "generate · TPOT", "fill": "#f0fdfa", "stroke": "#14b8a6", "flat": true},
+    {"id": "client", "kind": "rect", "x": 430, "y": 340, "width": 240, "height": 66, "label": "Client", "sublabel": "streamed tokens", "fill": "#f1f5f9", "stroke": "#64748b", "flat": true}
+  ],
+  "arrows": [
+    {"id": "router-prefill", "source": "router", "target": "prefill", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "prefill-transfer", "source": "prefill", "target": "transfer", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "transfer-decode", "source": "transfer", "target": "decode", "source_port": "bottom", "target_port": "top", "flow": "data"},
+    {"id": "decode-client", "source": "decode", "target": "client", "source_port": "left", "target_port": "right", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "request / response"},
+    {"flow": "data", "label": "KV cache transfer"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 452,
+  "legend_locked": false,
+  "footer": "Prefill and decode scale independently; the transfer engine's bandwidth and latency decide whether disaggregation wins",
+  "footer_x": 48,
+  "footer_y": 492
+}

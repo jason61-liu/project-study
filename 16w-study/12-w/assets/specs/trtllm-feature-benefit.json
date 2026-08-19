@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 840,
+  "title": "TensorRT-LLM Features: When Each One Pays Off",
+  "subtitle": "each serving feature helps only under a specific workload condition — enabling it blindly can cost more than it saves",
+  "nodes": [
+    {"id": "cb", "kind": "rect", "x": 70, "y": 140, "width": 300, "height": 66, "label": "Continuous Batching", "sublabel": "in-flight · iteration-level", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "pc", "kind": "rect", "x": 70, "y": 246, "width": 300, "height": 66, "label": "Prefix Cache", "sublabel": "reuse shared prompt KV", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "cp", "kind": "rect", "x": 70, "y": 352, "width": 300, "height": 66, "label": "Chunked Prefill", "sublabel": "split long prefill", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "sp", "kind": "rect", "x": 70, "y": 458, "width": 300, "height": 66, "label": "Scheduling & Preemption", "sublabel": "policy · swap stalled seqs", "fill": "#fff7ed", "stroke": "#f97316", "flat": true},
+    {"id": "kr", "kind": "rect", "x": 70, "y": 564, "width": 300, "height": 66, "label": "KV-aware Routing", "sublabel": "route to cache owner", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "pd", "kind": "rect", "x": 70, "y": 670, "width": 300, "height": 66, "label": "P/D Disaggregation", "sublabel": "split prefill & decode", "fill": "#faf5ff", "stroke": "#8b5cf6", "flat": true},
+    {"id": "e-cb", "kind": "rect", "x": 640, "y": 140, "width": 360, "height": 66, "label": "many concurrent short requests", "sublabel": "hide latency · raise throughput", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e-pc", "kind": "rect", "x": 640, "y": 246, "width": 360, "height": 66, "label": "shared system prompt / multi-turn", "sublabel": "skip re-prefill of prefix", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e-cp", "kind": "rect", "x": 640, "y": 352, "width": 360, "height": 66, "label": "long prompt + latency-sensitive decode", "sublabel": "no stall of ongoing generation", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e-sp", "kind": "rect", "x": 640, "y": 458, "width": 360, "height": 66, "label": "long seqs starve short ones", "sublabel": "reclaim memory · fair share", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e-kr", "kind": "rect", "x": 640, "y": 564, "width": 360, "height": 66, "label": "same context across workers", "sublabel": "avoid redundant prefill", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "e-pd", "kind": "rect", "x": 640, "y": 670, "width": 360, "height": 66, "label": "high ISL:OSL · MoE · pool scaling", "sublabel": "independent P/D scale", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true}
+  ],
+  "arrows": [
+    {"id": "a-cb", "source": "cb", "target": "e-cb", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-pc", "source": "pc", "target": "e-pc", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-cp", "source": "cp", "target": "e-cp", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-sp", "source": "sp", "target": "e-sp", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-kr", "source": "kr", "target": "e-kr", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "a-pd", "source": "pd", "target": "e-pd", "source_port": "right", "target_port": "left", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "feature → workload condition that makes it pay"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 776,
+  "legend_locked": false,
+  "footer": "Blue = throughput · orange = latency/fairness · purple = routing/disaggregation · green = the winning condition",
+  "footer_x": 48,
+  "footer_y": 808
+}

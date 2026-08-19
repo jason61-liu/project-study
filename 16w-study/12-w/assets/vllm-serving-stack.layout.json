@@ -1,0 +1,219 @@
+{
+  "canvas": {
+    "height": 560.0,
+    "width": 1100.0
+  },
+  "composition": {
+    "limits": {
+      "max_bends_per_edge": 2,
+      "max_bridged_crossings": 0,
+      "max_route_stretch": 1.35,
+      "max_total_bends": 8,
+      "min_container_gutter": 20.0,
+      "min_label_clearance": 4.0,
+      "min_node_gap": 40.0,
+      "min_segment_length": 16.0,
+      "profile": "showcase"
+    },
+    "metrics": {
+      "bridged_crossings": 0,
+      "max_route_stretch": 1.0,
+      "minimum_container_gutter": null,
+      "minimum_node_gap": 80.0,
+      "shortest_segment": 80.0,
+      "total_bends": 0
+    },
+    "ok": true,
+    "profile": "showcase",
+    "score": 100,
+    "violations": []
+  },
+  "edges": [
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "sched-bm",
+      "length": 120.0,
+      "route": [
+        [
+          380.0,
+          183.0
+        ],
+        [
+          500.0,
+          183.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "scheduler",
+      "source_port": [
+        380.0,
+        183.0
+      ],
+      "target": "block-manager",
+      "target_port": [
+        500.0,
+        183.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "bm-pc",
+      "length": 80.0,
+      "route": [
+        [
+          740.0,
+          183.0
+        ],
+        [
+          820.0,
+          183.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "block-manager",
+      "source_port": [
+        740.0,
+        183.0
+      ],
+      "target": "prefix-cache",
+      "target_port": [
+        820.0,
+        183.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "sched-prefill",
+      "length": 144.0,
+      "route": [
+        [
+          260.0,
+          216.0
+        ],
+        [
+          260.0,
+          360.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "scheduler",
+      "source_port": [
+        260.0,
+        216.0
+      ],
+      "target": "prefill",
+      "target_port": [
+        260.0,
+        360.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "prefill-decode",
+      "length": 120.0,
+      "route": [
+        [
+          380.0,
+          393.0
+        ],
+        [
+          500.0,
+          393.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "prefill",
+      "source_port": [
+        380.0,
+        393.0
+      ],
+      "target": "decode",
+      "target_port": [
+        500.0,
+        393.0
+      ],
+      "waypoints": []
+    },
+    {
+      "bends": 0,
+      "bridges": [],
+      "crossings": [],
+      "id": "decode-kv",
+      "length": 80.0,
+      "route": [
+        [
+          740.0,
+          393.0
+        ],
+        [
+          820.0,
+          393.0
+        ]
+      ],
+      "route_stretch": 1.0,
+      "source": "decode",
+      "source_port": [
+        740.0,
+        393.0
+      ],
+      "target": "kv-cache",
+      "target_port": [
+        820.0,
+        393.0
+      ],
+      "waypoints": []
+    }
+  ],
+  "input_schema": "v1",
+  "issues": [],
+  "mode": "architecture",
+  "ok": true,
+  "placements": {
+    "legend": {
+      "actual": [
+        70.0,
+        476.0
+      ],
+      "bounds": [
+        60.0,
+        462.0,
+        727.6,
+        508.0
+      ],
+      "moved": false,
+      "requested": [
+        70.0,
+        476.0
+      ]
+    }
+  },
+  "schema_version": 1,
+  "semantics": {
+    "details": {},
+    "ok": true,
+    "profile": "generic",
+    "style": 1,
+    "visual_theme": "Flat Icon"
+  },
+  "style": {
+    "id": 1,
+    "name": "Flat Icon"
+  },
+  "summary": {
+    "bridged_crossings": 0,
+    "edges": 5,
+    "nodes": 6
+  },
+  "text_metrics": "heuristic-v1"
+}

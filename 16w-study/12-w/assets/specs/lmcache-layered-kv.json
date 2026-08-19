@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 520,
+  "title": "LMCache: KV Cache Layer between Engines and Storage",
+  "subtitle": "per-engine connectors intercept KV ops, the CacheEngine pools and dedups them, and pluggable backends store them across memory tiers",
+  "nodes": [
+    {"id": "engines", "kind": "rect", "x": 60, "y": 150, "width": 210, "height": 66, "label": "Serving Engines", "sublabel": "vLLM · SGLang · TensorRT-LLM", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "connectors", "kind": "rect", "x": 330, "y": 150, "width": 210, "height": 66, "label": "GPU Connectors", "sublabel": "intercept KV · from_gpu / to_gpu", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "engine", "kind": "double_rect", "x": 600, "y": 150, "width": 210, "height": 66, "label": "LMCache Engine", "sublabel": "CacheEngine · pooling · hit / miss", "fill": "#eff6ff", "stroke": "#3b82f6", "flat": true},
+    {"id": "backends", "kind": "rect", "x": 870, "y": 150, "width": 210, "height": 66, "label": "Storage Backends", "sublabel": "DRAM · SSD · Redis · P2P", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "metrics", "kind": "rect", "x": 600, "y": 340, "width": 210, "height": 66, "label": "Measured", "sublabel": "hit rate · TTFT · transferred bytes", "fill": "#fff7ed", "stroke": "#f97316", "flat": true}
+  ],
+  "arrows": [
+    {"id": "engines-conn", "source": "engines", "target": "connectors", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "conn-engine", "source": "connectors", "target": "engine", "source_port": "right", "target_port": "left", "flow": "control"},
+    {"id": "engine-backends", "source": "engine", "target": "backends", "source_port": "right", "target_port": "left", "flow": "data"},
+    {"id": "engine-metrics", "source": "engine", "target": "metrics", "source_port": "bottom", "target_port": "top", "flow": "control"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "intercept / route KV ops"},
+    {"flow": "data", "label": "offload / load KV blocks"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 452,
+  "legend_locked": false,
+  "footer": "A hit loads the cached prefix and skips recompute; a miss computes and writes KV — track hit rate and transferred bytes",
+  "footer_x": 48,
+  "footer_y": 492
+}

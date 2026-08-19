@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "mode": "architecture",
+  "template_type": "architecture",
+  "style": 1,
+  "quality_profile": "showcase",
+  "width": 1100,
+  "height": 520,
+  "title": "SGLang RadixAttention: Radix Cache",
+  "subtitle": "a radix tree over token prefixes reuses shared KV at token granularity — hits reuse, misses compute only the divergent tail",
+  "nodes": [
+    {"id": "root", "kind": "rect", "x": 470, "y": 110, "width": 160, "height": 56, "label": "Root", "sublabel": "empty prefix", "fill": "#f1f5f9", "stroke": "#64748b", "flat": true},
+    {"id": "sys", "kind": "rect", "x": 470, "y": 210, "width": 300, "height": 56, "label": "Shared system prompt", "sublabel": "cached · reused by both", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "r1", "kind": "rect", "x": 250, "y": 330, "width": 240, "height": 56, "label": "Request 1 · answer A", "sublabel": "prefix hit → reuse KV", "fill": "#f0fdf4", "stroke": "#22c55e", "flat": true},
+    {"id": "r2", "kind": "rect", "x": 690, "y": 330, "width": 240, "height": 56, "label": "Request 2 · answer B", "sublabel": "diverged → compute tail", "fill": "#fff7ed", "stroke": "#f97316", "flat": true}
+  ],
+  "arrows": [
+    {"id": "root-sys", "source": "root", "target": "sys", "source_port": "bottom", "target_port": "top", "flow": "control"},
+    {"id": "sys-r1", "source": "sys", "target": "r1", "source_port": "bottom", "target_port": "top", "flow": "read"},
+    {"id": "sys-r2", "source": "sys", "target": "r2", "source_port": "bottom", "target_port": "top", "flow": "write"}
+  ],
+  "legend": [
+    {"flow": "control", "label": "descend tree"},
+    {"flow": "read", "label": "prefix hit (reuse)"},
+    {"flow": "write", "label": "prefix miss (compute + insert)"}
+  ],
+  "legend_orientation": "horizontal",
+  "legend_x": 70,
+  "legend_y": 430,
+  "legend_locked": false,
+  "footer": "Token-level longest-prefix match reuses the shared prompt; only the divergent tail is recomputed and inserted as a leaf",
+  "footer_x": 48,
+  "footer_y": 484
+}
