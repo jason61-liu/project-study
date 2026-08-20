@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-agent.local/schemas/run-request-v1.json",
+  "title": "Research run request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["question", "identity", "sources"],
+  "properties": {
+    "question": {"type": "string", "minLength": 1, "maxLength": 4000},
+    "idempotency_key": {"type": "string", "minLength": 1, "maxLength": 200},
+    "require_approval": {"type": "boolean", "default": false},
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tenant_id", "user_id", "scopes"],
+      "properties": {
+        "tenant_id": {"type": "string", "minLength": 1},
+        "user_id": {"type": "string", "minLength": 1},
+        "roles": {"type": "array", "items": {"type": "string"}},
+        "scopes": {"type": "array", "contains": {"const": "research:run"}}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "title", "url", "content"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string"},
+          "url": {"type": "string", "pattern": "^https?://"},
+          "content": {"type": "string"},
+          "claims": {"type": "object", "additionalProperties": {"type": "string"}},
+          "trust": {"enum": ["external", "internal", "authoritative"]}
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_steps": {"type": "integer", "minimum": 5},
+        "max_sources": {"type": "integer", "minimum": 1},
+        "max_chars": {"type": "integer", "minimum": 1},
+        "max_cost_usd": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}
+

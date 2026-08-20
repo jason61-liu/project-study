@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://research-agent.local/schemas/run-state-v1.json",
+  "title": "Research run state",
+  "type": "object",
+  "required": ["run_id", "tenant_id", "user_id", "status", "current_step", "version", "evidence"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "tenant_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "status": {"enum": ["pending", "running", "waiting_approval", "completed", "refused", "failed", "cancelled"]},
+    "current_step": {"type": "string"},
+    "version": {"type": "integer", "minimum": 0},
+    "subqueries": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "conflicts": {"type": "array"},
+    "report": {"type": ["string", "null"]},
+    "refusal_reason": {"type": ["string", "null"]},
+    "cost_usd": {"type": "number", "minimum": 0},
+    "steps_used": {"type": "integer", "minimum": 0}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["evidence_id", "source_id", "title", "url", "excerpt", "score", "claims"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^S[1-9][0-9]*$"},
+        "source_id": {"type": "string"},
+        "title": {"type": "string"},
+        "url": {"type": "string", "pattern": "^https?://"},
+        "excerpt": {"type": "string"},
+        "score": {"type": "number"},
+        "claims": {"type": "object", "additionalProperties": {"type": "string"}}
+      }
+    }
+  }
+}
+

@@ -559,12 +559,12 @@
 
 ### 知识与阅读
 
-- [ ] 阅读 [FlashAttention](https://arxiv.org/abs/2205.14135)，解释 IO-aware Tiling。
-- [ ] 阅读 [DeepSeek-V3](https://arxiv.org/abs/2412.19437)，解释 MLA、DeepSeekMoE、辅助损失自由负载均衡、MTP 与 FP8 分别解决什么问题。
-- [ ] 阅读 [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) 与 [DeepSeek-V3.2-Exp](https://github.com/deepseek-ai/DeepSeek-V3.2-Exp)，区分 GRPO/RL/蒸馏的训练机制与 DSA/FlashMLA 的推理机制。
-- [ ] 阅读 [Kimi K2](https://github.com/MoonshotAI/Kimi-K2)、[Kimi K2.5](https://github.com/MoonshotAI/Kimi-K2.5)、[Kimi k1.5](https://arxiv.org/abs/2501.12599) 与 [Kimi Linear](https://github.com/MoonshotAI/Kimi-Linear)，理解 MoE/MuonClip、Agentic 能力、长上下文 RL/partial rollout、KDA 与混合线性注意力。
-- [ ] 比较 FP16、BF16、FP8、INT8、INT4，以及权重、激活、KV Cache 量化的精度、显存和硬件要求。
-- [ ] 掌握 Speculative Decoding 的 Draft/Verify/接受率，并区分 Prefix/Prompt Cache、语义缓存和结果缓存的正确性边界。
+- [x] 阅读 [FlashAttention](https://arxiv.org/abs/2205.14135)，解释 IO-aware Tiling。
+- [x] 阅读 [DeepSeek-V3](https://arxiv.org/abs/2412.19437)，解释 MLA、DeepSeekMoE、辅助损失自由负载均衡、MTP 与 FP8 分别解决什么问题。
+- [x] 阅读 [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) 与 [DeepSeek-V3.2-Exp](https://github.com/deepseek-ai/DeepSeek-V3.2-Exp)，区分 GRPO/RL/蒸馏的训练机制与 DSA/FlashMLA 的推理机制。
+- [x] 阅读 [Kimi K2](https://github.com/MoonshotAI/Kimi-K2)、[Kimi K2.5](https://github.com/MoonshotAI/Kimi-K2.5)、[Kimi k1.5](https://arxiv.org/abs/2501.12599) 与 [Kimi Linear](https://github.com/MoonshotAI/Kimi-Linear)，理解 MoE/MuonClip、Agentic 能力、长上下文 RL/partial rollout、KDA 与混合线性注意力。
+- [x] 比较 FP16、BF16、FP8、INT8、INT4，以及权重、激活、KV Cache 量化的精度、显存和硬件要求。
+- [x] 掌握 Speculative Decoding 的 Draft/Verify/接受率，并区分 Prefix/Prompt Cache、语义缓存和结果缓存的正确性边界。
 
 ### 编码实验
 
@@ -576,10 +576,10 @@
 
 ### 面试与验收
 
-- [ ] 完成至少 12 道 DeepSeek/Kimi、量化、缓存和路由面试题，答案必须从产品名落到机制与约束。
-- [ ] 制作质量—延迟—成本决策表。
-- [ ] 回答“为什么量化后吞吐提升不等于所有任务成本都下降”。
-- [ ] 路由实验可复现，并明确失败回退策略。
+- [x] 完成至少 12 道 DeepSeek/Kimi、量化、缓存和路由面试题，答案必须从产品名落到机制与约束。
+- [x] 制作质量—延迟—成本决策表。
+- [x] 回答“为什么量化后吞吐提升不等于所有任务成本都下降”。
+- [x] 路由实验可复现，并明确失败回退策略。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 
@@ -595,12 +595,12 @@
 
 ### 知识与分析
 
-- [ ] 使用 Trace 找出模型、工具、检索、队列和串行依赖的时间占比。
-- [ ] 分析上下文膨胀、重复检索、无效反思和多 Agent 重复调用。
-- [ ] 评估上下文选择/压缩、记忆检索、Prompt Cache、KV Cache、并行工具和提前终止，明确它们位于不同层。
-- [ ] 设计模型分级、失败升级、预算控制和降级响应，并识别何时需要模型能力升级。
-- [ ] 比较 Prompt/RAG、SFT/LoRA、DPO、蒸馏和 Agentic RL 的数据、目标、成本、风险与评测要求。
-- [ ] 为原始消息、运行状态、长期记忆、检索证据和缓存分别定义 Source of Truth、生命周期、隔离键、版本、删除和污染恢复策略。
+- [x] 使用 Trace 找出模型、工具、检索、队列和串行依赖的时间占比。
+- [x] 分析上下文膨胀、重复检索、无效反思和多 Agent 重复调用。
+- [x] 评估上下文选择/压缩、记忆检索、Prompt Cache、KV Cache、并行工具和提前终止，明确它们位于不同层。
+- [x] 设计模型分级、失败升级、预算控制和降级响应，并识别何时需要模型能力升级。
+- [x] 比较 Prompt/RAG、SFT/LoRA、DPO、蒸馏和 Agentic RL 的数据、目标、成本、风险与评测要求。
+- [x] 为原始消息、运行状态、长期记忆、检索证据和缓存分别定义 Source of Truth、生命周期、隔离键、版本、删除和污染恢复策略。
 
 ### 编码实验
 
@@ -612,10 +612,10 @@
 
 ### 面试与验收
 
-- [ ] 完成至少 10 道 Agent 性能设计题。
-- [ ] 输出优化前后对比报告、至少一个负面结果和一份模型改造决策记录。
-- [ ] 进行 15 分钟性能评审，说明每项优化的证据。
-- [ ] 所有质量与安全回归阈值通过。
+- [x] 完成至少 10 道 Agent 性能设计题。
+- [x] 输出优化前后对比报告、至少一个负面结果和一份模型改造决策记录。
+- [x] 进行 15 分钟性能评审，说明每项优化的证据。
+- [x] 所有质量与安全回归阈值通过。
 
 **复盘：** 最大卡点：____；错误认识：____；需要补强：____
 

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deep-research-agent"
+version = "0.1.0"
+description = "Auditable, recoverable and tenant-isolated deep research agent"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+research-agent = "deep_research_agent.service:main"
+research-eval = "deep_research_agent.eval_harness:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

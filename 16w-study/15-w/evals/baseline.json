@@ -1,0 +1,452 @@
+{
+  "suite_version": "business-v1",
+  "tasks": 55,
+  "passed": 55,
+  "success_rate": 1.0,
+  "latency_ms_p50": 0.704,
+  "cost_usd_total": 0.000986,
+  "security_scenarios_defined": 15,
+  "fault_scenarios_defined": 10,
+  "trials": [
+    {
+      "task_id": "functional-01-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 1.666,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-01-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.883,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-01-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.858,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-01-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.834,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-01-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.725,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-02-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.719,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-02-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.761,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-02-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.704,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-02-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.703,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-02-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.758,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-03-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.779,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-03-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.729,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-03-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.819,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-03-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.712,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-03-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.722,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-04-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.768,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-04-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.724,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-04-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.718,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-04-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.716,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-04-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.825,
+      "cost_usd": 2.1e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-05-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.832,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-05-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.857,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-05-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.785,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-05-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.73,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-05-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.756,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-06-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.738,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-06-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.692,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-06-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.782,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-06-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.719,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-06-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.686,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-07-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.849,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-07-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.408,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-07-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.422,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-07-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.446,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-07-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.424,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-08-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.419,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-08-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.421,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-08-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.409,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-08-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.433,
+      "cost_usd": 1.6e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-08-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.424,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-09-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.427,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-09-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.396,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-09-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.421,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-09-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.419,
+      "cost_usd": 1.7e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-09-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.421,
+      "cost_usd": 1.8e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-10-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.495,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-10-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.431,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-10-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.441,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-10-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.498,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-10-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.564,
+      "cost_usd": 2e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-11-1",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.471,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-11-2",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.457,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-11-3",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.402,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-11-4",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.516,
+      "cost_usd": 1.9e-05,
+      "steps": 5
+    },
+    {
+      "task_id": "functional-11-5",
+      "passed": true,
+      "status": "completed",
+      "latency_ms": 0.498,
+      "cost_usd": 2.1e-05,
+      "steps": 5
+    }
+  ]
+}

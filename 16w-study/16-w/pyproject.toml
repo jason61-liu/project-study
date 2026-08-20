@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-agent-portfolio"
+version = "0.1.0"
+description = "Evidence and portfolio layer for the week-15 research agent"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+portfolio-eval = "portfolio.strengthening:main"
+portfolio-feedback = "portfolio.feedback:main"
+portfolio-release = "portfolio.release:main"
+portfolio-verify = "portfolio.verify:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

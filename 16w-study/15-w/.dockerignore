@@ -1,0 +1,6 @@
+data
+evals/baseline.json
+__pycache__
+*.pyc
+.git
+
