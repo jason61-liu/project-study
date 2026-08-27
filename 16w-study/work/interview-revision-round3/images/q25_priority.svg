@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.title{font-size:25px;font-weight:700}.subtitle{font-size:13px;fill:#64748b}.node{font-size:14px;font-weight:650}.detail{font-size:11px;fill:#64748b}.label{font-size:11px;fill:#475569}.section{font-size:12px;font-weight:700}.metric{font-size:13px;font-weight:700}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker>
+<marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 25 · 工具失败重试决策流程</text>
+<text x="48" y="68" class="subtitle">先判断结果是否已发生，再判断能否重试；退避不能替代幂等与查账</text>
+<path data-graph-role="edge" d="M240,154 L315,154" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M475,154 L535,154" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" d="M695,154 L765,154" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="702.5" y="125" width="55" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="730" y="138" text-anchor="middle" class="label">必要时查账</text>
+<path data-graph-role="edge" d="M845,190 L845,360" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="858.0" y="263" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="882" y="276" text-anchor="middle" class="label">未成功</text>
+<path data-graph-role="edge" d="M765,420 L695,420" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="706.0" y="391" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="730" y="404" text-anchor="middle" class="label">是</text>
+<path data-graph-role="edge" d="M535,420 L465,420" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="476.0" y="391" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="500" y="404" text-anchor="middle" class="label">是</text>
+<path data-graph-role="edge" d="M305,420 L250,420" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="254.0" y="391" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="278" y="404" text-anchor="middle" class="label">是</text>
+<g data-graph-role="node"><rect x="60" y="118" width="180" height="72" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="150.0" y="148" text-anchor="middle" class="node">工具失败</text>
+<text x="150.0" y="171" text-anchor="middle" class="detail">超时·限流·断连</text>
+</g>
+<g data-graph-role="node"><rect x="315" y="118" width="160" height="72" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="395.0" y="148" text-anchor="middle" class="node">规范化错误</text>
+<text x="395.0" y="171" text-anchor="middle" class="detail">类型·code·retryable</text>
+</g>
+<g data-graph-role="node"><polygon points="615,94 695,154 615,214 535,154" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="615" y="150" text-anchor="middle" class="node">结果未知?</text>
+<text x="615" y="170" text-anchor="middle" class="detail">响应丢失</text>
+</g>
+<g data-graph-role="node"><rect x="765" y="118" width="160" height="72" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="845.0" y="148" text-anchor="middle" class="node">查询权威回执</text>
+<text x="845.0" y="171" text-anchor="middle" class="detail">幂等键 / effect_id</text>
+</g>
+<g data-graph-role="node"><polygon points="845,360 925,420 845,480 765,420" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="845" y="416" text-anchor="middle" class="node">错误可重试?</text>
+<text x="845" y="436" text-anchor="middle" class="detail">否→停止/降级</text>
+</g>
+<g data-graph-role="node"><polygon points="615,360 695,420 615,480 535,420" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="615" y="416" text-anchor="middle" class="node">重复安全吗?</text>
+<text x="615" y="436" text-anchor="middle" class="detail">幂等或可查证</text>
+</g>
+<g data-graph-role="node"><polygon points="385,360 465,420 385,480 305,420" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="385" y="416" text-anchor="middle" class="node">仍有预算?</text>
+<text x="385" y="436" text-anchor="middle" class="detail">deadline·次数</text>
+</g>
+<g data-graph-role="node"><rect x="100" y="383" width="150" height="74" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="175.0" y="413" text-anchor="middle" class="node">退避后再试</text>
+<text x="175.0" y="436" text-anchor="middle" class="detail">同一业务幂等键</text>
+</g>
+<g data-graph-role="node"><rect x="70" y="565" width="220" height="78" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="180.0" y="595" text-anchor="middle" class="node">已成功</text>
+<text x="180.0" y="618" text-anchor="middle" class="detail">复用权威回执，禁止重放</text>
+</g>
+<g data-graph-role="node"><rect x="330" y="565" width="240" height="78" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="450.0" y="595" text-anchor="middle" class="node">任一条件为否</text>
+<text x="450.0" y="618" text-anchor="middle" class="detail">停止·降级·补偿·人工</text>
+</g>
+<g data-graph-role="node"><rect x="610" y="565" width="240" height="78" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="730.0" y="595" text-anchor="middle" class="node">共享运行约束</text>
+<text x="730.0" y="618" text-anchor="middle" class="detail">Retry Budget·舱壁·熔断</text>
+</g>
+<g data-graph-role="node"><rect x="890" y="565" width="240" height="78" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="1010.0" y="595" text-anchor="middle" class="node">可观测与验收</text>
+<text x="1010.0" y="618" text-anchor="middle" class="detail">放大率·收敛时间·回执</text>
+</g>
+<rect x="70" y="670" width="1060" height="58" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="94" y="695" class="metric">故障注入：响应丢失、重复消息、限流风暴、父请求取消和半成功均不得造成重复副作用</text>
+<text x="94" y="716" class="detail">主路径只表示满足所有条件后的安全重试；任一条件不满足都必须转入显式终态。</text>
+<line x1="48" y1="764" x2="78" y2="764" stroke="#2563eb" stroke-width="3"/>
+<text x="86" y="768" class="detail">正常判断</text>
+<line x1="223" y1="764" x2="253" y2="764" stroke="#ea580c" stroke-width="3"/>
+<text x="261" y="768" class="detail">查账/治理</text>
+<line x1="398" y1="764" x2="428" y2="764" stroke="#16a34a" stroke-width="3"/>
+<text x="436" y="768" class="detail">安全继续</text>
+<line x1="573" y1="764" x2="603" y2="764" stroke="#dc2626" stroke-width="3"/>
+<text x="611" y="768" class="detail">停止/人工</text>
+</svg>

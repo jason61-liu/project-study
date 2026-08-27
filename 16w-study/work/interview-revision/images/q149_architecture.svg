@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827} .title{font-size:25px;font-weight:700} .subtitle{font-size:13px;fill:#6b7280} .layer{font-size:13px;font-weight:700} .node{font-size:14px;font-weight:600} .sub{font-size:11px;fill:#6b7280} .edge-label{font-size:11px;fill:#4b5563}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 149 · Agent 平台三阶段演进架构图</text>
+<text x="48" y="68" class="subtitle">静态视图：组件边界、职责分层、持久状态与治理能力</text>
+<rect data-graph-role="container" x="40" y="82" width="1120" height="118" rx="12" fill="#eff6ff" fill-opacity="0.45" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="7,4"/>
+<rect x="56" y="92" width="118" height="23" rx="11" fill="#2563eb"/>
+<text x="115" y="108" text-anchor="middle" fill="#ffffff" style="fill:#ffffff;font-size:12px;font-weight:700">阶段一·验证价值</text>
+<g data-graph-role="node" id="q149-n0-0">
+<rect x="78" y="125" width="204" height="62" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="180.0" y="152" text-anchor="middle" class="node">Single API</text>
+<text x="180.0" y="173" text-anchor="middle" class="sub">单入口</text>
+</g>
+<g data-graph-role="node" id="q149-n0-1">
+<rect x="358" y="125" width="204" height="62" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="460.0" y="152" text-anchor="middle" class="node">Handwritten Loop</text>
+<text x="460.0" y="173" text-anchor="middle" class="sub">最小闭环</text>
+</g>
+<g data-graph-role="node" id="q149-n0-2">
+<rect x="638" y="125" width="204" height="62" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="740.0" y="152" text-anchor="middle" class="node">Local Tools</text>
+<text x="740.0" y="173" text-anchor="middle" class="sub">受控工具</text>
+</g>
+<g data-graph-role="node" id="q149-n0-3">
+<rect x="918" y="125" width="204" height="62" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="1020.0" y="152" text-anchor="middle" class="node">SQLite</text>
+<text x="1020.0" y="173" text-anchor="middle" class="sub">状态与轨迹</text>
+</g>
+<rect data-graph-role="container" x="40" y="240" width="1120" height="118" rx="12" fill="#faf5ff" fill-opacity="0.45" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="7,4"/>
+<rect x="56" y="250" width="118" height="23" rx="11" fill="#9333ea"/>
+<text x="115" y="266" text-anchor="middle" fill="#ffffff" style="fill:#ffffff;font-size:12px;font-weight:700">阶段二·验证可靠</text>
+<g data-graph-role="node" id="q149-n1-0">
+<rect x="78" y="283" width="204" height="62" rx="9" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="180.0" y="310" text-anchor="middle" class="node">Durable Queue</text>
+<text x="180.0" y="331" text-anchor="middle" class="sub">异步长任务</text>
+</g>
+<g data-graph-role="node" id="q149-n1-1">
+<rect x="358" y="283" width="204" height="62" rx="9" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="460.0" y="310" text-anchor="middle" class="node">Checkpoint</text>
+<text x="460.0" y="331" text-anchor="middle" class="sub">崩溃恢复</text>
+</g>
+<g data-graph-role="node" id="q149-n1-2">
+<rect x="638" y="283" width="204" height="62" rx="9" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="740.0" y="310" text-anchor="middle" class="node">HITL</text>
+<text x="740.0" y="331" text-anchor="middle" class="sub">高风险审批</text>
+</g>
+<g data-graph-role="node" id="q149-n1-3">
+<rect x="918" y="283" width="204" height="62" rx="9" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="1020.0" y="310" text-anchor="middle" class="node">Eval &amp; Trace</text>
+<text x="1020.0" y="331" text-anchor="middle" class="sub">质量与可观测</text>
+</g>
+<rect data-graph-role="container" x="40" y="398" width="1120" height="118" rx="12" fill="#fff7ed" fill-opacity="0.45" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="7,4"/>
+<rect x="56" y="408" width="118" height="23" rx="11" fill="#ea580c"/>
+<text x="115" y="424" text-anchor="middle" fill="#ffffff" style="fill:#ffffff;font-size:12px;font-weight:700">阶段三·平台化</text>
+<g data-graph-role="node" id="q149-n2-0">
+<rect x="78" y="441" width="204" height="62" rx="9" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="180.0" y="468" text-anchor="middle" class="node">Tenant Gateway</text>
+<text x="180.0" y="489" text-anchor="middle" class="sub">身份与配额</text>
+</g>
+<g data-graph-role="node" id="q149-n2-1">
+<rect x="358" y="441" width="204" height="62" rx="9" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="460.0" y="468" text-anchor="middle" class="node">Fair Scheduler</text>
+<text x="460.0" y="489" text-anchor="middle" class="sub">公平与隔离</text>
+</g>
+<g data-graph-role="node" id="q149-n2-2">
+<rect x="638" y="441" width="204" height="62" rx="9" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="740.0" y="468" text-anchor="middle" class="node">Tool Platform</text>
+<text x="740.0" y="489" text-anchor="middle" class="sub">统一治理</text>
+</g>
+<g data-graph-role="node" id="q149-n2-3">
+<rect x="918" y="441" width="204" height="62" rx="9" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="1020.0" y="468" text-anchor="middle" class="node">Metering</text>
+<text x="1020.0" y="489" text-anchor="middle" class="sub">成本与计费</text>
+</g>
+<rect data-graph-role="container" x="40" y="556" width="1120" height="118" rx="12" fill="#f0fdf4" fill-opacity="0.45" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="7,4"/>
+<rect x="56" y="566" width="118" height="23" rx="11" fill="#16a34a"/>
+<text x="115" y="582" text-anchor="middle" fill="#ffffff" style="fill:#ffffff;font-size:12px;font-weight:700">迁移护栏</text>
+<g data-graph-role="node" id="q149-n3-0">
+<rect x="78" y="599" width="204" height="62" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="180.0" y="626" text-anchor="middle" class="node">Schema Version</text>
+<text x="180.0" y="647" text-anchor="middle" class="sub">前后兼容</text>
+</g>
+<g data-graph-role="node" id="q149-n3-1">
+<rect x="358" y="599" width="204" height="62" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="460.0" y="626" text-anchor="middle" class="node">Data Migration</text>
+<text x="460.0" y="647" text-anchor="middle" class="sub">可回滚迁移</text>
+</g>
+<g data-graph-role="node" id="q149-n3-2">
+<rect x="638" y="599" width="204" height="62" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="740.0" y="626" text-anchor="middle" class="node">Shadow Traffic</text>
+<text x="740.0" y="647" text-anchor="middle" class="sub">新路径验证</text>
+</g>
+<g data-graph-role="node" id="q149-n3-3">
+<rect x="918" y="599" width="204" height="62" rx="9" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="1020.0" y="626" text-anchor="middle" class="node">Exit Criteria</text>
+<text x="1020.0" y="647" text-anchor="middle" class="sub">阶段验收</text>
+</g>
+<path data-graph-role="edge" id="q149-rail-0-0" d="M 180 187 L 180 273" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" id="q149-rail-0-1" d="M 180 345 L 180 431" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" id="q149-rail-0-2" d="M 180 503 L 180 589" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<path data-graph-role="edge" id="q149-rail-1-0" d="M 460 187 L 460 273" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" id="q149-rail-1-1" d="M 460 345 L 460 431" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" id="q149-rail-1-2" d="M 460 503 L 460 589" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<path data-graph-role="edge" id="q149-rail-2-0" d="M 740 187 L 740 273" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" id="q149-rail-2-1" d="M 740 345 L 740 431" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" id="q149-rail-2-2" d="M 740 503 L 740 589" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<path data-graph-role="edge" id="q149-rail-3-0" d="M 1020 187 L 1020 273" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" id="q149-rail-3-1" d="M 1020 345 L 1020 431" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<path data-graph-role="edge" id="q149-rail-3-2" d="M 1020 503 L 1020 589" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<g data-graph-role="legend">
+<line x1="280" y1="752" x2="314" y2="752" stroke="#2563eb" stroke-width="2"/>
+<text x="324" y="756" class="subtitle">请求/数据</text>
+<line x1="470" y1="752" x2="504" y2="752" stroke="#ea580c" stroke-width="2"/>
+<text x="514" y="756" class="subtitle">控制/策略</text>
+<line x1="660" y1="752" x2="694" y2="752" stroke="#16a34a" stroke-width="2"/>
+<text x="704" y="756" class="subtitle">状态/证据</text>
+<line x1="850" y1="752" x2="884" y2="752" stroke="#9333ea" stroke-width="2"/>
+<text x="894" y="756" class="subtitle">观测/反馈</text>
+</g>
+</svg>

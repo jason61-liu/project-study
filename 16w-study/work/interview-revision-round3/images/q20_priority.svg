@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.title{font-size:25px;font-weight:700}.subtitle{font-size:13px;fill:#64748b}.node{font-size:14px;font-weight:650}.detail{font-size:11px;fill:#64748b}.label{font-size:11px;fill:#475569}.section{font-size:12px;font-weight:700}.metric{font-size:13px;font-weight:700}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker>
+<marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 20 · MCP × A2A 分层协作架构</text>
+<text x="48" y="68" class="subtitle">A2A 管独立 Agent 间任务协作；MCP 管 Agent 内部工具与数据能力接入</text>
+<rect data-graph-role="container" x="40" y="95" width="1120" height="145" rx="12" fill="#eff6ff" fill-opacity=".55" stroke="#2563eb" stroke-dasharray="7,4"/>
+<text x="58" y="118" class="section" fill="#2563eb">A2A 协作层 · Agent 发现、Task 生命周期与 Artifact 交付</text>
+<rect data-graph-role="container" x="320" y="305" width="840" height="150" rx="12" fill="#faf5ff" fill-opacity=".55" stroke="#9333ea" stroke-dasharray="7,4"/>
+<text x="338" y="329" class="section" fill="#9333ea">Remote Agent 内部 · 实现对调用方保持黑盒</text>
+<rect data-graph-role="container" x="320" y="520" width="840" height="145" rx="12" fill="#f0fdf4" fill-opacity=".55" stroke="#16a34a" stroke-dasharray="7,4"/>
+<text x="338" y="544" class="section" fill="#16a34a">MCP 能力层 · 生命周期、能力协商、Tools / Resources / Prompts</text>
+<path data-graph-role="edge" d="M250,172 L440,172" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="235.0" y="143" width="220" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="345" y="156" text-anchor="middle" class="label">Agent Card / Message</text>
+<path data-graph-role="edge" d="M620,172 L805,172" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="651.5" y="143" width="121" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="712" y="156" text-anchor="middle" class="label">Task + 状态事件</text>
+<path data-graph-role="edge" d="M895,209 L895,340" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="926.0" y="263" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="950" y="276" text-anchor="middle" class="label">委托执行</text>
+<path data-graph-role="edge" d="M805,202 L620,202" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="613.0" y="211" width="198" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="712" y="224" text-anchor="middle" class="label">Artifact / Message</text>
+<path data-graph-role="edge" d="M620,415 L620,570" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="619.0" y="482" width="110" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="674" y="495" text-anchor="middle" class="label">MCP Client</text>
+<path data-graph-role="edge" d="M620,607 L750,607" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="630.0" y="576" width="110" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="685" y="589" text-anchor="middle" class="label">tools/call</text>
+<path data-graph-role="edge" d="M960,607 L1020,607" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="966.0" y="576" width="48" height="19" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="990" y="589" text-anchor="middle" class="label">业务能力</text>
+<g data-graph-role="node"><rect x="70" y="135" width="180" height="74" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="160.0" y="165" text-anchor="middle" class="node">用户 / 调用服务</text>
+<text x="160.0" y="188" text-anchor="middle" class="detail">目标与身份</text>
+</g>
+<g data-graph-role="node"><rect x="440" y="135" width="180" height="74" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="530.0" y="165" text-anchor="middle" class="node">A2A Client Agent</text>
+<text x="530.0" y="188" text-anchor="middle" class="detail">发现并委托</text>
+</g>
+<g data-graph-role="node"><rect x="805" y="135" width="180" height="74" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="895.0" y="165" text-anchor="middle" class="node">A2A Server</text>
+<text x="895.0" y="188" text-anchor="middle" class="detail">Remote Agent 端点</text>
+</g>
+<g data-graph-role="node"><rect x="420" y="350" width="200" height="74" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="520.0" y="380" text-anchor="middle" class="node">Agent Runtime</text>
+<text x="520.0" y="403" text-anchor="middle" class="detail">计划·状态·验证</text>
+</g>
+<g data-graph-role="node"><rect x="760" y="350" width="200" height="74" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="860.0" y="380" text-anchor="middle" class="node">Task / Artifact Store</text>
+<text x="860.0" y="403" text-anchor="middle" class="detail">持久任务与交付物</text>
+</g>
+<g data-graph-role="node"><rect x="420" y="570" width="200" height="74" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="520.0" y="600" text-anchor="middle" class="node">MCP Client</text>
+<text x="520.0" y="623" text-anchor="middle" class="detail">会话与能力协商</text>
+</g>
+<g data-graph-role="node"><rect x="760" y="570" width="200" height="74" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="860.0" y="600" text-anchor="middle" class="node">MCP Server</text>
+<text x="860.0" y="623" text-anchor="middle" class="detail">暴露受管能力</text>
+</g>
+<g data-graph-role="node"><rect x="1030" y="570" width="105" height="74" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+<text x="1082.5" y="600" text-anchor="middle" class="node">工具/数据</text>
+<text x="1082.5" y="623" text-anchor="middle" class="detail">权威后端</text>
+</g>
+<rect x="48" y="690" width="1104" height="42" rx="9" fill="#fff7ed" stroke="#ea580c"/>
+<text x="72" y="716" class="metric">共同外部控制：认证授权 · 租户隔离 · 幂等 · 审计 · 协议版本与能力校验</text>
+<line x1="48" y1="764" x2="78" y2="764" stroke="#2563eb" stroke-width="3"/>
+<text x="86" y="768" class="detail">A2A 请求/任务</text>
+<line x1="223" y1="764" x2="253" y2="764" stroke="#9333ea" stroke-width="3"/>
+<text x="261" y="768" class="detail">MCP 调用</text>
+<line x1="398" y1="764" x2="428" y2="764" stroke="#16a34a" stroke-width="3"/>
+<text x="436" y="768" class="detail">结果/数据</text>
+<line x1="573" y1="764" x2="603" y2="764" stroke="#ea580c" stroke-width="3"/>
+<text x="611" y="768" class="detail">治理触发</text>
+</svg>

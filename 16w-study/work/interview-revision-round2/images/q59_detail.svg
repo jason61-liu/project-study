@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 59 · 多 Agent 控制拓扑</text>
+<text x="46" y="67" class="s">对比视图：控制机制、责任边界与适用条件</text>
+<rect x="45.0" y="105" width="277.5" height="56" fill="#2563eb" stroke="#fff"/>
+<text x="183.75" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">维度</text>
+<rect x="322.5" y="105" width="277.5" height="56" fill="#16a34a" stroke="#fff"/>
+<text x="461.25" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">Manager</text>
+<rect x="600.0" y="105" width="277.5" height="56" fill="#9333ea" stroke="#fff"/>
+<text x="738.75" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">Team</text>
+<rect x="877.5" y="105" width="277.5" height="56" fill="#ea580c" stroke="#fff"/>
+<text x="1016.25" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">Swarm</text>
+<rect x="45.0" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="215" text-anchor="middle" class="h">控制权</text>
+<rect x="322.5" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="215" text-anchor="middle" class="n">中心规划验收</text>
+<rect x="600.0" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="215" text-anchor="middle" class="n">稳定角色协作</text>
+<rect x="877.5" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="215" text-anchor="middle" class="n">局部规则/交接</text>
+<rect x="45.0" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="183.75" y="311" text-anchor="middle" class="h">全局状态</text>
+<rect x="322.5" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="461.25" y="311" text-anchor="middle" class="n">Manager 持有</text>
+<rect x="600.0" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="738.75" y="311" text-anchor="middle" class="n">团队共享</text>
+<rect x="877.5" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1016.25" y="311" text-anchor="middle" class="n">分布/局部</text>
+<rect x="45.0" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="407" text-anchor="middle" class="h">优势</text>
+<rect x="322.5" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="407" text-anchor="middle" class="n">易治理审计</text>
+<rect x="600.0" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="407" text-anchor="middle" class="n">专业分工清晰</text>
+<rect x="877.5" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="407" text-anchor="middle" class="n">探索扩展性</text>
+<rect x="45.0" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="183.75" y="503" text-anchor="middle" class="h">风险</text>
+<rect x="322.5" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="461.25" y="503" text-anchor="middle" class="n">瓶颈/单点</text>
+<rect x="600.0" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="738.75" y="503" text-anchor="middle" class="n">协调与冲突</text>
+<rect x="877.5" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1016.25" y="503" text-anchor="middle" class="n">收敛和审计难</text>
+<rect x="45.0" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="599" text-anchor="middle" class="h">适用</text>
+<rect x="322.5" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="599" text-anchor="middle" class="n">合规强流程</text>
+<rect x="600.0" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="599" text-anchor="middle" class="n">固定角色任务</text>
+<rect x="877.5" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="599" text-anchor="middle" class="n">可自动验证探索</text>
+<rect x="45" y="676" width="1110" height="62" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="70" y="701" class="h">决策原则</text>
+<text x="70" y="724" class="s">先定义任务控制结构、验证器和风险，再选择机制；不要把框架名或论文名直接当作架构结论。</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 86 · 代码执行隔离层级</text>
+<text x="46" y="67" class="s">对比视图：控制机制、责任边界与适用条件</text>
+<rect x="45.0" y="105" width="222.0" height="56" fill="#2563eb" stroke="#fff"/>
+<text x="156.0" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">维度</text>
+<rect x="267.0" y="105" width="222.0" height="56" fill="#16a34a" stroke="#fff"/>
+<text x="378.0" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">进程</text>
+<rect x="489.0" y="105" width="222.0" height="56" fill="#9333ea" stroke="#fff"/>
+<text x="600.0" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">容器</text>
+<rect x="711.0" y="105" width="222.0" height="56" fill="#ea580c" stroke="#fff"/>
+<text x="822.0" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">gVisor</text>
+<rect x="933.0" y="105" width="222.0" height="56" fill="#dc2626" stroke="#fff"/>
+<text x="1044.0" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">MicroVM</text>
+<rect x="45.0" y="161" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="156.0" y="215" text-anchor="middle" class="h">内核边界</text>
+<rect x="267.0" y="161" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="378.0" y="215" text-anchor="middle" class="n">共享</text>
+<rect x="489.0" y="161" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="600.0" y="215" text-anchor="middle" class="n">共享</text>
+<rect x="711.0" y="161" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="822.0" y="215" text-anchor="middle" class="n">用户态内核</text>
+<rect x="933.0" y="161" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1044.0" y="215" text-anchor="middle" class="n">独立客体内核</text>
+<rect x="45.0" y="257" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="156.0" y="311" text-anchor="middle" class="h">隔离强度</text>
+<rect x="267.0" y="257" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="378.0" y="311" text-anchor="middle" class="n">低</text>
+<rect x="489.0" y="257" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="600.0" y="311" text-anchor="middle" class="n">中</text>
+<rect x="711.0" y="257" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="822.0" y="311" text-anchor="middle" class="n">中高</text>
+<rect x="933.0" y="257" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1044.0" y="311" text-anchor="middle" class="n">高</text>
+<rect x="45.0" y="353" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="156.0" y="407" text-anchor="middle" class="h">启动/密度</text>
+<rect x="267.0" y="353" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="378.0" y="407" text-anchor="middle" class="n">最佳</text>
+<rect x="489.0" y="353" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="600.0" y="407" text-anchor="middle" class="n">较好</text>
+<rect x="711.0" y="353" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="822.0" y="407" text-anchor="middle" class="n">中等</text>
+<rect x="933.0" y="353" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1044.0" y="407" text-anchor="middle" class="n">较重</text>
+<rect x="45.0" y="449" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="156.0" y="503" text-anchor="middle" class="h">典型输入</text>
+<rect x="267.0" y="449" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="378.0" y="503" text-anchor="middle" class="n">一方可信</text>
+<rect x="489.0" y="449" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="600.0" y="503" text-anchor="middle" class="n">受控代码</text>
+<rect x="711.0" y="449" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="822.0" y="503" text-anchor="middle" class="n">不可信代码</text>
+<rect x="933.0" y="449" width="222.0" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1044.0" y="503" text-anchor="middle" class="n">高风险多租户</text>
+<rect x="45.0" y="545" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="156.0" y="599" text-anchor="middle" class="h">仍需控制</text>
+<rect x="267.0" y="545" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="378.0" y="599" text-anchor="middle" class="n">权限/资源</text>
+<rect x="489.0" y="545" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="600.0" y="599" text-anchor="middle" class="n">seccomp/网络</text>
+<rect x="711.0" y="545" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="822.0" y="599" text-anchor="middle" class="n">出口/凭证</text>
+<rect x="933.0" y="545" width="222.0" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1044.0" y="599" text-anchor="middle" class="n">镜像/出口/审计</text>
+<rect x="45" y="676" width="1110" height="62" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="70" y="701" class="h">决策原则</text>
+<text x="70" y="724" class="s">先定义任务控制结构、验证器和风险，再选择机制；不要把框架名或论文名直接当作架构结论。</text>
+</svg>

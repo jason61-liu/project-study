@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.title{font-size:25px;font-weight:700}.subtitle{font-size:13px;fill:#64748b}.node{font-size:14px;font-weight:650}.detail{font-size:11px;fill:#64748b}.label{font-size:11px;fill:#475569}.section{font-size:12px;font-weight:700}.metric{font-size:13px;font-weight:700}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker>
+<marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 123 · 推理延迟、吞吐与 Goodput 时间轴</text>
+<text x="48" y="68" class="subtitle">同一请求的延迟拆解，与多请求容量指标使用不同观察尺度</text>
+<line x1="90" y1="198" x2="1110" y2="198" stroke="#334155" stroke-width="2" marker-end="url(#arrow-slate)"/>
+<text x="90" y="177" class="section">单请求时间轴</text>
+<rect x="90" y="215" width="130" height="86" rx="8" fill="#f8fafc" stroke="#64748b"/>
+<text x="155.0" y="250" text-anchor="middle" class="node">网关/排队</text>
+<text x="155.0" y="274" text-anchor="middle" class="detail">进入服务前等待</text>
+<rect x="220" y="215" width="125" height="86" rx="8" fill="#faf5ff" stroke="#9333ea"/>
+<text x="282.5" y="250" text-anchor="middle" class="node">Tokenize</text>
+<text x="282.5" y="274" text-anchor="middle" class="detail">输入预处理</text>
+<rect x="345" y="215" width="245" height="86" rx="8" fill="#fff7ed" stroke="#ea580c"/>
+<text x="467.5" y="250" text-anchor="middle" class="node">Prefill</text>
+<text x="467.5" y="274" text-anchor="middle" class="detail">处理全部输入</text>
+<rect x="590" y="215" width="110" height="86" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+<text x="645.0" y="250" text-anchor="middle" class="node">首轮调度</text>
+<text x="645.0" y="274" text-anchor="middle" class="detail">产生第 1 token</text>
+<rect x="700" y="215" width="390" height="86" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+<text x="895.0" y="250" text-anchor="middle" class="node">Decode</text>
+<text x="895.0" y="274" text-anchor="middle" class="detail">逐 token 生成</text>
+<path d="M90,330 L700,330" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+<text x="395" y="322" text-anchor="middle" class="metric">TTFT</text>
+<circle cx="700" cy="365" r="8" fill="#16a34a"/>
+<text x="700" y="393" text-anchor="middle" class="detail">T1</text>
+<line x1="710" y1="365" x2="788" y2="365" stroke="#16a34a" stroke-width="2"/>
+<text x="749.0" y="352" text-anchor="middle" class="label">ITL</text>
+<circle cx="798" cy="365" r="8" fill="#16a34a"/>
+<text x="798" y="393" text-anchor="middle" class="detail">T2</text>
+<line x1="808" y1="365" x2="886" y2="365" stroke="#16a34a" stroke-width="2"/>
+<text x="847.0" y="352" text-anchor="middle" class="label">ITL</text>
+<circle cx="896" cy="365" r="8" fill="#16a34a"/>
+<text x="896" y="393" text-anchor="middle" class="detail">T3</text>
+<line x1="906" y1="365" x2="984" y2="365" stroke="#16a34a" stroke-width="2"/>
+<text x="945.0" y="352" text-anchor="middle" class="label">ITL</text>
+<circle cx="994" cy="365" r="8" fill="#16a34a"/>
+<text x="994" y="393" text-anchor="middle" class="detail">T4</text>
+<line x1="1004" y1="365" x2="1080" y2="365" stroke="#16a34a" stroke-width="2"/>
+<text x="1042.0" y="352" text-anchor="middle" class="label">ITL</text>
+<circle cx="1090" cy="365" r="8" fill="#16a34a"/>
+<text x="1090" y="393" text-anchor="middle" class="detail">T5</text>
+<text x="90" y="452" class="section">指标口径与容量视图</text>
+<g data-graph-role="node"><rect x="90" y="480" width="225" height="92" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="202.5" y="510" text-anchor="middle" class="node">TTFT</text>
+<text x="202.5" y="533" text-anchor="middle" class="detail">排队 + Tokenize + Prefill + 首轮调度</text>
+</g>
+<g data-graph-role="node"><rect x="355" y="480" width="225" height="92" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="467.5" y="510" text-anchor="middle" class="node">TPOT / ITL</text>
+<text x="467.5" y="533" text-anchor="middle" class="detail">相邻输出 token 间隔；关注分位数</text>
+</g>
+<g data-graph-role="node"><rect x="620" y="480" width="225" height="92" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="732.5" y="510" text-anchor="middle" class="node">Throughput</text>
+<text x="732.5" y="533" text-anchor="middle" class="detail">注明 input/output/total token/s 或 req/s</text>
+</g>
+<g data-graph-role="node"><rect x="885" y="480" width="225" height="92" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="997.5" y="510" text-anchor="middle" class="node">Goodput</text>
+<text x="997.5" y="533" text-anchor="middle" class="detail">满足质量与延迟 SLO 的有效完成量</text>
+</g>
+<rect x="90" y="615" width="1020" height="100" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="116" y="647" class="metric">近似公式：E2E ≈ TTFT + (N−1) × TPOT</text>
+<text x="116" y="675" class="subtitle">容量验收必须使用真实输入/输出长度与并发分布；提高 Batch 可能提升吞吐，却恶化 TTFT/ITL 尾延迟。</text>
+<text x="116" y="699" class="subtitle">最终优化目标是在既定质量、错误率和延迟 SLO 下最大化 Goodput，而不是最大化裸 Token/s。</text>
+<line x1="48" y1="764" x2="78" y2="764" stroke="#2563eb" stroke-width="3"/>
+<text x="86" y="768" class="detail">请求/首 token</text>
+<line x1="223" y1="764" x2="253" y2="764" stroke="#16a34a" stroke-width="3"/>
+<text x="261" y="768" class="detail">Decode token</text>
+<line x1="398" y1="764" x2="428" y2="764" stroke="#ea580c" stroke-width="3"/>
+<text x="436" y="768" class="detail">Prefill</text>
+<line x1="573" y1="764" x2="603" y2="764" stroke="#9333ea" stroke-width="3"/>
+<text x="611" y="768" class="detail">处理/计量</text>
+</svg>

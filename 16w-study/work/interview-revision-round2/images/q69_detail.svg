@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 69 · 结构化输出的防线</text>
+<text x="46" y="67" class="s">聚焦流程：状态、决策、外部效果与验证闭环</text>
+<g data-graph-role="node"><rect x="55" y="120" width="220" height="84" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="165.0" y="150" class="n" text-anchor="middle">声明 Schema</text>
+<text x="165.0" y="173" class="d" text-anchor="middle">版本与支持子集</text>
+</g>
+<path data-graph-role="edge" d="M275,162 L320,162" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<g data-graph-role="node"><rect x="330" y="120" width="220" height="84" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="440.0" y="150" class="n" text-anchor="middle">约束解码</text>
+<text x="440.0" y="173" class="d" text-anchor="middle">采样阶段限制</text>
+</g>
+<path data-graph-role="edge" d="M550,162 L595,162" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<g data-graph-role="node"><rect x="605" y="120" width="220" height="84" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="715.0" y="150" class="n" text-anchor="middle">语法解析</text>
+<text x="715.0" y="173" class="d" text-anchor="middle">JSON 完整性</text>
+</g>
+<path data-graph-role="edge" d="M825,162 L870,162" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<g data-graph-role="node"><rect x="880" y="120" width="220" height="84" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="990.0" y="150" class="n" text-anchor="middle">Schema 校验</text>
+<text x="990.0" y="173" class="d" text-anchor="middle">类型与必填</text>
+</g>
+<path data-graph-role="edge" d="M990,204 L990,420" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<g data-graph-role="node"><rect x="880" y="430" width="220" height="84" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="990.0" y="460" class="n" text-anchor="middle">业务校验</text>
+<text x="990.0" y="483" class="d" text-anchor="middle">范围·归属·状态</text>
+</g>
+<path data-graph-role="edge" d="M880,472 L835,472" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+<g data-graph-role="node"><rect x="605" y="430" width="220" height="84" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="715.0" y="460" class="n" text-anchor="middle">允许修复?</text>
+<text x="715.0" y="483" class="d" text-anchor="middle">仅无副作用字段</text>
+</g>
+<path data-graph-role="edge" d="M605,472 L560,472" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#a-red)"/>
+<g data-graph-role="node"><rect x="330" y="430" width="220" height="84" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="440.0" y="460" class="n" text-anchor="middle">限次重试</text>
+<text x="440.0" y="483" class="d" text-anchor="middle">返回最小错误</text>
+</g>
+<path data-graph-role="edge" d="M330,472 L285,472" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+<g data-graph-role="node"><rect x="55" y="430" width="220" height="84" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="165.0" y="460" class="n" text-anchor="middle">执行或拒绝</text>
+<text x="165.0" y="483" class="d" text-anchor="middle">关键路径 fail closed</text>
+</g>
+<rect x="55" y="590" width="1090" height="112" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="80" y="625" class="h">验收重点</text>
+<text x="80" y="653" class="s">每一步都要有明确输入/输出、版本和失败语义；涉及外部副作用时，恢复前先查权威结果。</text>
+<text x="80" y="678" class="s">以契约测试、故障注入、重放和端到端指标证明机制生效，而不是只描述理想路径。</text>
+<line x1="754" y1="766" x2="782" y2="766" stroke="#2563eb" stroke-width="3"/>
+<text x="790" y="770" class="d">蓝：正常控制流</text>
+<line x1="899" y1="766" x2="927" y2="766" stroke="#ea580c" stroke-width="3"/>
+<text x="935" y="770" class="d">橙：治理/验证</text>
+<line x1="1044" y1="766" x2="1072" y2="766" stroke="#dc2626" stroke-width="3"/>
+<text x="1080" y="770" class="d">红：拒绝/异常</text>
+</svg>

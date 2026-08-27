@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.title{font-size:25px;font-weight:700}.subtitle{font-size:13px;fill:#64748b}.node{font-size:14px;font-weight:650}.detail{font-size:11px;fill:#64748b}.label{font-size:11px;fill:#475569}.section{font-size:12px;font-weight:700}.metric{font-size:13px;font-weight:700}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker>
+<marker id="arrow-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker>
+</defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 60 · HITL 审批暂停与安全恢复</text>
+<text x="48" y="68" class="subtitle">审批绑定具体动作；恢复时重新认证授权，并用幂等副作用收敛结果</text>
+<g data-graph-role="node"><rect x="17" y="94" width="150" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="92.0" y="124" text-anchor="middle" class="node">用户/Agent</text>
+<text x="92.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="92" y1="148" x2="92" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="220" y="94" width="150" height="54" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="295.0" y="124" text-anchor="middle" class="node">Agent Runtime</text>
+<text x="295.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="295" y1="148" x2="295" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="425" y="94" width="150" height="54" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+<text x="500.0" y="124" text-anchor="middle" class="node">Checkpoint DB</text>
+<text x="500.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="500" y1="148" x2="500" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="630" y="94" width="150" height="54" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="705.0" y="124" text-anchor="middle" class="node">审批服务</text>
+<text x="705.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="705" y1="148" x2="705" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="835" y="94" width="150" height="54" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="910.0" y="124" text-anchor="middle" class="node">Policy Engine</text>
+<text x="910.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="910" y1="148" x2="910" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="1035" y="94" width="150" height="54" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="1110.0" y="124" text-anchor="middle" class="node">工具网关</text>
+<text x="1110.0" y="147" text-anchor="middle" class="detail">参与方</text>
+</g>
+<line x1="1110" y1="148" x2="1110" y2="715" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<path data-graph-role="edge" d="M99,180 L284,180" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="157.5" y="163" width="72" height="18" rx="4" fill="#ffffff"/>
+<text x="193.5" y="176" text-anchor="middle" class="label">提议高风险动作</text>
+<path data-graph-role="edge" d="M302,215 L899,215" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="562.5" y="198" width="80" height="18" rx="4" fill="#ffffff"/>
+<text x="602.5" y="211" text-anchor="middle" class="label">预授权与风险分级</text>
+<path data-graph-role="edge" d="M903,250 L306,250" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="566.5" y="233" width="72" height="18" rx="4" fill="#ffffff"/>
+<text x="602.5" y="246" text-anchor="middle" class="label">需要人工审批</text>
+<path data-graph-role="edge" d="M302,285 L489,285" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="277.5" y="268" width="240" height="18" rx="4" fill="#ffffff"/>
+<text x="397.5" y="281" text-anchor="middle" class="label">原子保存状态 + Approval Record</text>
+<path data-graph-role="edge" d="M302,320 L694,320" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="464.0" y="303" width="72" height="18" rx="4" fill="#ffffff"/>
+<text x="500.0" y="316" text-anchor="middle" class="label">创建待审批项</text>
+<path data-graph-role="edge" d="M698,355 L103,355" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="348.5" y="338" width="100" height="18" rx="4" fill="#ffffff"/>
+<text x="398.5" y="351" text-anchor="middle" class="label">展示参数/影响/期限</text>
+<path data-graph-role="edge" d="M99,390 L694,390" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="338.5" y="373" width="120" height="18" rx="4" fill="#ffffff"/>
+<text x="398.5" y="386" text-anchor="middle" class="label">批准 / 拒绝 / 修改</text>
+<path data-graph-role="edge" d="M698,425 L306,425" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="445.0" y="408" width="110" height="18" rx="4" fill="#ffffff"/>
+<text x="500.0" y="421" text-anchor="middle" class="label">决定事件 → 重新入队</text>
+<path data-graph-role="edge" d="M302,460 L489,460" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="267.5" y="443" width="260" height="18" rx="4" fill="#ffffff"/>
+<text x="397.5" y="456" text-anchor="middle" class="label">按 thread/run 加载 Checkpoint</text>
+<path data-graph-role="edge" d="M302,495 L899,495" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow-orange)"/>
+<rect x="547.5" y="478" width="110" height="18" rx="4" fill="#ffffff"/>
+<text x="602.5" y="491" text-anchor="middle" class="label">重新认证 + 动态授权</text>
+<path data-graph-role="edge" d="M903,530 L306,530" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="557.5" y="513" width="90" height="18" rx="4" fill="#ffffff"/>
+<text x="602.5" y="526" text-anchor="middle" class="label">允许且参数哈希一致</text>
+<path data-graph-role="edge" d="M302,565 L1099,565" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="617.5" y="548" width="170" height="18" rx="4" fill="#ffffff"/>
+<text x="702.5" y="561" text-anchor="middle" class="label">effect_id + 幂等键执行</text>
+<path data-graph-role="edge" d="M1103,600 L306,600" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="632.5" y="583" width="140" height="18" rx="4" fill="#ffffff"/>
+<text x="702.5" y="596" text-anchor="middle" class="label">权威回执 / unknown</text>
+<path data-graph-role="edge" d="M302,635 L489,635" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="361.5" y="618" width="72" height="18" rx="4" fill="#ffffff"/>
+<text x="397.5" y="631" text-anchor="middle" class="label">提交终态与审计</text>
+<path data-graph-role="edge" d="M288,670 L103,670" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="143.5" y="653" width="100" height="18" rx="4" fill="#ffffff"/>
+<text x="193.5" y="666" text-anchor="middle" class="label">返回 Outcome</text>
+<line x1="48" y1="764" x2="78" y2="764" stroke="#2563eb" stroke-width="3"/>
+<text x="86" y="768" class="detail">交互/结果</text>
+<line x1="223" y1="764" x2="253" y2="764" stroke="#9333ea" stroke-width="3"/>
+<text x="261" y="768" class="detail">持久状态</text>
+<line x1="398" y1="764" x2="428" y2="764" stroke="#ea580c" stroke-width="3"/>
+<text x="436" y="768" class="detail">授权/调度</text>
+<line x1="573" y1="764" x2="603" y2="764" stroke="#16a34a" stroke-width="3"/>
+<text x="611" y="768" class="detail">可信执行</text>
+</svg>

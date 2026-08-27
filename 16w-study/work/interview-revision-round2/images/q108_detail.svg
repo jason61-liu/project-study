@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 108 · Prefill 与 Decode</text>
+<text x="46" y="67" class="s">对比视图：控制机制、责任边界与适用条件</text>
+<rect x="45.0" y="105" width="277.5" height="56" fill="#2563eb" stroke="#fff"/>
+<text x="183.75" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">维度</text>
+<rect x="322.5" y="105" width="277.5" height="56" fill="#16a34a" stroke="#fff"/>
+<text x="461.25" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">Prefill</text>
+<rect x="600.0" y="105" width="277.5" height="56" fill="#9333ea" stroke="#fff"/>
+<text x="738.75" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">Decode</text>
+<rect x="877.5" y="105" width="277.5" height="56" fill="#ea580c" stroke="#fff"/>
+<text x="1016.25" y="139" text-anchor="middle" style="fill:#fff;font-size:14px;font-weight:700">调度含义</text>
+<rect x="45.0" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="215" text-anchor="middle" class="h">并行轴</text>
+<rect x="322.5" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="215" text-anchor="middle" class="n">输入序列 T</text>
+<rect x="600.0" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="215" text-anchor="middle" class="n">多请求/序列</text>
+<rect x="877.5" y="161" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="215" text-anchor="middle" class="n">连续批处理</text>
+<rect x="45.0" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="183.75" y="311" text-anchor="middle" class="h">主要运算</text>
+<rect x="322.5" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="461.25" y="311" text-anchor="middle" class="n">大矩阵</text>
+<rect x="600.0" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="738.75" y="311" text-anchor="middle" class="n">逐 token 小步</text>
+<rect x="877.5" y="257" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1016.25" y="311" text-anchor="middle" class="n">混合批调度</text>
+<rect x="45.0" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="407" text-anchor="middle" class="h">常见瓶颈</text>
+<rect x="322.5" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="407" text-anchor="middle" class="n">计算/带宽均可能</text>
+<rect x="600.0" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="407" text-anchor="middle" class="n">权重+KV 读取</text>
+<rect x="877.5" y="353" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="407" text-anchor="middle" class="n">以 profiler 为准</text>
+<rect x="45.0" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="183.75" y="503" text-anchor="middle" class="h">核心指标</text>
+<rect x="322.5" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="461.25" y="503" text-anchor="middle" class="n">TTFT</text>
+<rect x="600.0" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="738.75" y="503" text-anchor="middle" class="n">TPOT/ITL</text>
+<rect x="877.5" y="449" width="277.5" height="96" fill="#ffffff" stroke="#cbd5e1"/>
+<text x="1016.25" y="503" text-anchor="middle" class="n">吞吐+尾延迟</text>
+<rect x="45.0" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="183.75" y="599" text-anchor="middle" class="h">关键旋钮</text>
+<rect x="322.5" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="461.25" y="599" text-anchor="middle" class="n">chunked prefill</text>
+<rect x="600.0" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="738.75" y="599" text-anchor="middle" class="n">batch/KV 调度</text>
+<rect x="877.5" y="545" width="277.5" height="96" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1016.25" y="599" text-anchor="middle" class="n">token budget</text>
+<rect x="45" y="676" width="1110" height="62" rx="10" fill="#fff7ed" stroke="#ea580c"/>
+<text x="70" y="701" class="h">决策原则</text>
+<text x="70" y="724" class="s">先定义任务控制结构、验证器和风险，再选择机制；不要把框架名或论文名直接当作架构结论。</text>
+</svg>

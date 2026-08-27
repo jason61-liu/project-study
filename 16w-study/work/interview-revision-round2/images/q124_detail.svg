@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 124 · vLLM 请求生命周期架构</text>
+<text x="46" y="67" class="s">架构视图：信任域、控制面、数据面与持久证据</text>
+<rect data-graph-role="container" x="40" y="85" width="1120" height="120" rx="12" fill="#eff6ff" fill-opacity=".45" stroke="#2563eb" stroke-dasharray="7,4"/>
+<rect x="55" y="95" width="135" height="24" rx="12" fill="#2563eb"/>
+<text x="122" y="112" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:700">协议与控制面</text>
+<g data-graph-role="node"><rect x="230" y="127" width="230" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="345.0" y="157" class="n" text-anchor="middle">API Server</text>
+<text x="345.0" y="180" class="d" text-anchor="middle">协议与流式</text>
+</g>
+<path data-graph-role="edge" d="M345,191 L345,275" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<g data-graph-role="node"><rect x="540" y="127" width="230" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="655.0" y="157" class="n" text-anchor="middle">Tokenizer</text>
+<text x="655.0" y="180" class="d" text-anchor="middle">输入预处理</text>
+</g>
+<path data-graph-role="edge" d="M655,191 L655,275" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<g data-graph-role="node"><rect x="850" y="127" width="230" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="965.0" y="157" class="n" text-anchor="middle">Model Router</text>
+<text x="965.0" y="180" class="d" text-anchor="middle">版本与适配器</text>
+</g>
+<path data-graph-role="edge" d="M965,191 L965,275" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect data-graph-role="container" x="40" y="243" width="1120" height="120" rx="12" fill="#faf5ff" fill-opacity=".45" stroke="#9333ea" stroke-dasharray="7,4"/>
+<rect x="55" y="253" width="135" height="24" rx="12" fill="#9333ea"/>
+<text x="122" y="270" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:700">Engine Core</text>
+<g data-graph-role="node"><rect x="230" y="285" width="230" height="64" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="345.0" y="315" class="n" text-anchor="middle">Request State</text>
+<text x="345.0" y="338" class="d" text-anchor="middle">序列生命周期</text>
+</g>
+<path data-graph-role="edge" d="M345,349 L345,433" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<g data-graph-role="node"><rect x="540" y="285" width="230" height="64" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="655.0" y="315" class="n" text-anchor="middle">Scheduler</text>
+<text x="655.0" y="338" class="d" text-anchor="middle">Prefill/Decode</text>
+</g>
+<path data-graph-role="edge" d="M655,349 L655,433" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<g data-graph-role="node"><rect x="850" y="285" width="230" height="64" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="965.0" y="315" class="n" text-anchor="middle">Block Manager</text>
+<text x="965.0" y="338" class="d" text-anchor="middle">逻辑 KV 页</text>
+</g>
+<path data-graph-role="edge" d="M965,349 L965,433" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<rect data-graph-role="container" x="40" y="401" width="1120" height="120" rx="12" fill="#fff7ed" fill-opacity=".45" stroke="#ea580c" stroke-dasharray="7,4"/>
+<rect x="55" y="411" width="135" height="24" rx="12" fill="#ea580c"/>
+<text x="122" y="428" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:700">执行数据面</text>
+<g data-graph-role="node"><rect x="230" y="443" width="230" height="64" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="345.0" y="473" class="n" text-anchor="middle">Workers</text>
+<text x="345.0" y="496" class="d" text-anchor="middle">TP/PP/EP</text>
+</g>
+<path data-graph-role="edge" d="M345,507 L345,591" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+<g data-graph-role="node"><rect x="540" y="443" width="230" height="64" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="655.0" y="473" class="n" text-anchor="middle">Model Executor</text>
+<text x="655.0" y="496" class="d" text-anchor="middle">图与 kernel</text>
+</g>
+<path data-graph-role="edge" d="M655,507 L655,591" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+<g data-graph-role="node"><rect x="850" y="443" width="230" height="64" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="965.0" y="473" class="n" text-anchor="middle">Sampler</text>
+<text x="965.0" y="496" class="d" text-anchor="middle">生成 token</text>
+</g>
+<path data-graph-role="edge" d="M965,507 L965,591" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+<rect data-graph-role="container" x="40" y="559" width="1120" height="120" rx="12" fill="#f0fdf4" fill-opacity=".45" stroke="#16a34a" stroke-dasharray="7,4"/>
+<rect x="55" y="569" width="135" height="24" rx="12" fill="#16a34a"/>
+<text x="122" y="586" text-anchor="middle" style="fill:#fff;font-size:12px;font-weight:700">运行治理</text>
+<g data-graph-role="node"><rect x="230" y="601" width="230" height="64" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="345.0" y="631" class="n" text-anchor="middle">Admission</text>
+<text x="345.0" y="654" class="d" text-anchor="middle">长度与显存预算</text>
+</g>
+<g data-graph-role="node"><rect x="540" y="601" width="230" height="64" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="655.0" y="631" class="n" text-anchor="middle">Telemetry</text>
+<text x="655.0" y="654" class="d" text-anchor="middle">TTFT·ITL·KV</text>
+</g>
+<g data-graph-role="node"><rect x="850" y="601" width="230" height="64" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="965.0" y="631" class="n" text-anchor="middle">Failure Control</text>
+<text x="965.0" y="654" class="d" text-anchor="middle">取消与恢复</text>
+</g>
+<line x1="754" y1="766" x2="782" y2="766" stroke="#2563eb" stroke-width="3"/>
+<text x="790" y="770" class="d">蓝：正常控制流</text>
+<line x1="899" y1="766" x2="927" y2="766" stroke="#ea580c" stroke-width="3"/>
+<text x="935" y="770" class="d">橙：治理/验证</text>
+<line x1="1044" y1="766" x2="1072" y2="766" stroke="#dc2626" stroke-width="3"/>
+<text x="1080" y="770" class="d">红：拒绝/异常</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#64748b}.n{font-size:14px;font-weight:650}.d{font-size:11px;fill:#64748b}.l{font-size:11px;fill:#475569}.h{font-size:13px;font-weight:700}</style>
+<defs><marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker><marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a"/></marker><marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#9333ea"/></marker><marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker><marker id="a-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#dc2626"/></marker><marker id="a-slate" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#64748b"/></marker></defs>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="46" y="42" class="t">题 121 · Speculative Decoding</text>
+<text x="46" y="67" class="s">时序视图：消息角色、调用关联、会话与提交边界</text>
+<g data-graph-role="node"><rect x="10.0" y="94" width="160" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="90.0" y="124" class="n" text-anchor="middle">客户端</text>
+<text x="90.0" y="147" class="d" text-anchor="middle">参与方</text>
+</g>
+<line x1="90.0" y1="148" x2="90.0" y2="716" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="265.0" y="94" width="160" height="54" rx="10" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+<text x="345.0" y="124" class="n" text-anchor="middle">Serving 调度器</text>
+<text x="345.0" y="147" class="d" text-anchor="middle">参与方</text>
+</g>
+<line x1="345.0" y1="148" x2="345.0" y2="716" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="520.0" y="94" width="160" height="54" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="600.0" y="124" class="n" text-anchor="middle">Draft 模型</text>
+<text x="600.0" y="147" class="d" text-anchor="middle">参与方</text>
+</g>
+<line x1="600.0" y1="148" x2="600.0" y2="716" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="775.0" y="94" width="160" height="54" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="855.0" y="124" class="n" text-anchor="middle">Target 模型</text>
+<text x="855.0" y="147" class="d" text-anchor="middle">参与方</text>
+</g>
+<line x1="855.0" y1="148" x2="855.0" y2="716" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<g data-graph-role="node"><rect x="1030.0" y="94" width="160" height="54" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+<text x="1110.0" y="124" class="n" text-anchor="middle">KV/采样器</text>
+<text x="1110.0" y="147" class="d" text-anchor="middle">参与方</text>
+</g>
+<line x1="1110.0" y1="148" x2="1110.0" y2="716" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,5"/>
+<path data-graph-role="edge" d="M98.0,185 L333.0,185" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="135.5" y="168" width="164" height="18" rx="4" fill="#fff"/>
+<text x="217.5" y="181" class="l" text-anchor="middle">生成请求</text>
+<path data-graph-role="edge" d="M353.0,233 L588.0,233" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="390.5" y="216" width="164" height="18" rx="4" fill="#fff"/>
+<text x="472.5" y="229" class="l" text-anchor="middle">提出 γ 个候选</text>
+<path data-graph-role="edge" d="M592.0,281 L357.0,281" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="390.5" y="264" width="164" height="18" rx="4" fill="#fff"/>
+<text x="472.5" y="277" class="l" text-anchor="middle">draft tokens</text>
+<path data-graph-role="edge" d="M353.0,329 L843.0,329" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<rect x="518.0" y="312" width="164" height="18" rx="4" fill="#fff"/>
+<text x="600.0" y="325" class="l" text-anchor="middle">一次前向并行验证</text>
+<path data-graph-role="edge" d="M863.0,377 L1098.0,377" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="900.5" y="360" width="164" height="18" rx="4" fill="#fff"/>
+<text x="982.5" y="373" class="l" text-anchor="middle">target probabilities</text>
+<path data-graph-role="edge" d="M1102.0,425 L357.0,425" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="645.5" y="408" width="164" height="18" rx="4" fill="#fff"/>
+<text x="727.5" y="421" class="l" text-anchor="middle">接受连续前缀</text>
+<path data-graph-role="edge" d="M353.0,473 L1098.0,473" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="645.5" y="456" width="164" height="18" rx="4" fill="#fff"/>
+<text x="727.5" y="469" class="l" text-anchor="middle">首拒绝处校正采样</text>
+<path data-graph-role="edge" d="M1102.0,521 L357.0,521" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<rect x="645.5" y="504" width="164" height="18" rx="4" fill="#fff"/>
+<text x="727.5" y="517" class="l" text-anchor="middle">提交/回滚 KV</text>
+<path data-graph-role="edge" d="M337.0,569 L102.0,569" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#a-orange)"/>
+<rect x="135.5" y="552" width="164" height="18" rx="4" fill="#fff"/>
+<text x="217.5" y="565" class="l" text-anchor="middle">仅流出已验证 token</text>
+<path data-graph-role="edge" d="M353.0,617 L588.0,617" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#a-blue)"/>
+<rect x="390.5" y="600" width="164" height="18" rx="4" fill="#fff"/>
+<text x="472.5" y="613" class="l" text-anchor="middle">进入下一轮</text>
+<line x1="754" y1="766" x2="782" y2="766" stroke="#2563eb" stroke-width="3"/>
+<text x="790" y="770" class="d">蓝：正常控制流</text>
+<line x1="899" y1="766" x2="927" y2="766" stroke="#ea580c" stroke-width="3"/>
+<text x="935" y="770" class="d">橙：治理/验证</text>
+<line x1="1044" y1="766" x2="1072" y2="766" stroke="#dc2626" stroke-width="3"/>
+<text x="1080" y="770" class="d">红：拒绝/异常</text>
+</svg>

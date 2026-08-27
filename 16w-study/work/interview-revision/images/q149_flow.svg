@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" width="1200" height="840">
+<style>text{font-family:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Microsoft YaHei','SimHei',sans-serif;fill:#111827} .title{font-size:25px;font-weight:700} .subtitle{font-size:13px;fill:#6b7280} .layer{font-size:13px;font-weight:700} .node{font-size:14px;font-weight:600} .sub{font-size:11px;fill:#6b7280} .edge-label{font-size:11px;fill:#4b5563}</style>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#9333ea"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#ea580c"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+</defs>
+<rect width="1200" height="840" fill="#ffffff"/>
+<text x="48" y="42" class="title">题 149 · Agent 平台三阶段演进核心流程</text>
+<text x="48" y="68" class="subtitle">动态视图：正常路径、决策分支、降级、失败与显式终态</text>
+<g data-graph-role="node" id="step-1"><rect x="45" y="125" width="210" height="84" rx="11" fill="#eff6ff" stroke="#2563eb" stroke-width="1.7"/>
+<circle cx="70" cy="150" r="15" fill="#2563eb"/><text x="70" y="155" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">1</text>
+<text x="157" y="163" text-anchor="middle" class="node">单机验证业务</text><text x="157" y="184" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-2"><rect x="330" y="125" width="210" height="84" rx="11" fill="#eff6ff" stroke="#2563eb" stroke-width="1.7"/>
+<circle cx="355" cy="150" r="15" fill="#2563eb"/><text x="355" y="155" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">2</text>
+<text x="442" y="163" text-anchor="middle" class="node">达到价值门槛</text><text x="442" y="184" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-3"><rect x="615" y="125" width="210" height="84" rx="11" fill="#eff6ff" stroke="#2563eb" stroke-width="1.7"/>
+<circle cx="640" cy="150" r="15" fill="#2563eb"/><text x="640" y="155" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">3</text>
+<text x="727" y="163" text-anchor="middle" class="node">增加持久执行</text><text x="727" y="184" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-4"><rect x="900" y="125" width="210" height="84" rx="11" fill="#faf5ff" stroke="#9333ea" stroke-width="1.7"/>
+<circle cx="925" cy="150" r="15" fill="#9333ea"/><text x="925" y="155" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">4</text>
+<text x="1012" y="163" text-anchor="middle" class="node">达到可靠门槛</text><text x="1012" y="184" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-5"><polygon points="1005,390 1110,432 1005,474 900,432" fill="#faf5ff" stroke="#9333ea" stroke-width="1.7"/>
+<text x="1005" y="428" text-anchor="middle" class="node">5. 出现多租户需求?</text><text x="1005" y="446" text-anchor="middle" class="sub">条件分支</text></g>
+<g data-graph-role="node" id="step-6"><rect x="615" y="390" width="210" height="84" rx="11" fill="#faf5ff" stroke="#9333ea" stroke-width="1.7"/>
+<circle cx="640" cy="415" r="15" fill="#9333ea"/><text x="640" y="420" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">6</text>
+<text x="727" y="428" text-anchor="middle" class="node">引入治理隔离</text><text x="727" y="449" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-7"><rect x="330" y="390" width="210" height="84" rx="11" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.7"/>
+<circle cx="355" cy="415" r="15" fill="#16a34a"/><text x="355" y="420" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">7</text>
+<text x="442" y="428" text-anchor="middle" class="node">迁移与灰度</text><text x="442" y="449" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<g data-graph-role="node" id="step-8"><rect x="45" y="390" width="210" height="84" rx="11" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.7"/>
+<circle cx="70" cy="415" r="15" fill="#16a34a"/><text x="70" y="420" text-anchor="middle" style="fill:#ffffff;font-size:12px;font-weight:700">8</text>
+<text x="157" y="428" text-anchor="middle" class="node">平台化运营</text><text x="157" y="449" text-anchor="middle" class="sub">持久化输入与输出</text></g>
+<path data-graph-role="edge" id="q149-top-0" d="M 255 167 L 320 167" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="258.5" y="143" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="292.5" y="157" text-anchor="middle" class="edge-label">下一步</text>
+<path data-graph-role="edge" id="q149-top-1" d="M 540 167 L 605 167" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="543.5" y="143" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="577.5" y="157" text-anchor="middle" class="edge-label">下一步</text>
+<path data-graph-role="edge" id="q149-top-2" d="M 825 167 L 890 167" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+<rect x="828.5" y="143" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="862.5" y="157" text-anchor="middle" class="edge-label">下一步</text>
+<path data-graph-role="edge" id="q149-turn" d="M 1005 209 L 1005 380" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="1004" y="286" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="1038" y="300" text-anchor="middle" class="edge-label">继续</text>
+<path data-graph-role="edge" id="q149-bottom-0" d="M 900 432 L 835 432" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="833.5" y="408" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="867.5" y="422" text-anchor="middle" class="edge-label">提交</text>
+<path data-graph-role="edge" id="q149-bottom-1" d="M 615 432 L 550 432" fill="none" stroke="#9333ea" stroke-width="2" marker-end="url(#arrow-purple)"/>
+<rect x="548.5" y="408" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="582.5" y="422" text-anchor="middle" class="edge-label">提交</text>
+<path data-graph-role="edge" id="q149-bottom-2" d="M 330 432 L 265 432" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="263.5" y="408" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="297.5" y="422" text-anchor="middle" class="edge-label">提交</text>
+<g data-graph-role="node"><rect x="45" y="660" width="210" height="76" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/><text x="150" y="690" text-anchor="middle" class="node">成功</text><text x="150" y="714" text-anchor="middle" class="sub">目标与证据满足</text></g>
+<g data-graph-role="node"><rect x="495" y="660" width="210" height="76" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/><text x="600" y="690" text-anchor="middle" class="node">降级/人工</text><text x="600" y="714" text-anchor="middle" class="sub">预算或策略触发</text></g>
+<g data-graph-role="node"><rect x="945" y="660" width="210" height="76" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/><text x="1050" y="690" text-anchor="middle" class="node">失败</text><text x="1050" y="714" text-anchor="middle" class="sub">不可恢复错误</text></g>
+<path data-graph-role="edge" id="q149-success" d="M 150 474 L 150 650" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+<rect x="148" y="561" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="182" y="575" text-anchor="middle" class="edge-label">达成</text>
+<path data-graph-role="edge" id="q149-degrade" d="M 720 474 L 720 585 L 600 585 L 600 650" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-orange)"/>
+<rect x="629" y="561" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="663" y="575" text-anchor="middle" class="edge-label">需介入</text>
+<path data-graph-role="edge" id="q149-fail" d="M 1110 209 L 1180 209 L 1180 698 L 1160 698" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-red)"/>
+<rect x="1114" y="596" width="68" height="18" rx="4" fill="#ffffff" opacity="0.96"/>
+<text x="1148" y="610" text-anchor="middle" class="edge-label">异常</text>
+<g data-graph-role="legend"><line x1="410" y1="790" x2="445" y2="790" stroke="#2563eb" stroke-width="2"/><text x="455" y="794" class="subtitle">主流程</text><line x1="530" y1="790" x2="565" y2="790" stroke="#ea580c" stroke-width="2" stroke-dasharray="6,4"/><text x="575" y="794" class="subtitle">人工/降级</text><line x1="690" y1="790" x2="725" y2="790" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/><text x="735" y="794" class="subtitle">失败路径</text></g>
+</svg>
